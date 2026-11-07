@@ -695,5 +695,272 @@
       }
     ],
     "subtitle": "subtitles.block.fence_gate.toggle"
+  },
+  "block.chiseled_bookshelf.break": {
+    "sounds": [
+      "trailsandtalesbackport:block/chiseled_bookshelf/break1",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break2",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break3",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break4",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break5",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.chiseled_bookshelf.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/chiseled_bookshelf/step1",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step2",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step3",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step4",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.chiseled_bookshelf.place": {
+    "sounds": [
+      "trailsandtalesbackport:block/chiseled_bookshelf/break1",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break2",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break3",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break4",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break5",
+      "trailsandtalesbackport:block/chiseled_bookshelf/break6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.chiseled_bookshelf.hit": {
+    "sounds": [
+      "trailsandtalesbackport:block/chiseled_bookshelf/step1",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step2",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step3",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step4",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.chiseled_bookshelf.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/chiseled_bookshelf/step1",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step2",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step3",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step4",
+      "trailsandtalesbackport:block/chiseled_bookshelf/step5"
+    ]
+  },
+  "block.chiseled_bookshelf.insert": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert1",
+        "pitch": 0.85,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert1",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert2",
+        "pitch": 0.85,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert2",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert3",
+        "pitch": 0.85,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert3",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert4",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert4",
+        "pitch": 0.85,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert4",
+        "pitch": 1.1,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.chiseled_bookshelf.insert"
+  },
+  "block.chiseled_bookshelf.insert.enchanted": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted1",
+        "pitch": 0.85,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted1",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted2",
+        "pitch": 0.85,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted2",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted3",
+        "pitch": 0.85,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted3",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted4",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted4",
+        "pitch": 0.85,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/insert_enchanted4",
+        "pitch": 1.1,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.chiseled_bookshelf.insert_enchanted"
+  },
+  "block.chiseled_bookshelf.pickup": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup1",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup1",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup2",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup2",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup3",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup3",
+        "pitch": 1.1,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.chiseled_bookshelf.take"
+  },
+  "block.chiseled_bookshelf.pickup.enchanted": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted1",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted1",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted2",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted2",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted3",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chiseled_bookshelf/pickup_enchanted3",
+        "pitch": 1.1,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.chiseled_bookshelf.take_enchanted"
   }
 }

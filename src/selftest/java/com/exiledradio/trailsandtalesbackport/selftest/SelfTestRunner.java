@@ -46,6 +46,7 @@ public final class SelfTestRunner {
             new ScaffoldSelfTest(),
             new CherrySelfTest(),
             new BambooSelfTest(),
+            new BookshelfSelfTest(),
     };
 
     private final List<String> wanted;

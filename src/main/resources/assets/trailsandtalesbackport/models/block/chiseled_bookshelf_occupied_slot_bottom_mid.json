@@ -1,0 +1,6 @@
+{
+  "parent": "trailsandtalesbackport:block/template_chiseled_bookshelf_slot_bottom_mid",
+  "textures": {
+    "texture": "trailsandtalesbackport:block/chiseled_bookshelf_occupied"
+  }
+}
