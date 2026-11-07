@@ -1,0 +1,7 @@
+{
+  "parent": "trailsandtalesbackport:block/template_custom_fence_gate_wall",
+  "textures": {
+    "particle": "trailsandtalesbackport:block/bamboo_fence_gate_particle",
+    "texture": "trailsandtalesbackport:block/bamboo_fence_gate"
+  }
+}
