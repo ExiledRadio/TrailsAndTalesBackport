@@ -32,21 +32,28 @@ What we need from other family mods, and what happens without them:
 
 | Thing | Owner | Without the owner |
 | --- | --- | --- |
-| Bamboo plant and item (bamboo block, planks, scaffolding recipes) | Village & Pillage (1.14) | We register an identical copy of the plant, sapling and item, and bamboo in jungles (no bamboo jungle biome, no pandas). **Still open 5.** |
-| Smithing table | Village & Pillage (1.14) | We register an identical copy, with 1.20's three slots |
-| Stripped logs (hanging sign recipes) | Village & Pillage (1.13 content) | Update Aquatic's copies if installed; otherwise the recipe takes the log itself |
+| Bamboo plant and item (bamboo block, planks, scaffolding recipes) | Village & Pillage (1.14) | We register an identical copy of the plant, sapling and item, and bamboo in jungles (no bamboo jungle biome, no pandas). **Decided 5.** |
+| Smithing table | Village & Pillage (1.14) | We register an identical copy, in 1.20's three-slot form, when Village & Pillage and Nether Update are both absent |
+| Stripped logs and wood (hanging sign recipes) | Village & Pillage (1.13 content) | Update Aquatic's copies if installed; otherwise our own identical copies, with axe stripping |
 | The five woods' standing signs | Village & Pillage | Not needed by us |
-| Honeycomb (sign waxing) | Buzzy Bees (1.15) | Waxing is off |
+| Honeycomb (sign waxing) | Buzzy Bees (1.15) | Waxing waits for Buzzy Bees: honeycomb's only source is bees, so a copy of the item alone could never be got (see the note below) |
 | Chains (hanging sign recipe) | Nether Update (1.16) | We register an identical copy (`chain`, axis property only until waterlogging) |
 | Crimson and warped stems, stripped stems | Nether Update | No crimson or warped hanging signs |
-| Netherite ingot and gear; bastions; piglins | Nether Update (or any netherite mod Core finds) | Netherite upgrade template unused; trim material netherite only with some netherite mod; piglin head absent |
-| Amethyst shard, copper ingot, glow ink sac, moss block, grove | Caves & Cliffs (1.17/1.18) | Those trim materials absent; calibrated sensor recipe absent; sniffer eggs hatch at the normal rate everywhere; glow ink on hanging signs absent |
-| Sculk sensor and the vibration system | Wild Update (1.19) | No calibrated sculk sensor (**Still open 4**) |
+| Netherite ingot and gear; bastions; piglins | Nether Update (or any netherite mod Core finds) | The netherite upgrade template comes from fallback loot but has nothing to upgrade; netherite trims only with some netherite mod; no piglin head without piglins |
+| Amethyst shard, copper ingot | Caves & Cliffs (1.17/1.18) | Our identical copies, with what makes them obtainable (geodes; copper ore) - see *Copies this adds* |
+| Glow ink sac, moss block, grove | Caves & Cliffs | Glow ink on signs, faster hatching on moss and snowy wolves wait for Caves & Cliffs (interactions with its content, not ingredients of ours) |
+| Sculk sensor and the vibration system | Wild Update (1.19) | Our copy of the sculk sensor, on Core's game events (Decided 4) |
 | Mangrove stem, stripped mangrove log | Wild Update | No mangrove hanging sign |
 | Chest boats | Wild Update | Our cherry chest boat and bamboo chest raft use our own chest-boat entity (see `CORE_REQUESTS.md` 4) |
-| Ancient cities (ward, silence trims) | Wild Update | Those two templates come from our fallback loot (**Still open 3**) |
-| Ocean ruins and shipwrecks (sherds, sniffer egg, coast trim) | Update Aquatic (1.13) | Fallback loot (**Still open 3**) |
+| Ancient cities (ward, silence trims) | Wild Update | Those two templates come from our fallback loot (Decided 3) |
+| Ocean ruins and shipwrecks (sherds, sniffer egg, coast trim) | Update Aquatic (1.13) | Fallback loot (Decided 3) |
 | Mob ambient sounds for heads (piglin) | Nether Update | — |
+
+**Which things get copies.** The rule copies what a feature of ours is made from (recipe ingredients, the
+block a sign hangs from, the sensor the calibrated one is built on), with whatever vanilla needs to obtain it.
+Things that are only an interaction with another mod's content (waxing with honeycomb, glow ink, piglin heads
+from piglins, hatching on moss) work when that mod is installed and are absent otherwise: copying bees, glow
+squid or piglins would be shipping the other mod.
 
 Each lookup goes through `common/Owners` (`block`, `item`, `theirs`, `shouldRegisterCopy`), backed by Backport
 Core's `BlockOwnership`. The blocks this mod ships first are declared there (`BlockOwnership.declare`), so
@@ -62,20 +69,20 @@ which returns null when that stream is off.
 | # | Stream | Package | Config | Entity ids | Packet ids | Needs |
 | --- | --- | --- | --- | --- | --- | --- |
 | C | Cherry wood, leaves, sapling, pink petals | `cherry` | `cherry` | none | 5-9 | nothing |
-| B | Bamboo wood set (+ bamboo copy) | `bamboo` | `bamboo` | none | 10-14 | Still open 5 (default: copy) |
+| B | Bamboo wood set (+ bamboo copy) | `bamboo` | `bamboo` | none | 10-14 | Decided 5 |
 | Bo | Boats and rafts | `boat` | `boats` | 1-4 | 15-19 | C, B by name |
-| G | Cherry grove biome | `biome` | `cherryGrove` | none | 20-24 | **Still open 1** |
+| G | Cherry grove biome | `biome` | `cherryGrove` | none | 20-24 | Decided 1 |
 | H | Hanging signs (+ chain copy) | `hangingsign` | `hangingSigns` | none | 25-29 | nothing |
-| Sg | 1.20 sign changes | `sign` | `signs` | none | 30-34 | **Still open 6** |
+| Sg | 1.20 sign changes | `sign` | `signs` | none | 30-34 | Decided 6 |
 | K | Chiseled bookshelf | `bookshelf` | `chiseledBookshelf` | none | 35-39 | nothing |
 | A | Archaeology: brush, suspicious blocks, sherds, decorated pot | `archaeology` | `archaeology` | none | 40-44 | nothing |
 | St | Structures: trail ruins, desert pyramid and well archaeology, Relic | `structure` | `structures` | none | 45-49 | Core's template loader for trail ruins |
 | N | Sniffer, egg, torchflower, pitcher plant | `sniffer` | `sniffer` | 5-9 | 50-54 | nothing |
 | Ca | Camels | `camel` | `camels` | 10-14 | 55-59 | nothing |
-| Sm | Smithing templates and armor trims | `smithing` | `smithing` | none | 60-64 | **Still open 2**, Core (`CORE_REQUESTS.md` 1) |
+| Sm | Smithing templates and armor trims | `smithing` | `smithing` | none | 60-64 | Decided 2, Core (`CORE_REQUESTS.md` 1) |
 | Ar | Armadillo and scutes | `armadillo` | `armadillos` | 15-19 | 65-69 | nothing |
 | W | Wolf armor, variants, tamed wolf changes | `wolf` | `wolves` | 20-24 | 70-74 | Ar by name |
-| Sc | Calibrated sculk sensor | `sculk` | `calibratedSculkSensor` | none | 75-79 | **Still open 4** |
+| Sc | Calibrated sculk sensor (+ sculk sensor copy) | `sculk` | `calibratedSculkSensor` | none | 75-79 | Decided 4, Core (`CORE_REQUESTS.md` 3) |
 | Hd | Piglin head, heads on note blocks | `heads` | `heads` | none | 80-84 | nothing |
 | X | Other changes | `misc` | `misc` | none | 85-89 | nothing |
 
@@ -103,7 +110,7 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
   mosaic** (2 bamboo slabs), stairs and slabs of both, fence, fence gate, door, trapdoor, pressure plate,
   button, sign. Bamboo wood sounds.
 - Bamboo comes from Village & Pillage. Without it, an identical copy of its plant, sapling and item, and its
-  jungle generation, registered only when it is absent (default; **Still open 5**).
+  jungle generation, registered only when it is absent (default; Decided 5).
 
 ### Bo. Boats and rafts
 
@@ -113,7 +120,7 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
 - Chest boats are Wild Update's mechanic: until Backport Core has the shared boat registry
   (`CORE_REQUESTS.md` 4) ours is a local shim with the same behavior.
 
-### G. Cherry grove biome (Still open 1)
+### G. Cherry grove biome (Decided 1)
 
 - 1.20's cherry grove: grass and foliage color, sky and fog, water color `#5DB7EF`, cherry trees, pink petals,
   pigs, sheep, rabbits and (with Buzzy Bees) bees, hilly terrain (1.12.2 has no 1.18 mountains; the extreme
@@ -131,13 +138,13 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
 - **Chain** copy when Nether Update is absent.
 - Waterlogging later (list at the end).
 
-### Sg. 1.20 sign changes (Still open 6)
+### Sg. 1.20 sign changes (Decided 6)
 
 - Right-clicking a placed sign edits it (not in Adventure mode, not while waxed); text on the back face,
   edited from behind; dye and glow ink per side; **waxing** with honeycomb (Buzzy Bees) stops editing.
 - Applies to vanilla's signs, our cherry and bamboo signs and hanging signs, and (Rule 2) Village & Pillage's
   five wood signs. Needs our renderer in place of vanilla's sign renderer and the back text stored in a
-  capability on the sign's tile entity. How far to go on other mods' signs is **Still open 6**.
+  capability on the sign's tile entity. How far to go on other mods' signs is Decided 6.
 
 ### K. Chiseled bookshelf
 
@@ -149,7 +156,7 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
 ### A. Archaeology
 
 - **Brush** (stick, copper ingot, feather; **without Caves & Cliffs' copper**, the recipe takes an iron nugget:
-  **Still open 3** has the alternatives), 64 durability, brushing animation (client), dispenser brushing
+  Decided 3 has the alternatives), 64 durability, brushing animation (client), dispenser brushing
   armadillos (with stream Ar).
 - **Suspicious sand** and **suspicious gravel**: tile entity with a loot table and a dusted stage 0-3; brushing
   for 96 ticks reveals the item, finishes into sand/gravel; falls like sand when unsupported but breaks when it
@@ -202,7 +209,7 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
   the rider (1.20.2 reach change), breeding with cactus, panic on lead (1.20.2), spawning in desert villages
   (Village & Pillage's: through `CORE_REQUESTS.md` 6, else one camel by a vanilla 1.12.2 desert village's well).
 
-### Sm. Smithing templates and armor trims (Still open 2)
+### Sm. Smithing templates and armor trims (Decided 2)
 
 - **Netherite upgrade** template and the 16 1.20 **armor trim templates** (coast, dune, eye, host, raiser, rib,
   sentry, shaper, silence, snout, spire, tide, vex, ward, wayfinder, wild; bolt and flow are 1.21's). Each
@@ -240,7 +247,7 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
   snow golem snowballs do only knockback; 1.20.5 wolf spawning on coarse dirt and podzol.
 - Advancements *Good as New*, *Shear Brilliance*, *The Whole Pack*.
 
-### Sc. Calibrated sculk sensor (Still open 4)
+### Sc. Calibrated sculk sensor (Decided 4)
 
 - 1 sculk sensor + 3 amethyst shards; redstone into its back side sets the one vibration frequency it listens
   to; range 16, active 10 ticks. It is built on Wild Update's vibration system.
@@ -320,32 +327,39 @@ Blocks 1.20 makes waterloggable: every hanging sign and wall hanging sign, the c
 sculk sensor, the decorated pot, cherry/bamboo signs, stairs, slabs, fences, trapdoors (like every wood),
 pink petals no, sniffer egg no.
 
-## Still open (the user's call)
+## Decided (the user, 2026-11-07)
 
-1. **Cherry grove biome.** Adding a biome changes world generation, and RLCraft Revamped runs without modded
-   biomes. Options: (a) a real biome added to the overworld list (weight configurable, default like extreme
-   hills); (b) no biome: cherry groves as patches of cherry trees and pink petals inside extreme hills and
-   forests; (c) both, (a) on by default. Recommended: (c).
-2. **Smithing templates on Village & Pillage's table.** 1.20 makes netherite upgrades need a template. Doing
-   that touches V&P's table (a third slot and 1.20's screen) and Core's registry. The design is in
-   `CORE_REQUESTS.md` 1. Yes/no to: the template requirement on by default when this mod is installed
-   (config to turn it off), and asking V&P's maintainer for the slot.
-3. **Things that only come from structures we don't have.** Without Update Aquatic, the warm and cold ocean
-   ruin sherds (7), the sniffer egg and the coast template; without Wild Update, ward and silence; without
-   Nether Update, snout and the netherite upgrade; without Caves & Cliffs, the brush's copper. Recommended:
-   a config `fallbackLoot` (on) that puts each orphan in the nearest 1.12.2 structure (sniffer egg and ocean
-   sherds in desert pyramid and well archaeology, coast in vanilla 1.12.2 ocean monument chests? none exist, so
-   desert pyramid; ward and silence in stronghold chests; snout in nether fortresses) and the brush taking an
-   iron nugget without copper.
-4. **Calibrated sculk sensor.** It is a sculk sensor variant; copying Wild Update's whole vibration system
-   when it is absent is a lot of code doing Wild Update's job. Recommended: the calibrated sensor exists only
-   with Wild Update installed, through a shared vibration API in Core (`CORE_REQUESTS.md` 3).
-5. **Bamboo without Village & Pillage.** Recommended: copy its bamboo plant, sapling, item and jungle
-   generation when V&P is absent (Rule 1's copy), nothing else (no pandas, no bamboo jungle).
-6. **Sign changes on signs we don't own.** Editing, back text and waxing need our renderer in place of vanilla's
-   sign renderer, and the same on V&P's five wood signs (it has its own renderer). Recommended: vanilla's and
-   ours here; V&P's through a small request to its maintainer (its renderer reads the back text from the same
-   capability).
+Standing rule: **closest to vanilla, always**; our own small ASM coremod is allowed where vanilla parity needs
+it (package `asm`, one transformer per patch, each in `docs/PATCHES.md`, no MixinBooter); **every mod works
+fully on its own**, so a block or item another family mod owns is copied when the owner is absent (Rule 1),
+never replaced by a crafting-grid stand-in. Shared items: the family owner's first, then other mods'
+ore-dictionary items, then our copy.
+
+1. **Cherry grove**: a real biome, placed as vanilla places it (a mountain-slope biome: with Caves & Cliffs'
+   terrain where it is installed; on 1.12.2 terrain, in the high, cool-temperate band where 1.18 puts it).
+   No patch variant.
+2. **Smithing**: the template requirement is on by default. Village & Pillage's table gets the template slot
+   and 1.20's screen through the request in `CORE_REQUESTS.md` 1. When Village & Pillage and Nether Update
+   are both absent, this mod registers its own copy of the table (Rule 1), already in 1.20's form.
+3. **Fallback loot** only for items whose real structure's owner is absent (so everything can be obtained);
+   with the owner installed, only vanilla's sources.
+4. **Calibrated sculk sensor** through Core's shared game-event system (`CORE_REQUESTS.md` 3, local shim
+   until then); when Wild Update is absent, this mod copies the sculk sensor too, so the calibrated one works.
+5. **Bamboo**: copy Village & Pillage's bamboo plant, sapling, item and jungle generation when it is absent.
+6. **Signs**: editing and back text on every sign, Village & Pillage's included (as a request to that mod);
+   a patch is fine where it is cleaner than replacing renderers.
+
+**Copies this adds** (each only when its owner, and any family copy of it, is absent):
+
+| Copy | Owner | For |
+| --- | --- | --- |
+| Stripped logs and wood of the six vanilla woods | Village & Pillage (Update Aquatic copies them too) | hanging sign recipes (replaces the plain-log stand-in in stream H) |
+| Bamboo plant, sapling, item, jungle bamboo | Village & Pillage | block of bamboo |
+| Smithing table (1.20 form) | Village & Pillage (Nether Update may copy it too) | templates and trims |
+| Copper ingot, with copper ore, raw copper and their generation (else it can't be got) | Caves & Cliffs | brush, copper trim |
+| Amethyst shard, with amethyst geodes, budding amethyst and clusters (its only vanilla source) | Caves & Cliffs | calibrated sensor, amethyst trim |
+| Sculk sensor | Wild Update | calibrated sculk sensor |
+| Chain | Nether Update | hanging signs (done) |
 
 ## Order
 
@@ -353,7 +367,7 @@ pink petals no, sniffer egg no.
 2. Streams that wait on nothing, one at a time on a `tt-<stream>` branch, merged into `main` when tested:
    **done**: C (cherry), B (bamboo wood, without the plant copy), K (chiseled bookshelf), H (hanging signs and
    chain), Bo (boats and rafts); see `docs/streams/`. **Next**: A, N, Ar, W, Hd, X.
-3. G, Sg, Sm, Sc as the user answers Still open 1, 6, 2, 4; B's bamboo copy on Still open 5; St's trail ruins
+3. G, Sg, Sm, Sc and the copies above (all decided 2026-11-07); St's trail ruins
    and ocean ruins when Core has the template loader (desert pyramid and well and the template loot can go
    before it).
 4. Languages through the family tool; waterlogging when Core's adapter exists.
