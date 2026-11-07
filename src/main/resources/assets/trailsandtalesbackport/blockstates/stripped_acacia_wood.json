@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "trailsandtalesbackport:stripped_acacia_wood"
+    },
+    "axis=z": {
+      "model": "trailsandtalesbackport:stripped_acacia_wood",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "trailsandtalesbackport:stripped_acacia_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=none": {
+      "model": "trailsandtalesbackport:stripped_acacia_wood"
+    }
+  }
+}

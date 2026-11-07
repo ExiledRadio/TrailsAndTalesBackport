@@ -3,7 +3,6 @@ package com.exiledradio.trailsandtalesbackport.hangingsign;
 import com.exiledradio.trailsandtalesbackport.ModConfig;
 import com.exiledradio.trailsandtalesbackport.common.Owners;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
@@ -58,8 +57,8 @@ public enum HangingWood {
     }
 
     /**
-     * What the recipe takes: 1.20's stripped log of this wood from whichever mod has it (Village & Pillage,
-     * or Update Aquatic's copy, for vanilla woods); a vanilla wood with neither takes its plain log.
+     * What the recipe takes: 1.20's stripped log of this wood from whichever mod has it. For vanilla woods:
+     * Village & Pillage's, else Update Aquatic's copy, else this mod's own copy.
      *
      * @return the ingredient stack, or null when the wood's mod lacks it (no recipe)
      */
@@ -81,11 +80,11 @@ public enum HangingWood {
                 if (stripped == null) {
                     stripped = Owners.theirs(Owners.UPDATE_AQUATIC, "stripped_" + this.name + "_log");
                 }
-                if (stripped != null) {
-                    return new ItemStack(stripped);
+                if (stripped == null) {
+                    // Neither installed: our own copy of the owner's stripped log (woodcopy).
+                    stripped = Owners.ours("stripped_" + this.name + "_log");
                 }
-                return this.vanillaMeta < 4 ? new ItemStack(Blocks.LOG, 1, this.vanillaMeta)
-                        : new ItemStack(Blocks.LOG2, 1, this.vanillaMeta - 4);
+                return stack(stripped);
         }
     }
 

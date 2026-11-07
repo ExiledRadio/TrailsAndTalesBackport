@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "trailsandtalesbackport:stripped_birch_log"
+    },
+    "axis=z": {
+      "model": "trailsandtalesbackport:stripped_birch_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "trailsandtalesbackport:stripped_birch_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=none": {
+      "model": "trailsandtalesbackport:stripped_birch_wood"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "trailsandtalesbackport:stripped_dark_oak_wood"
+    },
+    "axis=z": {
+      "model": "trailsandtalesbackport:stripped_dark_oak_wood",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "trailsandtalesbackport:stripped_dark_oak_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=none": {
+      "model": "trailsandtalesbackport:stripped_dark_oak_wood"
+    }
+  }
+}

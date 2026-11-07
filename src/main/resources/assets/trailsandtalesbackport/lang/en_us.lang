@@ -144,3 +144,18 @@ config.trailsandtalesbackport.misc.enabled=Enabled
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Axe strips
+
+# --- woodcopy ---
+# Copied from the owning mod by tools/woodcopy/copy_from_owner.py.
+tile.trailsandtalesbackport.stripped_acacia_log.name=Stripped Acacia Log
+tile.trailsandtalesbackport.stripped_acacia_wood.name=Stripped Acacia Wood
+tile.trailsandtalesbackport.stripped_birch_log.name=Stripped Birch Log
+tile.trailsandtalesbackport.stripped_birch_wood.name=Stripped Birch Wood
+tile.trailsandtalesbackport.stripped_dark_oak_log.name=Stripped Dark Oak Log
+tile.trailsandtalesbackport.stripped_dark_oak_wood.name=Stripped Dark Oak Wood
+tile.trailsandtalesbackport.stripped_jungle_log.name=Stripped Jungle Log
+tile.trailsandtalesbackport.stripped_jungle_wood.name=Stripped Jungle Wood
+tile.trailsandtalesbackport.stripped_oak_log.name=Stripped Oak Log
+tile.trailsandtalesbackport.stripped_oak_wood.name=Stripped Oak Wood
+tile.trailsandtalesbackport.stripped_spruce_log.name=Stripped Spruce Log
+tile.trailsandtalesbackport.stripped_spruce_wood.name=Stripped Spruce Wood
