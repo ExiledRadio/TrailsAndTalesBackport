@@ -5,8 +5,9 @@ with the API asked for. Nothing here is built in Core by this mod: Core is not o
 exists, this mod either waits (said per item) or carries a small local shim with the same shape in its own
 package, to be deleted when Core has the real thing.
 
-Requests 1 and 6 also change what **Village & Pillage** does, so they need its maintainer and the user's yes
-before anything is built against them (`PLAN.md`, *Still open* 2 and 6).
+Requests 1, 5 and 6 also change what **Village & Pillage** does; the user decided on 2026-11-07 that they
+go ahead (`PLAN.md`, *Decided* 2 and 6). The V&P side is written up for its maintainer in the family notes
+(`trails-and-tales-requests-for-village-and-pillage.md`).
 
 ## 1. Smithing templates and armor trims (the delicate one)
 
@@ -87,8 +88,9 @@ ItemStack ArmorTrims.apply(ItemStack armor, pattern, material);
 
 ### Meanwhile here
 
-- Without Village & Pillage: this mod registers its own copy of the smithing table (Rule 1), already in
-  three-slot form, under `trailsandtalesbackport:smithing_table`, same block states as V&P's.
+- Without Village & Pillage and Nether Update: this mod registers its own copy of the smithing table (Rule 1),
+  already in three-slot form, under `trailsandtalesbackport:smithing_table`, same block states as V&P's.
+- The template requirement is on by default (`smithing.netheriteNeedsTemplate`, 1.20's rule).
 - The `smithing` stream builds templates, trims and the client parts against a local `SmithingTemplates` /
   `ArmorTrims` shim with exactly the API above, used by our copied table. With V&P installed, nothing changes
   on its table until the request is done; the templates are still obtainable and duplicable.
@@ -127,8 +129,10 @@ GameEvents.listen(World, BlockPos, int range, VibrationListener listener);    //
 int GameEvent.frequency();                                                    // 1-15, as 1.20
 ```
 
-- Recommended (`PLAN.md` *Still open* 4): the calibrated sensor exists only with Wild Update installed, built on
-  this API. **Waiting** for it.
+- Decided (`PLAN.md` *Decided* 4): the calibrated sensor always exists; when Wild Update is absent this mod
+  also registers its copy of the sculk sensor. Both use this API; until Core has it, a local shim with the
+  same shape in our `sculk` package (vibrations from the 1.20 event list this mod can see: steps, block
+  place/break, item use, projectiles, eating, doors, containers...).
 
 ## 4. Boats, rafts and chest boats
 
@@ -156,8 +160,11 @@ SignData SignData.of(TileEntitySign sign);   // capability on every TileEntitySi
 void SignData.drawBack(...)                  // client helper a sign renderer calls after drawing the front
 ```
 
-- With this in Core, V&P's `TileEntityWoodSignRenderer` gets the back face from one call
-  (`PLAN.md` *Still open* 6). **Meanwhile** the capability lives in our `sign` package under the same name.
+- Decided (`PLAN.md` *Decided* 6): on every sign, V&P's included. With this in Core, V&P's
+  `TileEntityWoodSignRenderer` and `TileEntityDyedSignRenderer` get the back face from one call.
+  **Meanwhile** the capability lives in our `sign` package under the same name. Where a renderer can't be
+  reached without it (vanilla's `TileEntitySignRenderer` when V&P's dyed-sign renderer replaced it), a small
+  patch of our own `asm` coremod is allowed.
 
 ## 6. Village hooks
 
