@@ -1,0 +1,58 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "age": "0"
+      },
+      "apply": [
+        {
+          "model": "trailsandtalesbackport:bamboo1_age0"
+        },
+        {
+          "model": "trailsandtalesbackport:bamboo2_age0"
+        },
+        {
+          "model": "trailsandtalesbackport:bamboo3_age0"
+        },
+        {
+          "model": "trailsandtalesbackport:bamboo4_age0"
+        }
+      ]
+    },
+    {
+      "when": {
+        "age": "1"
+      },
+      "apply": [
+        {
+          "model": "trailsandtalesbackport:bamboo1_age1"
+        },
+        {
+          "model": "trailsandtalesbackport:bamboo2_age1"
+        },
+        {
+          "model": "trailsandtalesbackport:bamboo3_age1"
+        },
+        {
+          "model": "trailsandtalesbackport:bamboo4_age1"
+        }
+      ]
+    },
+    {
+      "when": {
+        "leaves": "small"
+      },
+      "apply": {
+        "model": "trailsandtalesbackport:bamboo_small_leaves"
+      }
+    },
+    {
+      "when": {
+        "leaves": "large"
+      },
+      "apply": {
+        "model": "trailsandtalesbackport:bamboo_large_leaves"
+      }
+    }
+  ]
+}

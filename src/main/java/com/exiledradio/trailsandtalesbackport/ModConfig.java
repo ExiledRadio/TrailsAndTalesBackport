@@ -107,6 +107,11 @@ public final class ModConfig {
         @Config.Comment("The bamboo wood set. Off, nothing is registered.")
         @Config.LangKey("config.trailsandtalesbackport.bamboo.enabled")
         public boolean enabled = true;
+
+        @Config.Comment({"Without Village & Pillage, this mod adds the bamboo plant itself; this scatters it",
+                "through jungles in newly generated chunks, as 1.14 does."})
+        @Config.LangKey("config.trailsandtalesbackport.bamboo.jungleBamboo")
+        public boolean jungleBamboo = true;
     }
 
     public static final class Boats {

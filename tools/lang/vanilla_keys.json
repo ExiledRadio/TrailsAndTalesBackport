@@ -1,5 +1,8 @@
 {
   "ours": [
+    "tile.trailsandtalesbackport.cherry_double_slab.name",
+    "tile.trailsandtalesbackport.bamboo_double_slab.name",
+    "tile.trailsandtalesbackport.bamboo_mosaic_double_slab.name",
     "itemGroup.trailsandtalesbackport",
     "config.trailsandtalesbackport.cherry",
     "config.trailsandtalesbackport.bamboo",
@@ -20,6 +23,7 @@
     "config.trailsandtalesbackport.misc",
     "config.trailsandtalesbackport.cherry.enabled",
     "config.trailsandtalesbackport.bamboo.enabled",
+    "config.trailsandtalesbackport.bamboo.jungleBamboo",
     "config.trailsandtalesbackport.boats.enabled",
     "config.trailsandtalesbackport.cherryGrove.enabled",
     "config.trailsandtalesbackport.hangingSigns.enabled",
@@ -34,10 +38,7 @@
     "config.trailsandtalesbackport.wolves.enabled",
     "config.trailsandtalesbackport.calibratedSculkSensor.enabled",
     "config.trailsandtalesbackport.heads.enabled",
-    "config.trailsandtalesbackport.misc.enabled",
-    "tile.trailsandtalesbackport.cherry_double_slab.name",
-    "tile.trailsandtalesbackport.bamboo_double_slab.name",
-    "tile.trailsandtalesbackport.bamboo_mosaic_double_slab.name"
+    "config.trailsandtalesbackport.misc.enabled"
   ],
   "vanilla": {
     "advancements.trailsandtalesbackport.adventure.read_power_from_chiseled_bookshelf.description": "advancements.adventure.read_power_from_chiseled_bookshelf.description",
@@ -45,6 +46,7 @@
     "entity.trailsandtalesbackport.boat.name": "entity.minecraft.boat",
     "entity.trailsandtalesbackport.chest_boat.name": "entity.minecraft.chest_boat",
     "item.trailsandtalesbackport.acacia_hanging_sign.name": "block.minecraft.acacia_hanging_sign",
+    "item.trailsandtalesbackport.bamboo.name": "block.minecraft.bamboo",
     "item.trailsandtalesbackport.bamboo_chest_raft.name": "item.minecraft.bamboo_chest_raft",
     "item.trailsandtalesbackport.bamboo_door.name": "block.minecraft.bamboo_door",
     "item.trailsandtalesbackport.bamboo_hanging_sign.name": "block.minecraft.bamboo_hanging_sign",
@@ -70,6 +72,7 @@
     "subtitles.trailsandtalesbackport.item.axe.strip": "subtitles.item.axe.strip",
     "tile.trailsandtalesbackport.acacia_hanging_sign.name": "block.minecraft.acacia_hanging_sign",
     "tile.trailsandtalesbackport.acacia_wall_hanging_sign.name": "block.minecraft.acacia_wall_hanging_sign",
+    "tile.trailsandtalesbackport.bamboo.name": "block.minecraft.bamboo",
     "tile.trailsandtalesbackport.bamboo_block.name": "block.minecraft.bamboo_block",
     "tile.trailsandtalesbackport.bamboo_button.name": "block.minecraft.bamboo_button",
     "tile.trailsandtalesbackport.bamboo_door.name": "block.minecraft.bamboo_door",
@@ -81,6 +84,7 @@
     "tile.trailsandtalesbackport.bamboo_mosaic_stairs.name": "block.minecraft.bamboo_mosaic_stairs",
     "tile.trailsandtalesbackport.bamboo_planks.name": "block.minecraft.bamboo_planks",
     "tile.trailsandtalesbackport.bamboo_pressure_plate.name": "block.minecraft.bamboo_pressure_plate",
+    "tile.trailsandtalesbackport.bamboo_sapling.name": "block.minecraft.bamboo_sapling",
     "tile.trailsandtalesbackport.bamboo_sign.name": "block.minecraft.bamboo_sign",
     "tile.trailsandtalesbackport.bamboo_slab.name": "block.minecraft.bamboo_slab",
     "tile.trailsandtalesbackport.bamboo_stairs.name": "block.minecraft.bamboo_stairs",

@@ -1,0 +1,6 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "trailsandtalesbackport:blocks/bamboo_stage0"
+  }
+}

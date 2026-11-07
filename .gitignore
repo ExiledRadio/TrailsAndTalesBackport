@@ -21,3 +21,4 @@ Thumbs.db
 __pycache__/
 /gradle-build.log
 /selftest.log
+/selftest-vp.log

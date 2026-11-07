@@ -58,10 +58,10 @@ public final class HangingSignSelfTest implements SelfTest {
         ItemStack none = ItemStack.EMPTY;
         ItemStack nugget = new ItemStack(Items.IRON_NUGGET);
         Crafting.expect(c, Crafting.grid(1, 3, nugget, new ItemStack(Items.IRON_INGOT), nugget), chain, "chain from nuggets and an ingot");
-        ItemStack log = new ItemStack(Blocks.LOG, 1, 0);
+        ItemStack log = HangingWood.OAK.log();
         Crafting.expect(c, Crafting.grid(3, 3, chain, none, chain, log, log, log, log, log, log), new ItemStack(oakItem, 6),
-                "6 oak hanging signs (plain oak logs: no stripped log in this game)");
-        ItemStack darkOak = new ItemStack(Blocks.LOG2, 1, 1);
+                "6 oak hanging signs from " + log.getItem().getRegistryName());
+        ItemStack darkOak = HangingWood.DARK_OAK.log();
         Crafting.expect(c, Crafting.grid(3, 3, chain, none, chain, darkOak, darkOak, darkOak, darkOak, darkOak, darkOak),
                 new ItemStack(HangingSignContent.ITEMS.get(HangingWood.DARK_OAK), 6), "dark oak from dark oak logs");
         if (CherryContent.set != null) {

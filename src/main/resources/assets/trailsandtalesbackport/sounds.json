@@ -1,45 +1,4 @@
 {
-  "item.axe.strip": {
-    "sounds": [
-      {
-        "name": "trailsandtalesbackport:item/axe/strip1",
-        "volume": 0.9
-      },
-      {
-        "name": "trailsandtalesbackport:item/axe/strip1",
-        "pitch": 0.85,
-        "volume": 0.9
-      },
-      {
-        "name": "trailsandtalesbackport:item/axe/strip2",
-        "volume": 0.9
-      },
-      {
-        "name": "trailsandtalesbackport:item/axe/strip2",
-        "pitch": 0.85,
-        "volume": 0.9
-      },
-      {
-        "name": "trailsandtalesbackport:item/axe/strip3",
-        "volume": 0.9
-      },
-      {
-        "name": "trailsandtalesbackport:item/axe/strip3",
-        "pitch": 0.85,
-        "volume": 0.9
-      },
-      {
-        "name": "trailsandtalesbackport:item/axe/strip4",
-        "volume": 0.9
-      },
-      {
-        "name": "trailsandtalesbackport:item/axe/strip4",
-        "pitch": 0.85,
-        "volume": 0.9
-      }
-    ],
-    "subtitle": "subtitles.trailsandtalesbackport.item.axe.strip"
-  },
   "block.cherry_wood.break": {
     "sounds": [
       "trailsandtalesbackport:block/cherry_wood/break1",
@@ -1282,5 +1241,225 @@
       "trailsandtalesbackport:block/chain/step5",
       "trailsandtalesbackport:block/chain/step6"
     ]
+  },
+  "block.bamboo.break": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place4",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place5",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place6",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.bamboo.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/bamboo/step1",
+      "trailsandtalesbackport:block/bamboo/step2",
+      "trailsandtalesbackport:block/bamboo/step3",
+      "trailsandtalesbackport:block/bamboo/step4",
+      "trailsandtalesbackport:block/bamboo/step5",
+      "trailsandtalesbackport:block/bamboo/step6"
+    ]
+  },
+  "block.bamboo.hit": {
+    "sounds": [
+      "trailsandtalesbackport:block/bamboo/step1",
+      "trailsandtalesbackport:block/bamboo/step2",
+      "trailsandtalesbackport:block/bamboo/step3",
+      "trailsandtalesbackport:block/bamboo/step4",
+      "trailsandtalesbackport:block/bamboo/step5",
+      "trailsandtalesbackport:block/bamboo/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.bamboo.place": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place4",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place5",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/place6",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.bamboo.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/bamboo/step1",
+      {
+        "name": "trailsandtalesbackport:block/bamboo/step2",
+        "pitch": 0.7
+      },
+      "trailsandtalesbackport:block/bamboo/step3",
+      {
+        "name": "trailsandtalesbackport:block/bamboo/step4",
+        "pitch": 0.7
+      },
+      "trailsandtalesbackport:block/bamboo/step5",
+      "trailsandtalesbackport:block/bamboo/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.bamboo_sapling.break": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place1",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place2",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place3",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place4",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place5",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place6",
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.bamboo_sapling.hit": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_hit1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_hit2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_hit3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_hit4",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_hit5",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.bamboo_sapling.place": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place1",
+        "volume": 0.85
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place2",
+        "volume": 0.85
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place3",
+        "volume": 0.85
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place4",
+        "volume": 0.85
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place5",
+        "volume": 0.85
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo/sapling_place6",
+        "volume": 0.85
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "item.axe.strip": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:item/axe/strip1",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/axe/strip1",
+        "pitch": 0.85,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/axe/strip2",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/axe/strip2",
+        "pitch": 0.85,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/axe/strip3",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/axe/strip3",
+        "pitch": 0.85,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/axe/strip4",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/axe/strip4",
+        "pitch": 0.85,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.axe.strip"
   }
 }
