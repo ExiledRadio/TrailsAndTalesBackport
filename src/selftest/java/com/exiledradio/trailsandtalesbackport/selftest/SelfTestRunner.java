@@ -49,6 +49,7 @@ public final class SelfTestRunner {
             new BambooPlantSelfTest(),
             new BookshelfSelfTest(),
             new HangingSignSelfTest(),
+            new StrippedLogSelfTest(),
             new BoatSelfTest(),
     };
 

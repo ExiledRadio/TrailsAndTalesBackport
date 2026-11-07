@@ -36,6 +36,10 @@ public final class AxeStripping {
 
     private static final Map<Block, Block> PAIRS = new HashMap<Block, Block>();
 
+    /** Rules that need the whole state (vanilla logs keep their wood in metadata); null means "not mine". */
+    private static final java.util.List<java.util.function.Function<IBlockState, IBlockState>> RULES =
+            new java.util.ArrayList<java.util.function.Function<IBlockState, IBlockState>>();
+
     private AxeStripping() {
     }
 
@@ -49,31 +53,55 @@ public final class AxeStripping {
         PAIRS.putAll(pairs);
     }
 
+    /** Adds a stripping rule for states a block-to-block pair cannot express. */
+    public static void addRule(java.util.function.Function<IBlockState, IBlockState> rule) {
+        RULES.add(rule);
+    }
+
+    /** @return the stripped form of a state, or null if no rule of ours strips it */
+    @javax.annotation.Nullable
+    public static IBlockState stripped(IBlockState state) {
+        Block stripped = PAIRS.get(state.getBlock());
+        if (stripped != null) {
+            IBlockState out = stripped.getDefaultState();
+            if (state.getPropertyKeys().contains(BlockRotatedPillar.AXIS)) {
+                out = out.withProperty(BlockRotatedPillar.AXIS, state.getValue(BlockRotatedPillar.AXIS));
+            }
+            return out;
+        }
+        for (java.util.function.Function<IBlockState, IBlockState> rule : RULES) {
+            IBlockState out = rule.apply(state);
+            if (out != null) {
+                return out;
+            }
+        }
+        return null;
+    }
+
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
         event.getRegistry().register(STRIP);
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         ItemStack held = event.getItemStack();
-        if (held.isEmpty() || !held.getItem().getToolClasses(held).contains("axe")) {
+        EntityPlayer player = event.getEntityPlayer();
+        if (held.isEmpty() || !held.getItem().getToolClasses(held).contains("axe") || player.isSpectator()
+                || event.getUseItem() == net.minecraftforge.fml.common.eventhandler.Event.Result.DENY) {
             return;
         }
         World world = event.getWorld();
         BlockPos pos = event.getPos();
-        IBlockState state = world.getBlockState(pos);
-        Block stripped = PAIRS.get(state.getBlock());
-        if (stripped == null) {
+        if (!player.canPlayerEdit(pos, event.getFace(), held)) {
             return;
         }
-        EntityPlayer player = event.getEntityPlayer();
+        IBlockState out = stripped(world.getBlockState(pos));
+        if (out == null) {
+            return;
+        }
         world.playSound(player, pos, STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
         if (!world.isRemote) {
-            IBlockState out = stripped.getDefaultState();
-            if (state.getPropertyKeys().contains(BlockRotatedPillar.AXIS)) {
-                out = out.withProperty(BlockRotatedPillar.AXIS, state.getValue(BlockRotatedPillar.AXIS));
-            }
             world.setBlockState(pos, out, 11);
             held.damageItem(1, player);
         }
