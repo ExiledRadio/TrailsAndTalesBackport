@@ -43,6 +43,7 @@ public final class ClientSetup {
         net.minecraftforge.fml.client.registry.ClientRegistry.bindTileEntitySpecialRenderer(
                 com.exiledradio.trailsandtalesbackport.hangingsign.TileHangingSign.class,
                 new com.exiledradio.trailsandtalesbackport.hangingsign.client.HangingSignRenderer());
+        com.exiledradio.trailsandtalesbackport.boat.client.RenderModBoat.register();
     }
 
     @SubscribeEvent
