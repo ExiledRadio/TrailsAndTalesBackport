@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trailsandtalesbackport:bamboo_hanging_sign"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:bamboo_hanging_sign"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:bamboo_hanging_sign"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:bamboo_hanging_sign"
+    }
+  }
+}

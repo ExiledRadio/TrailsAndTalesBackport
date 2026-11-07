@@ -47,6 +47,7 @@ public final class SelfTestRunner {
             new CherrySelfTest(),
             new BambooSelfTest(),
             new BookshelfSelfTest(),
+            new HangingSignSelfTest(),
     };
 
     private final List<String> wanted;

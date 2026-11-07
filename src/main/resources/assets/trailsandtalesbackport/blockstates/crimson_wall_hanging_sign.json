@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trailsandtalesbackport:crimson_hanging_sign"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:crimson_hanging_sign"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:crimson_hanging_sign"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:crimson_hanging_sign"
+    }
+  }
+}

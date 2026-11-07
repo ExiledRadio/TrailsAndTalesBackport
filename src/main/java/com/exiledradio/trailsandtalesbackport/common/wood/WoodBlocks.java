@@ -71,6 +71,8 @@ public final class WoodBlocks {
             this.side = side;
             setHardness(2.0F);
             setSoundType(sound);
+            // BlockRotatedPillar leaves the first axis value (x) as the default; upright, as vanilla logs.
+            setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.Y));
         }
 
         @Override

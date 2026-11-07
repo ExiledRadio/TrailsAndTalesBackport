@@ -91,6 +91,7 @@ public final class CherrySelfTest implements SelfTest {
                 }
             }
         }
+        c.eq(EnumFacing.Axis.Y, set.log.getDefaultState().getValue(BlockRotatedPillar.AXIS), "logs are upright by default");
         c.eq(16, CherryContent.petals.getBlockState().getValidStates().size(), "pink petals: 4 facings x 4 amounts");
         c.eq(4, CherryContent.leaves.getBlockState().getValidStates().size(), "leaves: decay flags only");
 

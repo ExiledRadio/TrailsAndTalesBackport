@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trailsandtalesbackport:oak_hanging_sign"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:oak_hanging_sign"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:oak_hanging_sign"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:oak_hanging_sign"
+    }
+  }
+}

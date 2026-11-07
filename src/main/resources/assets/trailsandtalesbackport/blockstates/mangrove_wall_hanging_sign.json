@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trailsandtalesbackport:mangrove_hanging_sign"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:mangrove_hanging_sign"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:mangrove_hanging_sign"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:mangrove_hanging_sign"
+    }
+  }
+}
