@@ -63,3 +63,25 @@ tile.trailsandtalesbackport.pink_petals.name=Pink Petals
 tile.trailsandtalesbackport.potted_cherry_sapling.name=Potted Cherry Sapling
 tile.trailsandtalesbackport.stripped_cherry_log.name=Stripped Cherry Log
 tile.trailsandtalesbackport.stripped_cherry_wood.name=Stripped Cherry Wood
+
+# --- bamboo ---
+item.trailsandtalesbackport.bamboo_door.name=Bamboo Door
+item.trailsandtalesbackport.bamboo_sign.name=Bamboo Sign
+tile.trailsandtalesbackport.bamboo_block.name=Block of Bamboo
+tile.trailsandtalesbackport.bamboo_button.name=Bamboo Button
+tile.trailsandtalesbackport.bamboo_door.name=Bamboo Door
+tile.trailsandtalesbackport.bamboo_double_slab.name=Bamboo Slab
+tile.trailsandtalesbackport.bamboo_fence.name=Bamboo Fence
+tile.trailsandtalesbackport.bamboo_fence_gate.name=Bamboo Fence Gate
+tile.trailsandtalesbackport.bamboo_mosaic.name=Bamboo Mosaic
+tile.trailsandtalesbackport.bamboo_mosaic_double_slab.name=Bamboo Mosaic Slab
+tile.trailsandtalesbackport.bamboo_mosaic_slab.name=Bamboo Mosaic Slab
+tile.trailsandtalesbackport.bamboo_mosaic_stairs.name=Bamboo Mosaic Stairs
+tile.trailsandtalesbackport.bamboo_planks.name=Bamboo Planks
+tile.trailsandtalesbackport.bamboo_pressure_plate.name=Bamboo Pressure Plate
+tile.trailsandtalesbackport.bamboo_sign.name=Bamboo Sign
+tile.trailsandtalesbackport.bamboo_slab.name=Bamboo Slab
+tile.trailsandtalesbackport.bamboo_stairs.name=Bamboo Stairs
+tile.trailsandtalesbackport.bamboo_trapdoor.name=Bamboo Trapdoor
+tile.trailsandtalesbackport.bamboo_wall_sign.name=Bamboo Wall Sign
+tile.trailsandtalesbackport.stripped_bamboo_block.name=Block of Stripped Bamboo

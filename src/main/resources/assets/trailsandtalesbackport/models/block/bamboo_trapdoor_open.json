@@ -1,0 +1,6 @@
+{
+  "parent": "trailsandtalesbackport:block/template_orientable_trapdoor_open",
+  "textures": {
+    "texture": "trailsandtalesbackport:block/bamboo_trapdoor"
+  }
+}

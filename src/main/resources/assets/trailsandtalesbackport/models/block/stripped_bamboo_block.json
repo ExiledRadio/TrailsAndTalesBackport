@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "trailsandtalesbackport:block/stripped_bamboo_block_top",
+    "side": "trailsandtalesbackport:block/stripped_bamboo_block"
+  }
+}

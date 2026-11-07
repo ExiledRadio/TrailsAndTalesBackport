@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "rotation=0": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=1": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=2": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=3": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=4": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=5": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=6": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=7": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=8": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=9": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=10": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=11": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=12": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=13": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=14": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    },
+    "rotation=15": {
+      "model": "trailsandtalesbackport:bamboo_sign"
+    }
+  }
+}

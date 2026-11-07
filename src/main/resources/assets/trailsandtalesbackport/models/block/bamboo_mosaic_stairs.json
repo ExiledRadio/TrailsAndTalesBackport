@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "trailsandtalesbackport:block/bamboo_mosaic",
+    "side": "trailsandtalesbackport:block/bamboo_mosaic",
+    "top": "trailsandtalesbackport:block/bamboo_mosaic"
+  }
+}

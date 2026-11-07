@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "trailsandtalesbackport:stripped_bamboo_block_x"
+    },
+    "axis=y": {
+      "model": "trailsandtalesbackport:stripped_bamboo_block_y"
+    },
+    "axis=z": {
+      "model": "trailsandtalesbackport:stripped_bamboo_block_z"
+    }
+  }
+}
