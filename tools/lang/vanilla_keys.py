@@ -37,6 +37,8 @@ def candidates(key):
     if key.startswith("item.%s." % M) and key.endswith(".name"):
         name = ".".join(parts[2:-1])
         return ["item.minecraft." + name, "block.minecraft." + name]
+    if key.startswith("advancements.%s." % M):
+        return ["advancements." + key[len("advancements.%s." % M):]]
     if key.startswith("subtitles.%s." % M):
         return ["subtitles." + key[len("subtitles.%s." % M):]]
     return []

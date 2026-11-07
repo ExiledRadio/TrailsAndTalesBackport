@@ -85,3 +85,12 @@ tile.trailsandtalesbackport.bamboo_stairs.name=Bamboo Stairs
 tile.trailsandtalesbackport.bamboo_trapdoor.name=Bamboo Trapdoor
 tile.trailsandtalesbackport.bamboo_wall_sign.name=Bamboo Wall Sign
 tile.trailsandtalesbackport.stripped_bamboo_block.name=Block of Stripped Bamboo
+
+# --- bookshelf ---
+tile.trailsandtalesbackport.chiseled_bookshelf.name=Chiseled Bookshelf
+advancements.trailsandtalesbackport.adventure.read_power_from_chiseled_bookshelf.title=The Power of Books
+advancements.trailsandtalesbackport.adventure.read_power_from_chiseled_bookshelf.description=Read the power signal of a Chiseled Bookshelf using a Comparator
+subtitles.trailsandtalesbackport.chiseled_bookshelf.insert=Book placed
+subtitles.trailsandtalesbackport.chiseled_bookshelf.insert_enchanted=Enchanted Book placed
+subtitles.trailsandtalesbackport.chiseled_bookshelf.take=Book taken
+subtitles.trailsandtalesbackport.chiseled_bookshelf.take_enchanted=Enchanted Book taken

@@ -1,0 +1,9 @@
+block.chiseled_bookshelf.break
+block.chiseled_bookshelf.fall
+block.chiseled_bookshelf.hit
+block.chiseled_bookshelf.insert
+block.chiseled_bookshelf.insert.enchanted
+block.chiseled_bookshelf.pickup
+block.chiseled_bookshelf.pickup.enchanted
+block.chiseled_bookshelf.place
+block.chiseled_bookshelf.step

@@ -279,3 +279,21 @@ def port_blockstate(vanilla, ours, props, convert=None, extra_models=()):
 def port_item_model(vanilla, ours=None):
     """Ports models/item/<vanilla>.json (with its parents and textures) as our item model."""
     return port_model("item/" + vanilla, "item/" + (ours or vanilla))
+
+
+def advancement(path, icon, criteria, vanilla_key, parent="minecraft:adventure/root", frame="task"):
+    """Writes advancements/<path>.json with 1.20's title and description keys under our namespace.
+
+    @param vanilla_key 1.20's key stem, e.g. 'adventure.read_power_from_chiseled_bookshelf'
+    @param criteria {name: trigger dict}; 'minecraft:impossible' ones are granted by code
+    @return the two en_us.lang lines
+    """
+    ours = "advancements.%s.%s" % (MODID, vanilla_key)
+    write_json("advancements/%s.json" % path, {
+        "parent": parent,
+        "display": {"icon": {"item": icon}, "title": {"translate": ours + ".title"},
+                    "description": {"translate": ours + ".description"}, "frame": frame},
+        "criteria": criteria,
+    })
+    return ["%s.title=%s" % (ours, VANILLA_LANG["advancements.%s.title" % vanilla_key]),
+            "%s.description=%s" % (ours, VANILLA_LANG["advancements.%s.description" % vanilla_key])]
