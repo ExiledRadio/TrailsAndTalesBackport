@@ -350,10 +350,12 @@ pink petals no, sniffer egg no.
 ## Order
 
 1. Scaffold, this plan, `CORE_REQUESTS.md`: **done**.
-2. Streams that wait on nothing: C, B (default copy), Bo, H, K, A, N, Ar, W, Hd, X, one at a time on a `tt-<stream>`
-   branch, each merged into `main` when tested.
-3. G, Sg, Sm, Sc as the user answers Still open 1, 6, 2, 4; St's trail ruins and ocean ruins when Core has the
-   template loader (desert pyramid and well and the template loot can go before it).
+2. Streams that wait on nothing, one at a time on a `tt-<stream>` branch, merged into `main` when tested:
+   **done**: C (cherry), B (bamboo wood, without the plant copy), K (chiseled bookshelf), H (hanging signs and
+   chain), Bo (boats and rafts); see `docs/streams/`. **Next**: A, N, Ar, W, Hd, X.
+3. G, Sg, Sm, Sc as the user answers Still open 1, 6, 2, 4; B's bamboo copy on Still open 5; St's trail ruins
+   and ocean ruins when Core has the template loader (desert pyramid and well and the template loot can go
+   before it).
 4. Languages through the family tool; waterlogging when Core's adapter exists.
 
 ## Later
