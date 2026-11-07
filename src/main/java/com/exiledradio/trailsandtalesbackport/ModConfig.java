@@ -1,0 +1,235 @@
+package com.exiledradio.trailsandtalesbackport;
+
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+/**
+ * Configuration: one category per stream, each with an {@code enabled} switch.
+ *
+ * <h2>Rules for streams</h2>
+ * <ul>
+ *   <li>A stream edits only inside its own category class.</li>
+ *   <li>Category classes extend {@code Object} directly. Forge 1.12 crashes at startup ("Unknown type")
+ *       on a category class that extends another one.</li>
+ *   <li>{@code enabled} is read once, during registration, and needs a restart: switching a stream off
+ *       means its blocks and items are never registered, so a world that has them loses them.</li>
+ *   <li>A changed default never reaches an installed game (Forge keeps the value in the file), so a
+ *       default that must change gets a new key.</li>
+ * </ul>
+ */
+@Config(modid = TrailsAndTalesBackport.MOD_ID, name = TrailsAndTalesBackport.MOD_ID)
+public final class ModConfig {
+
+    @Config.LangKey("config.trailsandtalesbackport.cherry")
+    @Config.Comment("The cherry wood set, cherry leaves and saplings, and pink petals.")
+    public static final Cherry cherry = new Cherry();
+
+    @Config.LangKey("config.trailsandtalesbackport.bamboo")
+    @Config.Comment("The bamboo wood set: bamboo blocks, planks, mosaic and the rest.")
+    public static final Bamboo bamboo = new Bamboo();
+
+    @Config.LangKey("config.trailsandtalesbackport.boats")
+    @Config.Comment("Cherry boats, bamboo rafts and their chest forms.")
+    public static final Boats boats = new Boats();
+
+    @Config.LangKey("config.trailsandtalesbackport.cherryGrove")
+    @Config.Comment("The cherry grove biome.")
+    public static final CherryGrove cherryGrove = new CherryGrove();
+
+    @Config.LangKey("config.trailsandtalesbackport.hangingSigns")
+    @Config.Comment("Hanging signs for every wood.")
+    public static final HangingSigns hangingSigns = new HangingSigns();
+
+    @Config.LangKey("config.trailsandtalesbackport.signs")
+    @Config.Comment("1.20's sign changes: editing, text on both sides and waxing.")
+    public static final Signs signs = new Signs();
+
+    @Config.LangKey("config.trailsandtalesbackport.chiseledBookshelf")
+    @Config.Comment("The chiseled bookshelf.")
+    public static final ChiseledBookshelf chiseledBookshelf = new ChiseledBookshelf();
+
+    @Config.LangKey("config.trailsandtalesbackport.archaeology")
+    @Config.Comment("The brush, suspicious sand and gravel, pottery sherds and decorated pots.")
+    public static final Archaeology archaeology = new Archaeology();
+
+    @Config.LangKey("config.trailsandtalesbackport.structures")
+    @Config.Comment("Trail ruins, and archaeology in desert pyramids and desert wells.")
+    public static final Structures structures = new Structures();
+
+    @Config.LangKey("config.trailsandtalesbackport.sniffer")
+    @Config.Comment("The sniffer, sniffer eggs, torchflowers and pitcher plants.")
+    public static final Sniffer sniffer = new Sniffer();
+
+    @Config.LangKey("config.trailsandtalesbackport.camels")
+    @Config.Comment("Camels.")
+    public static final Camels camels = new Camels();
+
+    @Config.LangKey("config.trailsandtalesbackport.smithing")
+    @Config.Comment("Smithing templates and armor trims.")
+    public static final Smithing smithing = new Smithing();
+
+    @Config.LangKey("config.trailsandtalesbackport.armadillos")
+    @Config.Comment("The armadillo and armadillo scutes.")
+    public static final Armadillos armadillos = new Armadillos();
+
+    @Config.LangKey("config.trailsandtalesbackport.wolves")
+    @Config.Comment("Wolf armor, the eight new wolf variants and 1.20.5's changes to tamed wolves.")
+    public static final Wolves wolves = new Wolves();
+
+    @Config.LangKey("config.trailsandtalesbackport.calibratedSculkSensor")
+    @Config.Comment("The calibrated sculk sensor.")
+    public static final CalibratedSculkSensor calibratedSculkSensor = new CalibratedSculkSensor();
+
+    @Config.LangKey("config.trailsandtalesbackport.heads")
+    @Config.Comment("The piglin head, and mob heads on note blocks.")
+    public static final Heads heads = new Heads();
+
+    @Config.LangKey("config.trailsandtalesbackport.misc")
+    @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
+    public static final Misc misc = new Misc();
+
+    // ------------------------------------------------------------------------------------------
+    // Categories. Each stream owns exactly one.
+    // ------------------------------------------------------------------------------------------
+
+    public static final class Cherry {
+        @Config.RequiresMcRestart
+        @Config.Comment("Cherry wood, leaves, saplings and pink petals. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.cherry.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Bamboo {
+        @Config.RequiresMcRestart
+        @Config.Comment("The bamboo wood set. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.bamboo.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Boats {
+        @Config.RequiresMcRestart
+        @Config.Comment("Cherry boats and bamboo rafts, with and without chests. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.boats.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class CherryGrove {
+        @Config.RequiresMcRestart
+        @Config.Comment("The cherry grove biome. Off, it never generates.")
+        @Config.LangKey("config.trailsandtalesbackport.cherryGrove.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class HangingSigns {
+        @Config.RequiresMcRestart
+        @Config.Comment("Hanging signs. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.hangingSigns.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Signs {
+        @Config.RequiresMcRestart
+        @Config.Comment("Signs can be edited after placing, carry text on both sides, and can be waxed.")
+        @Config.LangKey("config.trailsandtalesbackport.signs.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class ChiseledBookshelf {
+        @Config.RequiresMcRestart
+        @Config.Comment("The chiseled bookshelf. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.chiseledBookshelf.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Archaeology {
+        @Config.RequiresMcRestart
+        @Config.Comment("The brush, suspicious sand and gravel, pottery sherds and decorated pots. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.archaeology.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Structures {
+        @Config.RequiresMcRestart
+        @Config.Comment("Trail ruins and the archaeology added to older structures. Off, none generate.")
+        @Config.LangKey("config.trailsandtalesbackport.structures.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Sniffer {
+        @Config.RequiresMcRestart
+        @Config.Comment("The sniffer, its egg, torchflowers and pitcher plants. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.sniffer.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Camels {
+        @Config.RequiresMcRestart
+        @Config.Comment("Camels. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.camels.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Smithing {
+        @Config.RequiresMcRestart
+        @Config.Comment("Smithing templates and armor trims. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.smithing.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Armadillos {
+        @Config.RequiresMcRestart
+        @Config.Comment("The armadillo and armadillo scutes. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.armadillos.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Wolves {
+        @Config.RequiresMcRestart
+        @Config.Comment("Wolf armor, wolf variants and the tamed wolf changes.")
+        @Config.LangKey("config.trailsandtalesbackport.wolves.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class CalibratedSculkSensor {
+        @Config.RequiresMcRestart
+        @Config.Comment("The calibrated sculk sensor. Off, nothing is registered.")
+        @Config.LangKey("config.trailsandtalesbackport.calibratedSculkSensor.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Heads {
+        @Config.RequiresMcRestart
+        @Config.Comment("The piglin head and mob heads playing their mob's sound on note blocks.")
+        @Config.LangKey("config.trailsandtalesbackport.heads.enabled")
+        public boolean enabled = true;
+    }
+
+    public static final class Misc {
+        @Config.RequiresMcRestart
+        @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
+        @Config.LangKey("config.trailsandtalesbackport.misc.enabled")
+        public boolean enabled = true;
+    }
+
+    // ------------------------------------------------------------------------------------------
+
+    /** Saves edits made in the in-game config screen. */
+    @Mod.EventBusSubscriber(modid = TrailsAndTalesBackport.MOD_ID)
+    public static final class EventHandler {
+        private EventHandler() {
+        }
+
+        @SubscribeEvent
+        public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+            if (TrailsAndTalesBackport.MOD_ID.equals(event.getModID())) {
+                ConfigManager.sync(TrailsAndTalesBackport.MOD_ID, Config.Type.INSTANCE);
+            }
+        }
+    }
+
+    private ModConfig() {
+    }
+}

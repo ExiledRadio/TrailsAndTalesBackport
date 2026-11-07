@@ -1,0 +1,38 @@
+# Generated: each block below is written by tools/<section>/generate.py through tools/assets.py.
+
+# --- config ---
+itemGroup.trailsandtalesbackport=Trails & Tales
+config.trailsandtalesbackport.cherry=Cherry Wood
+config.trailsandtalesbackport.bamboo=Bamboo Wood
+config.trailsandtalesbackport.boats=Boats and Rafts
+config.trailsandtalesbackport.cherryGrove=Cherry Grove
+config.trailsandtalesbackport.hangingSigns=Hanging Signs
+config.trailsandtalesbackport.signs=Signs
+config.trailsandtalesbackport.chiseledBookshelf=Chiseled Bookshelf
+config.trailsandtalesbackport.archaeology=Archaeology
+config.trailsandtalesbackport.structures=Structures
+config.trailsandtalesbackport.sniffer=Sniffer
+config.trailsandtalesbackport.camels=Camels
+config.trailsandtalesbackport.smithing=Smithing Templates and Armor Trims
+config.trailsandtalesbackport.armadillos=Armadillos
+config.trailsandtalesbackport.wolves=Wolves
+config.trailsandtalesbackport.calibratedSculkSensor=Calibrated Sculk Sensor
+config.trailsandtalesbackport.heads=Mob Heads
+config.trailsandtalesbackport.misc=Other Changes
+config.trailsandtalesbackport.cherry.enabled=Enabled
+config.trailsandtalesbackport.bamboo.enabled=Enabled
+config.trailsandtalesbackport.boats.enabled=Enabled
+config.trailsandtalesbackport.cherryGrove.enabled=Enabled
+config.trailsandtalesbackport.hangingSigns.enabled=Enabled
+config.trailsandtalesbackport.signs.enabled=Enabled
+config.trailsandtalesbackport.chiseledBookshelf.enabled=Enabled
+config.trailsandtalesbackport.archaeology.enabled=Enabled
+config.trailsandtalesbackport.structures.enabled=Enabled
+config.trailsandtalesbackport.sniffer.enabled=Enabled
+config.trailsandtalesbackport.camels.enabled=Enabled
+config.trailsandtalesbackport.smithing.enabled=Enabled
+config.trailsandtalesbackport.armadillos.enabled=Enabled
+config.trailsandtalesbackport.wolves.enabled=Enabled
+config.trailsandtalesbackport.calibratedSculkSensor.enabled=Enabled
+config.trailsandtalesbackport.heads.enabled=Enabled
+config.trailsandtalesbackport.misc.enabled=Enabled

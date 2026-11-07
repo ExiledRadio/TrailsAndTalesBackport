@@ -1,0 +1,23 @@
+# Gradle
+/build/
+/.gradle/
+
+# ForgeGradle's generated run directory and decompiled workspace
+/run/
+/eclipse/
+/.idea/
+*.iml
+*.ipr
+*.iws
+/out/
+
+# Backport Core and other family jars for compiling and integration runs
+/deps/
+
+# OS
+.DS_Store
+Thumbs.db
+
+__pycache__/
+/gradle-build.log
+/selftest.log
