@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trailsandtalesbackport:spruce_hanging_sign"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:spruce_hanging_sign"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:spruce_hanging_sign"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:spruce_hanging_sign"
+    }
+  }
+}

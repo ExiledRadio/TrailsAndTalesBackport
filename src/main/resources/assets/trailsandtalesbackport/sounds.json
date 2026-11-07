@@ -962,5 +962,325 @@
       }
     ],
     "subtitle": "subtitles.trailsandtalesbackport.chiseled_bookshelf.take_enchanted"
+  },
+  "block.hanging_sign.break": {
+    "sounds": [
+      "trailsandtalesbackport:block/hanging_sign/break1",
+      "trailsandtalesbackport:block/hanging_sign/break2",
+      "trailsandtalesbackport:block/hanging_sign/break3",
+      "trailsandtalesbackport:block/hanging_sign/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.hanging_sign.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/hanging_sign/step1",
+      "trailsandtalesbackport:block/hanging_sign/step2",
+      "trailsandtalesbackport:block/hanging_sign/step3",
+      "trailsandtalesbackport:block/hanging_sign/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.hanging_sign.place": {
+    "sounds": [
+      "trailsandtalesbackport:block/hanging_sign/break1",
+      "trailsandtalesbackport:block/hanging_sign/break2",
+      "trailsandtalesbackport:block/hanging_sign/break3",
+      "trailsandtalesbackport:block/hanging_sign/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.hanging_sign.hit": {
+    "sounds": [
+      "trailsandtalesbackport:block/hanging_sign/step1",
+      "trailsandtalesbackport:block/hanging_sign/step2",
+      "trailsandtalesbackport:block/hanging_sign/step3",
+      "trailsandtalesbackport:block/hanging_sign/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.hanging_sign.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/hanging_sign/step1",
+      "trailsandtalesbackport:block/hanging_sign/step2",
+      "trailsandtalesbackport:block/hanging_sign/step3",
+      "trailsandtalesbackport:block/hanging_sign/step4"
+    ]
+  },
+  "block.cherry_wood_hanging_sign.break": {
+    "sounds": [
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/break1",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/break2",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/break3",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.cherry_wood_hanging_sign.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step1",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step2",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step3",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.cherry_wood_hanging_sign.place": {
+    "sounds": [
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/break1",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/break2",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/break3",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.cherry_wood_hanging_sign.hit": {
+    "sounds": [
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step1",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step2",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step3",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.cherry_wood_hanging_sign.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step1",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step2",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step3",
+      "trailsandtalesbackport:block/cherry_wood_hanging_sign/step4"
+    ]
+  },
+  "block.bamboo_wood_hanging_sign.break": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/break1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/break2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/break3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/break4",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.bamboo_wood_hanging_sign.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step1",
+      "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step2",
+      "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step3",
+      "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.bamboo_wood_hanging_sign.place": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/break1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/break2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/break3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/break4",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.bamboo_wood_hanging_sign.hit": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step1",
+        "pitch": 1.1,
+        "volume": 0.7
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step2",
+        "pitch": 1.1,
+        "volume": 0.7
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step3",
+        "pitch": 1.1,
+        "volume": 0.7
+      },
+      {
+        "name": "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step4",
+        "pitch": 1.1,
+        "volume": 0.7
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.bamboo_wood_hanging_sign.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step1",
+      "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step2",
+      "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step3",
+      "trailsandtalesbackport:block/bamboo_wood_hanging_sign/step4"
+    ]
+  },
+  "block.nether_wood_hanging_sign.break": {
+    "sounds": [
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/break1",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/break2",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/break3",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.nether_wood_hanging_sign.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/step1",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/step2",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/step3",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.nether_wood_hanging_sign.place": {
+    "sounds": [
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/break1",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/break2",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/break3",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.nether_wood_hanging_sign.hit": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/nether_wood_hanging_sign/step1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/nether_wood_hanging_sign/step2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/nether_wood_hanging_sign/step3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/nether_wood_hanging_sign/step4",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.nether_wood_hanging_sign.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/step1",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/step2",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/step3",
+      "trailsandtalesbackport:block/nether_wood_hanging_sign/step4"
+    ]
+  },
+  "block.chain.break": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/chain/break1",
+        "volume": 0.5
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/break2",
+        "volume": 0.5
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/break3",
+        "volume": 0.5
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/break4",
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.chain.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/chain/step1",
+      "trailsandtalesbackport:block/chain/step2",
+      "trailsandtalesbackport:block/chain/step3",
+      "trailsandtalesbackport:block/chain/step4",
+      "trailsandtalesbackport:block/chain/step5",
+      "trailsandtalesbackport:block/chain/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.chain.place": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/chain/break1",
+        "volume": 0.5
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/break2",
+        "volume": 0.5
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/break3",
+        "volume": 0.5
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/break4",
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.chain.hit": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/chain/step1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/step2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/step3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/step4",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/step5",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/chain/step6",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.chain.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/chain/step1",
+      "trailsandtalesbackport:block/chain/step2",
+      "trailsandtalesbackport:block/chain/step3",
+      "trailsandtalesbackport:block/chain/step4",
+      "trailsandtalesbackport:block/chain/step5",
+      "trailsandtalesbackport:block/chain/step6"
+    ]
   }
 }

@@ -40,6 +40,9 @@ public final class ClientSetup {
                 new com.exiledradio.trailsandtalesbackport.common.wood.client.WoodSignRenderer());
         // Streams add their client init calls below, one line each.
         com.exiledradio.trailsandtalesbackport.cherry.client.CherryClient.init();
+        net.minecraftforge.fml.client.registry.ClientRegistry.bindTileEntitySpecialRenderer(
+                com.exiledradio.trailsandtalesbackport.hangingsign.TileHangingSign.class,
+                new com.exiledradio.trailsandtalesbackport.hangingsign.client.HangingSignRenderer());
     }
 
     @SubscribeEvent

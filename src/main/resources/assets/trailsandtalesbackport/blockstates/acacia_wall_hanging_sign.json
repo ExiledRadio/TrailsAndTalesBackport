@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trailsandtalesbackport:acacia_hanging_sign"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:acacia_hanging_sign"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:acacia_hanging_sign"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:acacia_hanging_sign"
+    }
+  }
+}

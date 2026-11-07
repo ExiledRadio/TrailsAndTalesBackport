@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trailsandtalesbackport:birch_hanging_sign"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:birch_hanging_sign"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:birch_hanging_sign"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:birch_hanging_sign"
+    }
+  }
+}
