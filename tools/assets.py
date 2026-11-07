@@ -208,3 +208,74 @@ def item_generated(name, texture_name):
 def item_from_block(name, model=None):
     """Writes models/item/<name>.json that shows the block model."""
     write_json("models/item/%s.json" % name, {"parent": "%s:block/%s" % (MODID, model or name)})
+
+
+def bs_model(model):
+    """'trailsandtalesbackport:block/x' -> 'trailsandtalesbackport:x': 1.12.2 blockstates add the block/ folder."""
+    return model.replace(":block/", ":")
+
+
+def _port_variant(v):
+    """A 1.20 variant entry (dict, or a weighted list of them) with its model ported to ours."""
+    if isinstance(v, list):
+        return [_port_variant(x) for x in v]
+    out = dict(v)
+    ns, _, path = out["model"].rpartition(":")
+    out["model"] = bs_model(port_model(path))
+    return out
+
+
+def states(props):
+    """Every combination of a block's 1.12.2 properties: props is {name: [values]} -> list of dicts."""
+    combos = [{}]
+    for name in sorted(props):
+        combos = [dict(c, **{name: v}) for c in combos for v in props[name]]
+    return combos
+
+
+def variant_string(state):
+    """1.12.2's default state mapper string: properties sorted by name; 'normal' when there are none."""
+    if not state:
+        return "normal"
+    return ",".join("%s=%s" % (k, state[k]) for k in sorted(state))
+
+
+def port_blockstate(vanilla, ours, props, convert=None, extra_models=()):
+    """Writes blockstates/<ours>.json from 1.20.6's blockstates/<vanilla>.json, with its models ported.
+
+    * "variants" files: one 1.12.2 variant per state of ours (props, as for states()); convert(state)
+      maps our state to 1.20's property names and values, and the 1.20 variant whose properties are all
+      in it is used (1.20 keys name a subset; "" matches anything).
+    * "multipart" files are kept as they are (their conditions must use our names; convert is ignored).
+    @return the 1.20 data, for generators that want to look at it
+    """
+    data = jar_json("assets/minecraft/blockstates/%s.json" % vanilla)
+    if "multipart" in data:
+        parts = []
+        for part in data["multipart"]:
+            p = dict(part)
+            p["apply"] = _port_variant(part["apply"])
+            parts.append(p)
+        write_json("blockstates/%s.json" % ours, {"multipart": parts})
+        return data
+    table = []
+    for key, v in data["variants"].items():
+        want = dict(kv.split("=", 1) for kv in key.split(",")) if key else {}
+        table.append((want, v))
+    out = {}
+    for state in states(props):
+        modern = convert(dict(state)) if convert else state
+        modern = {k: str(v) for k, v in modern.items()}
+        for want, v in table:
+            if all(modern.get(k) == val for k, val in want.items()):
+                out[variant_string(state)] = _port_variant(v)
+                break
+        else:
+            raise KeyError("%s: no 1.20 variant for %s (as %s)" % (vanilla, state, modern))
+    write_json("blockstates/%s.json" % ours, {"variants": out})
+    return data
+
+
+def port_item_model(vanilla, ours=None):
+    """Ports models/item/<vanilla>.json (with its parents and textures) as our item model."""
+    return port_model("item/" + vanilla, "item/" + (ours or vanilla))
