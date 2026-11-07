@@ -1,0 +1,7 @@
+{
+  "parent": "trailsandtalesbackport:block/cube_column_uv_locked_y",
+  "textures": {
+    "end": "trailsandtalesbackport:block/stripped_cherry_log_top",
+    "side": "trailsandtalesbackport:block/stripped_cherry_log"
+  }
+}

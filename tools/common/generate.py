@@ -50,4 +50,9 @@ for key in re.findall(r'@Config\.LangKey\("([^"]+)"\)', open(CONFIG, encoding="u
     last = key.split(".")[-1]
     lines.append("%s=%s" % (key, NAMES.get(last, words(last))))
 assets.merge_lang("config", lines)
+
+# Sounds every stream may use (common/wood/AxeStripping).
+events = {"item.axe.strip": assets.copy_sound("item.axe.strip")}
+assets.merge_sounds("common", events)
+assets.merge_lang("common", assets.subtitle_lines(events))
 print("common: %d lines" % len(lines))
