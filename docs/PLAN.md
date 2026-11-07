@@ -365,8 +365,8 @@ ore-dictionary items, then our copy.
 
 1. Scaffold, this plan, `CORE_REQUESTS.md`: **done**.
 2. Streams that wait on nothing, one at a time on a `tt-<stream>` branch, merged into `main` when tested:
-   **done**: C (cherry), B (bamboo wood, without the plant copy), K (chiseled bookshelf), H (hanging signs and
-   chain), Bo (boats and rafts); see `docs/streams/`. **Next**: A, N, Ar, W, Hd, X.
+   **done**: C (cherry), B (bamboo wood and the bamboo plant copy), K (chiseled bookshelf), H (hanging signs,
+   chain and stripped log copies), Bo (boats and rafts); see `docs/streams/`. **Next**: A, N, Ar, W, Hd, X.
 3. G, Sg, Sm, Sc and the copies above (all decided 2026-11-07); St's trail ruins
    and ocean ruins when Core has the template loader (desert pyramid and well and the template loot can go
    before it).
