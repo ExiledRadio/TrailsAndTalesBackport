@@ -373,6 +373,7 @@ public final class CherrySelfTest implements SelfTest {
         // Drops: 1.20's sapling and stick chances, no apples.
         int saplings = 0;
         int sticks = 0;
+        int stickDrops = 0;
         int apples = 0;
         int n = 20000;
         for (int i = 0; i < n; i++) {
@@ -382,14 +383,16 @@ public final class CherrySelfTest implements SelfTest {
                 if (s.getItem() == Item.getItemFromBlock(CherryContent.sapling)) {
                     saplings++;
                 } else if (s.getItem() == Items.STICK) {
-                    sticks++;
+                    sticks += s.getCount();
+                    stickDrops++;
                 } else if (s.getItem() == Items.APPLE) {
                     apples++;
                 }
             }
         }
         c.ok(saplings > n * 0.04 && saplings < n * 0.06, "saplings ~5%: " + saplings + "/" + n);
-        c.ok(sticks > n * 0.02 && sticks < n * 0.04, "1-2 sticks 2% of the time: " + sticks + " sticks/" + n);
+        c.ok(stickDrops > n * 0.015 && stickDrops < n * 0.025, "sticks 2% of the time: " + stickDrops + "/" + n);
+        c.ok(sticks >= stickDrops && sticks <= 2 * stickDrops, "1 or 2 at a time: " + sticks);
         c.eq(0, apples, "no apples");
         c.eq(1, leaves.onSheared(new ItemStack(Items.SHEARS), c.world, log, 0).size(), "shears give the leaves");
     }
