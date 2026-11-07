@@ -1,0 +1,8 @@
+{
+  "parent": "trailsandtalesbackport:block/slab_top",
+  "textures": {
+    "bottom": "trailsandtalesbackport:block/cherry_planks",
+    "side": "trailsandtalesbackport:block/cherry_planks",
+    "top": "trailsandtalesbackport:block/cherry_planks"
+  }
+}

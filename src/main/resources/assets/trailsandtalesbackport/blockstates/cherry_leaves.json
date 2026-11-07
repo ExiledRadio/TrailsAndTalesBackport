@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "check_decay=true,decayable=true": {
+      "model": "trailsandtalesbackport:cherry_leaves"
+    },
+    "check_decay=true,decayable=false": {
+      "model": "trailsandtalesbackport:cherry_leaves"
+    },
+    "check_decay=false,decayable=true": {
+      "model": "trailsandtalesbackport:cherry_leaves"
+    },
+    "check_decay=false,decayable=false": {
+      "model": "trailsandtalesbackport:cherry_leaves"
+    }
+  }
+}

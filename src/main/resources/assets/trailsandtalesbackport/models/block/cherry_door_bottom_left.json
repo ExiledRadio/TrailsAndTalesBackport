@@ -1,0 +1,7 @@
+{
+  "parent": "trailsandtalesbackport:block/door_bottom_left",
+  "textures": {
+    "bottom": "trailsandtalesbackport:block/cherry_door_bottom",
+    "top": "trailsandtalesbackport:block/cherry_door_top"
+  }
+}

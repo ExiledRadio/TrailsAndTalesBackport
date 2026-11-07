@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "rotation=0": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=1": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=2": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=3": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=4": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=5": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=6": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=7": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=8": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=9": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=10": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=11": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=12": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=13": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=14": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    },
+    "rotation=15": {
+      "model": "trailsandtalesbackport:cherry_sign"
+    }
+  }
+}

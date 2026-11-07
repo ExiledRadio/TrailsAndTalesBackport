@@ -1,0 +1,7 @@
+{
+  "parent": "trailsandtalesbackport:block/flowerbed_1",
+  "textures": {
+    "flowerbed": "trailsandtalesbackport:block/pink_petals",
+    "stem": "trailsandtalesbackport:block/pink_petals_stem"
+  }
+}

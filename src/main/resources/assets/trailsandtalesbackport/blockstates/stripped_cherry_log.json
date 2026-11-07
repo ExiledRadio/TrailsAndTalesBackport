@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "trailsandtalesbackport:stripped_cherry_log_x"
+    },
+    "axis=y": {
+      "model": "trailsandtalesbackport:stripped_cherry_log_y"
+    },
+    "axis=z": {
+      "model": "trailsandtalesbackport:stripped_cherry_log_z"
+    }
+  }
+}

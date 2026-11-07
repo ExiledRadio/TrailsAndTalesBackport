@@ -46,6 +46,7 @@ public final class TrailsAndTalesBackport {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         NetworkHandler.init();
+        com.exiledradio.trailsandtalesbackport.cherry.CherryContent.preInit();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
         // type, so this class verifies on a server - a guarded method here would not.

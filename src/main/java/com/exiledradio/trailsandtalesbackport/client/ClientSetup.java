@@ -35,7 +35,11 @@ public final class ClientSetup {
 
     public static void init() {
         MinecraftForge.EVENT_BUS.register(new ClientSetup());
+        net.minecraftforge.fml.client.registry.ClientRegistry.bindTileEntitySpecialRenderer(
+                com.exiledradio.trailsandtalesbackport.common.wood.WoodSign.Tile.class,
+                new com.exiledradio.trailsandtalesbackport.common.wood.client.WoodSignRenderer());
         // Streams add their client init calls below, one line each.
+        com.exiledradio.trailsandtalesbackport.cherry.client.CherryClient.init();
     }
 
     @SubscribeEvent
