@@ -105,7 +105,6 @@ tile.trailsandtalesbackport.bamboo_sapling.name=Bamboo Shoot
 item.trailsandtalesbackport.bamboo.name=Bamboo
 
 # --- config ---
-itemGroup.trailsandtalesbackport=Trails & Tales
 config.trailsandtalesbackport.cherry=Cherry Wood
 config.trailsandtalesbackport.bamboo=Bamboo Wood
 config.trailsandtalesbackport.boats=Boats and Rafts
