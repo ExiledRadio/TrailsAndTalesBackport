@@ -1,5 +1,6 @@
 package com.exiledradio.trailsandtalesbackport;
 
+import com.exiledradio.backportcore.settings.Setting;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -23,70 +24,87 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Config(modid = TrailsAndTalesBackport.MOD_ID, name = TrailsAndTalesBackport.MOD_ID)
 public final class ModConfig {
 
+    @Setting.Feature(icon = "trailsandtalesbackport:cherry_sapling")
     @Config.LangKey("config.trailsandtalesbackport.cherry")
     @Config.Comment("The cherry wood set, cherry leaves and saplings, and pink petals.")
     public static final Cherry cherry = new Cherry();
 
+    @Setting.Feature(icon = "trailsandtalesbackport:bamboo_mosaic")
     @Config.LangKey("config.trailsandtalesbackport.bamboo")
     @Config.Comment("The bamboo wood set: bamboo blocks, planks, mosaic and the rest.")
     public static final Bamboo bamboo = new Bamboo();
 
+    @Setting.Feature(icon = "trailsandtalesbackport:cherry_chest_boat")
     @Config.LangKey("config.trailsandtalesbackport.boats")
     @Config.Comment("Cherry boats, bamboo rafts and their chest forms.")
     public static final Boats boats = new Boats();
 
+    @Setting.Feature(icon = "trailsandtalesbackport:pink_petals")
     @Config.LangKey("config.trailsandtalesbackport.cherryGrove")
     @Config.Comment("The cherry grove biome.")
     public static final CherryGrove cherryGrove = new CherryGrove();
 
+    @Setting.Feature(icon = "trailsandtalesbackport:oak_hanging_sign")
     @Config.LangKey("config.trailsandtalesbackport.hangingSigns")
     @Config.Comment("Hanging signs for every wood.")
     public static final HangingSigns hangingSigns = new HangingSigns();
 
+    @Setting.Feature(icon = "minecraft:sign")
     @Config.LangKey("config.trailsandtalesbackport.signs")
     @Config.Comment("1.20's sign changes: editing, text on both sides and waxing.")
     public static final Signs signs = new Signs();
 
+    @Setting.Feature(icon = "trailsandtalesbackport:chiseled_bookshelf")
     @Config.LangKey("config.trailsandtalesbackport.chiseledBookshelf")
     @Config.Comment("The chiseled bookshelf.")
     public static final ChiseledBookshelf chiseledBookshelf = new ChiseledBookshelf();
 
+    @Setting.Feature(icon = "minecraft:flower_pot")
     @Config.LangKey("config.trailsandtalesbackport.archaeology")
     @Config.Comment("The brush, suspicious sand and gravel, pottery sherds and decorated pots.")
     public static final Archaeology archaeology = new Archaeology();
 
+    @Setting.Feature(icon = "minecraft:sandstone@1")
     @Config.LangKey("config.trailsandtalesbackport.structures")
     @Config.Comment("Trail ruins, and archaeology in desert pyramids and desert wells.")
     public static final Structures structures = new Structures();
 
+    @Setting.Feature(icon = "minecraft:wheat_seeds")
     @Config.LangKey("config.trailsandtalesbackport.sniffer")
     @Config.Comment("The sniffer, sniffer eggs, torchflowers and pitcher plants.")
     public static final Sniffer sniffer = new Sniffer();
 
+    @Setting.Feature(icon = "minecraft:cactus")
     @Config.LangKey("config.trailsandtalesbackport.camels")
     @Config.Comment("Camels.")
     public static final Camels camels = new Camels();
 
+    @Setting.Feature(icon = "minecraft:iron_chestplate")
     @Config.LangKey("config.trailsandtalesbackport.smithing")
     @Config.Comment("Smithing templates and armor trims.")
     public static final Smithing smithing = new Smithing();
 
+    @Setting.Feature(icon = "minecraft:spider_eye")
     @Config.LangKey("config.trailsandtalesbackport.armadillos")
     @Config.Comment("The armadillo and armadillo scutes.")
     public static final Armadillos armadillos = new Armadillos();
 
+    @Setting.Feature(icon = "minecraft:bone")
     @Config.LangKey("config.trailsandtalesbackport.wolves")
     @Config.Comment("Wolf armor, the eight new wolf variants and 1.20.5's changes to tamed wolves.")
     public static final Wolves wolves = new Wolves();
 
+    @Setting.Feature(icon = "minecraft:daylight_detector")
     @Config.LangKey("config.trailsandtalesbackport.calibratedSculkSensor")
     @Config.Comment("The calibrated sculk sensor.")
     public static final CalibratedSculkSensor calibratedSculkSensor = new CalibratedSculkSensor();
 
+    @Setting.Feature(icon = "minecraft:skull@4")
     @Config.LangKey("config.trailsandtalesbackport.heads")
     @Config.Comment("The piglin head, and mob heads on note blocks.")
     public static final Heads heads = new Heads();
 
+    @Setting.Feature(icon = "minecraft:book")
     @Config.LangKey("config.trailsandtalesbackport.misc")
     @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
     public static final Misc misc = new Misc();
@@ -110,6 +128,7 @@ public final class ModConfig {
 
         @Config.Comment({"Without Village & Pillage, this mod adds the bamboo plant itself; this scatters it",
                 "through jungles in newly generated chunks, as 1.14 does."})
+        @Setting.NewChunks
         @Config.LangKey("config.trailsandtalesbackport.bamboo.jungleBamboo")
         public boolean jungleBamboo = true;
     }
@@ -124,6 +143,7 @@ public final class ModConfig {
     public static final class CherryGrove {
         @Config.RequiresMcRestart
         @Config.Comment("The cherry grove biome. Off, it never generates.")
+        @Setting.NewChunks
         @Config.LangKey("config.trailsandtalesbackport.cherryGrove.enabled")
         public boolean enabled = true;
     }
@@ -159,6 +179,7 @@ public final class ModConfig {
     public static final class Structures {
         @Config.RequiresMcRestart
         @Config.Comment("Trail ruins and the archaeology added to older structures. Off, none generate.")
+        @Setting.NewChunks
         @Config.LangKey("config.trailsandtalesbackport.structures.enabled")
         public boolean enabled = true;
     }
