@@ -18,7 +18,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
@@ -81,8 +80,12 @@ public final class BambooWoodContent {
         }
     }
 
-    /** Low priority, so the bamboo item of any mod registering in the item event exists by now. */
-    @SubscribeEvent(priority = EventPriority.LOW)
+    /**
+     * Normal priority, in mod order: every mod's items (the bamboo item included) are registered before the
+     * recipe event starts. At low priority these recipes came after every other mod's, and a mod's "any planks"
+     * trapdoor recipe listed ahead of them turned bamboo planks into oak trapdoors.
+     */
+    @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         if (!enabled()) {
             return;
