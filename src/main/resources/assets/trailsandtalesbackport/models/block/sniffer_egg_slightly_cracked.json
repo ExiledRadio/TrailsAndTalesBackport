@@ -1,0 +1,11 @@
+{
+  "parent": "trailsandtalesbackport:block/sniffer_egg",
+  "textures": {
+    "bottom": "trailsandtalesbackport:block/sniffer_egg_slightly_cracked_bottom",
+    "east": "trailsandtalesbackport:block/sniffer_egg_slightly_cracked_east",
+    "north": "trailsandtalesbackport:block/sniffer_egg_slightly_cracked_north",
+    "south": "trailsandtalesbackport:block/sniffer_egg_slightly_cracked_south",
+    "top": "trailsandtalesbackport:block/sniffer_egg_slightly_cracked_top",
+    "west": "trailsandtalesbackport:block/sniffer_egg_slightly_cracked_west"
+  }
+}

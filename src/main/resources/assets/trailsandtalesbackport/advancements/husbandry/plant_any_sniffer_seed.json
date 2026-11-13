@@ -1,0 +1,36 @@
+{
+  "parent": "trailsandtalesbackport:husbandry/feed_snifflet",
+  "display": {
+    "icon": {
+      "item": "trailsandtalesbackport:pitcher_pod"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.plant_any_sniffer_seed.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.plant_any_sniffer_seed.description"
+    },
+    "frame": "task",
+    "hidden": true
+  },
+  "criteria": {
+    "torchflower": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "trailsandtalesbackport:torchflower_crop"
+      }
+    },
+    "pitcher_pod": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "trailsandtalesbackport:pitcher_crop"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "torchflower",
+      "pitcher_pod"
+    ]
+  ]
+}

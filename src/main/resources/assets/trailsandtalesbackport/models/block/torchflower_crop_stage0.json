@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "trailsandtalesbackport:block/torchflower_crop_stage0"
+  }
+}

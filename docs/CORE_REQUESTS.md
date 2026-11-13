@@ -133,6 +133,9 @@ int GameEvent.frequency();                                                    //
   also registers its copy of the sculk sensor. Both use this API; until Core has it, a local shim with the
   same shape in our `sculk` package (vibrations from the 1.20 event list this mod can see: steps, block
   place/break, item use, projectiles, eating, doors, containers...).
+- The sniffer (stream N) posts 1.20's `ENTITY_SHAKE` (current Java: `ENTITY_ACTION`) at its head block every
+  10 ticks while digging, and a placed sniffer egg posts `BLOCK_PLACE`. Neither is posted yet: they wait for
+  this API (`sniffer/EntitySniffer.emitDiggingParticles`, `sniffer/BlockSnifferEgg.onBlockAdded`).
 
 ## 4. Boats, rafts and chest boats
 

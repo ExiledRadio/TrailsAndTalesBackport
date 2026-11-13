@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": {
+      "item": "trailsandtalesbackport:sniffer_egg"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.obtain_sniffer_egg.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.obtain_sniffer_egg.description"
+    },
+    "frame": "task",
+    "hidden": true
+  },
+  "criteria": {
+    "obtain_sniffer_egg": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:sniffer_egg"
+          }
+        ]
+      }
+    }
+  }
+}

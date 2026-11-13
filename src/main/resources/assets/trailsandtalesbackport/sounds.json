@@ -1461,5 +1461,214 @@
       }
     ],
     "subtitle": "subtitles.trailsandtalesbackport.item.axe.strip"
+  },
+  "entity.sniffer.death": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/death1",
+      "trailsandtalesbackport:mob/sniffer/death2"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.death"
+  },
+  "entity.sniffer.digging": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/longdig1",
+      "trailsandtalesbackport:mob/sniffer/longdig2"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.digging"
+  },
+  "entity.sniffer.digging_stop": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/digging_stop1",
+      "trailsandtalesbackport:mob/sniffer/digging_stop2"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.digging_stop"
+  },
+  "entity.sniffer.drop_seed": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:random/pop",
+        "pitch": 0.6,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:random/pop",
+        "pitch": 0.7,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:random/pop",
+        "pitch": 0.8,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.drop_seed"
+  },
+  "entity.sniffer.eat": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/eat1",
+        "volume": 0.7
+      },
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/eat2",
+        "volume": 0.7
+      },
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/eat3",
+        "volume": 0.7
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.eat"
+  },
+  "entity.sniffer.happy": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/happy1",
+      "trailsandtalesbackport:mob/sniffer/happy2",
+      "trailsandtalesbackport:mob/sniffer/happy3",
+      "trailsandtalesbackport:mob/sniffer/happy4",
+      "trailsandtalesbackport:mob/sniffer/happy5"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.happy"
+  },
+  "entity.sniffer.hurt": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/hurt1",
+      "trailsandtalesbackport:mob/sniffer/hurt2",
+      "trailsandtalesbackport:mob/sniffer/hurt3"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.hurt"
+  },
+  "entity.sniffer.idle": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/idle1",
+      "trailsandtalesbackport:mob/sniffer/idle2",
+      "trailsandtalesbackport:mob/sniffer/idle3",
+      "trailsandtalesbackport:mob/sniffer/idle4",
+      "trailsandtalesbackport:mob/sniffer/idle5",
+      "trailsandtalesbackport:mob/sniffer/idle6",
+      "trailsandtalesbackport:mob/sniffer/idle7",
+      "trailsandtalesbackport:mob/sniffer/idle8",
+      "trailsandtalesbackport:mob/sniffer/idle9",
+      "trailsandtalesbackport:mob/sniffer/idle10",
+      "trailsandtalesbackport:mob/sniffer/idle11"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.idle"
+  },
+  "entity.sniffer.scenting": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/scenting1",
+      "trailsandtalesbackport:mob/sniffer/scenting2",
+      "trailsandtalesbackport:mob/sniffer/scenting3"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.scenting"
+  },
+  "entity.sniffer.searching": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/searching1",
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/searching1",
+        "volume": 0.8
+      },
+      "trailsandtalesbackport:mob/sniffer/searching2",
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/searching2",
+        "volume": 0.8
+      },
+      "trailsandtalesbackport:mob/sniffer/searching3",
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/searching3",
+        "volume": 0.8
+      },
+      "trailsandtalesbackport:mob/sniffer/searching4",
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/searching4",
+        "volume": 0.8
+      },
+      "trailsandtalesbackport:mob/sniffer/searching5",
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/searching5",
+        "volume": 0.8
+      },
+      "trailsandtalesbackport:mob/sniffer/searching6",
+      {
+        "name": "trailsandtalesbackport:mob/sniffer/searching6",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.searching"
+  },
+  "entity.sniffer.sniffing": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/sniffing1",
+      "trailsandtalesbackport:mob/sniffer/sniffing2",
+      "trailsandtalesbackport:mob/sniffer/sniffing3"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.sniffer.sniffing"
+  },
+  "entity.sniffer.step": {
+    "sounds": [
+      "trailsandtalesbackport:mob/sniffer/step1",
+      "trailsandtalesbackport:mob/sniffer/step2",
+      "trailsandtalesbackport:mob/sniffer/step3",
+      "trailsandtalesbackport:mob/sniffer/step4",
+      "trailsandtalesbackport:mob/sniffer/step5",
+      "trailsandtalesbackport:mob/sniffer/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.sniffer_egg.crack": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:mob/turtle/egg/egg_crack1",
+        "pitch": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:mob/turtle/egg/egg_crack2",
+        "pitch": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:mob/turtle/egg/egg_crack3",
+        "pitch": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:mob/turtle/egg/egg_crack4",
+        "pitch": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:mob/turtle/egg/egg_crack5",
+        "pitch": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.block.sniffer_egg.crack"
+  },
+  "block.sniffer_egg.hatch": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:mob/turtle/egg/egg_break1",
+        "pitch": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:mob/turtle/egg/egg_break2",
+        "pitch": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.block.sniffer_egg.hatch"
+  },
+  "block.sniffer_egg.plop": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:mob/chicken/plop",
+        "pitch": 0.6
+      },
+      {
+        "name": "trailsandtalesbackport:mob/chicken/plop",
+        "pitch": 0.7
+      },
+      {
+        "name": "trailsandtalesbackport:mob/chicken/plop",
+        "pitch": 0.8
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.block.sniffer_egg.plop"
   }
 }
