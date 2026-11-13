@@ -85,6 +85,7 @@ which returns null when that stream is off.
 | Sc | Calibrated sculk sensor (+ sculk sensor copy) | `sculk` | `calibratedSculkSensor` | none | 75-79 | Decided 4, Core (`CORE_REQUESTS.md` 3) |
 | Hd | Piglin head, heads on note blocks | `heads` | `heads` | none | 80-84 | nothing |
 | X | Other changes | `misc` | `misc` | none | 85-89 | nothing |
+| Lf | Look and feel: 1.20.x title screen, splashes, menu music, options, loading screen | `lookfeel` | `lookAndFeel` | none | 90-94 | Backport Core's `presentation` module |
 
 Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers to collide on.
 
@@ -315,7 +316,8 @@ Exactly as Update Aquatic Backport's plan:
 - `./gradlew build` never deploys unless `ttbDeployDir` is set in `~/.gradle/gradle.properties`.
 - Backport Core: `deps/BackportCore-1.0.0-dev.jar`, copied from `BackportCore/build/libs` (not committed).
 - Headless test: `./gradlew runServer -Pselftest=<stream>` on port 25880 (`eclipse/server.properties`); a
-  stream worktree uses 25880 + its row number (1-17). Then `python tools/check_assets.py` with 0 errors, then
+  stream worktree uses 25880 + its row number (1-17); Lf (look and feel) uses 25918, since 25898 is another
+  mod's. Then `python tools/check_assets.py` with 0 errors, then
   `./gradlew build` last.
 - Before every Gradle run: at least 8 GB free RAM. Gradle `-Xmx2G`, no daemon. Kill only our own server, by
   PID. Never `cleanRunServer`.

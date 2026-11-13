@@ -55,6 +55,7 @@ public final class SelfTestRunner {
             new SnifferSelfTest(),
             new ArmadilloSelfTest(),
             new CamelSelfTest(),
+            new LookFeelSelfTest(),
     };
 
     private final List<String> wanted;

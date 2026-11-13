@@ -1,0 +1,10 @@
+{
+  "music.game": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:music/game/a_familiar_room",
+        "stream": true
+      }
+    ]
+  }
+}

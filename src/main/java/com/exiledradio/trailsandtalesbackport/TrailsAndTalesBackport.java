@@ -59,6 +59,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.preInit();
         com.exiledradio.trailsandtalesbackport.armadillo.ArmadilloContent.preInit();
         com.exiledradio.trailsandtalesbackport.camel.CamelContent.preInit();
+        com.exiledradio.trailsandtalesbackport.lookfeel.LookAndFeel.preInit();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
         // type, so this class verifies on a server - a guarded method here would not.
