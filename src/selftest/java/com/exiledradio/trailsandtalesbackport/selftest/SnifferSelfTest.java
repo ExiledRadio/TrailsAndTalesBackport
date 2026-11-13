@@ -443,8 +443,14 @@ public final class SnifferSelfTest implements SelfTest {
         Advancement two = c.world.getMinecraftServer().getAdvancementManager().getAdvancement(SnifferAdvancements.TWO_BY_TWO);
         Advancement seedy = c.world.getMinecraftServer().getAdvancementManager().getAdvancement(SnifferAdvancements.SEEDY_PLACE);
         c.ok(two != null && two.getCriteria().containsKey(SnifferAdvancements.SNIFFER_CRITERION), "Two by Two needs a sniffer");
-        c.ok(two != null && two.getRequirements()[two.getRequirements().length - 1][0].equals(SnifferAdvancements.SNIFFER_CRITERION),
-                "as its own requirement");
+        // Other streams (camel, armadillo) append their own requirements too, so the sniffer's need not be last.
+        boolean required = false;
+        if (two != null) {
+            for (String[] req : two.getRequirements()) {
+                required |= req.length == 1 && SnifferAdvancements.SNIFFER_CRITERION.equals(req[0]);
+            }
+        }
+        c.ok(required, "as its own requirement");
         c.ok(seedy != null && seedy.getCriteria().containsKey("torchflower") && seedy.getCriteria().containsKey("pitcher_pod"),
                 "A Seedy Place takes both seeds");
         c.ok(seedy != null && seedy.getRequirements().length == 1 && seedy.getRequirements()[0].length == 7,
