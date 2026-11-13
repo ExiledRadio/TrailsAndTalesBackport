@@ -109,6 +109,11 @@ public final class ModConfig {
     @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
     public static final Misc misc = new Misc();
 
+    @Setting.Feature(icon = "minecraft:painting")
+    @Config.LangKey("config.trailsandtalesbackport.lookAndFeel")
+    @Config.Comment("1.20's look: the cherry grove panorama, the title logo, splashes, menu music and the rest.")
+    public static final LookAndFeel lookAndFeel = new LookAndFeel();
+
     // ------------------------------------------------------------------------------------------
     // Categories. Each stream owns exactly one.
     // ------------------------------------------------------------------------------------------
@@ -238,6 +243,18 @@ public final class ModConfig {
         @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
         @Config.LangKey("config.trailsandtalesbackport.misc.enabled")
         public boolean enabled = true;
+    }
+
+    public static final class LookAndFeel {
+        @Config.RequiresMcRestart
+        @Config.Comment("1.20's title screen, splashes, menu music, options and loading screen through Backport Core.")
+        @Config.LangKey("config.trailsandtalesbackport.lookAndFeel.enabled")
+        public boolean enabled = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("1.20 adds A Familiar Room to the music that plays in every overworld biome.")
+        @Config.LangKey("config.trailsandtalesbackport.lookAndFeel.gameMusic")
+        public boolean gameMusic = true;
     }
 
     // ------------------------------------------------------------------------------------------

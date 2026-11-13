@@ -201,3 +201,43 @@ calibrated sculk sensor and piglin head. Listed here so Core's maintainer can pr
 When Core's `Waterloggable` adapter exists: hanging signs and wall hanging signs (all woods), our chain copy,
 the calibrated sculk sensor, the decorated pot, and our cherry and bamboo stairs, slabs, fences, fence gates,
 trapdoors and signs.
+
+## 10. Presentation: what 1.20's look needs from Core (stream Lf)
+
+Stream Lf (`docs/streams/lookfeel.md`) hands Core 1.20, 1.20.2, 1.20.3 and 1.20.5 through `Presentation.version`.
+These pieces are single slots, so they belong to Core; each has a small local shim until Core has it.
+
+1. **Title logo layout revision (1.20).** 1.20's `LogoRenderer` draws `minecraft.png` as one 256 by 44 piece of a
+   256 by 64 texture at width / 2 - 128, then `edition.png` (128 by 14 of 128 by 16) at width / 2 - 64, 37 below
+   the logo's top, before the splash. The splash moved to width / 2 + 123, 69. Asked for: a `VanillaRevisions`
+   title revision (`LOGO_1_20`) that draws both textures in that layout, the Minceraft roll using
+   `minceraft.png` (1.20 gave it its own texture), and the splash at the revision's position.
+   *Shim:* `tools/lookfeel/generate.py` lays 1.20.6's logo out the way 1.12.2 draws `minecraft.png` (two 155 by 44
+   pieces); `LookAndFeelClient` draws "Java Edition", takes the splash out of `GuiMainMenu` for the frame and draws
+   it at 1.20's place, and binds `minceraft.png` for a rolled Minceraft. All of it only while
+   `Presentation.asset("textures/gui/title/minecraft.png")` is this mod's.
+2. **Debug keys with no help line.** 1.20.2's F3 + 1 and F3 + 2 are not in vanilla's F3 + Q list. Asked for:
+   `debugKey(keyCode, null, action)` registers a key with no F3 + Q line.
+   *Shim:* the two keys print this mod's own lines ("F3 + 1 = Show profiler chart").
+3. **Menu music removals by path.** `removeMenuMusic` matches the exact sound name, so 1.20's removal of 1.19's
+   Aerie, Firebugs and Labyrinthine has to guess Wild Update's namespace. Asked for: a removal that matches any
+   namespace by the vanilla path (`removeMenuMusicPath("music/game/swamp/aerie")`).
+   *Shim:* removes both `minecraft:` and `wildupdatebackport:` names.
+4. **Loading-grid colors per version.** 23w16a recolored the grid (carvers take liquid carvers' blue; light is
+   0xFFE0A0; Initialize Light is 0xCCCCCC). Asked for: `LoadingStatus.color(GameVersion)`, used by Core's 1.14 and
+   1.16 drawers too, so 1.20 to 1.20.4 (before the 1.20.5 drawer) show 1.20's colors.
+   *Shim:* the 1.20.5 drawer (`LoadingScreen1205`) uses 1.20's colors itself.
+5. **1.20.5's menu look (24w09a).** Menus over a blurred, darkened panorama outside a world and over the blurred
+   world inside one, header and footer separators, a lighter pause background, all driven by Menu Background
+   Blur. That is every screen, so Core's. Asked for: a menu-background owner that, from 1.20.5, draws
+   `Screen.renderBackground` as 1.20.6 does, reading the blur from the option this mod registers
+   (`trailsandtalesbackport:menu_background_blurriness`, or Core may take the option over).
+   *Shim:* only the world-loading screen has it (Core's `PANORAMA_1_20_5` drawer, registered by this mod).
+6. **Panorama motion (1.20.5).** 1.20.6's `PanoramaRenderer` holds the pitch at 10 degrees and only spins (1.13's
+   bob between 20 and 30 degrees is gone). Asked for: the motion as a revision of `PanoramaRenderer`.
+7. **Application icon (1.20).** The window icon changed from a crafting table to a grass block. Asked for: an icon
+   slot (`Contribution.windowIcon(16px, 32px)`), newest wins.
+   *Shim:* `LookAndFeelClient.setIcon` sets 1.20's on pre-init.
+8. **Narrator Hotkey (1.20.2, Accessibility, default ON).** Turning it off stops Ctrl + B toggling the narrator;
+   1.12.2 handles Ctrl + B in `Minecraft.dispatchKeypresses` with no event to cancel. Needs a patch, and this mod
+   has no coremod, so it is Core's (it already patches `processKeyF3`).

@@ -37,7 +37,15 @@
     "config.trailsandtalesbackport.wolves.enabled",
     "config.trailsandtalesbackport.calibratedSculkSensor.enabled",
     "config.trailsandtalesbackport.heads.enabled",
-    "config.trailsandtalesbackport.misc.enabled"
+    "config.trailsandtalesbackport.misc.enabled",
+    "config.trailsandtalesbackport.lookAndFeel",
+    "config.trailsandtalesbackport.lookAndFeel.enabled",
+    "config.trailsandtalesbackport.lookAndFeel.gameMusic",
+    "options.accessibility.menu_background_blurriness",
+    "options.accessibility.menu_background_blurriness.tooltip",
+    "selectWorld.data_read",
+    "debug.profiler_chart.help",
+    "debug.fps_charts.help"
   ],
   "vanilla": {
     "advancements.trailsandtalesbackport.adventure.read_power_from_chiseled_bookshelf.description": "advancements.adventure.read_power_from_chiseled_bookshelf.description",

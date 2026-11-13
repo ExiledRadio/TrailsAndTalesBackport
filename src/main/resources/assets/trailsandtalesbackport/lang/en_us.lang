@@ -158,3 +158,13 @@ tile.trailsandtalesbackport.stripped_oak_log.name=Stripped Oak Log
 tile.trailsandtalesbackport.stripped_oak_wood.name=Stripped Oak Wood
 tile.trailsandtalesbackport.stripped_spruce_log.name=Stripped Spruce Log
 tile.trailsandtalesbackport.stripped_spruce_wood.name=Stripped Spruce Wood
+
+# --- lookfeel ---
+config.trailsandtalesbackport.lookAndFeel=Look and Feel
+config.trailsandtalesbackport.lookAndFeel.enabled=Enabled
+config.trailsandtalesbackport.lookAndFeel.gameMusic=A Familiar Room in the Game Music
+options.accessibility.menu_background_blurriness=Menu Background Blur
+options.accessibility.menu_background_blurriness.tooltip=Changes the blurriness of menu backgrounds
+selectWorld.data_read=Reading world data...
+debug.profiler_chart.help=F3 + 1 = Show profiler chart
+debug.fps_charts.help=F3 + 2 = Show FPS and TPS charts
