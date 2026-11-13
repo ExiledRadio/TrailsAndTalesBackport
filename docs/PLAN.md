@@ -194,8 +194,8 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
 
 - **Sniffer** (14 health, slow, sniffs and digs grass, dirt, podzol, coarse dirt, mud and moss (family
   blocks by name) for torchflower seeds or pitcher pods, 8-minute cooldown, remembers dug spots), breeding with
-  torchflower seeds lays a **sniffer egg**; the **snifflet** grows up in 20 minutes.
-- **Sniffer egg** hatches in 3 stages, 20 minutes (10 on Caves & Cliffs' moss), cracks louder on moss.
+  torchflower seeds lays a **sniffer egg**; the **snifflet** grows up in 40 minutes (48000 ticks).
+- **Sniffer egg** hatches in 3 stages, 20 minutes (10 on Caves & Cliffs' moss, with green sparkles each stage).
 - **Torchflower seeds** → torchflower crop (2 stages) → **torchflower** (flower, orange dye, potted form).
 - **Pitcher pod** → pitcher crop (5 stages, two blocks tall from stage 3) → **pitcher plant** (tall flower,
   cyan dye, 2 cyan dye). Bees pollinate (Buzzy Bees by name).

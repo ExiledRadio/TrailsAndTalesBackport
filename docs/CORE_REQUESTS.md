@@ -136,6 +136,9 @@ int GameEvent.frequency();                                                    //
 - Stream A's events, posted once this exists (none are posted today): `BLOCK_CHANGE` from a decorated pot
   taking an item or wobbling empty-handed (source the player), and `BLOCK_DESTROY` where a falling suspicious
   block breaks on landing.
+- The sniffer (stream N) posts 1.20's `ENTITY_SHAKE` (current Java: `ENTITY_ACTION`) at its head block every
+  10 ticks while digging, and a placed sniffer egg posts `BLOCK_PLACE`. Neither is posted yet: they wait for
+  this API (`sniffer/EntitySniffer.emitDiggingParticles`, `sniffer/BlockSnifferEgg.onBlockAdded`).
 
 ## 4. Boats, rafts and chest boats
 

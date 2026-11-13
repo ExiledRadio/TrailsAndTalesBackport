@@ -144,6 +144,9 @@ public final class ArchaeologySelfTest implements SelfTest {
             if (name.equals(ArchaeologyLoot.DESERT_WELL) && Owners.theirs(Owners.VILLAGE_AND_PILLAGE, "suspicious_stew") != null) {
                 expect++;
             }
+            if (name.equals(ArchaeologyLoot.OCEAN_RUIN_WARM) && Owners.ours("sniffer_egg") != null) {
+                expect++;
+            }
             if (name.equals(ArchaeologyLoot.TRAIL_RUINS_COMMON)) {
                 expect = 25 + (Owners.ours("oak_hanging_sign") != null ? 2 : 0)
                         + (Owners.present(Owners.CAVES_AND_CLIFFS) ? 4 : 0);

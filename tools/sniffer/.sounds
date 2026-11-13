@@ -1,0 +1,15 @@
+block.sniffer_egg.crack
+block.sniffer_egg.hatch
+block.sniffer_egg.plop
+entity.sniffer.death
+entity.sniffer.digging
+entity.sniffer.digging_stop
+entity.sniffer.drop_seed
+entity.sniffer.eat
+entity.sniffer.happy
+entity.sniffer.hurt
+entity.sniffer.idle
+entity.sniffer.scenting
+entity.sniffer.searching
+entity.sniffer.sniffing
+entity.sniffer.step

@@ -45,6 +45,7 @@ public final class ClientSetup {
                 new com.exiledradio.trailsandtalesbackport.hangingsign.client.HangingSignRenderer());
         com.exiledradio.trailsandtalesbackport.boat.client.RenderModBoat.register();
         com.exiledradio.trailsandtalesbackport.archaeology.client.ArchaeologyClient.init();
+        com.exiledradio.trailsandtalesbackport.sniffer.client.SnifferClient.init();
     }
 
     @SubscribeEvent

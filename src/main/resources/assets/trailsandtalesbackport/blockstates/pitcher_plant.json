@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "trailsandtalesbackport:pitcher_plant_bottom"
+    },
+    "half=upper": {
+      "model": "trailsandtalesbackport:pitcher_plant_top"
+    }
+  }
+}
