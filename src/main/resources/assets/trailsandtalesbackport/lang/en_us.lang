@@ -158,3 +158,15 @@ tile.trailsandtalesbackport.stripped_oak_log.name=Stripped Oak Log
 tile.trailsandtalesbackport.stripped_oak_wood.name=Stripped Oak Wood
 tile.trailsandtalesbackport.stripped_spruce_log.name=Stripped Spruce Log
 tile.trailsandtalesbackport.stripped_spruce_wood.name=Stripped Spruce Wood
+
+# --- camel ---
+entity.trailsandtalesbackport.camel.name=Camel
+subtitles.trailsandtalesbackport.entity.camel.ambient=Camel grunts
+subtitles.trailsandtalesbackport.entity.camel.dash=Camel yeets
+subtitles.trailsandtalesbackport.entity.camel.dash_ready=Camel recovers
+subtitles.trailsandtalesbackport.entity.camel.death=Camel dies
+subtitles.trailsandtalesbackport.entity.camel.eat=Camel eats
+subtitles.trailsandtalesbackport.entity.camel.hurt=Camel hurts
+subtitles.trailsandtalesbackport.entity.camel.saddle=Saddle equips
+subtitles.trailsandtalesbackport.entity.camel.sit=Camel sits down
+subtitles.trailsandtalesbackport.entity.camel.stand=Camel stands up

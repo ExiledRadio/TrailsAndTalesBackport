@@ -177,7 +177,11 @@ VillageHooks.onVillageGenerated(VillageCallback cb);   // (World, StructureBound
 ```
 
 - V&P would call it after placing a village; Core also calls it for vanilla 1.12.2 villages it can see. Asks
-  V&P's maintainer for one call. **Meanwhile** this mod spawns camels by vanilla 1.12.2 desert villages only.
+  V&P's maintainer for one call. **Meanwhile** (stream Ca, `camel/CamelVillages`) this mod reads villages from
+  the world's saved structure data on chunk population: V&P's desert town centers by its piece NBT (`Pool`,
+  `Element`, `PosX/Y/Z`, `Rotation`) and its `pools.json` by resource name, vanilla 1.12.2's by `ViStart`. A hook
+  would also need to pass the town center's template name, position and rotation, since 1.20's camel stands
+  beside a jigsaw inside it.
 
 ## 7. Ownership table entries
 
