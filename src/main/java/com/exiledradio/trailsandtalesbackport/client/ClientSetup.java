@@ -49,6 +49,7 @@ public final class ClientSetup {
         com.exiledradio.trailsandtalesbackport.armadillo.client.ArmadilloClient.init();
         com.exiledradio.trailsandtalesbackport.camel.client.CamelClient.init();
         com.exiledradio.trailsandtalesbackport.lookfeel.client.LookAndFeelClient.init();
+        com.exiledradio.trailsandtalesbackport.heads.client.HeadsClient.init();
     }
 
     @SubscribeEvent

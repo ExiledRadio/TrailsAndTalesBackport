@@ -267,3 +267,7 @@ options.accessibility.menu_background_blurriness.tooltip=Changes the blurriness 
 selectWorld.data_read=Reading world data...
 debug.profiler_chart.help=F3 + 1 = Show profiler chart
 debug.fps_charts.help=F3 + 2 = Show FPS and TPS charts
+
+# --- heads ---
+tile.trailsandtalesbackport.piglin_head.name=Piglin Head
+subtitles.trailsandtalesbackport.entity.piglin.ambient=Piglin snorts

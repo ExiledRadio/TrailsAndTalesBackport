@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "trailsandtalesbackport:piglin_head"
+    },
+    "facing=north": {
+      "model": "trailsandtalesbackport:piglin_head"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:piglin_head"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:piglin_head"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:piglin_head"
+    }
+  }
+}

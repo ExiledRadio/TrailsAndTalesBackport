@@ -56,6 +56,7 @@ public final class SelfTestRunner {
             new ArmadilloSelfTest(),
             new CamelSelfTest(),
             new LookFeelSelfTest(),
+            new HeadsSelfTest(),
     };
 
     private final List<String> wanted;

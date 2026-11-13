@@ -2331,5 +2331,76 @@
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.note_block.imitate.skeleton": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.skeleton.ambient",
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.entity.skeleton.ambient"
+  },
+  "block.note_block.imitate.wither_skeleton": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.wither_skeleton.ambient",
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.entity.wither_skeleton.ambient"
+  },
+  "block.note_block.imitate.zombie": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.zombie.ambient",
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.entity.zombie.ambient"
+  },
+  "block.note_block.imitate.creeper": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.creeper.primed",
+        "pitch": 0.5,
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.entity.creeper.primed"
+  },
+  "block.note_block.imitate.ender_dragon": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.enderdragon.ambient",
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.entity.enderdragon.ambient"
+  },
+  "block.note_block.imitate.piglin": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:mob/piglin/idle1",
+        "volume": 0.66
+      },
+      {
+        "name": "trailsandtalesbackport:mob/piglin/idle2",
+        "volume": 0.66
+      },
+      {
+        "name": "trailsandtalesbackport:mob/piglin/idle3",
+        "volume": 0.66
+      },
+      {
+        "name": "trailsandtalesbackport:mob/piglin/idle4",
+        "volume": 0.66
+      },
+      {
+        "name": "trailsandtalesbackport:mob/piglin/idle5",
+        "volume": 0.66
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.piglin.ambient"
   }
 }
