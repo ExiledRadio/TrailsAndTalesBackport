@@ -208,6 +208,8 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
   sitting at random, **dash** (jump key, cooldown, shown on the jump bar), tall enough that zombies don't reach
   the rider (1.20.2 reach change), breeding with cactus, panic on lead (1.20.2), spawning in desert villages
   (Village & Pillage's: through `CORE_REQUESTS.md` 6, else one camel by a vanilla 1.12.2 desert village's well).
+  **Done** (`docs/streams/camels.md`): 1.20 puts the camel at each desert town center (a jigsaw in its three
+  meeting points), so Village & Pillage's desert town centers get it there, read by name from saved village data.
 
 ### Sm. Smithing templates and armor trims (Decided 2)
 

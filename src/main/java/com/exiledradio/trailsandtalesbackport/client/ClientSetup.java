@@ -47,6 +47,7 @@ public final class ClientSetup {
         com.exiledradio.trailsandtalesbackport.archaeology.client.ArchaeologyClient.init();
         com.exiledradio.trailsandtalesbackport.sniffer.client.SnifferClient.init();
         com.exiledradio.trailsandtalesbackport.armadillo.client.ArmadilloClient.init();
+        com.exiledradio.trailsandtalesbackport.camel.client.CamelClient.init();
     }
 
     @SubscribeEvent

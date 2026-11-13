@@ -245,3 +245,15 @@ subtitles.trailsandtalesbackport.entity.armadillo.roll=Armadillo rolls up
 subtitles.trailsandtalesbackport.entity.armadillo.scute_drop=Armadillo sheds scute
 subtitles.trailsandtalesbackport.entity.armadillo.unroll_finish=Armadillo unrolls
 subtitles.trailsandtalesbackport.entity.armadillo.unroll_start=Armadillo peeks
+
+# --- camel ---
+entity.trailsandtalesbackport.camel.name=Camel
+subtitles.trailsandtalesbackport.entity.camel.ambient=Camel grunts
+subtitles.trailsandtalesbackport.entity.camel.dash=Camel yeets
+subtitles.trailsandtalesbackport.entity.camel.dash_ready=Camel recovers
+subtitles.trailsandtalesbackport.entity.camel.death=Camel dies
+subtitles.trailsandtalesbackport.entity.camel.eat=Camel eats
+subtitles.trailsandtalesbackport.entity.camel.hurt=Camel hurts
+subtitles.trailsandtalesbackport.entity.camel.saddle=Saddle equips
+subtitles.trailsandtalesbackport.entity.camel.sit=Camel sits down
+subtitles.trailsandtalesbackport.entity.camel.stand=Camel stands up

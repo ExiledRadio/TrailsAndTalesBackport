@@ -1,0 +1,11 @@
+entity.camel.ambient
+entity.camel.dash
+entity.camel.dash_ready
+entity.camel.death
+entity.camel.eat
+entity.camel.hurt
+entity.camel.saddle
+entity.camel.sit
+entity.camel.stand
+entity.camel.step
+entity.camel.step_sand

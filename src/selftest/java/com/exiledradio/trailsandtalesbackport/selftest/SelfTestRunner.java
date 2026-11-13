@@ -54,6 +54,7 @@ public final class SelfTestRunner {
             new ArchaeologySelfTest(),
             new SnifferSelfTest(),
             new ArmadilloSelfTest(),
+            new CamelSelfTest(),
     };
 
     private final List<String> wanted;
