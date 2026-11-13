@@ -1,0 +1,58 @@
+{
+  "pools": [
+    {
+      "name": "main",
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:archer_pottery_sherd",
+          "weight": 1,
+          "entryName": "archer_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:miner_pottery_sherd",
+          "weight": 1,
+          "entryName": "miner_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:prize_pottery_sherd",
+          "weight": 1,
+          "entryName": "prize_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:skull_pottery_sherd",
+          "weight": 1,
+          "entryName": "skull_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "weight": 1,
+          "entryName": "diamond"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:tnt",
+          "weight": 1,
+          "entryName": "tnt"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gunpowder",
+          "weight": 1,
+          "entryName": "gunpowder"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "weight": 1,
+          "entryName": "emerald"
+        }
+      ]
+    }
+  ]
+}

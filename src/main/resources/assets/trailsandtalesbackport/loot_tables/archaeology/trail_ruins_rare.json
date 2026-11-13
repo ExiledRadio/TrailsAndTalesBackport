@@ -1,0 +1,52 @@
+{
+  "pools": [
+    {
+      "name": "main",
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:burn_pottery_sherd",
+          "weight": 1,
+          "entryName": "burn_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:danger_pottery_sherd",
+          "weight": 1,
+          "entryName": "danger_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:friend_pottery_sherd",
+          "weight": 1,
+          "entryName": "friend_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:heart_pottery_sherd",
+          "weight": 1,
+          "entryName": "heart_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:heartbreak_pottery_sherd",
+          "weight": 1,
+          "entryName": "heartbreak_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:howl_pottery_sherd",
+          "weight": 1,
+          "entryName": "howl_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:sheaf_pottery_sherd",
+          "weight": 1,
+          "entryName": "sheaf_pottery_sherd"
+        }
+      ]
+    }
+  ]
+}

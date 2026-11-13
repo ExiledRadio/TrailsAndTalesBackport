@@ -1,0 +1,267 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "trailsandtalesbackport:brush"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.adventure.salvage_sherd.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.adventure.salvage_sherd.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "desert_pyramid": {
+      "trigger": "minecraft:impossible"
+    },
+    "desert_well": {
+      "trigger": "minecraft:impossible"
+    },
+    "ocean_ruin_cold": {
+      "trigger": "minecraft:impossible"
+    },
+    "ocean_ruin_warm": {
+      "trigger": "minecraft:impossible"
+    },
+    "trail_ruins_rare": {
+      "trigger": "minecraft:impossible"
+    },
+    "trail_ruins_common": {
+      "trigger": "minecraft:impossible"
+    },
+    "has_angler": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:angler_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_archer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:archer_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_arms_up": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:arms_up_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_blade": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:blade_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_brewer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:brewer_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_burn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:burn_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_danger": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:danger_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_explorer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:explorer_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_friend": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:friend_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_heart": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:heart_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_heartbreak": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:heartbreak_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_howl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:howl_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_miner": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:miner_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_mourner": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:mourner_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_plenty": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:plenty_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_prize": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:prize_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_sheaf": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:sheaf_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_shelter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:shelter_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_skull": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:skull_pottery_sherd"
+          }
+        ]
+      }
+    },
+    "has_snort": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "trailsandtalesbackport:snort_pottery_sherd"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "desert_pyramid",
+      "desert_well",
+      "ocean_ruin_cold",
+      "ocean_ruin_warm",
+      "trail_ruins_rare",
+      "trail_ruins_common"
+    ],
+    [
+      "has_angler",
+      "has_archer",
+      "has_arms_up",
+      "has_blade",
+      "has_brewer",
+      "has_burn",
+      "has_danger",
+      "has_explorer",
+      "has_friend",
+      "has_heart",
+      "has_heartbreak",
+      "has_howl",
+      "has_miner",
+      "has_mourner",
+      "has_plenty",
+      "has_prize",
+      "has_sheaf",
+      "has_shelter",
+      "has_skull",
+      "has_snort"
+    ]
+  ]
+}

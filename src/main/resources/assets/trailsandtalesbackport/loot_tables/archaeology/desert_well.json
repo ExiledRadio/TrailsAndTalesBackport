@@ -1,0 +1,40 @@
+{
+  "pools": [
+    {
+      "name": "main",
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:arms_up_pottery_sherd",
+          "weight": 2,
+          "entryName": "arms_up_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:brewer_pottery_sherd",
+          "weight": 2,
+          "entryName": "brewer_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:brick",
+          "weight": 1,
+          "entryName": "brick"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "weight": 1,
+          "entryName": "emerald"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:stick",
+          "weight": 1,
+          "entryName": "stick"
+        }
+      ]
+    }
+  ]
+}

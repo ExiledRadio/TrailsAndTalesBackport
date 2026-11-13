@@ -1,0 +1,21 @@
+{
+  "parent": "trailsandtalesbackport:adventure/salvage_sherd",
+  "display": {
+    "icon": {
+      "item": "trailsandtalesbackport:decorated_pot",
+      "nbt": "{BlockEntityTag:{sherds:[\"minecraft:brick\",\"trailsandtalesbackport:heart_pottery_sherd\",\"minecraft:brick\",\"trailsandtalesbackport:explorer_pottery_sherd\"]}}"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.adventure.craft_decorated_pot_using_only_sherds.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.adventure.craft_decorated_pot_using_only_sherds.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "pot_crafted_using_only_sherds": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

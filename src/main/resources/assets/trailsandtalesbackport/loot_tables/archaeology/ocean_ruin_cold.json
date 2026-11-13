@@ -1,0 +1,70 @@
+{
+  "pools": [
+    {
+      "name": "main",
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:blade_pottery_sherd",
+          "weight": 1,
+          "entryName": "blade_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:explorer_pottery_sherd",
+          "weight": 1,
+          "entryName": "explorer_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:mourner_pottery_sherd",
+          "weight": 1,
+          "entryName": "mourner_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "trailsandtalesbackport:plenty_pottery_sherd",
+          "weight": 1,
+          "entryName": "plenty_pottery_sherd"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_axe",
+          "weight": 1,
+          "entryName": "iron_axe"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "weight": 2,
+          "entryName": "emerald"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:wheat",
+          "weight": 2,
+          "entryName": "wheat"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:wooden_hoe",
+          "weight": 2,
+          "entryName": "wooden_hoe"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:coal",
+          "weight": 2,
+          "entryName": "coal"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_nugget",
+          "weight": 2,
+          "entryName": "gold_nugget"
+        }
+      ]
+    }
+  ]
+}

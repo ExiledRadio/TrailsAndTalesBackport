@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "cracked=false,facing=north": {
+      "model": "trailsandtalesbackport:decorated_pot"
+    },
+    "cracked=false,facing=south": {
+      "model": "trailsandtalesbackport:decorated_pot"
+    },
+    "cracked=false,facing=west": {
+      "model": "trailsandtalesbackport:decorated_pot"
+    },
+    "cracked=false,facing=east": {
+      "model": "trailsandtalesbackport:decorated_pot"
+    },
+    "cracked=true,facing=north": {
+      "model": "trailsandtalesbackport:decorated_pot"
+    },
+    "cracked=true,facing=south": {
+      "model": "trailsandtalesbackport:decorated_pot"
+    },
+    "cracked=true,facing=west": {
+      "model": "trailsandtalesbackport:decorated_pot"
+    },
+    "cracked=true,facing=east": {
+      "model": "trailsandtalesbackport:decorated_pot"
+    }
+  }
+}

@@ -51,6 +51,7 @@ public final class SelfTestRunner {
             new HangingSignSelfTest(),
             new StrippedLogSelfTest(),
             new BoatSelfTest(),
+            new ArchaeologySelfTest(),
     };
 
     private final List<String> wanted;

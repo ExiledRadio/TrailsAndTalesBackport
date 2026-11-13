@@ -133,6 +133,9 @@ int GameEvent.frequency();                                                    //
   also registers its copy of the sculk sensor. Both use this API; until Core has it, a local shim with the
   same shape in our `sculk` package (vibrations from the 1.20 event list this mod can see: steps, block
   place/break, item use, projectiles, eating, doors, containers...).
+- Stream A's events, posted once this exists (none are posted today): `BLOCK_CHANGE` from a decorated pot
+  taking an item or wobbling empty-handed (source the player), and `BLOCK_DESTROY` where a falling suspicious
+  block breaks on landing.
 
 ## 4. Boats, rafts and chest boats
 
@@ -183,7 +186,7 @@ VillageHooks.onVillageGenerated(VillageCallback cb);   // (World, StructureBound
 
 Not a code request: this mod declares, from pre-init, the blocks it ships first so later mods find them:
 `BlockOwnership.declare("trailsandtalesbackport", ...)` for the cherry and bamboo sets, hanging signs, chiseled
-bookshelf, suspicious sand and gravel, decorated pot, sniffer egg, torchflower, pitcher plant, pink petals,
+bookshelf, the brush, suspicious sand and gravel, the twenty pottery sherds, decorated pot, sniffer egg, torchflower, pitcher plant, pink petals,
 calibrated sculk sensor and piglin head. Listed here so Core's maintainer can pre-fill them as V&P's are.
 
 ## 8. Textures and sounds for Core's packs
