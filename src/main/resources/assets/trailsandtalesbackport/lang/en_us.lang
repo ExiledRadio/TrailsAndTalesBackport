@@ -282,3 +282,7 @@ subtitles.trailsandtalesbackport.item.wolf_armor.break=Wolf Armor breaks
 subtitles.trailsandtalesbackport.item.wolf_armor.crack=Wolf Armor cracks
 subtitles.trailsandtalesbackport.item.wolf_armor.damage=Wolf Armor takes damage
 subtitles.trailsandtalesbackport.item.wolf_armor.repair=Wolf Armor is repaired
+
+# --- heads ---
+tile.trailsandtalesbackport.piglin_head.name=Piglin Head
+subtitles.trailsandtalesbackport.entity.piglin.ambient=Piglin snorts
