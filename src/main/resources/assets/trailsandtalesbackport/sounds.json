@@ -2331,5 +2331,60 @@
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "item.armor.equip_wolf": {
+    "sounds": [
+      "trailsandtalesbackport:item/armor/equip_wolf1",
+      {
+        "name": "trailsandtalesbackport:item/armor/equip_wolf1",
+        "pitch": 1.1
+      },
+      "trailsandtalesbackport:item/armor/equip_wolf2",
+      {
+        "name": "trailsandtalesbackport:item/armor/equip_wolf2",
+        "pitch": 1.1
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.armor.equip_wolf"
+  },
+  "item.armor.unequip_wolf": {
+    "sounds": [
+      "trailsandtalesbackport:item/armor/unequip_wolf1",
+      "trailsandtalesbackport:item/armor/unequip_wolf2"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.armor.unequip_wolf"
+  },
+  "item.wolf_armor.break": {
+    "sounds": [
+      "trailsandtalesbackport:item/armor/break_wolf"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.wolf_armor.break"
+  },
+  "item.wolf_armor.crack": {
+    "sounds": [
+      "trailsandtalesbackport:item/armor/crack_wolf1",
+      "trailsandtalesbackport:item/armor/crack_wolf2",
+      "trailsandtalesbackport:item/armor/crack_wolf3",
+      "trailsandtalesbackport:item/armor/crack_wolf4"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.wolf_armor.crack"
+  },
+  "item.wolf_armor.damage": {
+    "sounds": [
+      "trailsandtalesbackport:item/armor/damage_wolf1",
+      "trailsandtalesbackport:item/armor/damage_wolf2",
+      "trailsandtalesbackport:item/armor/damage_wolf3",
+      "trailsandtalesbackport:item/armor/damage_wolf4"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.wolf_armor.damage"
+  },
+  "item.wolf_armor.repair": {
+    "sounds": [
+      "trailsandtalesbackport:item/armor/repair_wolf1",
+      "trailsandtalesbackport:item/armor/repair_wolf2",
+      "trailsandtalesbackport:item/armor/repair_wolf3",
+      "trailsandtalesbackport:item/armor/repair_wolf4"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.wolf_armor.repair"
   }
 }

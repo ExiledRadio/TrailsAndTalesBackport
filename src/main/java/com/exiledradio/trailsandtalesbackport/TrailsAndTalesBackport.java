@@ -59,6 +59,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.preInit();
         com.exiledradio.trailsandtalesbackport.armadillo.ArmadilloContent.preInit();
         com.exiledradio.trailsandtalesbackport.camel.CamelContent.preInit();
+        com.exiledradio.trailsandtalesbackport.wolf.WolfContent.preInit();
         com.exiledradio.trailsandtalesbackport.lookfeel.LookAndFeel.preInit();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
@@ -73,6 +74,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.init();
         com.exiledradio.trailsandtalesbackport.common.Compat.init();
         com.exiledradio.trailsandtalesbackport.armadillo.ArmadilloContent.init();
+        com.exiledradio.trailsandtalesbackport.wolf.WolfContent.init();
     }
 
     @Mod.EventHandler

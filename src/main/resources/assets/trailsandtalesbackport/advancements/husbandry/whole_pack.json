@@ -1,0 +1,76 @@
+{
+  "parent": "minecraft:husbandry/tame_an_animal",
+  "display": {
+    "icon": {
+      "item": "minecraft:bone"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.whole_pack.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.whole_pack.description"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "minecraft:ashen": {
+      "trigger": "minecraft:impossible"
+    },
+    "minecraft:black": {
+      "trigger": "minecraft:impossible"
+    },
+    "minecraft:chestnut": {
+      "trigger": "minecraft:impossible"
+    },
+    "minecraft:pale": {
+      "trigger": "minecraft:impossible"
+    },
+    "minecraft:rusty": {
+      "trigger": "minecraft:impossible"
+    },
+    "minecraft:snowy": {
+      "trigger": "minecraft:impossible"
+    },
+    "minecraft:spotted": {
+      "trigger": "minecraft:impossible"
+    },
+    "minecraft:striped": {
+      "trigger": "minecraft:impossible"
+    },
+    "minecraft:woods": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "minecraft:ashen"
+    ],
+    [
+      "minecraft:black"
+    ],
+    [
+      "minecraft:chestnut"
+    ],
+    [
+      "minecraft:pale"
+    ],
+    [
+      "minecraft:rusty"
+    ],
+    [
+      "minecraft:snowy"
+    ],
+    [
+      "minecraft:spotted"
+    ],
+    [
+      "minecraft:striped"
+    ],
+    [
+      "minecraft:woods"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  }
+}

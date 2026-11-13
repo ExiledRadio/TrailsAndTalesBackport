@@ -1,0 +1,25 @@
+{
+  "parent": "minecraft:husbandry/tame_an_animal",
+  "display": {
+    "icon": {
+      "item": "minecraft:shears"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "remove_wolf_armor": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "remove_wolf_armor"
+    ]
+  ]
+}

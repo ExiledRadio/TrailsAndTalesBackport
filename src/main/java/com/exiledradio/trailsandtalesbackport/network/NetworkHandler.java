@@ -35,5 +35,6 @@ public final class NetworkHandler {
         channel = NetworkRegistry.INSTANCE.newSimpleChannel(CHANNEL);
         // Streams register their packets below, in id order.
         com.exiledradio.trailsandtalesbackport.archaeology.ArchaeologyNetwork.register(channel); // 40-41
+        com.exiledradio.trailsandtalesbackport.wolf.WolfNetwork.register(channel); // 70-71
     }
 }
