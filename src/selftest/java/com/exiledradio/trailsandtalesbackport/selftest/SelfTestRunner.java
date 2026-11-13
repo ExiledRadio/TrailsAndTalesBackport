@@ -51,6 +51,7 @@ public final class SelfTestRunner {
             new HangingSignSelfTest(),
             new StrippedLogSelfTest(),
             new BoatSelfTest(),
+            new ArmadilloSelfTest(),
     };
 
     private final List<String> wanted;
@@ -150,7 +151,9 @@ public final class SelfTestRunner {
             }
         }
         for (Item item : ForgeRegistries.ITEMS) {
-            if (TrailsAndTalesBackport.MOD_ID.equals(item.getRegistryName().getNamespace()) && !seen.contains(item)) {
+            // Test-only stand-ins (classes of this package) have no assets and never reach a release.
+            if (TrailsAndTalesBackport.MOD_ID.equals(item.getRegistryName().getNamespace()) && !seen.contains(item)
+                    && !item.getClass().getName().startsWith(SelfTestRunner.class.getPackage().getName())) {
                 out.println(item.getRegistryName() + "\t-\tNO_MODEL_REQUEST\t-");
             }
         }

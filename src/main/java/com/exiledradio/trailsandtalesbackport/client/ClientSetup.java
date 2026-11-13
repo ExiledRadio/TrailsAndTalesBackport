@@ -44,6 +44,7 @@ public final class ClientSetup {
                 com.exiledradio.trailsandtalesbackport.hangingsign.TileHangingSign.class,
                 new com.exiledradio.trailsandtalesbackport.hangingsign.client.HangingSignRenderer());
         com.exiledradio.trailsandtalesbackport.boat.client.RenderModBoat.register();
+        com.exiledradio.trailsandtalesbackport.armadillo.client.ArmadilloClient.init();
     }
 
     @SubscribeEvent

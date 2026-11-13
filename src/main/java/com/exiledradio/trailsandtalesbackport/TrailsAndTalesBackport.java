@@ -55,6 +55,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.bamboo.BambooWoodContent.preInit();
         com.exiledradio.trailsandtalesbackport.bookshelf.BookshelfContent.preInit();
         com.exiledradio.trailsandtalesbackport.hangingsign.HangingSignContent.preInit();
+        com.exiledradio.trailsandtalesbackport.armadillo.ArmadilloContent.preInit();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
         // type, so this class verifies on a server - a guarded method here would not.
@@ -66,6 +67,7 @@ public final class TrailsAndTalesBackport {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         com.exiledradio.trailsandtalesbackport.common.Compat.init();
+        com.exiledradio.trailsandtalesbackport.armadillo.ArmadilloContent.init();
     }
 
     @Mod.EventHandler

@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "trailsandtalesbackport:armadillo_scute"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.adventure.brush_armadillo.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.adventure.brush_armadillo.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "brush_armadillo": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
