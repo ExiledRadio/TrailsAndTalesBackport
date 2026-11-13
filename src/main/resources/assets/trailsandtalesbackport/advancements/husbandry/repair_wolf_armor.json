@@ -1,0 +1,25 @@
+{
+  "parent": "minecraft:husbandry/tame_an_animal",
+  "display": {
+    "icon": {
+      "item": "trailsandtalesbackport:wolf_armor"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.repair_wolf_armor.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.husbandry.repair_wolf_armor.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "repair_wolf_armor": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "repair_wolf_armor"
+    ]
+  ]
+}

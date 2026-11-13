@@ -267,3 +267,18 @@ options.accessibility.menu_background_blurriness.tooltip=Changes the blurriness 
 selectWorld.data_read=Reading world data...
 debug.profiler_chart.help=F3 + 1 = Show profiler chart
 debug.fps_charts.help=F3 + 2 = Show FPS and TPS charts
+
+# --- wolf ---
+advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=Remove Wolf Armor from a Wolf using Shears
+advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.title=Shear Brilliance
+advancements.trailsandtalesbackport.husbandry.repair_wolf_armor.description=Repair a damaged Wolf Armor using Armadillo Scutes
+advancements.trailsandtalesbackport.husbandry.repair_wolf_armor.title=Good as New
+advancements.trailsandtalesbackport.husbandry.whole_pack.description=Tame one of each Wolf variant
+advancements.trailsandtalesbackport.husbandry.whole_pack.title=The Whole Pack
+item.trailsandtalesbackport.wolf_armor.name=Wolf Armor
+subtitles.trailsandtalesbackport.item.armor.equip_wolf=Wolf Armor is fastened
+subtitles.trailsandtalesbackport.item.armor.unequip_wolf=Wolf Armor snips away
+subtitles.trailsandtalesbackport.item.wolf_armor.break=Wolf Armor breaks
+subtitles.trailsandtalesbackport.item.wolf_armor.crack=Wolf Armor cracks
+subtitles.trailsandtalesbackport.item.wolf_armor.damage=Wolf Armor takes damage
+subtitles.trailsandtalesbackport.item.wolf_armor.repair=Wolf Armor is repaired

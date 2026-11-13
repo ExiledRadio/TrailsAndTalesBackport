@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "trailsandtalesbackport:item/wolf_armor"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "trailsandtalesbackport:dyed": 1
+      },
+      "model": "trailsandtalesbackport:item/wolf_armor_dyed"
+    }
+  ]
+}
