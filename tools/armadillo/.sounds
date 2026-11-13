@@ -1,0 +1,13 @@
+entity.armadillo.ambient
+entity.armadillo.brush
+entity.armadillo.death
+entity.armadillo.eat
+entity.armadillo.hurt
+entity.armadillo.hurt_reduced
+entity.armadillo.land
+entity.armadillo.peek
+entity.armadillo.roll
+entity.armadillo.scute_drop
+entity.armadillo.step
+entity.armadillo.unroll_finish
+entity.armadillo.unroll_start

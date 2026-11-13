@@ -227,3 +227,21 @@ subtitles.trailsandtalesbackport.entity.sniffer.idle=Sniffer grunts
 subtitles.trailsandtalesbackport.entity.sniffer.scenting=Sniffer scents
 subtitles.trailsandtalesbackport.entity.sniffer.searching=Sniffer searches
 subtitles.trailsandtalesbackport.entity.sniffer.sniffing=Sniffer sniffs
+
+# --- armadillo ---
+advancements.trailsandtalesbackport.adventure.brush_armadillo.description=Get Armadillo Scutes from an Armadillo using a Brush
+advancements.trailsandtalesbackport.adventure.brush_armadillo.title=Isn't It Scute?
+entity.trailsandtalesbackport.armadillo.name=Armadillo
+item.trailsandtalesbackport.armadillo_scute.name=Armadillo Scute
+subtitles.trailsandtalesbackport.entity.armadillo.ambient=Armadillo grunts
+subtitles.trailsandtalesbackport.entity.armadillo.brush=Scute is brushed off
+subtitles.trailsandtalesbackport.entity.armadillo.death=Armadillo dies
+subtitles.trailsandtalesbackport.entity.armadillo.eat=Armadillo eats
+subtitles.trailsandtalesbackport.entity.armadillo.hurt=Armadillo hurts
+subtitles.trailsandtalesbackport.entity.armadillo.hurt_reduced=Armadillo shields itself
+subtitles.trailsandtalesbackport.entity.armadillo.land=Armadillo lands
+subtitles.trailsandtalesbackport.entity.armadillo.peek=Armadillo peeks
+subtitles.trailsandtalesbackport.entity.armadillo.roll=Armadillo rolls up
+subtitles.trailsandtalesbackport.entity.armadillo.scute_drop=Armadillo sheds scute
+subtitles.trailsandtalesbackport.entity.armadillo.unroll_finish=Armadillo unrolls
+subtitles.trailsandtalesbackport.entity.armadillo.unroll_start=Armadillo peeks

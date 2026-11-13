@@ -129,6 +129,10 @@ GameEvents.listen(World, BlockPos, int range, VibrationListener listener);    //
 int GameEvent.frequency();                                                    // 1-15, as 1.20
 ```
 
+- The armadillo (stream Ar) posts `ENTITY_ACTION` when it rolls up or unrolls, `ENTITY_PLACE` when it sheds a
+  scute and `ENTITY_INTERACT` when brushed. None is posted yet: they wait for this API
+  (`armadillo/EntityArmadillo.rollUp`, `rollOut`, `updateAITasks`, `brushOffScute`).
+
 - Decided (`PLAN.md` *Decided* 4): the calibrated sensor always exists; when Wild Update is absent this mod
   also registers its copy of the sculk sensor. Both use this API; until Core has it, a local shim with the
   same shape in our `sculk` package (vibrations from the 1.20 event list this mod can see: steps, block

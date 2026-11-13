@@ -1975,5 +1975,149 @@
       }
     ],
     "subtitle": "subtitles.trailsandtalesbackport.block.sniffer_egg.plop"
+  },
+  "entity.armadillo.ambient": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/ambient1",
+      "trailsandtalesbackport:mob/armadillo/ambient2",
+      "trailsandtalesbackport:mob/armadillo/ambient3",
+      "trailsandtalesbackport:mob/armadillo/ambient4",
+      "trailsandtalesbackport:mob/armadillo/ambient5",
+      "trailsandtalesbackport:mob/armadillo/ambient6",
+      "trailsandtalesbackport:mob/armadillo/ambient7",
+      "trailsandtalesbackport:mob/armadillo/ambient8"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.ambient"
+  },
+  "entity.armadillo.brush": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:mob/armadillo/brush_armadillo1",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:mob/armadillo/brush_armadillo1",
+        "pitch": 0.8,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:mob/armadillo/brush_armadillo1",
+        "pitch": 0.9,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:mob/armadillo/brush_armadillo2",
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:mob/armadillo/brush_armadillo2",
+        "pitch": 0.8,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:mob/armadillo/brush_armadillo2",
+        "pitch": 0.9,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.brush"
+  },
+  "entity.armadillo.death": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/death1",
+      "trailsandtalesbackport:mob/armadillo/death2",
+      "trailsandtalesbackport:mob/armadillo/death3",
+      "trailsandtalesbackport:mob/armadillo/death4"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.death"
+  },
+  "entity.armadillo.eat": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/eat1",
+      "trailsandtalesbackport:mob/armadillo/eat2",
+      "trailsandtalesbackport:mob/armadillo/eat3"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.eat"
+  },
+  "entity.armadillo.hurt": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/hurt1",
+      "trailsandtalesbackport:mob/armadillo/hurt2",
+      "trailsandtalesbackport:mob/armadillo/hurt3",
+      "trailsandtalesbackport:mob/armadillo/hurt4",
+      "trailsandtalesbackport:mob/armadillo/hurt5"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.hurt"
+  },
+  "entity.armadillo.hurt_reduced": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/hurt_reduced1",
+      "trailsandtalesbackport:mob/armadillo/hurt_reduced2",
+      "trailsandtalesbackport:mob/armadillo/hurt_reduced3",
+      "trailsandtalesbackport:mob/armadillo/hurt_reduced4"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.hurt_reduced"
+  },
+  "entity.armadillo.land": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/land1",
+      "trailsandtalesbackport:mob/armadillo/land2",
+      "trailsandtalesbackport:mob/armadillo/land3",
+      "trailsandtalesbackport:mob/armadillo/land4"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.land"
+  },
+  "entity.armadillo.peek": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/peek"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.peek"
+  },
+  "entity.armadillo.roll": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/roll1",
+      "trailsandtalesbackport:mob/armadillo/roll2",
+      "trailsandtalesbackport:mob/armadillo/roll3",
+      "trailsandtalesbackport:mob/armadillo/roll4"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.roll"
+  },
+  "entity.armadillo.scute_drop": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/scute_drop1",
+      {
+        "name": "trailsandtalesbackport:mob/armadillo/scute_drop1",
+        "pitch": 0.9
+      },
+      "trailsandtalesbackport:mob/armadillo/scute_drop2",
+      {
+        "name": "trailsandtalesbackport:mob/armadillo/scute_drop2",
+        "pitch": 0.9
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.scute_drop"
+  },
+  "entity.armadillo.step": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/step1",
+      "trailsandtalesbackport:mob/armadillo/step2",
+      "trailsandtalesbackport:mob/armadillo/step3",
+      "trailsandtalesbackport:mob/armadillo/step4",
+      "trailsandtalesbackport:mob/armadillo/step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "entity.armadillo.unroll_finish": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/unroll_finish1",
+      "trailsandtalesbackport:mob/armadillo/unroll_finish2"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.unroll_finish"
+  },
+  "entity.armadillo.unroll_start": {
+    "sounds": [
+      "trailsandtalesbackport:mob/armadillo/unroll_start"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.armadillo.unroll_start"
   }
 }
