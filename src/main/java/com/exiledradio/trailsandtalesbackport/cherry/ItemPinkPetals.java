@@ -11,6 +11,10 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 /**
  * The pink petals item: placed on petals that are not yet full (the clicked block, or the block the
@@ -25,14 +29,10 @@ public class ItemPinkPetals extends ItemBlock {
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing,
                                       float hitX, float hitY, float hitZ) {
-        BlockPos target = pos;
-        IBlockState state = world.getBlockState(target);
-        if (!BlockPinkPetals.canAddTo(state)) {
-            target = pos.offset(facing);
-            state = world.getBlockState(target);
-        }
+        BlockPos target = addTarget(world, pos, facing);
         ItemStack stack = player.getHeldItem(hand);
-        if (BlockPinkPetals.canAddTo(state) && player.canPlayerEdit(target, facing, stack)) {
+        if (target != null && player.canPlayerEdit(target, facing, stack)) {
+            IBlockState state = world.getBlockState(target);
             if (!world.isRemote) {
                 world.setBlockState(target, state.withProperty(BlockPinkPetals.AMOUNT, state.getValue(BlockPinkPetals.AMOUNT) + 1), 3);
             }
@@ -45,5 +45,29 @@ public class ItemPinkPetals extends ItemBlock {
             return EnumActionResult.SUCCESS;
         }
         return super.onItemUse(player, world, pos, hand, facing, hitX, hitY, hitZ);
+    }
+
+    /**
+     * The petals a click adds one to: the clicked block, or the block the click would place into, while not yet
+     * full; null when the click places new petals (or nothing).
+     */
+    @Nullable
+    public static BlockPos addTarget(World world, BlockPos pos, EnumFacing facing) {
+        if (BlockPinkPetals.canAddTo(world.getBlockState(pos))) {
+            return pos;
+        }
+        BlockPos next = pos.offset(facing);
+        return BlockPinkPetals.canAddTo(world.getBlockState(next)) ? next : null;
+    }
+
+    /**
+     * The client asks this before it sends a click to the server (as it does for slabs, which {@code ItemSlab} answers
+     * the same way): without it, a click on petals is refused on the client because petals cannot stand on
+     * petals, and adding a petal never happens in a real game.
+     */
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean canPlaceBlockOnSide(World world, BlockPos pos, EnumFacing side, EntityPlayer player, ItemStack stack) {
+        return addTarget(world, pos, side) != null || super.canPlaceBlockOnSide(world, pos, side, player, stack);
     }
 }
