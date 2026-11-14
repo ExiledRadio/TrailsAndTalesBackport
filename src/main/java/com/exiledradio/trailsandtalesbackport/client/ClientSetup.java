@@ -51,6 +51,12 @@ public final class ClientSetup {
         com.exiledradio.trailsandtalesbackport.wolf.client.WolfClient.init();
         com.exiledradio.trailsandtalesbackport.lookfeel.client.LookAndFeelClient.init();
         com.exiledradio.trailsandtalesbackport.heads.client.HeadsClient.init();
+        com.exiledradio.trailsandtalesbackport.sign.client.SignClient.init();
+    }
+
+    /** Client post-init: work that must come after every mod's own setup (renderers that replace others'). */
+    public static void postInit() {
+        com.exiledradio.trailsandtalesbackport.sign.client.SignClient.postInit();
     }
 
     @SubscribeEvent

@@ -2457,5 +2457,154 @@
       }
     ],
     "subtitle": "subtitles.trailsandtalesbackport.entity.piglin.ambient"
+  },
+  "block.sign.waxed_interact_fail": {
+    "sounds": [
+      "trailsandtalesbackport:block/sign/waxed_interact_fail1",
+      {
+        "name": "trailsandtalesbackport:block/sign/waxed_interact_fail1",
+        "pitch": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/sign/waxed_interact_fail2",
+        "pitch": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sign/waxed_interact_fail2",
+        "pitch": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/sign/waxed_interact_fail3",
+        "pitch": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sign/waxed_interact_fail3",
+        "pitch": 0.9
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.block.sign.waxed_interact_fail"
+  },
+  "item.dye.use": {
+    "sounds": [
+      "trailsandtalesbackport:item/dye/dye",
+      {
+        "name": "trailsandtalesbackport:item/dye/dye",
+        "pitch": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/dye/dye",
+        "pitch": 0.95
+      },
+      {
+        "name": "trailsandtalesbackport:item/dye/dye",
+        "pitch": 1.1
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.dye.use"
+  },
+  "item.ink_sac.use": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac1",
+        "pitch": 0.85
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac1",
+        "pitch": 0.88
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac1",
+        "pitch": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac2",
+        "pitch": 0.85
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac2",
+        "pitch": 0.88
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac2",
+        "pitch": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac3",
+        "pitch": 0.85
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac3",
+        "pitch": 0.88
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac3",
+        "pitch": 0.9
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.ink_sac.use"
+  },
+  "item.glow_ink_sac.use": {
+    "sounds": [
+      "trailsandtalesbackport:item/ink_sac/ink_sac1",
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac1",
+        "pitch": 0.95
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac1",
+        "pitch": 1.05
+      },
+      "trailsandtalesbackport:item/ink_sac/ink_sac2",
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac2",
+        "pitch": 0.95
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac2",
+        "pitch": 1.05
+      },
+      "trailsandtalesbackport:item/ink_sac/ink_sac3",
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac3",
+        "pitch": 0.95
+      },
+      {
+        "name": "trailsandtalesbackport:item/ink_sac/ink_sac3",
+        "pitch": 1.05
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.glow_ink_sac.use"
+  },
+  "item.honeycomb.wax_on": {
+    "sounds": [
+      "trailsandtalesbackport:item/honeycomb/wax_on1",
+      {
+        "name": "trailsandtalesbackport:item/honeycomb/wax_on1",
+        "pitch": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/honeycomb/wax_on1",
+        "pitch": 1.1
+      },
+      "trailsandtalesbackport:item/honeycomb/wax_on2",
+      {
+        "name": "trailsandtalesbackport:item/honeycomb/wax_on2",
+        "pitch": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/honeycomb/wax_on2",
+        "pitch": 1.1
+      },
+      "trailsandtalesbackport:item/honeycomb/wax_on3",
+      {
+        "name": "trailsandtalesbackport:item/honeycomb/wax_on3",
+        "pitch": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:item/honeycomb/wax_on3",
+        "pitch": 1.1
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.item.honeycomb.wax_on"
   }
 }

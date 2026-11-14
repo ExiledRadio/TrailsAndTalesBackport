@@ -286,3 +286,12 @@ subtitles.trailsandtalesbackport.item.wolf_armor.repair=Wolf Armor is repaired
 # --- heads ---
 tile.trailsandtalesbackport.piglin_head.name=Piglin Head
 subtitles.trailsandtalesbackport.entity.piglin.ambient=Piglin snorts
+
+# --- sign ---
+gui.trailsandtalesbackport.sign.edit=Edit Sign Message
+gui.trailsandtalesbackport.hanging_sign.edit=Edit Hanging Sign Message
+subtitles.trailsandtalesbackport.block.sign.waxed_interact_fail=Sign wobbles
+subtitles.trailsandtalesbackport.item.dye.use=Dye stains
+subtitles.trailsandtalesbackport.item.glow_ink_sac.use=Glow Ink Sac splotches
+subtitles.trailsandtalesbackport.item.honeycomb.wax_on=Wax on
+subtitles.trailsandtalesbackport.item.ink_sac.use=Ink Sac splotches

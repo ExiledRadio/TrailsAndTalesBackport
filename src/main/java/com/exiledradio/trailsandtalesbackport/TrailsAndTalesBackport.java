@@ -55,6 +55,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.bamboo.BambooWoodContent.preInit();
         com.exiledradio.trailsandtalesbackport.bookshelf.BookshelfContent.preInit();
         com.exiledradio.trailsandtalesbackport.hangingsign.HangingSignContent.preInit();
+        com.exiledradio.trailsandtalesbackport.sign.SignsContent.preInit();
         com.exiledradio.trailsandtalesbackport.archaeology.ArchaeologyContent.preInit();
         com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.preInit();
         com.exiledradio.trailsandtalesbackport.armadillo.ArmadilloContent.preInit();
@@ -77,10 +78,14 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.armadillo.ArmadilloContent.init();
         com.exiledradio.trailsandtalesbackport.wolf.WolfContent.init();
         com.exiledradio.trailsandtalesbackport.heads.HeadsContent.init();
+        com.exiledradio.trailsandtalesbackport.sign.SignsContent.init();
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        if (event.getSide().isClient()) {
+            com.exiledradio.trailsandtalesbackport.client.ClientSetup.postInit();
+        }
     }
 
     @Mod.EventHandler

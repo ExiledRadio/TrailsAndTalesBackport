@@ -28,6 +28,10 @@ import java.util.Map;
  */
 public class HangingSignRenderer extends TileEntitySpecialRenderer<TileHangingSign> {
 
+    /** 1.20's hanging sign text: lines 9 apart, at most 60 pixels wide. */
+    public static final int LINE_HEIGHT = 9;
+    public static final int MAX_WIDTH = 60;
+
     private final Model model = new Model();
     private final Map<com.exiledradio.trailsandtalesbackport.hangingsign.HangingWood, ResourceLocation> textures =
             new EnumMap<com.exiledradio.trailsandtalesbackport.hangingsign.HangingWood, ResourceLocation>(
@@ -74,24 +78,7 @@ public class HangingSignRenderer extends TileEntitySpecialRenderer<TileHangingSi
         GlStateManager.popMatrix();
 
         if (destroyStage < 0) {
-            FontRenderer font = getFontRenderer();
-            float scale = 0.015625F * 0.9F;
-            GlStateManager.translate(0.0F, -0.32F, 0.073F);
-            GlStateManager.scale(scale, -scale, scale);
-            GlStateManager.glNormal3f(0.0F, 0.0F, -scale);
-            GlStateManager.depthMask(false);
-            for (int line = 0; line < te.signText.length; line++) {
-                if (te.signText[line] == null) {
-                    continue;
-                }
-                List<ITextComponent> split = GuiUtilRenderComponents.splitText(te.signText[line], 60, font, false, true);
-                String s = split != null && !split.isEmpty() ? split.get(0).getFormattedText() : "";
-                if (line == te.lineBeingEdited) {
-                    s = "> " + s + " <";
-                }
-                font.drawString(s, -font.getStringWidth(s) / 2, line * 9 - 18, 0);
-            }
-            GlStateManager.depthMask(true);
+            renderText(te);
         }
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         GlStateManager.popMatrix();
@@ -100,6 +87,38 @@ public class HangingSignRenderer extends TileEntitySpecialRenderer<TileHangingSi
             GlStateManager.popMatrix();
             GlStateManager.matrixMode(5888);
         }
+    }
+
+    /**
+     * The board's text, from the board's middle. Here the front only, in black; stream Sg's renderer
+     * ({@code sign.client.HangingSignSidesRenderer}) draws both faces with their colors over this.
+     */
+    protected void renderText(TileHangingSign te) {
+        FontRenderer font = getFontRenderer();
+        GlStateManager.pushMatrix();
+        textOrigin();
+        GlStateManager.depthMask(false);
+        for (int line = 0; line < te.signText.length; line++) {
+            if (te.signText[line] == null) {
+                continue;
+            }
+            List<ITextComponent> split = GuiUtilRenderComponents.splitText(te.signText[line], MAX_WIDTH, font, false, true);
+            String s = split != null && !split.isEmpty() ? split.get(0).getFormattedText() : "";
+            if (line == te.lineBeingEdited) {
+                s = "> " + s + " <";
+            }
+            font.drawString(s, -font.getStringWidth(s) / 2, line * LINE_HEIGHT - 18, 0);
+        }
+        GlStateManager.depthMask(true);
+        GlStateManager.popMatrix();
+    }
+
+    /** 1.20's hanging sign text offset and scale (0.9 of a sign's), from the board's middle. */
+    protected static void textOrigin() {
+        float scale = 0.015625F * 0.9F;
+        GlStateManager.translate(0.0F, -0.32F, 0.073F);
+        GlStateManager.scale(scale, -scale, scale);
+        GlStateManager.glNormal3f(0.0F, 0.0F, -scale);
     }
 
     private ResourceLocation texture(com.exiledradio.trailsandtalesbackport.hangingsign.HangingWood wood) {
