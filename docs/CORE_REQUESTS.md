@@ -255,3 +255,19 @@ These pieces are single slots, so they belong to Core; each has a small local sh
 8. **Narrator Hotkey (1.20.2, Accessibility, default ON).** Turning it off stops Ctrl + B toggling the narrator;
    1.12.2 handles Ctrl + B in `Minecraft.dispatchKeypresses` with no event to cancel. Needs a patch, and this mod
    has no coremod, so it is Core's (it already patches `processKeyF3`).
+
+## 11. Biomes: `/locate biome` and Adventuring Time (stream G)
+
+1. **`/locate biome <id>`.** Today's `/locate` has a `biome` form: "The nearest minecraft:cherry_grove is at
+   [x, y, z] (n blocks away)", with 1.18's spiral search (`BiomeSource.findClosestBiome3d`: radius 6400, horizontal
+   step 32, the first match on each ring, the reply's coordinates green and clickable as the structure form's). Core's
+   `LocateCommand` only knows structures. Asked for: the `biome` form over `ForgeRegistries.BIOMES` (ids in any
+   namespace, `#tag` through Forge's biome dictionary or a small tag table backports fill), searching the world's
+   own `BiomeProvider` so it works in 1.12.2's layers and in Caves &amp; Cliffs' 1.18 terrain alike.
+   *Built* on Core branch `core-locate-biome` (51620e0, not merged): `locate.BiomeLocate`. It finds
+   `trailsandtalesbackport:cherry_grove` as `minecraft:cherry_grove` with no call from here.
+2. **Adventuring Time.** 1.12.2's `adventure/adventuring_time` lists its 1.12.2 biomes one criterion each; 1.20.6's
+   lists every overworld biome, the cherry grove among them. A mod replacing the vanilla file would clash with every
+   other backport that adds a biome (Wild Update's mangrove swamp, Tricky Trials' pale garden). Asked for: Core builds
+   the advancement's criteria from a list the backports fill (`Advancements.adventuringTime(biome)`, in the modern
+   order), re-applied after `/reload`. *Meanwhile:* the grove is not in Adventuring Time.

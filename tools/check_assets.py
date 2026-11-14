@@ -40,10 +40,18 @@ def split(name):
     return (ns or "minecraft"), path
 
 
+# 1.12.2's own sounds and music are not in its jar but in its asset index (the game downloads them).
+_INDEX_PATH = os.path.join(os.path.expanduser("~"), ".gradle", "caches", "minecraft", "assets", "indexes", "1.12.json")
+OLD_INDEX = json.load(open(_INDEX_PATH, encoding="utf-8"))["objects"] if os.path.exists(_INDEX_PATH) else {}
+
+
 def read_asset(ns, path):
     if ns == "minecraft":
         key = "assets/minecraft/" + path
-        return jar.read(key) if key in jar_names else None
+        if key in jar_names:
+            return jar.read(key)
+        # Present in the asset index: the game has it (the content itself is not needed here).
+        return b"" if ("minecraft/" + path) in OLD_INDEX else None
     full = os.path.join(ASSETS, ns, *path.split("/"))
     if os.path.exists(full):
         with open(full, "rb") as f:

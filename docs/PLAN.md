@@ -127,6 +127,10 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
   pigs, sheep, rabbits and (with Buzzy Bees) bees, hilly terrain (1.12.2 has no 1.18 mountains; the extreme
   hills height variation is the nearest). *Adventuring Time* gets it through the biome registry on its own.
 - How it gets into the world is the user's call (see *Still open*).
+- **Built** (`docs/streams/grove.md`): in 1.12.2 terrain part of the extreme hills becomes grove (0.3% of the world,
+  1.20's share; the terrain and every other biome unchanged); Caves & Cliffs' 1.18 terrain already had 1.20's grove
+  climate and features, and takes this biome by name. *Adventuring Time* does not get it on its own (1.12.2's
+  advancement lists its biomes): `CORE_REQUESTS.md` 11.2, with `/locate biome` as 11.1.
 
 ### H. Hanging signs
 

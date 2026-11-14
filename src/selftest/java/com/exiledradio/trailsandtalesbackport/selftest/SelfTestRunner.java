@@ -59,6 +59,7 @@ public final class SelfTestRunner {
             new LookFeelSelfTest(),
             new HeadsSelfTest(),
             new SignSelfTest(),
+            new CherryGroveSelfTest(),
     };
 
     private final List<String> wanted;
