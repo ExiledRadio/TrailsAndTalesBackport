@@ -413,6 +413,24 @@ public final class CherryGroveSelfTest implements SelfTest {
     // ---- other backports -------------------------------------------------------------------------------------
 
     private static void integration(Check c, BiomeCherryGrove grove) throws Exception {
+        Class<?> locate = null;
+        try {
+            locate = Class.forName("com.exiledradio.backportcore.locate.BiomeLocate");
+        } catch (ClassNotFoundException e) {
+            TrailsAndTalesBackport.LOGGER.info("SELFTEST grove: this Backport Core has no /locate biome");
+        }
+        if (locate != null) {
+            // Backport Core 1.2.0's /locate biome: the grove answers to today's id, and is found.
+            c.eq("minecraft:cherry_grove", locate.getMethod("id", Biome.class).invoke(null, grove), "/locate biome knows the grove as minecraft:cherry_grove");
+            Object found = locate.getMethod("nearest", net.minecraft.world.WorldServer.class, BlockPos.class, String.class)
+                    .invoke(null, c.world, new BlockPos(0, 80, 0), "minecraft:cherry_grove");
+            if (c.ok(found != null, "/locate biome minecraft:cherry_grove finds a grove")) {
+                BlockPos pos = (BlockPos) found.getClass().getField("pos").get(found);
+                Biome[] at = c.world.getBiomeProvider().getBiomesForGeneration(null, pos.getX() >> 2, pos.getZ() >> 2, 1, 1);
+                c.ok(at[0] == grove, "where /locate biome says: " + pos);
+                TrailsAndTalesBackport.LOGGER.info("SELFTEST grove: /locate biome minecraft:cherry_grove from 0, 80, 0: {}", pos);
+            }
+        }
         if (Loader.isModLoaded("buzzybeesbackport")) {
             Class<?> nests = Class.forName("com.exiledradio.buzzybeesbackport.api.BeeNests");
             Class<?> flowers = Class.forName("com.exiledradio.buzzybeesbackport.api.BeeFlowers");

@@ -103,8 +103,10 @@ packet ids 20-24 are unused. Dev-server port 25884. Generator: `tools/biome/gene
     playing. Its tracks are 1.20.6's: Bromeliad and Echo in the Wind (weight 3, volume 0.4) are the look and feel
     stream's files; Left to Bloom (0.4) is copied from 1.20.6's assets; Clark, Minecraft and Sweden are 1.12.2's
     `calm2`, `calm1` and `calm3` (the generator checks the hashes match).
-*   **`/locate biome`**: Backport Core's `/locate` has no biome form (none on any Core branch). Asked for in
-    `CORE_REQUESTS.md` 11.1; the grove is an ordinary registered biome, so it will be found with no work here.
+*   **`/locate biome`**: built in Backport Core on branch `core-locate-biome` (51620e0, from Core main 7826056):
+    `/locate biome minecraft:cherry_grove`. Core names a biome registered under one of today's vanilla names, in
+    any namespace, by that name in `minecraft:`, so nothing here calls it. Until that branch is merged,
+    `CORE_REQUESTS.md` 11.1 stands.
 *   **Adventuring Time**: 1.12.2's advancement lists its biomes in its JSON, so the plan's "through the biome
     registry on its own" does not hold. Asked for in `CORE_REQUESTS.md` 11.2.
 
@@ -150,6 +152,10 @@ flat ground. Both runs were undone afterwards (mods folder empty, `level-type=DE
 Full suite `-Pselftest=all` (Default world): **`SELFTEST DONE pass=3779 fail=0`**. `python tools/check_assets.py`: 0 errors. It now finds
 1.12.2's own sounds (`calm1-3`) in 1.12.2's asset index, which the game downloads, as well as in its jar.
 
+With **Backport Core `core-locate-biome`** (its dev jar as `deps/BackportCore-locatebiome-dev.jar`,
+`-Pcore_version=locatebiome`): **98/0**. `BiomeLocate.id` gives `minecraft:cherry_grove`. The search from 0, 80, 0 finds
+-576, 80, -544, and that 1:4 cell is the grove.
+
 ## Not tested
 
 *   Anything drawn or heard: grass, foliage, sky and water colors on screen; the music step (it runs in the client's
@@ -161,7 +167,7 @@ Full suite `-Pselftest=all` (Default world): **`SELFTEST DONE pass=3779 fail=0`*
 
 ## Not done
 
-*   `/locate biome` and Adventuring Time: Core requests 11.1 and 11.2.
+*   Adventuring Time: Core request 11.2. (`/locate biome`, 11.1, is on Core's `core-locate-biome` branch.)
 *   1.20's underwater fog color: Core request 10 of Wild Update (the family has no fog hook yet).
 *   The glow squid spawn entry is Caves & Cliffs'; amethyst geodes, glow lichen, tuff and copper in the grove come
     from C&C's own 1.12 generation where installed.

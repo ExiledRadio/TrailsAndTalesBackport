@@ -264,8 +264,8 @@ These pieces are single slots, so they belong to Core; each has a small local sh
    `LocateCommand` only knows structures. Asked for: the `biome` form over `ForgeRegistries.BIOMES` (ids in any
    namespace, `#tag` through Forge's biome dictionary or a small tag table backports fill), searching the world's
    own `BiomeProvider` so it works in 1.12.2's layers and in Caves &amp; Cliffs' 1.18 terrain alike.
-   *Meanwhile:* none. 1.12.2 had no biome search, so there is nothing to shim; `trailsandtalesbackport:cherry_grove`
-   is an ordinary registered biome, and the form will find it with no work here.
+   *Built* on Core branch `core-locate-biome` (51620e0, not merged): `locate.BiomeLocate`. It finds
+   `trailsandtalesbackport:cherry_grove` as `minecraft:cherry_grove` with no call from here.
 2. **Adventuring Time.** 1.12.2's `adventure/adventuring_time` lists its 1.12.2 biomes one criterion each; 1.20.6's
    lists every overworld biome, the cherry grove among them. A mod replacing the vanilla file would clash with every
    other backport that adds a biome (Wild Update's mangrove swamp, Tricky Trials' pale garden). Asked for: Core builds
