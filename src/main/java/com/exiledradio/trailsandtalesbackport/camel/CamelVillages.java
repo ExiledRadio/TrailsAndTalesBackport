@@ -1,6 +1,8 @@
 package com.exiledradio.trailsandtalesbackport.camel;
 
 import com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport;
+import com.exiledradio.backportcore.structure.Structures;
+import com.exiledradio.backportcore.worldgen.FlatWorlds;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -51,7 +53,10 @@ import java.util.Map;
  * camel at a corner of their well, the first corner where it fits.
  *
  * <p>Each camel is spawned once, when the chunk whose population area holds its spot is populated (after the
- * village pieces there are placed), with no random draws, so the same seed gives the same camels.
+ * village pieces there are placed), with no random draws, so the same seed gives the same camels. A vanilla well's
+ * camel is placed when the chunk holding the middle of the well is populated instead: which corner it takes depends
+ * on the blocks around the well at that moment, and asked again later (as the village grows) the answer can move to
+ * a corner whose chunk was populated already, which left the village without its camel.
  * {@link #spawnInChunk} is the entry point for any other terrain generator that populates chunks its own way.
  */
 public final class CamelVillages {
@@ -77,7 +82,10 @@ public final class CamelVillages {
 
     @SubscribeEvent
     public void populate(PopulateChunkEvent.Post event) {
-        if (!event.getWorld().isRemote && CamelContent.enabled()) {
+        // A camel is part of its village, as a villager is: in superflat it comes with the preset's villages
+        // (1.12's flat generator never spawns animals at generation, but its villages do get their villagers).
+        if (!event.getWorld().isRemote && CamelContent.enabled()
+                && FlatWorlds.structure(event.getWorld(), Structures.VILLAGE)) {
             spawnInChunk(event.getWorld(), event.getChunkX(), event.getChunkZ());
         }
     }
@@ -86,10 +94,17 @@ public final class CamelVillages {
     public static final class Spot {
         public final Vec3d pos;
         public final float yaw;
+        /** The block whose chunk population places the camel. */
+        final BlockPos anchor;
 
         Spot(Vec3d pos, float yaw) {
+            this(pos, yaw, new BlockPos(pos));
+        }
+
+        Spot(Vec3d pos, float yaw, BlockPos anchor) {
             this.pos = pos;
             this.yaw = yaw;
+            this.anchor = anchor;
         }
     }
 
@@ -98,8 +113,8 @@ public final class CamelVillages {
         int x0 = (chunkX << 4) + 8;
         int z0 = (chunkZ << 4) + 8;
         for (Spot spot : spotsNear(world, chunkX, chunkZ)) {
-            int x = (int) Math.floor(spot.pos.x);
-            int z = (int) Math.floor(spot.pos.z);
+            int x = spot.anchor.getX();
+            int z = spot.anchor.getZ();
             if (x >= x0 && x <= x0 + 15 && z >= z0 && z <= z0 + 15) {
                 spawn(world, spot);
             }
@@ -220,7 +235,8 @@ public final class CamelVillages {
 
     /**
      * A vanilla 1.12.2 desert village: one camel at the first corner of its well (north-west, north-east,
-     * south-east, south-west) where it fits, standing on the ground there; null until the well is placed.
+     * south-east, south-west) where it fits, standing on the ground there; null until the well is placed. Its
+     * anchor is inside the well, so all four corners are loaded when the anchor's chunk is populated.
      */
     @Nullable
     static Spot wellSpot(World world, NBTTagCompound piece) {
@@ -233,6 +249,7 @@ public final class CamelVillages {
         }
         StructureBoundingBox box = new StructureBoundingBox(bb);
         double[][] corners = {{box.minX, box.minZ}, {box.maxX + 1, box.minZ}, {box.maxX + 1, box.maxZ + 1}, {box.minX, box.maxZ + 1}};
+        BlockPos anchor = new BlockPos(box.minX + 2, 0, box.minZ + 2);
         Spot first = null;
         for (double[] c : corners) {
             BlockPos column = new BlockPos(c[0] - 0.5D, 0, c[1] - 0.5D);
@@ -240,7 +257,7 @@ public final class CamelVillages {
                 continue;
             }
             int y = world.getHeight(column.getX(), column.getZ());
-            Spot spot = new Spot(new Vec3d(c[0], y, c[1]), 0.0F);
+            Spot spot = new Spot(new Vec3d(c[0], y, c[1]), 0.0F, anchor);
             if (first == null) {
                 first = spot;
             }

@@ -13,6 +13,7 @@ everything the camel syncs goes through entity data and 1.12.2's own riding pack
     right-click to open a camel's saddle slot.
 *   Every desert village has a camel at its center.
 *   *Two by Two* now needs camels.
+*   Superflat worlds get only what their preset lists: cherry trees, petals and jungle bamboo need `decoration`, and a desert village's camel comes with the preset's villages.
 
 ## How it works
 

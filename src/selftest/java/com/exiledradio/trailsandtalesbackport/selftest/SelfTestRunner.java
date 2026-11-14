@@ -60,6 +60,7 @@ public final class SelfTestRunner {
             new HeadsSelfTest(),
             new SignSelfTest(),
             new CherryGroveSelfTest(),
+            new FlatSelfTest(),
     };
 
     private final List<String> wanted;
