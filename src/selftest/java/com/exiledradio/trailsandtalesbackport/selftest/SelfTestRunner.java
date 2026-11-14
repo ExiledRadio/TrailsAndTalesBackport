@@ -58,6 +58,7 @@ public final class SelfTestRunner {
             new WolfSelfTest(),
             new LookFeelSelfTest(),
             new HeadsSelfTest(),
+            new CherryGroveSelfTest(),
     };
 
     private final List<String> wanted;
