@@ -18,12 +18,10 @@ import net.minecraft.client.gui.GuiVideoSettings;
 import net.minecraft.client.gui.GuiWorldSelection;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.texture.SimpleTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -44,8 +42,6 @@ import java.nio.ByteBuffer;
 /**
  * Stream Lf's client side: what 1.20 changed that is drawn or pressed rather than registered with Core.
  * <ul>
- *   <li>1.20's "Java Edition" under the title logo (1.20.6's {@code LogoRenderer}: 128 by 14 at width / 2 - 64,
- *       37 below the logo's top), and its Minceraft logo, while this mod's logo is the one Core serves;</li>
  *   <li>1.20.2's F3 + 1 (profiler chart) and F3 + 2 (FPS and TPS charts), which also keep the charts when F3 is
  *       pressed with Shift or Alt (1.20.2 took those away);</li>
  *   <li>1.20.2's "Back" on the Multiplayer and World Selection screens (23w31a; was "Cancel");</li>
@@ -57,12 +53,7 @@ import java.nio.ByteBuffer;
 @SideOnly(Side.CLIENT)
 public final class LookAndFeelClient {
 
-    static final ResourceLocation TITLE_LOGO = new ResourceLocation("textures/gui/title/minecraft.png");
-    static final ResourceLocation EDITION = new ResourceLocation("textures/gui/title/edition.png");
-
     /** Counters for the client self-test. */
-    public static volatile int editionFrames;
-    public static volatile int splashFrames;
     public static volatile int backButtons;
     public static volatile int guiScaleScrolls;
     public static volatile boolean iconSet;
@@ -70,10 +61,6 @@ public final class LookAndFeelClient {
     /** 1.20.2's chart switches, which F3 alone no longer changes. */
     static boolean profilerChart;
     static boolean fpsCharts;
-
-    private static Field minceraftRoll;
-    /** True while minecraft.png is bound to 1.20's Minceraft logo. */
-    private static boolean minceraft;
 
     private LookAndFeelClient() {
     }
@@ -107,130 +94,12 @@ public final class LookAndFeelClient {
 
     // ---- Title logo ----
 
-    /** @return true while Core serves this mod's title logo (no newer installed version replaced it) */
+    /**
+     * @return true while Core serves this mod's title logo (no newer installed version replaced it). Core's patch
+     *         P29 draws it in 1.20's layout from 1.20.6's own files: the logo, Minceraft, "Java Edition" and the splash.
+     */
     public static boolean ourLogo() {
         return LookAndFeel.LOGO.equals(Presentation.asset("textures/gui/title/minecraft.png"));
-    }
-
-    /**
-     * A new title screen: 1.12.2 shows its Minceraft as shuffled slices of minecraft.png, one time in 10,000. 1.20 has
-     * a Minceraft logo of its own, so the roll is taken here, and minecraft.png is bound to 1.20's Minceraft logo
-     * for that screen instead.
-     */
-    @SubscribeEvent
-    public void onGuiOpen(GuiOpenEvent event) {
-        if (!(event.getGui() instanceof GuiMainMenu)) {
-            return;
-        }
-        boolean rolled = false;
-        if (ourLogo()) {
-            try {
-                if (minceraftRoll == null) {
-                    minceraftRoll = ReflectionHelper.findField(GuiMainMenu.class, "minceraftRoll", "field_73974_b");
-                }
-                if (minceraftRoll.getFloat(event.getGui()) < 1.0E-4F) {
-                    minceraftRoll.setFloat(event.getGui(), 1.0F);
-                    rolled = true;
-                }
-            } catch (Exception e) {
-                TrailsAndTalesBackport.LOGGER.debug("Look and feel: Minceraft roll unreadable ({})", e.toString());
-            }
-        }
-        showMinceraft(rolled);
-    }
-
-    /** Binds minecraft.png to 1.20's Minceraft logo, or back to the normal one. */
-    public static void showMinceraft(boolean show) {
-        if (show == minceraft) {
-            return;
-        }
-        minceraft = show;
-        Minecraft mc = Minecraft.getMinecraft();
-        mc.getTextureManager().deleteTexture(TITLE_LOGO);
-        if (show) {
-            mc.getTextureManager().loadTexture(TITLE_LOGO, new SimpleTexture(LookAndFeel.MINCERAFT));
-        }
-    }
-
-    /** @return true while the title screen shows 1.20's Minceraft logo */
-    public static boolean showingMinceraft() {
-        return minceraft;
-    }
-
-    /**
-     * 1.12.2 draws its splash before anything this mod can draw after it, and where 1.12.2 puts it (width / 2 + 90,
-     * 70), which "Java Edition" now covers. While this mod's logo is shown, the splash is taken out of the title
-     * screen for its own drawing and drawn after "Java Edition", where 1.20 draws it.
-     */
-    @SubscribeEvent
-    public void onDrawPre(GuiScreenEvent.DrawScreenEvent.Pre event) {
-        if (!(event.getGui() instanceof GuiMainMenu) || !ourLogo()) {
-            return;
-        }
-        String splash = splash(event.getGui());
-        heldSplash = splash;
-        if (splash != null && !splash.isEmpty()) {
-            setSplash(event.getGui(), "");
-        }
-    }
-
-    /**
-     * 1.20.6 {@code LogoRenderer.renderLogo}: "Java Edition", 128 by 14, overlapping the logo's bottom by 7; then
-     * {@code SplashRenderer.render}: the splash at width / 2 + 123, 69, turned 20 degrees, pulsing as 1.12.2's.
-     */
-    @SubscribeEvent
-    public void onDraw(GuiScreenEvent.DrawScreenEvent.Post event) {
-        if (!(event.getGui() instanceof GuiMainMenu) || !ourLogo()) {
-            return;
-        }
-        GuiScreen gui = event.getGui();
-        String splash = heldSplash;
-        heldSplash = null;
-        if (splash != null && !splash.isEmpty()) {
-            setSplash(gui, splash);
-        }
-        Minecraft mc = Minecraft.getMinecraft();
-        mc.getTextureManager().bindTexture(EDITION);
-        GlStateManager.enableBlend();
-        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
-                GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        Gui.drawModalRectWithCustomSizedTexture(gui.width / 2 - 64, 30 + 44 - 7, 0.0F, 0.0F, 128, 14, 128.0F, 16.0F);
-        GlStateManager.disableBlend();
-        editionFrames++;
-        if (splash != null && !splash.isEmpty()) {
-            GlStateManager.pushMatrix();
-            GlStateManager.translate(gui.width / 2.0F + 123.0F, 69.0F, 0.0F);
-            GlStateManager.rotate(-20.0F, 0.0F, 0.0F, 1.0F);
-            float size = 1.8F - MathHelper.abs(MathHelper.sin((float) (Minecraft.getSystemTime() % 1000L) / 1000.0F * ((float) Math.PI * 2F)) * 0.1F);
-            size = size * 100.0F / (float) (mc.fontRenderer.getStringWidth(splash) + 32);
-            GlStateManager.scale(size, size, size);
-            gui.drawCenteredString(mc.fontRenderer, splash, 0, -8, 0xFFFFFF00);
-            GlStateManager.popMatrix();
-            splashFrames++;
-        }
-    }
-
-    private static String heldSplash;
-    private static Field splashText;
-
-    @javax.annotation.Nullable
-    static String splash(GuiScreen menu) {
-        try {
-            if (splashText == null) {
-                splashText = ReflectionHelper.findField(GuiMainMenu.class, "splashText", "field_73975_c");
-            }
-            return (String) splashText.get(menu);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    private static void setSplash(GuiScreen menu, String text) {
-        try {
-            splashText.set(menu, text);
-        } catch (Exception ignored) {
-        }
     }
 
     // ---- F3 charts (1.20.2) ----

@@ -85,7 +85,9 @@ public final class LookFeelSelfTest implements SelfTest {
 
     private static void title(Check c) throws IOException {
         String[][] assets = {
-                {"textures/gui/title/minecraft.png", "textures/gui/title/minecraft.png", "1024x1024"},
+                {"textures/gui/title/minecraft.png", "textures/gui/title/minecraft.png", "1024x256"},
+                {"textures/gui/title/minceraft.png", "textures/gui/title/minceraft.png", "1024x256"},
+                {"textures/gui/title/minceraft.png.mcmeta", "textures/gui/title/minceraft.png.mcmeta", null},
                 {"textures/gui/title/minecraft.png.mcmeta", "textures/gui/title/minecraft.png.mcmeta", null},
                 {"textures/gui/title/edition.png", "textures/gui/title/edition.png", "512x64"},
                 {"textures/gui/title/edition.png.mcmeta", "textures/gui/title/edition.png.mcmeta", null},
@@ -101,12 +103,6 @@ public final class LookFeelSelfTest implements SelfTest {
                 c.ok(read(src).contains("\"blur\": true"), a[1] + " asks for smooth scaling");
             }
         }
-        c.ok(Arrays.equals(new int[] {1024, 1024}, pngSize(LookAndFeel.MINCERAFT)), "1.20's Minceraft logo is laid out the same way");
-        // The logo laid out for 1.12.2's two pieces: 1.20's left edge 9 pixels into the first piece (4x), nothing
-        // left of it, and the second piece's rows start at 45.
-        BufferedImage logo = image(LookAndFeel.LOGO);
-        c.ok(columnEmpty(logo, 0, 0, 36, 176) && !columnEmpty(logo, 36, 0, 80, 176), "the first piece starts 9 pixels in");
-        c.ok(rowsEmpty(logo, 176, 180) && !rowsEmpty(logo, 180, 356), "the second piece is at row 45, below a clear gap");
         for (int size : new int[] {16, 32}) {
             int[] icon = pngSize(new ResourceLocation(ID, "textures/gui/icon/icon_" + size + "x" + size + ".png"));
             c.ok(icon != null && icon[0] == size && icon[1] == size, "1.20's " + size + " pixel window icon: " + Arrays.toString(icon));

@@ -79,6 +79,8 @@ public final class LookAndFeel {
                 .titleLogo(LOGO)
                 // 1.20.6's logo is drawn smoothed (its .mcmeta), as vanilla's at four times the size.
                 .replaceAsset("textures/gui/title/minecraft.png.mcmeta", new ResourceLocation(ID, "textures/gui/title/minecraft.png.mcmeta"))
+                .replaceAsset("textures/gui/title/minceraft.png", MINCERAFT)
+                .replaceAsset("textures/gui/title/minceraft.png.mcmeta", new ResourceLocation(ID, "textures/gui/title/minceraft.png.mcmeta"))
                 .replaceAsset("textures/gui/title/edition.png", new ResourceLocation(ID, "textures/gui/title/edition.png"))
                 .replaceAsset("textures/gui/title/edition.png.mcmeta", new ResourceLocation(ID, "textures/gui/title/edition.png.mcmeta"))
                 .vanillaText(new ResourceLocation(ID, "vanilla_text"));

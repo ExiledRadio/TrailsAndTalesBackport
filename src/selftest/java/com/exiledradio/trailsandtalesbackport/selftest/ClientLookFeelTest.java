@@ -116,16 +116,16 @@ public final class ClientLookFeelTest {
         ok("backportcore:vanilla_by_version".equals(pack), "the title logo comes from Core's vanilla-asset pack: " + pack);
         ok(mc.getResourceManager().getResource(new ResourceLocation("textures/gui/title/minecraft.png")).hasMetadata(),
                 "the logo has its .mcmeta (smooth scaling)");
-        ok(LookAndFeelClient.editionFrames > 20, "\"Java Edition\" was drawn: " + LookAndFeelClient.editionFrames);
-        ok(LookAndFeelClient.splashFrames > 20, "the splash was drawn at 1.20's place: " + LookAndFeelClient.splashFrames);
+        ok(com.exiledradio.backportcore.presentation.client.TitleLogo.layout()
+                == com.exiledradio.backportcore.presentation.VanillaRevisions.TitleLogo.LOGO_1_20,
+                "Core lays the title out as 1.20 does: " + com.exiledradio.backportcore.presentation.client.TitleLogo.layout());
+        ok(com.exiledradio.backportcore.presentation.client.TitleLogo.frames > 20,
+                "Core drew the logo in 1.20's layout: " + com.exiledradio.backportcore.presentation.client.TitleLogo.frames);
         ok(LookAndFeelClient.iconSet, "1.20's window icon was set");
         ok(Presentation.loadingRevision() == LoadingRevision.PANORAMA_1_20_5, "the loading screen is 1.20.5's");
 
-        // Minceraft: 1.20's own logo is bound in place of minecraft.png, then put back.
-        LookAndFeelClient.showMinceraft(true);
-        ok(LookAndFeelClient.showingMinceraft(), "Minceraft can be shown");
-        LookAndFeelClient.showMinceraft(false);
-        ok(!LookAndFeelClient.showingMinceraft(), "and put back");
+        // Minceraft: Core draws 1.20's own when 1.12.2 rolls it.
+        ok(Presentation.asset("textures/gui/title/minceraft.png") != null, "Core has 1.20's Minceraft logo");
 
         // Music: A Familiar Room joined 1.12.2's game music.
         ok(GameMusicPack.installed, "the game music pack is installed");
