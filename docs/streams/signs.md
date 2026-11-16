@@ -113,13 +113,17 @@ from the previous run's world and fails on every run after the first (not this s
     (the lookup by name is checked only for being absent); Village & Pillage's sign renderer being replaced.
 *   The client's half of the packets (opening the screen from packet 31; sending packet 30 on close).
 
-## Left out, or for later
+## Built after the first pass (branch `tt-leftovers`)
 
-*   **Wax particles** (1.20's level event 3003 also shows wax-on particles): 1.12.2 has no such particle; the
-    sound plays.
-*   **Other mods' signs with their own renderer** (Decided 6's limit): they get editing, both faces, dye, glow
-    and wax, but only their own renderer draws them, so the back and glow do not show.
-*   **Request to Village & Pillage** (Decided 6): nothing is needed for it to work; if it wants its own sign
-    renderer back, it can draw `trailsandtalesbackport:sign`'s back text and glow, and its dyeing can stand
-    down while ours is on (ours runs first and cancels the click already).
-*   Selectors and scores on the back's text are not resolved when it loads (the front's are, by vanilla).
+*   **Wax-on particles** (level event 3003): packet 32 (`SignNetwork.WaxOn`) goes with the wax sound to everyone
+    within 64 blocks; `sign.client.WaxParticles` spawns 1.20.6's `ParticleUtils.spawnParticlesOnBlockFaces(...,
+    WAX_ON, UniformInt.of(3, 5))`: three to five on each face, as `GlowParticle.WaxOnProvider` makes them (color
+    0.91, 0.55, 0.08; 1.20.6's `glow` sprite; 10 to 39 ticks; brightening to full block light).
+*   **Other mods' signs with their own renderer**: on the first client tick, every `TileEntitySign` subclass bound to
+    a renderer that is not this mod's gets `sign.client.OtherSignRenderer` around it: theirs draws the board and
+    the front, then the back text and, on a glowing front, the glowing front text are drawn in vanilla's sign
+    layout. A sign whose renderer lays its board out differently gets the text in vanilla's place.
+*   **Selectors and scores on the back** resolve as the sign loads, as the front's do (same sender: the sign,
+    permission level 2; server worlds only, as 1.20.6's `loadLines`).
+*   **Request to Village & Pillage** (Decided 6) stands: nothing is needed; if it binds its own renderer again,
+    `OtherSignRenderer` draws the back and glow over it.

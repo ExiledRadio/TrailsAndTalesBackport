@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Aldeão Zumbi vocifera
 subtitles.entity.zombie_villager.cure=Aldeão Zumbi funga
 subtitles.item.armor.equip=Armadura equipada
 subtitles.item.armor.equip_elytra=Élitros farfalham
+death.attack.genericKill=%1$s morreu
+death.attack.genericKill.player=%1$s morreu enquanto lutava com %2$s
+death.attack.outsideBorder=%1$s saiu dos confins desse mundo
+death.attack.outsideBorder.player=%1$s saiu dos confins desse mundo enquanto lutava com %2$s

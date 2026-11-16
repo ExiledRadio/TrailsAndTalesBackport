@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Зомбоселянин кричит
 subtitles.entity.zombie_villager.cure=Зомбоселянин сопе
 subtitles.item.armor.equip=Обладунки вдягнуто
 subtitles.item.armor.equip_elytra=Елітри шурхотять
+death.attack.genericKill=%1$s був убитий
+death.attack.genericKill.player=%1$s убито під час битви з %2$s
+death.attack.outsideBorder=%1$s вийшов за межі цього світу
+death.attack.outsideBorder.player=%1$s вийшов за межі цього світу під час битви з %2$s

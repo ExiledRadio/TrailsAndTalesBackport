@@ -116,9 +116,69 @@ public final class SignData {
         this.waxed = tag.getBoolean("is_waxed");
     }
 
+    /**
+     * Selectors, scores and other entity text on the back resolved as the sign loads, as the front's are
+     * (1.12.2's {@code TileEntitySign.readFromNBT}; 1.20.6's {@code SignBlockEntity.loadLines} does both faces): the
+     * same sender (the sign, permission level 2), on a server world only, as 1.20.6.
+     */
+    void resolve(final net.minecraft.tileentity.TileEntitySign sign) {
+        final net.minecraft.world.World world = sign.getWorld();
+        if (world == null || world.isRemote || world.getMinecraftServer() == null) {
+            return;
+        }
+        net.minecraft.command.ICommandSender sender = new net.minecraft.command.ICommandSender() {
+            @Override
+            public String getName() {
+                return "Sign";
+            }
+
+            @Override
+            public boolean canUseCommand(int permLevel, String commandName) {
+                return permLevel <= 2;
+            }
+
+            @Override
+            public net.minecraft.util.math.BlockPos getPosition() {
+                return sign.getPos();
+            }
+
+            @Override
+            public net.minecraft.util.math.Vec3d getPositionVector() {
+                return new net.minecraft.util.math.Vec3d(sign.getPos()).add(0.5D, 0.5D, 0.5D);
+            }
+
+            @Override
+            public net.minecraft.world.World getEntityWorld() {
+                return world;
+            }
+
+            @Override
+            public net.minecraft.server.MinecraftServer getServer() {
+                return world.getMinecraftServer();
+            }
+        };
+        for (int i = 0; i < 4; i++) {
+            try {
+                this.back[i] = net.minecraft.util.text.TextComponentUtils.processComponent(sender, this.back[i], null);
+            } catch (net.minecraft.command.CommandException e) {
+                // As vanilla: the line stays as written.
+            }
+        }
+        resolvedLoads++;
+    }
+
+    /** For the self-test: how many loads resolved a back face. */
+    public static volatile int resolvedLoads;
+
     /** Attached to each sign tile by {@link SignsContent#attach}. */
     static final class Provider implements ICapabilitySerializable<NBTTagCompound> {
         final SignData data = new SignData();
+        @Nullable
+        private final net.minecraft.tileentity.TileEntitySign sign;
+
+        Provider(@Nullable net.minecraft.tileentity.TileEntitySign sign) {
+            this.sign = sign;
+        }
 
         @Override
         public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing) {
@@ -139,6 +199,9 @@ public final class SignData {
         @Override
         public void deserializeNBT(NBTTagCompound nbt) {
             this.data.read(nbt);
+            if (this.sign != null) {
+                this.data.resolve(this.sign);
+            }
         }
     }
 }

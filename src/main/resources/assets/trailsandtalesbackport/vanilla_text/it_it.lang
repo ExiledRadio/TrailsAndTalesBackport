@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Villico zombi curato
 subtitles.entity.zombie_villager.cure=Villico zombi si agita
 subtitles.item.armor.equip=Armatura indossata
 subtitles.item.armor.equip_elytra=Battito d'elitre
+death.attack.genericKill=Qualcosa ha ucciso %1$s
+death.attack.genericKill.player=Qualcosa ha ucciso %1$s mentre lottava con %2$s
+death.attack.outsideBorder=%1$s ha oltrepassato i confini del mondo
+death.attack.outsideBorder.player=%1$s ha oltrepassato i confini del mondo mentre lottava con %2$s

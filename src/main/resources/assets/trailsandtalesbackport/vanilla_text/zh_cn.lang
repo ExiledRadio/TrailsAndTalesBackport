@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=僵尸村民：哀嚎
 subtitles.entity.zombie_villager.cure=僵尸村民：撕心裂肺
 subtitles.item.armor.equip=盔甲：被装备
 subtitles.item.armor.equip_elytra=鞘翅：沙沙作响
+death.attack.genericKill=%1$s被杀死了
+death.attack.genericKill.player=%1$s在与%2$s战斗时被杀死了
+death.attack.outsideBorder=%1$s脱离了这个世界
+death.attack.outsideBorder.player=%1$s在与%2$s战斗时脱离了这个世界

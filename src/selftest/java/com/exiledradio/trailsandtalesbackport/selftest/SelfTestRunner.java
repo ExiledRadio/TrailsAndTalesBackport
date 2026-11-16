@@ -64,6 +64,10 @@ public final class SelfTestRunner {
             new FlatSelfTest(),
             new WaterlogSelfTest(),
             new SmithingSelfTest(),
+            new LeftoversSelfTest(),
+            new EffectParticlesSelfTest(),
+            new FutureMcSelfTest(),
+            new Presentation1205SelfTest(),
     };
 
     private final List<String> wanted;

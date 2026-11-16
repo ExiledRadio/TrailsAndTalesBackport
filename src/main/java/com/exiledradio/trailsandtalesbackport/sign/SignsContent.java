@@ -87,7 +87,7 @@ public final class SignsContent {
     @SubscribeEvent
     public static void attach(AttachCapabilitiesEvent<TileEntity> event) {
         if (enabled() && event.getObject() instanceof TileEntitySign) {
-            event.addCapability(SignData.KEY, new SignData.Provider());
+            event.addCapability(SignData.KEY, new SignData.Provider((TileEntitySign) event.getObject()));
         }
     }
 

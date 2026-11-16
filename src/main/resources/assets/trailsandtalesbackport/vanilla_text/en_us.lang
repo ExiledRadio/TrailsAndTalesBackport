@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Zombie Villager vociferates
 subtitles.entity.zombie_villager.cure=Zombie Villager snuffles
 subtitles.item.armor.equip=Gear equips
 subtitles.item.armor.equip_elytra=Elytra rustle
+death.attack.genericKill=%1$s was killed
+death.attack.genericKill.player=%1$s was killed while fighting %2$s
+death.attack.outsideBorder=%1$s left the confines of this world
+death.attack.outsideBorder.player=%1$s left the confines of this world while fighting %2$s

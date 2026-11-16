@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=村人ゾンビが叫ぶ
 subtitles.entity.zombie_villager.cure=村人ゾンビが治療される
 subtitles.item.armor.equip=装備が装着される
 subtitles.item.armor.equip_elytra=エリトラが装着される
+death.attack.genericKill=%1$sは殺された
+death.attack.genericKill.player=%1$sは%2$sと戦いながら殺された
+death.attack.outsideBorder=%1$sはワールドの外側へと踏み出した
+death.attack.outsideBorder.player=%1$sは%2$sと戦いながらワールドの外側へと踏み出した

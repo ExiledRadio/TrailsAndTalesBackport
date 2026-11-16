@@ -1,0 +1,231 @@
+{
+  "stripped_oak_log": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    },
+    "12": {
+      "axis": "none"
+    }
+  },
+  "stripped_oak_wood": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    }
+  },
+  "stripped_spruce_log": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    },
+    "12": {
+      "axis": "none"
+    }
+  },
+  "stripped_spruce_wood": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    }
+  },
+  "stripped_birch_log": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    },
+    "12": {
+      "axis": "none"
+    }
+  },
+  "stripped_birch_wood": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    }
+  },
+  "stripped_jungle_log": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    },
+    "12": {
+      "axis": "none"
+    }
+  },
+  "stripped_jungle_wood": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    }
+  },
+  "stripped_acacia_log": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    },
+    "12": {
+      "axis": "none"
+    }
+  },
+  "stripped_acacia_wood": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    }
+  },
+  "stripped_dark_oak_log": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    },
+    "12": {
+      "axis": "none"
+    }
+  },
+  "stripped_dark_oak_wood": {
+    "0": {
+      "axis": "y"
+    },
+    "4": {
+      "axis": "x"
+    },
+    "8": {
+      "axis": "z"
+    }
+  },
+  "bamboo": {
+    "0": {
+      "leaves": "none",
+      "mature": "false",
+      "thick": "false"
+    },
+    "1": {
+      "leaves": "small",
+      "mature": "false",
+      "thick": "false"
+    },
+    "2": {
+      "leaves": "large",
+      "mature": "false",
+      "thick": "false"
+    },
+    "3": {
+      "leaves": "none",
+      "mature": "false",
+      "thick": "true"
+    },
+    "4": {
+      "leaves": "small",
+      "mature": "false",
+      "thick": "true"
+    },
+    "5": {
+      "leaves": "large",
+      "mature": "false",
+      "thick": "true"
+    },
+    "6": {
+      "leaves": "none",
+      "mature": "true",
+      "thick": "false"
+    },
+    "7": {
+      "leaves": "small",
+      "mature": "true",
+      "thick": "false"
+    },
+    "8": {
+      "leaves": "large",
+      "mature": "true",
+      "thick": "false"
+    },
+    "9": {
+      "leaves": "none",
+      "mature": "true",
+      "thick": "true"
+    },
+    "10": {
+      "leaves": "small",
+      "mature": "true",
+      "thick": "true"
+    },
+    "11": {
+      "leaves": "large",
+      "mature": "true",
+      "thick": "true"
+    }
+  },
+  "chain": {
+    "0": {}
+  },
+  "smithing_table": {
+    "2": {
+      "facing": "north"
+    },
+    "3": {
+      "facing": "south"
+    },
+    "4": {
+      "facing": "west"
+    },
+    "5": {
+      "facing": "east"
+    }
+  }
+}

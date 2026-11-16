@@ -36,6 +36,7 @@ public final class SignClient {
     public static void init() {
         if (SignsContent.enabled()) {
             MinecraftForge.EVENT_BUS.register(new SignClient());
+            MinecraftForge.EVENT_BUS.register(new WaxParticles());
         }
     }
 
@@ -90,6 +91,17 @@ public final class SignClient {
             } catch (RuntimeException e) {
                 TrailsAndTalesBackport.LOGGER.warn("Could not swap vanilla's sign editor for 1.20's", e);
             }
+        }
+    }
+
+    private static boolean wrapped;
+
+    /** Other mods' sign renderers, once every mod has bound its own: {@link OtherSignRenderer}. */
+    @SubscribeEvent
+    public void onClientTick(net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent event) {
+        if (!wrapped && event.phase == net.minecraftforge.fml.common.gameevent.TickEvent.Phase.START) {
+            wrapped = true;
+            OtherSignRenderer.wrapAll();
         }
     }
 }

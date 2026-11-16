@@ -40,6 +40,7 @@ public final class ClientSetup {
                 new com.exiledradio.trailsandtalesbackport.common.wood.client.WoodSignRenderer());
         // Streams add their client init calls below, one line each.
         com.exiledradio.trailsandtalesbackport.cherry.client.CherryClient.init();
+        com.exiledradio.trailsandtalesbackport.effectparticles.client.EffectParticlesClient.init();
         net.minecraftforge.fml.client.registry.ClientRegistry.bindTileEntitySpecialRenderer(
                 com.exiledradio.trailsandtalesbackport.hangingsign.TileHangingSign.class,
                 new com.exiledradio.trailsandtalesbackport.hangingsign.client.HangingSignRenderer());
@@ -52,8 +53,10 @@ public final class ClientSetup {
         com.exiledradio.trailsandtalesbackport.lookfeel.client.LookAndFeelClient.init();
         com.exiledradio.trailsandtalesbackport.heads.client.HeadsClient.init();
         com.exiledradio.trailsandtalesbackport.sign.client.SignClient.init();
-        com.exiledradio.trailsandtalesbackport.biome.client.CherryGroveClient.init();
         com.exiledradio.trailsandtalesbackport.smithing.client.SmithingClient.init();
+        com.exiledradio.trailsandtalesbackport.music.client.BiomeMusicClient.init();
+        com.exiledradio.trailsandtalesbackport.lookfeel.client.ArmPoses.register();
+        com.exiledradio.trailsandtalesbackport.presentation1205.client.Presentation1205Client.init();
     }
 
     /** Client post-init: work that must come after every mod's own setup (renderers that replace others'). */

@@ -104,6 +104,16 @@ public final class ModConfig {
     @Config.Comment("The piglin head, and mob heads on note blocks.")
     public static final Heads heads = new Heads();
 
+    @Setting.Feature(icon = "minecraft:comparator")
+    @Config.LangKey("config.trailsandtalesbackport.compat")
+    @Config.Comment("How this mod behaves alongside other mods.")
+    public static final Compat compat = new Compat();
+
+    @Setting.Feature(icon = "minecraft:compass")
+    @Config.LangKey("config.trailsandtalesbackport.presentation1205")
+    @Config.Comment("1.20.5's world warnings and Viossa: chunk failure and low disk space toasts, the low disk space and world recovery screens, and the Viossa language.")
+    public static final Presentation1205 presentation1205 = new Presentation1205();
+
     @Setting.Feature(icon = "minecraft:book")
     @Config.LangKey("config.trailsandtalesbackport.misc")
     @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
@@ -117,6 +127,18 @@ public final class ModConfig {
     // ------------------------------------------------------------------------------------------
     // Categories. Each stream owns exactly one.
     // ------------------------------------------------------------------------------------------
+
+    public static final class Compat {
+        @Config.RequiresMcRestart
+        @Config.Comment({"When another installed mod adds the same blocks and items (stripped logs, bamboo, chain): OURS hides the",
+                "other mod's, THEIRS hides ours, BOTH hides nothing."})
+        @Config.LangKey("config.trailsandtalesbackport.compat.duplicates")
+        public com.exiledradio.backportcore.duplicate.DuplicateBlocks.Keep duplicates = com.exiledradio.backportcore.duplicate.DuplicateBlocks.Keep.OURS;
+
+        @Config.Comment("Convert blocks and items left behind by another mod that added them, when that mod is removed from a world.")
+        @Config.LangKey("config.trailsandtalesbackport.compat.convertRemoved")
+        public boolean convertRemoved = true;
+    }
 
     public static final class Cherry {
         @Config.RequiresMcRestart
@@ -258,11 +280,44 @@ public final class ModConfig {
         public boolean enabled = true;
     }
 
+    public static final class Presentation1205 {
+        @Config.Comment("In singleplayer, a toast when a chunk fails to load or save (1.20.5).")
+        @Config.LangKey("config.trailsandtalesbackport.presentation1205.chunkToasts")
+        public boolean chunkToasts = true;
+
+        @Config.Comment("A warning screen when opening a singleplayer world with less than 64 MB free, and a toast when the game saves with that little space left (1.20.5).")
+        @Config.LangKey("config.trailsandtalesbackport.presentation1205.lowDiskSpace")
+        public boolean lowDiskSpace = true;
+
+        @Config.Comment("Worlds whose level.dat cannot be read show in the world list and open the Failed to Load World screen, which can restore level.dat_old, instead of 1.12.2 using level.dat_old silently (1.20.5).")
+        @Config.LangKey("config.trailsandtalesbackport.presentation1205.recoverWorld")
+        public boolean recoverWorld = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("Viossa in the language list (1.20.5).")
+        @Config.LangKey("config.trailsandtalesbackport.presentation1205.viossa")
+        public boolean viossa = true;
+    }
+
     public static final class Misc {
+        @Config.Comment({"1.20.5's effect particles: one particle per effect in its own color (ambient ones fainter), and fewer of",
+                "them, in place of one blended color. Shown while 1.20.5 or later is the newest installed version. Client only."})
+        @Setting.Client
+        @Config.LangKey("config.trailsandtalesbackport.misc.effectParticles")
+        public boolean effectParticles = true;
+
         @Config.RequiresMcRestart
         @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
         @Config.LangKey("config.trailsandtalesbackport.misc.enabled")
         public boolean enabled = true;
+
+        @Config.Comment("1.20's death messages: /kill reads \"was killed\" and the world border \"left the confines of this world\".")
+        @Config.LangKey("config.trailsandtalesbackport.misc.deathMessages")
+        public boolean deathMessages = true;
+
+        @Config.Comment("1.20's step sounds: walking on a carpet, moss carpet, snow layer or roots plays it and, muffled, the block below; on petals, a lily pad or glow lichen it plays that block.")
+        @Config.LangKey("config.trailsandtalesbackport.misc.stepSounds")
+        public boolean stepSounds = true;
     }
 
     public static final class LookAndFeel {
@@ -275,6 +330,11 @@ public final class ModConfig {
         @Config.Comment("1.20 adds A Familiar Room to the music that plays in every overworld biome.")
         @Config.LangKey("config.trailsandtalesbackport.lookAndFeel.gameMusic")
         public boolean gameMusic = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("1.20's biome music: Bromeliad, Crescent Dunes, Echo in the Wind and the older tracks in jungles, deserts, badlands, forests, old growth taigas and the cherry grove, and 1.20's lists in Caves & Cliffs' 1.18 biomes.")
+        @Config.LangKey("config.trailsandtalesbackport.lookAndFeel.biomeMusic")
+        public boolean biomeMusic = true;
     }
 
     // ------------------------------------------------------------------------------------------

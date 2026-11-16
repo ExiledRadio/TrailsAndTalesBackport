@@ -137,7 +137,8 @@ them the by-name way.
     of *Decided*'s copies, not built yet.
 *   Vibrations from pots and landing suspicious blocks: posted since stream Sc (`sensor.md`, Core's game events).
 *   Waterlogged pots: done in the waterlogging pass (`waterlog.md`).
-*   The third-person brushing arm pose (1.20's `ArmPose.BRUSH`).
+*   The third-person brushing arm pose (1.20's `ArmPose.BRUSH`): built on `tt-leftovers`
+    (`lookfeel.client.ArmPoses`, on Core's player model hook).
 
 ## Tested headlessly
 

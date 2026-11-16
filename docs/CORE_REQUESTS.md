@@ -268,6 +268,17 @@ These pieces are single slots, so they belong to Core; each has a small local sh
 8. **Narrator Hotkey (1.20.2, Accessibility, default ON).** Turning it off stops Ctrl + B toggling the narrator;
    1.12.2 handles Ctrl + B in `Minecraft.dispatchKeypresses` with no event to cancel. Needs a patch, and this mod
    has no coremod, so it is Core's (it already patches `processKeyF3`).
+   *Built* on Core's `core-tt` branch: `Presentation.NARRATOR_HOTKEY` (shown from 1.20.2, after Hide Splash Texts)
+   and patch P32 on `Minecraft.dispatchKeypresses`. Nothing is needed from this mod (it registers 1.20.2).
+9. **F3 + 3, the network charts (1.20.2).** 1.20.2's `DebugScreenOverlay` draws a bandwidth chart (bytes received a
+   tick, `BandwidthDebugChart`) and a ping chart (`PingDebugChart`, fed by `ServerboundPingRequestPacket` /
+   `ClientboundPongResponsePacket` every second while it shows) where F3 + 2's charts go. The debug screen and its
+   keys are Core's. Asked for: the two charts, the byte count from a Netty handler on the client's
+   `NetworkManager` channel and the ping from a Core packet (absent server side: the chart says so), behind a
+   `debugKey(Keyboard.KEY_3, null, ...)` (10.2's no-help-line form) this mod registers for 1.20.2.
+   *Built* on Core's `core-tt` branch (0fe79e5): F3 + 3 is Core's own key from 1.20.2 (`DebugKeys.coreKey`), with
+   1.20.6's bandwidth and ping charts and 1.20.2's "Debug charts" line. Nothing to register here. With 10.2 also
+   built there, F3 + 1 and F3 + 2 can pass `null` and drop this mod's help lines once that Core is released.
 
 ## 11. Biomes: `/locate biome` and Adventuring Time (stream G)
 

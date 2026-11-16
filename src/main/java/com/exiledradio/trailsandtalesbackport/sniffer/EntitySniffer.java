@@ -87,6 +87,14 @@ public class EntitySniffer extends EntityAnimal {
         this.brain = new SnifferBrain(this);
         ((net.minecraft.pathfinding.PathNavigateGround) getNavigator()).setCanSwim(true);
         setPathPriority(PathNodeType.WATER, -1.0F);
+        // 1.20's getMaxHeadYRot: 50 degrees (SnifferHead).
+        net.minecraftforge.fml.common.ObfuscationReflectionHelper.setPrivateValue(net.minecraft.entity.EntityLiving.class, this,
+                new SnifferHead.Look(this), "field_70749_g");
+    }
+
+    @Override
+    protected net.minecraft.entity.EntityBodyHelper createBodyHelper() {
+        return new SnifferHead.Body(this);
     }
 
     @Override

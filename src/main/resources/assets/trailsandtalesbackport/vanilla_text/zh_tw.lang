@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=殭屍村民喊叫
 subtitles.entity.zombie_villager.cure=殭屍村民抽鼻
 subtitles.item.armor.equip=穿上裝備
 subtitles.item.armor.equip_elytra=鞘翅沙沙聲
+death.attack.genericKill=%1$s 被殺死了
+death.attack.genericKill.player=%1$s 在與 %2$s 戰鬥時被殺死了
+death.attack.outsideBorder=%1$s 脫離了這個世界
+death.attack.outsideBorder.player=%1$s 在與 %2$s 戰鬥時脫離了這個世界
