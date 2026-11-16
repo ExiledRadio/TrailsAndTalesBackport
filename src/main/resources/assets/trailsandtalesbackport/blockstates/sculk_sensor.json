@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "sculk_sensor_phase=active": {
+      "model": "trailsandtalesbackport:sculk_sensor_active"
+    },
+    "sculk_sensor_phase=cooldown": {
+      "model": "trailsandtalesbackport:sculk_sensor_active"
+    },
+    "sculk_sensor_phase=inactive": {
+      "model": "trailsandtalesbackport:sculk_sensor_inactive"
+    }
+  }
+}

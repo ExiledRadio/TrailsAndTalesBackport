@@ -130,7 +130,7 @@ The archaeology stream is not on this branch, so the test registers a stand-in `
 
 ## Left out, and why
 
-*   **Game events** (roll up, unroll, shed, brush): they wait for Core's vibrations (`CORE_REQUESTS.md` 3).
+*   **Game events** (roll up, unroll, shed, brush): posted since stream Sc (`sensor.md`).
 *   **Wolf armor** and the scute's use in it: stream W.
 *   **26.x's baby armadillo model**: a 26.x change, not 1.20's.
 *   **1.20.5 renamed the turtle's scute to "Turtle Scute"**: that item is Update Aquatic's (and vanilla 1.12.2's

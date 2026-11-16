@@ -118,8 +118,8 @@ random: first seed after 420-4160 ticks). `-Pselftest=all`: **`pass=521 fail=0`*
 
 ## Left out, and why
 
-*   **Game events**: 1.20's digging shake and the egg's block-place event wait for Core's vibrations
-    (`CORE_REQUESTS.md` 3).
+*   **Game events**: 1.20's digging `entity_action` and the egg's `block_place` are posted since stream Sc
+    (`sensor.md`).
 *   **Bees growing the crops**: 1.20's bees grow both crops (the pitcher crop through its own grow, which places
     the top half). Buzzy Bees' growable hook only raises an `age` property, which would leave a torchflower
     crop at age 1 for ever and a pitcher crop without its top, so neither crop is registered with it. Needs a

@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.camel;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockConcretePowder;
 import net.minecraft.block.BlockSand;
@@ -571,6 +573,7 @@ public class EntityCamel extends AbstractHorse {
             return;
         }
         playSound(CamelContent.DASH, getSoundVolume(), getSoundPitch());
+        Vibrations.entity(this, GameEvent.ENTITY_ACTION);
         setDashing(true);
     }
 
@@ -611,6 +614,7 @@ public class EntityCamel extends AbstractHorse {
     public void sitDown() {
         if (!isCamelSitting()) {
             playSound(CamelContent.SIT, getSoundVolume(), getSoundPitch());
+            Vibrations.entity(this, GameEvent.ENTITY_ACTION);
             resetLastPoseChangeTick(-this.world.getTotalWorldTime());
         }
     }
@@ -618,11 +622,13 @@ public class EntityCamel extends AbstractHorse {
     public void standUp() {
         if (isCamelSitting()) {
             playSound(CamelContent.STAND, getSoundVolume(), getSoundPitch());
+            Vibrations.entity(this, GameEvent.ENTITY_ACTION);
             resetLastPoseChangeTick(this.world.getTotalWorldTime());
         }
     }
 
     public void standUpInstantly() {
+        Vibrations.entity(this, GameEvent.ENTITY_ACTION);
         resetLastPoseChangeTickToFullStand(this.world.getTotalWorldTime());
     }
 
@@ -745,6 +751,7 @@ public class EntityCamel extends AbstractHorse {
             this.world.playSound(null, this.posX, this.posY, this.posZ, CamelContent.EAT, getSoundCategory(), 1.0F,
                     1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F);
         }
+        Vibrations.entity(this, GameEvent.EAT);
         return true;
     }
 

@@ -3095,5 +3095,172 @@
       }
     ],
     "subtitle": "subtitles.block.generic.place"
+  },
+  "block.sculk_sensor.break": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/break1",
+        "pitch": 1.2,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/break2",
+        "pitch": 1.2,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/break3",
+        "pitch": 1.2,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/break4",
+        "pitch": 1.2,
+        "volume": 0.9
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/break5",
+        "pitch": 1.2,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.sculk_sensor.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/sculk/step1",
+      "trailsandtalesbackport:block/sculk/step2",
+      "trailsandtalesbackport:block/sculk/step3",
+      "trailsandtalesbackport:block/sculk/step4",
+      "trailsandtalesbackport:block/sculk/step5",
+      "trailsandtalesbackport:block/sculk/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.sculk_sensor.place": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/place1",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/place2",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/place3",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/place4",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/place5",
+        "pitch": 1.2,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.sculk_sensor.hit": {
+    "sounds": [
+      "trailsandtalesbackport:block/sculk/step1",
+      "trailsandtalesbackport:block/sculk/step2",
+      "trailsandtalesbackport:block/sculk/step3",
+      "trailsandtalesbackport:block/sculk/step4",
+      "trailsandtalesbackport:block/sculk/step5",
+      "trailsandtalesbackport:block/sculk/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.sculk_sensor.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/sculk/step1",
+      "trailsandtalesbackport:block/sculk/step2",
+      "trailsandtalesbackport:block/sculk/step3",
+      "trailsandtalesbackport:block/sculk/step4",
+      "trailsandtalesbackport:block/sculk/step5",
+      "trailsandtalesbackport:block/sculk/step6"
+    ]
+  },
+  "block.sculk_sensor.clicking": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking1",
+        "volume": 0.73
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking2",
+        "volume": 0.73
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking3",
+        "volume": 0.73
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking4",
+        "volume": 0.73
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking5",
+        "volume": 0.73
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking6",
+        "volume": 0.73
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.block.sculk_sensor.clicking"
+  },
+  "block.sculk_sensor.clicking_stop": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking_stop1",
+        "volume": 0.62
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking_stop2",
+        "volume": 0.62
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking_stop3",
+        "volume": 0.62
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking_stop4",
+        "volume": 0.62
+      },
+      {
+        "name": "trailsandtalesbackport:block/sculk_sensor/sculk_clicking_stop5",
+        "volume": 0.62
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.block.sculk_sensor.clicking_stop"
+  },
+  "block.amethyst_block.resonate": {
+    "sounds": [
+      {
+        "attenuation_distance": 48,
+        "name": "trailsandtalesbackport:block/amethyst/resonate1"
+      },
+      {
+        "attenuation_distance": 48,
+        "name": "trailsandtalesbackport:block/amethyst/resonate2"
+      },
+      {
+        "attenuation_distance": 48,
+        "name": "trailsandtalesbackport:block/amethyst/resonate3"
+      },
+      {
+        "attenuation_distance": 48,
+        "name": "trailsandtalesbackport:block/amethyst/resonate4"
+      }
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.block.amethyst_block.resonate"
   }
 }

@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.bookshelf;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
@@ -186,6 +188,7 @@ public class BlockChiseledBookshelf extends Block implements ITileEntityProvider
                 if (!player.inventory.addItemStackToInventory(book)) {
                     player.dropItem(book, false);
                 }
+                Vibrations.block(world, GameEvent.BLOCK_CHANGE, pos, player);
             }
             return true;
         }

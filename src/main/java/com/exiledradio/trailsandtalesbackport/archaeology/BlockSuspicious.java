@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.archaeology;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
@@ -145,6 +147,15 @@ public class BlockSuspicious extends BlockFalling {
             world.setBlockToAir(pos);
         }
         world.playEvent(2001, pos, Block.getStateId(fallingState));
+        // 1.20's onBrokenAfterFall: block_destroy at the falling block's center, the falling block as the source.
+        net.minecraft.entity.Entity falling = null;
+        for (EntityFallingBlock e : world.getEntitiesWithinAABB(EntityFallingBlock.class, new net.minecraft.util.math.AxisAlignedBB(pos).grow(0.5D))) {
+            if (e.getBlock() == fallingState) {
+                falling = e;
+                break;
+            }
+        }
+        Vibrations.block(world, GameEvent.BLOCK_DESTROY, pos, falling);
     }
 
     // --- drops -----------------------------------------------------------------------------------

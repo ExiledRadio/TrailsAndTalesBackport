@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.sign;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
@@ -89,6 +91,8 @@ public final class SignInteraction {
             if (StatList.getObjectUseStats(used) != null) {
                 player.addStat(StatList.getObjectUseStats(used));
             }
+            // 1.20: dye, glow ink, ink and wax all post block_change from the player.
+            Vibrations.block(sign.getWorld(), GameEvent.BLOCK_CHANGE, sign.getPos(), player, sign.getWorld().getBlockState(sign.getPos()));
             SignEditing.changed(sign);
             return EnumActionResult.SUCCESS;
         }

@@ -267,7 +267,7 @@ public final class ArchaeologyContent {
         if (state.getBlock() != decoratedPot || !isImpactProjectile(projectile) || !mayInteract(projectile, world, pos)) {
             return;
         }
-        decoratedPot.shatter(world, pos, state);
+        decoratedPot.shatter(world, pos, state, projectile);
     }
 
     static boolean isImpactProjectile(Entity e) {

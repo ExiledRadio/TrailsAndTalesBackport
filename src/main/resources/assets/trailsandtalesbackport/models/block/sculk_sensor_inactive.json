@@ -1,0 +1,6 @@
+{
+  "parent": "trailsandtalesbackport:block/sculk_sensor",
+  "textures": {
+    "tendrils": "trailsandtalesbackport:block/sculk_sensor_tendril_inactive"
+  }
+}

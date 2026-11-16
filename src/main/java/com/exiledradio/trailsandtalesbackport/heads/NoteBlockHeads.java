@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.heads;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -111,8 +113,17 @@ public final class NoteBlockHeads {
         return world.getBlockState(notePos).getBlock() == Blocks.NOTEBLOCK && isHead(world.getBlockState(notePos.up()));
     }
 
-    /** 1.20's {@code NoteBlock.triggerEvent} for a mob head: the sound at the block's center, pitch 1. */
+    /** {@link #play(World, BlockPos, net.minecraft.entity.Entity)} with no one playing it (redstone). */
     public static boolean play(World world, BlockPos notePos) {
+        return play(world, notePos, null);
+    }
+
+    /**
+     * 1.20's {@code playNote} and {@code NoteBlock.triggerEvent} for a mob head: {@code note_block_play} from the
+     * player (any head, the silent player head too), then the sound at the block's center, pitch 1.
+     */
+    public static boolean play(World world, BlockPos notePos, @Nullable net.minecraft.entity.Entity player) {
+        Vibrations.block(world, GameEvent.NOTE_BLOCK_PLAY, notePos, player);
         SoundEvent sound = soundFor(world, notePos);
         if (sound == null) {
             return false;
@@ -150,7 +161,7 @@ public final class NoteBlockHeads {
             return;
         }
         // Vanilla still tunes it (as 1.20's use does), then its own note stays silent under a block.
-        play(world, pos);
+        play(world, pos, event.getEntityPlayer());
     }
 
     /** 1.12.2's rule for whether a right click reaches the block: not sneaking, or sneaking empty-handed. */
@@ -172,7 +183,7 @@ public final class NoteBlockHeads {
         }
         BlockPos pos = event.getPos();
         if (hasHead(world, pos)) {
-            play(world, pos);
+            play(world, pos, event.getEntityPlayer());
         }
     }
 

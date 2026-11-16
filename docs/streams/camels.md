@@ -108,4 +108,4 @@ no self-test classes.
     Village & Pillage's terrain adapters (OTG and the others) beyond the `Village`/`OTGVillage` names.
 *   Leash offset: 1.12.2 draws the leash at its own fixed point, not 1.20's `getLeashOffset`.
 *   1.20 lets camels path over fences (`setCanWalkOverFences`); 1.12.2's pathfinder has no such option.
-*   Game events (vibrations) for sitting, standing, dashing and eating: Wild Update's, not hooked here.
+*   Game events (vibrations) for sitting, standing, dashing and eating: posted since stream Sc (`sensor.md`).

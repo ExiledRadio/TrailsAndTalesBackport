@@ -99,5 +99,5 @@ creeper. The dispenser: nothing in front keeps the head (not thrown); an armor s
     entity with the piglin's name; Nether Update's dev jar was not in `eclipse/mods`).
 *   Note blocks set by commands or structures after their chunk loaded (not tracked until the chunk reloads, or
     a head or note block is placed there); a power pulse that rises and falls within one tick.
-*   Sculk sensors and allays hearing a head-played note block: 1.20 sends a `note_block_play` game event; this
-    stream sends none (no family game-event bus to post it on yet).
+*   Sculk sensors and allays hearing a head-played note block: `note_block_play` is posted since stream Sc
+    (`sensor.md`).
