@@ -104,6 +104,11 @@ public final class ModConfig {
     @Config.Comment("The piglin head, and mob heads on note blocks.")
     public static final Heads heads = new Heads();
 
+    @Setting.Feature(icon = "minecraft:compass")
+    @Config.LangKey("config.trailsandtalesbackport.presentation1205")
+    @Config.Comment("1.20.5's world warnings and Viossa: chunk failure and low disk space toasts, the low disk space and world recovery screens, and the Viossa language.")
+    public static final Presentation1205 presentation1205 = new Presentation1205();
+
     @Setting.Feature(icon = "minecraft:book")
     @Config.LangKey("config.trailsandtalesbackport.misc")
     @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
@@ -236,6 +241,25 @@ public final class ModConfig {
         @Config.Comment("The piglin head and mob heads playing their mob's sound on note blocks.")
         @Config.LangKey("config.trailsandtalesbackport.heads.enabled")
         public boolean enabled = true;
+    }
+
+    public static final class Presentation1205 {
+        @Config.Comment("In singleplayer, a toast when a chunk fails to load or save (1.20.5).")
+        @Config.LangKey("config.trailsandtalesbackport.presentation1205.chunkToasts")
+        public boolean chunkToasts = true;
+
+        @Config.Comment("A warning screen when opening a singleplayer world with less than 64 MB free, and a toast when the game saves with that little space left (1.20.5).")
+        @Config.LangKey("config.trailsandtalesbackport.presentation1205.lowDiskSpace")
+        public boolean lowDiskSpace = true;
+
+        @Config.Comment("Worlds whose level.dat cannot be read show in the world list and open the Failed to Load World screen, which can restore level.dat_old, instead of 1.12.2 using level.dat_old silently (1.20.5).")
+        @Config.LangKey("config.trailsandtalesbackport.presentation1205.recoverWorld")
+        public boolean recoverWorld = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("Viossa in the language list (1.20.5).")
+        @Config.LangKey("config.trailsandtalesbackport.presentation1205.viossa")
+        public boolean viossa = true;
     }
 
     public static final class Misc {

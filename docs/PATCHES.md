@@ -12,3 +12,4 @@ Each patch's hook checks its own config and `Presentation.isAtLeast(...)`, so wi
 
 | # | Feature | Target (MCP / SRG) | Change | Why no event does it |
 | --- | --- | --- | --- | --- |
+| P20 | 1.20.5's chunk toasts (stream presentation1205) | `ChunkProviderServer.saveChunkData` / `func_73242_b` `(Lnet/minecraft/world/chunk/Chunk;)V` and `loadChunkFromFile` / `func_73239_e` `(II)Lnet/minecraft/world/chunk/Chunk;` | First line: `ChunkFailures.saving(chunk)` / `ChunkFailures.loading(x, z)`, which only remember the chunk (Forge-patched class, javac frames; parameters only) | The failures are caught and logged inside these methods; the log lines name no chunk, and no event fires before the catch |
