@@ -227,11 +227,15 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
   emerald, lapis, redstone, quartz, and with the family's items amethyst, copper and netherite. Stored as NBT
   (`Trim: {pattern, material}`), shown in the tooltip, drawn on the worn armor through our own armor layer
   added to every biped renderer (client), and on the item icon through a wrapped item model (client). Trim
-  textures are generated at build time from 1.20.6's grayscale trims and palettes (`tools/smithing`).
+  textures are built at runtime from 1.20.6's grayscale trims and palettes, as 1.20's paletted atlas (Core).
 - **Netherite upgrades need the template** when this mod is installed (1.20), on whichever smithing table is
-  in the game. This changes Village & Pillage's table and Core's registry: design in `CORE_REQUESTS.md` 1;
-  nothing is built against them until the user says yes.
+  in the game. This changes Village & Pillage's table and Core's registry: design in `CORE_REQUESTS.md` 1.
 - Advancements *Crafting a New Look*, *Smithing with Style*.
+- **Done** (`docs/streams/smithing.md`, branch `tt-smithing`; Core 1.4.0 on Core branch `core-armor-trims`):
+  Core's `SmithingTemplates` and `ArmorTrims` (with the client rendering), this mod's templates, patterns,
+  materials, 1.20 container and screen, loot and fallback loot, advancements, and the copper and amethyst
+  copies. Until Village & Pillage and Nether Update declare the template slot, right-clicking their tables
+  opens this mod's 1.20 container.
 
 ### Ar. Armadillo
 
@@ -363,9 +367,9 @@ ore-dictionary items, then our copy.
 | --- | --- | --- |
 | Stripped logs and wood of the six vanilla woods | Village & Pillage (Update Aquatic copies them too) | hanging sign recipes (replaces the plain-log stand-in in stream H) |
 | Bamboo plant, sapling, item, jungle bamboo | Village & Pillage | block of bamboo |
-| Smithing table (1.20 form) | Village & Pillage (Nether Update may copy it too) | templates and trims |
-| Copper ingot, with copper ore, raw copper and their generation (else it can't be got) | Caves & Cliffs | brush, copper trim |
-| Amethyst shard, with amethyst geodes, budding amethyst and clusters (its only vanilla source) | Caves & Cliffs | calibrated sensor, amethyst trim |
+| Smithing table (1.20 form) | Village & Pillage (Nether Update may copy it too) | templates and trims (done, stream Sm) |
+| Copper ingot, with copper ore, raw copper and their generation (else it can't be got); also not with Tricky Trials' copper | Caves & Cliffs | brush, copper trim (done, stream Sm) |
+| Amethyst shard, with amethyst geodes, budding amethyst, buds, clusters, calcite and smooth basalt (its only vanilla source) | Caves & Cliffs | calibrated sensor, amethyst trim (done, stream Sm) |
 | Sculk sensor | Wild Update | calibrated sculk sensor |
 | Chain | Nether Update | hanging signs (done) |
 
@@ -375,7 +379,7 @@ ore-dictionary items, then our copy.
 2. Streams that wait on nothing, one at a time on a `tt-<stream>` branch, merged into `main` when tested:
    **done**: C (cherry), B (bamboo wood and the bamboo plant copy), K (chiseled bookshelf), H (hanging signs,
    chain and stripped log copies), Bo (boats and rafts); see `docs/streams/`. **Next**: A, N, Ar, W, Hd, X.
-3. G, Sg, Sm, Sc and the copies above (all decided 2026-11-07); St's trail ruins
+3. G, Sg, Sm (**done**, with the copper, amethyst and smithing table copies), Sc and the other copies above (all decided 2026-11-07); St's trail ruins
    and ocean ruins when Core has the template loader (desert pyramid and well and the template loot can go
    before it).
 4. Languages through the family tool; waterlogging when Core's adapter exists.

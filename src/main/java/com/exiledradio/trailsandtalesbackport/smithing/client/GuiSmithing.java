@@ -148,8 +148,9 @@ public class GuiSmithing extends GuiContainer {
     }
 
     /**
-     * The armor stand as 1.20 draws it: no base plate, arms shown, body turned 30 degrees toward the inventory, seen a
-     * little from above (25 degrees), not following the mouse.
+     * The armor stand as 1.20's {@code renderEntityInInventory} draws it: translated to (x, y, 50), scaled by
+     * (scale, scale, -scale), turned by 1.20's {@code ARMOR_STAND_ANGLE} (25 degrees about X, then 180 about Z), body
+     * at 210 degrees (turned 30 degrees toward the inventory), not following the mouse; no base plate, arms shown.
      */
     private void drawStand(int x, int y, int scale) {
         EntityArmorStand e = this.stand;
@@ -159,15 +160,15 @@ public class GuiSmithing extends GuiContainer {
         GlStateManager.enableColorMaterial();
         GlStateManager.pushMatrix();
         GlStateManager.translate((float) x, (float) y, 50.0F);
-        GlStateManager.scale((float) -scale, (float) scale, (float) scale);
+        GlStateManager.scale((float) scale, (float) scale, (float) -scale);
+        GlStateManager.rotate(25.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
         GlStateManager.rotate(135.0F, 0.0F, 1.0F, 0.0F);
         RenderHelper.enableStandardItemLighting();
         GlStateManager.rotate(-135.0F, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotate(-25.0F, 1.0F, 0.0F, 0.0F);
-        e.renderYawOffset = e.prevRenderYawOffset = 30.0F;
-        e.rotationYaw = e.prevRotationYaw = 30.0F;
-        e.rotationYawHead = e.prevRotationYawHead = 30.0F;
+        e.renderYawOffset = e.prevRenderYawOffset = 210.0F;
+        e.rotationYaw = e.prevRotationYaw = 210.0F;
+        e.rotationYawHead = e.prevRotationYawHead = 210.0F;
         e.rotationPitch = e.prevRotationPitch = 25.0F;
         RenderManager rm = Minecraft.getMinecraft().getRenderManager();
         rm.setPlayerViewY(180.0F);

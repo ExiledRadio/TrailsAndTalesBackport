@@ -25,6 +25,15 @@ public final class SmithingClient {
 
     public static void init() {
         MinecraftForge.EVENT_BUS.register(new SmithingClient());
+        // `runClient -Pselftest=trimrender`: the client check, reached by name (a release jar has no test classes).
+        String selftest = System.getProperty(TrailsAndTalesBackport.MOD_ID + ".selftest");
+        if (selftest != null && selftest.contains("trimrender")) {
+            try {
+                Class.forName("com.exiledradio.trailsandtalesbackport.selftest.ClientSmithingTest").getMethod("register").invoke(null);
+            } catch (ReflectiveOperationException e) {
+                TrailsAndTalesBackport.LOGGER.error("CLIENT SELFTEST DONE pass=0 fail=1: the test classes are not in this build", e);
+            }
+        }
     }
 
     /** For the GUI handler; returns {@code Object} so the common class names no client type. */
