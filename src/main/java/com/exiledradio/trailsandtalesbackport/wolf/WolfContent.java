@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.wolf;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import com.exiledradio.trailsandtalesbackport.ModConfig;
 import com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport;
 import com.exiledradio.trailsandtalesbackport.common.Content;
@@ -388,6 +390,8 @@ public final class WolfContent {
                     stack.shrink(1);
                 }
                 wolf.playSound(ARMOR_EQUIP_WOLF, 1.0F, 1.0F);
+                // 1.20.5's setBodyArmorItem -> onEquipItem: equip, from the wolf.
+                Vibrations.entity(wolf, GameEvent.EQUIP);
             }
             done(event);
             return;
@@ -399,6 +403,7 @@ public final class WolfContent {
                 wolf.playSound(ARMOR_UNEQUIP_WOLF, 1.0F, 1.0F);
                 ItemStack armor = data.armor;
                 WolfArmor.set(wolf, data, ItemStack.EMPTY);
+                Vibrations.entity(wolf, GameEvent.UNEQUIP);
                 wolf.entityDropItem(armor, 0.0F);
                 grant(player, REMOVE_WOLF_ARMOR, "remove_wolf_armor");
             }

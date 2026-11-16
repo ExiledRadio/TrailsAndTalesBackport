@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.archaeology;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
@@ -221,9 +223,11 @@ public class BlockDecoratedPot extends Block {
             world.playSound(null, pos, this.insert, SoundCategory.BLOCKS, 1.0F, 0.7F + 0.5F * fill);
             ArchaeologyNetwork.dustPlume(world, pos);
             pot.changed();
+            Vibrations.block(world, GameEvent.BLOCK_CHANGE, pos, player);
         } else {
             world.playSound(null, pos, this.insertFail, SoundCategory.BLOCKS, 1.0F, 1.0F);
             pot.wobble(TileDecoratedPot.Wobble.NEGATIVE);
+            Vibrations.block(world, GameEvent.BLOCK_CHANGE, pos, player);
         }
         return true;
     }
@@ -314,10 +318,16 @@ public class BlockDecoratedPot extends Block {
         super.breakBlock(world, pos, state);
     }
 
-    /** A projectile shatters it ({@link ArchaeologyContent} calls this from the impact event). */
-    public void shatter(World world, BlockPos pos, IBlockState state) {
+    /**
+     * A projectile shatters it ({@link ArchaeologyContent} calls this from the impact event): 1.20's
+     * {@code destroyBlock(pos, true, projectile)}, which also posts {@code block_destroy} from the projectile.
+     */
+    public void shatter(World world, BlockPos pos, IBlockState state, @Nullable net.minecraft.entity.Entity projectile) {
         world.setBlockState(pos, state.withProperty(CRACKED, true), 4);
-        world.destroyBlock(pos, true);
+        IBlockState cracked = world.getBlockState(pos);
+        if (world.destroyBlock(pos, true)) {
+            Vibrations.block(world, GameEvent.BLOCK_DESTROY, pos, projectile, cracked);
+        }
     }
 
     @Override

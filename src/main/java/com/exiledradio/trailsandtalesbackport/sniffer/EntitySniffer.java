@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.sniffer;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityAgeable;
@@ -325,6 +327,10 @@ public class EntitySniffer extends EntityAnimal {
         switch (getState()) {
             case DIGGING:
                 emitDiggingParticles();
+                // 1.20: every 10 ticks of digging, at the head's block (outside the particles' time window).
+                if (!this.world.isRemote && this.ticksExisted % 10 == 0) {
+                    Vibrations.block(this.world, GameEvent.ENTITY_ACTION, headBlock(), this);
+                }
                 dropSeed();
                 break;
             case SEARCHING:

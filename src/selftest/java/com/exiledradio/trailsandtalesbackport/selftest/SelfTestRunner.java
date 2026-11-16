@@ -60,6 +60,7 @@ public final class SelfTestRunner {
             new HeadsSelfTest(),
             new SignSelfTest(),
             new CherryGroveSelfTest(),
+            new SensorSelfTest(),
             new FlatSelfTest(),
     };
 
@@ -116,7 +117,9 @@ public final class SelfTestRunner {
     private static void dumpStates(File file) throws Exception {
         PrintWriter out = new PrintWriter(file, "UTF-8");
         for (Block block : ForgeRegistries.BLOCKS) {
-            if (!TrailsAndTalesBackport.MOD_ID.equals(block.getRegistryName().getNamespace())) {
+            // Test-only stand-ins (classes of this package) have no assets and never reach a release.
+            if (!TrailsAndTalesBackport.MOD_ID.equals(block.getRegistryName().getNamespace())
+                    || block.getClass().getName().startsWith(SelfTestRunner.class.getPackage().getName())) {
                 continue;
             }
             String kind = Content.multipartBlocks().contains(block) ? "multipart" : "variants";

@@ -120,6 +120,13 @@ StructureHooks.blockEntityData(String structureName, BlockEntityFiller f); // lo
 
 ## 3. Vibrations (game events)
 
+**Done** in Backport Core 1.4.0 (`gameevent.*`, branch `core-game-events`): Wild Update Backport's system moved
+there (Wild switched on `wu-core-game-events`, its self-tests unchanged at 2435/0), with 1.20.6's rules added
+(`VibrationSystem`, `GameEvents.require("1.20", ...)`, 1.20's events and tags, mount/dismount/unequip/wolf-shake
+emitters, `SensorActivation` for resonance). The names below are what was asked; Core's `docs/API.md` has the
+real ones (`GameEvents.emit`/`add`, `GameEvent.frequency()`). Every event listed below is posted now
+(`docs/streams/sensor.md`); the local shim was never needed.
+
 Shared with Wild Update's sculk sensor, shrieker, warden and allay. The calibrated sculk sensor listens to the
 same events.
 

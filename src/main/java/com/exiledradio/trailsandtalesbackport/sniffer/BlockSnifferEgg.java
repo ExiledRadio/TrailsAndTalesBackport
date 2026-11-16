@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.sniffer;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -126,6 +128,7 @@ public class BlockSnifferEgg extends Block {
         if (boost) {
             world.addBlockEvent(pos, this, EVENT_BOOST_PARTICLES, 0);
         }
+        Vibrations.block(world, GameEvent.BLOCK_PLACE, pos, null, state);
         world.scheduleUpdate(pos, this, stageDelay(world, pos));
     }
 

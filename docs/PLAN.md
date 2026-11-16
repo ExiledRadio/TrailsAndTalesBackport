@@ -257,7 +257,9 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
 ### Sc. Calibrated sculk sensor (Decided 4)
 
 - 1 sculk sensor + 3 amethyst shards; redstone into its back side sets the one vibration frequency it listens
-  to; range 16, active 10 ticks. It is built on Wild Update's vibration system.
+  to; range 16, active 10 ticks. On Backport Core 1.4.0's game events, with 1.20.6's vibration rules; amethyst
+  resonance for every backport's sensors; this mod's game events from every stream. **Done** on `tt-sensor`
+  (`docs/streams/sensor.md`).
 
 ### Hd. Heads
 
@@ -351,8 +353,8 @@ ore-dictionary items, then our copy.
    are both absent, this mod registers its own copy of the table (Rule 1), already in 1.20's form.
 3. **Fallback loot** only for items whose real structure's owner is absent (so everything can be obtained);
    with the owner installed, only vanilla's sources.
-4. **Calibrated sculk sensor** through Core's shared game-event system (`CORE_REQUESTS.md` 3, local shim
-   until then); when Wild Update is absent, this mod copies the sculk sensor too, so the calibrated one works.
+4. **Calibrated sculk sensor** through Core's shared game-event system (`CORE_REQUESTS.md` 3, done in Core
+   1.4.0); when Wild Update is absent, this mod copies the sculk sensor too, so the calibrated one works.
 5. **Bamboo**: copy Village & Pillage's bamboo plant, sapling, item and jungle generation when it is absent.
 6. **Signs**: editing and back text on every sign, Village & Pillage's included (as a request to that mod);
    a patch is fine where it is cleaner than replacing renderers.
@@ -366,7 +368,7 @@ ore-dictionary items, then our copy.
 | Smithing table (1.20 form) | Village & Pillage (Nether Update may copy it too) | templates and trims |
 | Copper ingot, with copper ore, raw copper and their generation (else it can't be got) | Caves & Cliffs | brush, copper trim |
 | Amethyst shard, with amethyst geodes, budding amethyst and clusters (its only vanilla source) | Caves & Cliffs | calibrated sensor, amethyst trim |
-| Sculk sensor | Wild Update | calibrated sculk sensor |
+| Sculk sensor (done, stream Sc; creative-only without Wild Update, see `sensor.md`) | Wild Update | calibrated sculk sensor |
 | Chain | Nether Update | hanging signs (done) |
 
 ## Order
@@ -375,7 +377,8 @@ ore-dictionary items, then our copy.
 2. Streams that wait on nothing, one at a time on a `tt-<stream>` branch, merged into `main` when tested:
    **done**: C (cherry), B (bamboo wood and the bamboo plant copy), K (chiseled bookshelf), H (hanging signs,
    chain and stripped log copies), Bo (boats and rafts); see `docs/streams/`. **Next**: A, N, Ar, W, Hd, X.
-3. G, Sg, Sm, Sc and the copies above (all decided 2026-11-07); St's trail ruins
+3. G, Sg, Sm, Sc and the copies above (all decided 2026-11-07; Sc done on `tt-sensor`, which needs Core's
+   `core-game-events` (1.4.0) and, with Wild Update installed, Wild's `wu-core-game-events`); St's trail ruins
    and ocean ruins when Core has the template loader (desert pyramid and well and the template loot can go
    before it).
 4. Languages through the family tool; waterlogging when Core's adapter exists.

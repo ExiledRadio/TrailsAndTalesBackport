@@ -226,7 +226,7 @@ public final class ModConfig {
 
     public static final class CalibratedSculkSensor {
         @Config.RequiresMcRestart
-        @Config.Comment("The calibrated sculk sensor. Off, nothing is registered.")
+        @Config.Comment("The calibrated sculk sensor, the sculk sensor when Wild Update Backport is absent, and 1.20's vibrations (amethyst resonance, the game events of this mod's blocks and mobs). Off, nothing is registered.")
         @Config.LangKey("config.trailsandtalesbackport.calibratedSculkSensor.enabled")
         public boolean enabled = true;
     }

@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.armadillo;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -188,6 +190,7 @@ public class EntityArmadillo extends EntityAnimal {
         if (!isScared()) {
             stopInPlace();
             resetInLove();
+            Vibrations.entity(this, GameEvent.ENTITY_ACTION);
             playSound(ArmadilloContent.ROLL, getSoundVolume(), getSoundPitch());
             switchToState(ArmadilloState.ROLLING);
         }
@@ -196,6 +199,7 @@ public class EntityArmadillo extends EntityAnimal {
     /** 1.20.5's {@code rollOut}: the unroll-finish sound, idle. */
     public void rollOut() {
         if (isScared()) {
+            Vibrations.entity(this, GameEvent.ENTITY_ACTION);
             playSound(ArmadilloContent.UNROLL_FINISH, getSoundVolume(), getSoundPitch());
             switchToState(ArmadilloState.IDLE);
         }
@@ -316,6 +320,7 @@ public class EntityArmadillo extends EntityAnimal {
         if (isEntityAlive() && --this.scuteTime <= 0 && !isChild() && this.world.getGameRules().getBoolean("doMobLoot")) {
             if (dropLoot(SHED_LOOT, null)) {
                 playSound(ArmadilloContent.SCUTE_DROP, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                Vibrations.entity(this, GameEvent.ENTITY_PLACE);
             }
             this.scuteTime = pickNextScuteDropTime();
         }
@@ -429,6 +434,7 @@ public class EntityArmadillo extends EntityAnimal {
         }
         if (!this.world.isRemote) {
             dropLoot(BRUSH_LOOT, player);
+            Vibrations.entity(this, GameEvent.ENTITY_INTERACT);
             playSound(ArmadilloContent.BRUSH, 1.0F, 1.0F);
         }
         return true;

@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.bookshelf;
 
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -121,6 +123,8 @@ public class TileChiseledBookshelf extends TileEntity {
             IBlockState state = world.getBlockState(this.pos);
             world.notifyBlockUpdate(this.pos, state, state, 3);
             world.updateComparatorOutputLevel(this.pos, state.getBlock());
+            // 1.20's updateState: block_change for any change of the books (players, hoppers), the new state as context.
+            Vibrations.block(world, GameEvent.BLOCK_CHANGE, this.pos, null, state.getActualState(world, this.pos));
         }
     }
 
