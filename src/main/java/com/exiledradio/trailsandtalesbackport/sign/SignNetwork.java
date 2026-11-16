@@ -19,6 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
  *   <li>30, {@link Update} (to the server): 1.20's {@code ServerboundSignUpdatePacket} - position, face,
  *       four lines of at most 384 characters.</li>
  *   <li>31, {@link Open} (to the client): 1.20's {@code ClientboundOpenSignEditorPacket} - position, face.</li>
+ *   <li>32, {@link WaxOn} (to the clients within 64 blocks): level event 3003's particles - position.</li>
  * </ul>
  * The client handler runs through {@code sign.client.SignClient}, named only inside a method body.
  */
@@ -26,6 +27,7 @@ public final class SignNetwork {
 
     public static final int UPDATE = 30;
     public static final int OPEN = 31;
+    public static final int WAX_ON = 32;
 
     private SignNetwork() {
     }
@@ -36,6 +38,7 @@ public final class SignNetwork {
         }
         channel.registerMessage(Update.Handler.class, Update.class, UPDATE, Side.SERVER);
         channel.registerMessage(Open.Handler.class, Open.class, OPEN, Side.CLIENT);
+        channel.registerMessage(WaxOn.Handler.class, WaxOn.class, WAX_ON, Side.CLIENT);
     }
 
     public static final class Update implements IMessage {
@@ -115,6 +118,36 @@ public final class SignNetwork {
             @Override
             public IMessage onMessage(Open message, MessageContext ctx) {
                 com.exiledradio.trailsandtalesbackport.sign.client.SignClient.open(message.pos, message.front);
+                return null;
+            }
+        }
+    }
+
+    /** Level event 3003's particles: wax-on particles on every face of the waxed block. */
+    public static final class WaxOn implements IMessage {
+        public BlockPos pos = BlockPos.ORIGIN;
+
+        public WaxOn() {
+        }
+
+        public WaxOn(BlockPos pos) {
+            this.pos = pos;
+        }
+
+        @Override
+        public void fromBytes(ByteBuf buf) {
+            this.pos = BlockPos.fromLong(buf.readLong());
+        }
+
+        @Override
+        public void toBytes(ByteBuf buf) {
+            buf.writeLong(this.pos.toLong());
+        }
+
+        public static final class Handler implements IMessageHandler<WaxOn, IMessage> {
+            @Override
+            public IMessage onMessage(WaxOn message, MessageContext ctx) {
+                com.exiledradio.trailsandtalesbackport.sign.client.WaxParticles.receive(message.pos);
                 return null;
             }
         }

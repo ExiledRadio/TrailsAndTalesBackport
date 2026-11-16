@@ -10,6 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
@@ -140,6 +141,10 @@ public final class SignInteraction {
                 return false;
             }
             world.playSound(null, sign.getPos(), SignsContent.HONEYCOMB_WAX_ON, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            BlockPos at = sign.getPos();
+            com.exiledradio.trailsandtalesbackport.network.NetworkHandler.channel.sendToAllAround(new SignNetwork.WaxOn(at),
+                    new net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint(world.provider.getDimension(),
+                            at.getX() + 0.5D, at.getY() + 0.5D, at.getZ() + 0.5D, 64.0D));
             return true;
         }
         if (!SignSides.hasMessage(sign, front)) {
