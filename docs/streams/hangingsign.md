@@ -54,4 +54,4 @@ Package `hangingsign`. Config `hangingSigns` (`enabled`).
 ## Left for other streams
 
 *   Text on the back face, dyeing and glow ink, waxing: stream Sg (1.20's hanging sign edit screen too).
-*   Waterlogging (every hanging sign and the chain): Core's adapter.
+*   Waterlogging (every hanging sign and the chain): done (`waterlog.md`).

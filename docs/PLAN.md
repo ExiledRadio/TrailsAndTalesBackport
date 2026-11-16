@@ -37,7 +37,7 @@ What we need from other family mods, and what happens without them:
 | Stripped logs and wood (hanging sign recipes) | Village & Pillage (1.13 content) | Update Aquatic's copies if installed; otherwise our own identical copies, with axe stripping |
 | The five woods' standing signs | Village & Pillage | Not needed by us |
 | Honeycomb (sign waxing) | Buzzy Bees (1.15) | Waxing waits for Buzzy Bees: honeycomb's only source is bees, so a copy of the item alone could never be got (see the note below) |
-| Chains (hanging sign recipe) | Nether Update (1.16) | We register an identical copy (`chain`, axis property only until waterlogging) |
+| Chains (hanging sign recipe) | Nether Update (1.16) | We register an identical copy (`chain`, axis property; waterloggable through Core, as Nether Update's) |
 | Crimson and warped stems, stripped stems | Nether Update | No crimson or warped hanging signs |
 | Netherite ingot and gear; bastions; piglins | Nether Update (or any netherite mod Core finds) | The netherite upgrade template comes from fallback loot but has nothing to upgrade; netherite trims only with some netherite mod; no piglin head without piglins |
 | Amethyst shard, copper ingot | Caves & Cliffs (1.17/1.18) | Our identical copies, with what makes them obtainable (geodes; copper ore) - see *Copies this adds* |
@@ -141,7 +141,7 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
   16 rotations when attached; not placed unsupported; smaller text area; editing, dyeing and (with Caves &
   Cliffs) glow ink like signs; front and back text as 1.20 signs. Tile entity and renderer of our own.
 - **Chain** copy when Nether Update is absent.
-- Waterlogging later (list at the end).
+- Waterlogging: done (`docs/streams/waterlog.md`).
 
 ### Sg. 1.20 sign changes (Decided 6)
 
@@ -329,11 +329,15 @@ Exactly as Update Aquatic Backport's plan:
   dev runtime), removed again afterwards.
 - No mixins, no coremod, no ASM. A part that cannot be done without patching stops and goes to the user.
 
-## Waterlogging (later pass, through Core's `Waterloggable` adapter)
+## Waterlogging (done: `docs/streams/waterlog.md`, branch `tt-waterlog`)
 
-Blocks 1.20 makes waterloggable: every hanging sign and wall hanging sign, the chain copy, the calibrated
-sculk sensor, the decorated pot, cherry/bamboo signs, stairs, slabs, fences, trapdoors (like every wood),
-pink petals no, sniffer egg no.
+Through Backport Core's `Waterloggable` over Fluidlogged API 3.3.3 (optional; without it everything is dry).
+Waterloggable, as 1.20.6: every hanging sign and wall hanging sign, the chain copy, the decorated pot,
+cherry/bamboo signs and wall signs, stairs (bamboo mosaic too), slabs (not double), fences, trapdoors, and
+cherry leaves (every 1.19+ leaf). Dry, as 1.20.6: doors, fence gates, buttons, pressure plates, planks, logs,
+pink petals, sniffer egg, sapling, bamboo, the chiseled bookshelf, suspicious blocks, heads. Cherry trees keep
+water sources in their leaves. **The calibrated sculk sensor** (and the sculk sensor copy) are stream Sc's:
+they implement `Waterloggable` there (a waterlogged sensor makes no clicking sound, as Wild Update's).
 
 ## Decided (the user, 2026-11-07)
 
@@ -378,7 +382,7 @@ ore-dictionary items, then our copy.
 3. G, Sg, Sm, Sc and the copies above (all decided 2026-11-07); St's trail ruins
    and ocean ruins when Core has the template loader (desert pyramid and well and the template loot can go
    before it).
-4. Languages through the family tool; waterlogging when Core's adapter exists.
+4. Languages through the family tool; waterlogging (**done**, `docs/streams/waterlog.md`).
 
 ## Later
 

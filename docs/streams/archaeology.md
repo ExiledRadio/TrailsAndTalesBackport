@@ -136,7 +136,7 @@ them the by-name way.
 *   Without Caves & Cliffs (or another mod's `ingotCopper`) the brush has no recipe: the copper ingot copy is one
     of *Decided*'s copies, not built yet.
 *   Vibrations from pots and landing suspicious blocks: Core's game events (`CORE_REQUESTS.md` 3).
-*   Waterlogged pots: the later waterlogging pass.
+*   Waterlogged pots: done in the waterlogging pass (`waterlog.md`).
 *   The third-person brushing arm pose (1.20's `ArmPose.BRUSH`).
 
 ## Tested headlessly

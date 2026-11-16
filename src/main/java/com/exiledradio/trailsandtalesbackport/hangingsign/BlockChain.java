@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.hangingsign;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -16,12 +18,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * 1.16's chain, Nether Update's block (family Rule 1): registered only when no installed mod provides one,
- * for the hanging sign recipe. Its states are 1.16's without waterlogging: {@code axis} x, y, z, in 1.12.2's
- * pillar metadata (y 0, x 4, z 8). Nether Update's copy must match, so the owner can rename ours in place.
+ * for the hanging sign recipe. Its states are 1.16's: {@code axis} x, y, z, in 1.12.2's pillar metadata (y 0,
+ * x 4, z 8). Nether Update's copy must match, so the owner can rename ours in place. It is {@link Waterloggable}
+ * as 1.16's and Nether Update's are; the water is Fluidlogged API's (not a block state property), so no state
+ * changes, and without Fluidlogged API it is dry.
  *
  * <p>Numbers are 1.16's: hardness 5, blast resistance 6, metal map color, 3/16 thick, chain sounds.
  */
-public class BlockChain extends BlockRotatedPillar {
+public class BlockChain extends BlockRotatedPillar implements Waterloggable {
 
     private static final double LO = 6.5D / 16;
     private static final double HI = 9.5D / 16;

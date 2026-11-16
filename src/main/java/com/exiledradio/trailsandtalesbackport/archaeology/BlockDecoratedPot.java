@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.archaeology;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
@@ -55,9 +57,11 @@ import java.util.function.Predicate;
  *       its four sherds and bricks with the shatter sound; otherwise it drops itself with its faces. A
  *       projectile shatters it too. A piston breaks it (drops itself). Whatever it holds spills out.</li>
  *   <li>A comparator reads how full it is.</li>
+ *   <li>{@link Waterloggable}, as 1.20's (with Fluidlogged API; dry without it); broken or shattered, it leaves
+ *       its water.</li>
  * </ul>
  */
-public class BlockDecoratedPot extends Block {
+public class BlockDecoratedPot extends Block implements Waterloggable {
 
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
     public static final PropertyBool CRACKED = PropertyBool.create("cracked");

@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.cherry;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -41,10 +43,12 @@ import java.util.Set;
  *   <li><b>Drops</b> ({@code blocks/cherry_leaves} in 1.20.6): a sapling at 5% (6.25%, 8.33%, 10% with
  *       Fortune), 1-2 sticks at 2% (2.2%, 2.5%, 3.3%, 10%), no apples; itself with shears or Silk Touch.</li>
  *   <li><b>Falling petals</b> under leaves with no full block below, one time in ten (client).</li>
+ *   <li><b>Waterlogged</b> ({@link Waterloggable}, as every 1.19+ leaf), with Fluidlogged API; dry without it.
+ *       Placed by a growing tree into a water source, they keep it.</li>
  * </ul>
  * Fancy and fast graphics follow vanilla's own leaves, which the game switches with the option.
  */
-public class BlockCherryLeaves extends BlockLeaves {
+public class BlockCherryLeaves extends BlockLeaves implements Waterloggable {
 
     private static final float[] SAPLING = {0.05F, 0.0625F, 0.083333336F, 0.1F};
     private static final float[] STICKS = {0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F};

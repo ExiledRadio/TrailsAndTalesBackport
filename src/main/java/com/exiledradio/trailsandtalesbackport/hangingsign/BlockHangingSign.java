@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.hangingsign;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.BlockSign;
 import net.minecraft.block.SoundType;
@@ -28,8 +30,11 @@ import java.util.Random;
  * <p>Both extend {@link BlockSign}, so editing, commands in sign text and every {@code instanceof} check
  * work as for any sign; they are not {@code BlockStandingSign}/{@code BlockWallSign}, whose support rules
  * (a block below, a block behind) are not these.
+ *
+ * <p>Both are {@link Waterloggable}, as 1.20's {@code CeilingHangingSignBlock} and {@code WallHangingSignBlock}
+ * are (with Fluidlogged API; dry without it). One that loses its support drops and leaves its water.
  */
-public abstract class BlockHangingSign extends BlockSign {
+public abstract class BlockHangingSign extends BlockSign implements Waterloggable {
 
     final HangingWood wood;
     Item item;

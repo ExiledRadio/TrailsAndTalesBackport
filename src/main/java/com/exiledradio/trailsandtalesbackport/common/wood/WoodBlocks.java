@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.common.wood;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockButtonWood;
 import net.minecraft.block.BlockDoor;
@@ -40,6 +42,10 @@ import java.util.Random;
  * <p>Numbers are vanilla's wood: hardness 2 and blast resistance 3 (15 in 1.12.2's tripled scale) for
  * planks, logs, stairs, slabs, fences and gates; 3 for doors and trapdoors; 0.5 for buttons and pressure
  * plates.
+ *
+ * <p>Stairs, slabs (not a double slab), fences and trapdoors are {@link Waterloggable}, as 1.20's are
+ * ({@code SimpleWaterloggedBlock}); doors, fence gates, buttons, pressure plates, planks and logs are not.
+ * The water is Fluidlogged API's, when it is installed; without it they are as dry as 1.12.2's.
  */
 public final class WoodBlocks {
 
@@ -108,7 +114,7 @@ public final class WoodBlocks {
         }
     }
 
-    public static class Stairs extends BlockStairs {
+    public static class Stairs extends BlockStairs implements Waterloggable {
         public Stairs(WoodKind kind, IBlockState planks) {
             super(planks);
             setHardness(2.0F);
@@ -124,7 +130,7 @@ public final class WoodBlocks {
      * {@link #isDouble()} is answered by the subclass, since {@code BlockSlab}'s constructor calls it
      * before any field here is assigned.
      */
-    public abstract static class Slab extends BlockSlab {
+    public abstract static class Slab extends BlockSlab implements Waterloggable {
 
         public static final PropertyEnum<Variant> VARIANT = PropertyEnum.create("variant", Variant.class);
 
@@ -135,6 +141,12 @@ public final class WoodBlocks {
             public String getName() {
                 return "default";
             }
+        }
+
+        /** 1.20: a slab holds water, a double slab (a full block) does not. */
+        @Override
+        public boolean canHoldWater(IBlockState state, IBlockAccess world, BlockPos pos) {
+            return !isDouble();
         }
 
         /** The half slab every one of these drops and is picked as. */
@@ -223,7 +235,7 @@ public final class WoodBlocks {
         }
     }
 
-    public static class Fence extends BlockFence {
+    public static class Fence extends BlockFence implements Waterloggable {
         public Fence(WoodKind kind) {
             super(Material.WOOD, kind.planksColor);
             setHardness(2.0F);
@@ -389,7 +401,7 @@ public final class WoodBlocks {
         }
     }
 
-    public static class TrapDoor extends BlockTrapDoor {
+    public static class TrapDoor extends BlockTrapDoor implements Waterloggable {
         private final WoodKind kind;
 
         public TrapDoor(WoodKind kind) {
