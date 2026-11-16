@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
  *   15-19 boats           45-49 structures         75-79 calibratedSculkSensor
  *   20-24 cherryGrove     50-54 sniffer            80-84 heads
  *   25-29 hangingSigns    55-59 camels             85-89 misc
+ *                                                 90-94 effectParticles
  * </pre>
  *
  * <p>The channel name is short because Forge caps channel names at 20 characters, one fewer than the
@@ -37,5 +38,6 @@ public final class NetworkHandler {
         com.exiledradio.trailsandtalesbackport.sign.SignNetwork.register(channel); // 30-31
         com.exiledradio.trailsandtalesbackport.archaeology.ArchaeologyNetwork.register(channel); // 40-41
         com.exiledradio.trailsandtalesbackport.wolf.WolfNetwork.register(channel); // 70-71
+        com.exiledradio.trailsandtalesbackport.effectparticles.EffectParticlesMessage.register(channel); // 90
     }
 }

@@ -62,6 +62,8 @@ public final class SelfTestRunner {
             new CherryGroveSelfTest(),
             new FlatSelfTest(),
             new LeftoversSelfTest(),
+            new EffectParticlesSelfTest(),
+            new FutureMcSelfTest(),
     };
 
     private final List<String> wanted;
