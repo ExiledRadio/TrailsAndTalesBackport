@@ -138,7 +138,24 @@ public final class LookFeelSelfTest implements SelfTest {
                 expected.add(s);
             }
         }
-        c.eq(expected.size(), pool.size(), "pool size: 1.12.2's set less 1.20's removals plus its additions");
+        // Other backports add their own splashes to the same pool (Caves & Cliffs' 1.17-1.18 ones), so the exact size
+        // only holds when this mod is the only one adding; with another installed, every expected line must still be there.
+        boolean others = net.minecraftforge.fml.common.Loader.isModLoaded("cavesandcliffsbackport")
+                || net.minecraftforge.fml.common.Loader.isModLoaded("wildupdatebackport")
+                || net.minecraftforge.fml.common.Loader.isModLoaded("trickytrialsbackport");
+        if (others) {
+            // Their versions add and remove lines of their own; this mod's part is its additions in, its removals out.
+            boolean ours = true;
+            for (String s : added) {
+                ours &= Splashes.isAboutTheRuntime(s) || pool.contains(s);
+            }
+            for (String s : removed) {
+                ours &= Splashes.isAboutTheRuntime(s) || !pool.contains(s);
+            }
+            c.ok(ours, "1.20's additions are in the pool and its removals are out (other backports change it too)");
+        } else {
+            c.eq(expected.size(), pool.size(), "pool size: 1.12.2's set less 1.20's removals plus its additions");
+        }
     }
 
     private static void music(Check c) throws IOException {

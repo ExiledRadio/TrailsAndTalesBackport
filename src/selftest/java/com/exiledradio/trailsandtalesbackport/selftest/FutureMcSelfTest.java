@@ -63,7 +63,7 @@ public final class FutureMcSelfTest implements SelfTest {
             }
             c.ok(!DuplicateBlocks.isHidden(ours), "without the other mod our " + pair[0] + " is not hidden");
         }
-        c.eq(14, pairs, "14 of the 15 pairs have our half here (12 stripped logs and woods, bamboo, chain)");
+        c.eq(15, pairs, "all 15 pairs have our half here (12 stripped logs and woods, bamboo, chain, smithing table)");
 
         // States one by one.
         FutureMcTable.Target log = FutureMcTable.block(new ResourceLocation(FutureMcTable.FUTURE_MC, "stripped_spruce_log"));
