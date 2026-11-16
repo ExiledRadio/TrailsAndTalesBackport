@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "trailsandtalesbackport:dune_armor_trim_smithing_template"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.adventure.trim_with_any_armor_pattern.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.adventure.trim_with_any_armor_pattern.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "trimmed": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

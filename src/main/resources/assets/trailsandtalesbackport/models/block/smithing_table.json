@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "trailsandtalesbackport:block/smithing_table_bottom",
+    "east": "trailsandtalesbackport:block/smithing_table_side",
+    "north": "trailsandtalesbackport:block/smithing_table_front",
+    "particle": "trailsandtalesbackport:block/smithing_table_front",
+    "south": "trailsandtalesbackport:block/smithing_table_front",
+    "up": "trailsandtalesbackport:block/smithing_table_top",
+    "west": "trailsandtalesbackport:block/smithing_table_side"
+  }
+}

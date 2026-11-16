@@ -1,0 +1,70 @@
+{
+  "parent": "trailsandtalesbackport:adventure/trim_with_any_armor_pattern",
+  "display": {
+    "icon": {
+      "item": "trailsandtalesbackport:silence_armor_trim_smithing_template"
+    },
+    "title": {
+      "translate": "advancements.trailsandtalesbackport.adventure.trim_with_all_exclusive_armor_patterns.title"
+    },
+    "description": {
+      "translate": "advancements.trailsandtalesbackport.adventure.trim_with_all_exclusive_armor_patterns.description"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "spire_armor_trim_smithing_template": {
+      "trigger": "minecraft:impossible"
+    },
+    "snout_armor_trim_smithing_template": {
+      "trigger": "minecraft:impossible"
+    },
+    "rib_armor_trim_smithing_template": {
+      "trigger": "minecraft:impossible"
+    },
+    "ward_armor_trim_smithing_template": {
+      "trigger": "minecraft:impossible"
+    },
+    "silence_armor_trim_smithing_template": {
+      "trigger": "minecraft:impossible"
+    },
+    "vex_armor_trim_smithing_template": {
+      "trigger": "minecraft:impossible"
+    },
+    "tide_armor_trim_smithing_template": {
+      "trigger": "minecraft:impossible"
+    },
+    "wayfinder_armor_trim_smithing_template": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "rib_armor_trim_smithing_template"
+    ],
+    [
+      "silence_armor_trim_smithing_template"
+    ],
+    [
+      "snout_armor_trim_smithing_template"
+    ],
+    [
+      "spire_armor_trim_smithing_template"
+    ],
+    [
+      "tide_armor_trim_smithing_template"
+    ],
+    [
+      "vex_armor_trim_smithing_template"
+    ],
+    [
+      "ward_armor_trim_smithing_template"
+    ],
+    [
+      "wayfinder_armor_trim_smithing_template"
+    ]
+  ],
+  "rewards": {
+    "experience": 150
+  }
+}

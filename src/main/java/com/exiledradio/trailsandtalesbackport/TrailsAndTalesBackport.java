@@ -32,7 +32,7 @@ import org.apache.logging.log4j.Logger;
         acceptedMinecraftVersions = "[1.12.2]",
         // Loaded before quark, so recipes are listed first: its trapdoor recipe takes any planks, and listed
         // ahead of this mod's it turned this mod's planks into oak trapdoors instead of their own.
-        dependencies = "required-after:backportcore@[1.3.0,);before:quark"
+        dependencies = "required-after:backportcore@[1.4.0,);before:quark"
 )
 public final class TrailsAndTalesBackport {
 
@@ -64,6 +64,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.lookfeel.LookAndFeel.preInit();
         com.exiledradio.trailsandtalesbackport.heads.HeadsContent.preInit();
         com.exiledradio.trailsandtalesbackport.biome.CherryGroveContent.preInit();
+        com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.preInit();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
         // type, so this class verifies on a server - a guarded method here would not.
@@ -81,10 +82,12 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.heads.HeadsContent.init();
         com.exiledradio.trailsandtalesbackport.sign.SignsContent.init();
         com.exiledradio.trailsandtalesbackport.biome.CherryGroveContent.init();
+        com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.init();
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.postInit();
         if (event.getSide().isClient()) {
             com.exiledradio.trailsandtalesbackport.client.ClientSetup.postInit();
         }

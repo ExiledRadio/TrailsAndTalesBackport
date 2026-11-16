@@ -61,6 +61,7 @@ public final class SelfTestRunner {
             new SignSelfTest(),
             new CherryGroveSelfTest(),
             new FlatSelfTest(),
+            new SmithingSelfTest(),
     };
 
     private final List<String> wanted;

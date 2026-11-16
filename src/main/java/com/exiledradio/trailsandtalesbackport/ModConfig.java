@@ -208,6 +208,26 @@ public final class ModConfig {
         @Config.Comment("Smithing templates and armor trims. Off, nothing is registered.")
         @Config.LangKey("config.trailsandtalesbackport.smithing.enabled")
         public boolean enabled = true;
+
+        @Config.Comment({
+                "Netherite upgrades need the netherite upgrade smithing template, as in 1.20, on whichever smithing",
+                "table is in the game. Off: an upgrade also works with the template slot left empty."
+        })
+        @Config.LangKey("config.trailsandtalesbackport.smithing.netheriteNeedsTemplate")
+        public boolean netheriteNeedsTemplate = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment({
+                "Copper ore veins in the Overworld for this mod's copy of copper (only without Caves & Cliffs",
+                "Backport and Tricky Trials Backport, which have their own)."
+        })
+        @Config.LangKey("config.trailsandtalesbackport.smithing.copperOre")
+        public boolean copperOre = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("Amethyst geodes for this mod's copy of amethyst (only without Caves & Cliffs Backport).")
+        @Config.LangKey("config.trailsandtalesbackport.smithing.geodes")
+        public boolean geodes = true;
     }
 
     public static final class Armadillos {
