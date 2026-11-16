@@ -2640,5 +2640,13 @@
         "stream": true
       }
     ]
+  },
+  "music_disc.relic": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:records/relic",
+        "stream": true
+      }
+    ]
   }
 }

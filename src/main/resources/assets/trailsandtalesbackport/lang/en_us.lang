@@ -295,3 +295,7 @@ subtitles.trailsandtalesbackport.item.dye.use=Dye stains
 subtitles.trailsandtalesbackport.item.glow_ink_sac.use=Glow Ink Sac splotches
 subtitles.trailsandtalesbackport.item.honeycomb.wax_on=Wax on
 subtitles.trailsandtalesbackport.item.ink_sac.use=Ink Sac splotches
+
+# --- structures ---
+item.record.relic.desc=Aaron Cherof - Relic
+item.record.name=Music Disc
