@@ -59,17 +59,17 @@ public final class ModConfig {
     @Config.Comment("The chiseled bookshelf.")
     public static final ChiseledBookshelf chiseledBookshelf = new ChiseledBookshelf();
 
-    @Setting.Feature(icon = "minecraft:flower_pot")
+    @Setting.Feature(icon = "trailsandtalesbackport:brush")
     @Config.LangKey("config.trailsandtalesbackport.archaeology")
     @Config.Comment("The brush, suspicious sand and gravel, pottery sherds and decorated pots.")
     public static final Archaeology archaeology = new Archaeology();
 
-    @Setting.Feature(icon = "minecraft:sandstone@1")
+    @Setting.Feature(icon = "trailsandtalesbackport:suspicious_sand")
     @Config.LangKey("config.trailsandtalesbackport.structures")
     @Config.Comment("Trail ruins, and archaeology in desert pyramids and desert wells.")
     public static final Structures structures = new Structures();
 
-    @Setting.Feature(icon = "minecraft:wheat_seeds")
+    @Setting.Feature(icon = "trailsandtalesbackport:sniffer_egg")
     @Config.LangKey("config.trailsandtalesbackport.sniffer")
     @Config.Comment("The sniffer, sniffer eggs, torchflowers and pitcher plants.")
     public static final Sniffer sniffer = new Sniffer();
@@ -84,12 +84,12 @@ public final class ModConfig {
     @Config.Comment("Smithing templates and armor trims.")
     public static final Smithing smithing = new Smithing();
 
-    @Setting.Feature(icon = "minecraft:spider_eye")
+    @Setting.Feature(icon = "trailsandtalesbackport:armadillo_scute")
     @Config.LangKey("config.trailsandtalesbackport.armadillos")
     @Config.Comment("The armadillo and armadillo scutes.")
     public static final Armadillos armadillos = new Armadillos();
 
-    @Setting.Feature(icon = "minecraft:bone")
+    @Setting.Feature(icon = "trailsandtalesbackport:wolf_armor")
     @Config.LangKey("config.trailsandtalesbackport.wolves")
     @Config.Comment("Wolf armor, the eight new wolf variants and 1.20.5's changes to tamed wolves.")
     public static final Wolves wolves = new Wolves();
@@ -99,7 +99,7 @@ public final class ModConfig {
     @Config.Comment("The calibrated sculk sensor.")
     public static final CalibratedSculkSensor calibratedSculkSensor = new CalibratedSculkSensor();
 
-    @Setting.Feature(icon = "minecraft:skull@4")
+    @Setting.Feature(icon = "trailsandtalesbackport:piglin_head")
     @Config.LangKey("config.trailsandtalesbackport.heads")
     @Config.Comment("The piglin head, and mob heads on note blocks.")
     public static final Heads heads = new Heads();
