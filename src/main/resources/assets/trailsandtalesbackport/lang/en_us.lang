@@ -392,3 +392,6 @@ config.trailsandtalesbackport.presentation1205.chunkToasts=Chunk Load and Save F
 config.trailsandtalesbackport.presentation1205.lowDiskSpace=Low Disk Space Warnings
 config.trailsandtalesbackport.presentation1205.recoverWorld=World Recovery Screen
 config.trailsandtalesbackport.presentation1205.viossa=Viossa in the Language List
+# --- structures ---
+item.record.relic.desc=Aaron Cherof - Relic
+item.record.name=Music Disc

@@ -1,0 +1,7889 @@
+{
+ "seed": 42,
+ "version": "1.20.1",
+ "starts": [
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -121,
+    -120
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -116,
+    -100
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -135,
+    -53
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -130,
+    -30
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -111,
+    5
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -122,
+    54
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -119,
+    87
+   ],
+   "valid": true,
+   "pieces": [
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/tower_5",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1904,
+      64,
+      1392
+     ],
+     "rotation": "NONE",
+     "ground": 1,
+     "bb": [
+      -1904,
+      64,
+      1392,
+      -1898,
+      76,
+      1398
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1395,
+       "source_x": -1897,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1391,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1399,
+       "source_x": -1901,
+       "delta_y": -1,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1393,
+       "source_x": -1899,
+       "delta_y": 13,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1395,
+       "source_x": -1905,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/large_hall_3",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1890,
+      64,
+      1388
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      -1897,
+      64,
+      1388,
+      -1890,
+      70,
+      1399
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1395,
+       "source_x": -1898,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/long_road_end",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1899,
+      64,
+      1382
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      -1903,
+      64,
+      1382,
+      -1899,
+      68,
+      1391
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1392,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_spacer_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1899,
+      63,
+      1399
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      -1903,
+      63,
+      1399,
+      -1899,
+      67,
+      1403
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1398,
+       "source_x": -1901,
+       "delta_y": 1,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1404,
+       "source_x": -1901,
+       "delta_y": -1,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/tower_top_5",
+     "processors": "minecraft:trail_ruins_tower_top_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1904,
+      77,
+      1392
+     ],
+     "rotation": "NONE",
+     "ground": -12,
+     "bb": [
+      -1904,
+      77,
+      1392,
+      -1898,
+      80,
+      1398
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1393,
+       "source_x": -1899,
+       "delta_y": -13,
+       "source_ground_y": 64,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/hall_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1905,
+      64,
+      1389
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      -1914,
+      64,
+      1389,
+      -1905,
+      70,
+      1397
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1395,
+       "source_x": -1904,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1398,
+       "source_x": -1907,
+       "delta_y": -1,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1899,
+      62,
+      1404
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 3,
+     "bb": [
+      -1903,
+      62,
+      1404,
+      -1899,
+      66,
+      1408
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1403,
+       "source_x": -1901,
+       "delta_y": 1,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1407,
+       "source_x": -1904,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1409,
+       "source_x": -1901,
+       "delta_y": -1,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/one_room_3",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1909,
+      63,
+      1398
+     ],
+     "rotation": "NONE",
+     "ground": 2,
+     "bb": [
+      -1909,
+      63,
+      1398,
+      -1905,
+      67,
+      1402
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1397,
+       "source_x": -1907,
+       "delta_y": 1,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/large_room_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1904,
+      62,
+      1403
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 3,
+     "bb": [
+      -1914,
+      62,
+      1403,
+      -1904,
+      67,
+      1411
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1407,
+       "source_x": -1903,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_2",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1899,
+      61,
+      1409
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1903,
+      61,
+      1409,
+      -1899,
+      65,
+      1413
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1408,
+       "source_x": -1901,
+       "delta_y": 1,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1414,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_3",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1899,
+      61,
+      1414
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1904,
+      61,
+      1414,
+      -1899,
+      65,
+      1418
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1413,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1417,
+       "source_x": -1905,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1418,
+       "source_x": -1898,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1419,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/large_room_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1905,
+      61,
+      1413
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1915,
+      61,
+      1413,
+      -1905,
+      66,
+      1421
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1417,
+       "source_x": -1904,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/decor/decor_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1896,
+      61,
+      1416
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1898,
+      61,
+      1416,
+      -1896,
+      66,
+      1420
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1418,
+       "source_x": -1899,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_4",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1899,
+      61,
+      1419
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1904,
+      61,
+      1419,
+      -1899,
+      65,
+      1423
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1418,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1424,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_3",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1899,
+      61,
+      1424
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1904,
+      61,
+      1424,
+      -1899,
+      65,
+      1428
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1423,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1428,
+       "source_x": -1898,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1425,
+       "source_x": -1905,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": 1429,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/decor/decor_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1898,
+      61,
+      1430
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1898,
+      61,
+      1426,
+      -1896,
+      64,
+      1430
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1428,
+       "source_x": -1899,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/one_room_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1911,
+      61,
+      1428
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1911,
+      61,
+      1422,
+      -1905,
+      67,
+      1428
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1425,
+       "source_x": -1904,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_3",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      -1899,
+      61,
+      1429
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      -1904,
+      61,
+      1429,
+      -1899,
+      65,
+      1433
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": 1428,
+       "source_x": -1901,
+       "delta_y": 0,
+       "source_ground_y": 65,
+       "dest_proj": "rigid"
+      }
+     ]
+    }
+   ],
+   "box": [
+    -1915,
+    61,
+    1382,
+    -1890,
+    80,
+    1433
+   ],
+   "suspicious": [
+    {
+     "pos": [
+      -1914,
+      62,
+      1418
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5934254618440678591
+    },
+    {
+     "pos": [
+      -1913,
+      64,
+      1407
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1210118244151627112
+    },
+    {
+     "pos": [
+      -1912,
+      63,
+      1416
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5014161114275463050
+    },
+    {
+     "pos": [
+      -1912,
+      64,
+      1410
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1356706296643657621
+    },
+    {
+     "pos": [
+      -1912,
+      65,
+      1406
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8751781930988486419
+    },
+    {
+     "pos": [
+      -1912,
+      65,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -7048766502888307150
+    },
+    {
+     "pos": [
+      -1912,
+      66,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1285732839592078105
+    },
+    {
+     "pos": [
+      -1912,
+      69,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6202247199351942112
+    },
+    {
+     "pos": [
+      -1911,
+      62,
+      1419
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -213607243658827196
+    },
+    {
+     "pos": [
+      -1910,
+      63,
+      1405
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6012241921690838843
+    },
+    {
+     "pos": [
+      -1910,
+      63,
+      1425
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6379360935165114491
+    },
+    {
+     "pos": [
+      -1910,
+      64,
+      1425
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -789208134825684855
+    },
+    {
+     "pos": [
+      -1910,
+      67,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8002343028302550702
+    },
+    {
+     "pos": [
+      -1910,
+      69,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4747636969828476548
+    },
+    {
+     "pos": [
+      -1909,
+      63,
+      1426
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7465391376159336777
+    },
+    {
+     "pos": [
+      -1909,
+      64,
+      1413
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4921293319806456167
+    },
+    {
+     "pos": [
+      -1909,
+      65,
+      1425
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8957176345589163395
+    },
+    {
+     "pos": [
+      -1909,
+      66,
+      1406
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2751144490036388330
+    },
+    {
+     "pos": [
+      -1909,
+      66,
+      1409
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -4092649242704103506
+    },
+    {
+     "pos": [
+      -1909,
+      66,
+      1424
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -2885076236461211931
+    },
+    {
+     "pos": [
+      -1908,
+      62,
+      1419
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -868517239478086661
+    },
+    {
+     "pos": [
+      -1908,
+      64,
+      1399
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8876703100008044228
+    },
+    {
+     "pos": [
+      -1908,
+      64,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5144641966401284429
+    },
+    {
+     "pos": [
+      -1908,
+      64,
+      1427
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7529029996763289201
+    },
+    {
+     "pos": [
+      -1908,
+      65,
+      1399
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -410889283546352616
+    },
+    {
+     "pos": [
+      -1908,
+      65,
+      1401
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5701989240120031595
+    },
+    {
+     "pos": [
+      -1908,
+      66,
+      1401
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8752174691580523064
+    },
+    {
+     "pos": [
+      -1908,
+      66,
+      1425
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 4085183386606539905
+    },
+    {
+     "pos": [
+      -1908,
+      67,
+      1390
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -374257039472225566
+    },
+    {
+     "pos": [
+      -1908,
+      68,
+      1389
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6608211223897389732
+    },
+    {
+     "pos": [
+      -1908,
+      68,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -4279359178014411006
+    },
+    {
+     "pos": [
+      -1907,
+      62,
+      1419
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 9194943962786322063
+    },
+    {
+     "pos": [
+      -1907,
+      63,
+      1423
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4396438542332084428
+    },
+    {
+     "pos": [
+      -1907,
+      64,
+      1427
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4102423341433645494
+    },
+    {
+     "pos": [
+      -1907,
+      65,
+      1398
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -726936081517563217
+    },
+    {
+     "pos": [
+      -1907,
+      65,
+      1399
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3885868926383741158
+    },
+    {
+     "pos": [
+      -1907,
+      66,
+      1398
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4495924219397948563
+    },
+    {
+     "pos": [
+      -1907,
+      66,
+      1399
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8289321353785589343
+    },
+    {
+     "pos": [
+      -1907,
+      66,
+      1406
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 8078119688527068790
+    },
+    {
+     "pos": [
+      -1907,
+      68,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 9007064813027076369
+    },
+    {
+     "pos": [
+      -1906,
+      64,
+      1399
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1757741284482118202
+    },
+    {
+     "pos": [
+      -1906,
+      70,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1817085039314383912
+    },
+    {
+     "pos": [
+      -1905,
+      63,
+      1407
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7999704441968271543
+    },
+    {
+     "pos": [
+      -1905,
+      64,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5060862411301913041
+    },
+    {
+     "pos": [
+      -1905,
+      65,
+      1408
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2565361600566936170
+    },
+    {
+     "pos": [
+      -1904,
+      67,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -5274855841064640282
+    },
+    {
+     "pos": [
+      -1903,
+      64,
+      1427
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1160350495423359948
+    },
+    {
+     "pos": [
+      -1903,
+      65,
+      1405
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6712148658495787573
+    },
+    {
+     "pos": [
+      -1903,
+      71,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1580873371392829938
+    },
+    {
+     "pos": [
+      -1902,
+      63,
+      1421
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -386989115386136089
+    },
+    {
+     "pos": [
+      -1902,
+      66,
+      1400
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7236937236440060991
+    },
+    {
+     "pos": [
+      -1902,
+      77,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 2444045421727776973
+    },
+    {
+     "pos": [
+      -1901,
+      63,
+      1416
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -349855065367759674
+    },
+    {
+     "pos": [
+      -1901,
+      63,
+      1431
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6266164379306200961
+    },
+    {
+     "pos": [
+      -1901,
+      64,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 3950661245024157932
+    },
+    {
+     "pos": [
+      -1901,
+      64,
+      1419
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3645152192099011634
+    },
+    {
+     "pos": [
+      -1901,
+      65,
+      1412
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3351824130618135839
+    },
+    {
+     "pos": [
+      -1901,
+      67,
+      1401
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6782150004942926265
+    },
+    {
+     "pos": [
+      -1901,
+      68,
+      1387
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8231466991177858083
+    },
+    {
+     "pos": [
+      -1901,
+      68,
+      1393
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5328593062850938175
+    },
+    {
+     "pos": [
+      -1901,
+      71,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 5647966535706782293
+    },
+    {
+     "pos": [
+      -1901,
+      72,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 7313377748258730160
+    },
+    {
+     "pos": [
+      -1900,
+      63,
+      1411
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4425405006270246331
+    },
+    {
+     "pos": [
+      -1900,
+      63,
+      1433
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1056856977507158210
+    },
+    {
+     "pos": [
+      -1900,
+      67,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8833505640367612102
+    },
+    {
+     "pos": [
+      -1900,
+      78,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -482795892914510613
+    },
+    {
+     "pos": [
+      -1899,
+      64,
+      1408
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8528218257679603662
+    },
+    {
+     "pos": [
+      -1899,
+      64,
+      1424
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5010283356770214461
+    },
+    {
+     "pos": [
+      -1899,
+      66,
+      1389
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 9155047193218849659
+    },
+    {
+     "pos": [
+      -1899,
+      68,
+      1398
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4247278635053979572
+    },
+    {
+     "pos": [
+      -1899,
+      69,
+      1393
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6183746235043804790
+    },
+    {
+     "pos": [
+      -1899,
+      70,
+      1395
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6053355220777921336
+    },
+    {
+     "pos": [
+      -1898,
+      63,
+      1427
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -892103315906984992
+    },
+    {
+     "pos": [
+      -1898,
+      63,
+      1429
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -9128929015035561682
+    },
+    {
+     "pos": [
+      -1898,
+      64,
+      1427
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 3941128954540219976
+    },
+    {
+     "pos": [
+      -1898,
+      64,
+      1428
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 3895409476726507245
+    },
+    {
+     "pos": [
+      -1898,
+      64,
+      1429
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8566286204567464920
+    },
+    {
+     "pos": [
+      -1898,
+      65,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -5144049764467804043
+    },
+    {
+     "pos": [
+      -1898,
+      65,
+      1418
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8046000443851813042
+    },
+    {
+     "pos": [
+      -1898,
+      66,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5582677569163151146
+    },
+    {
+     "pos": [
+      -1897,
+      63,
+      1427
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3800773055467081871
+    },
+    {
+     "pos": [
+      -1897,
+      63,
+      1429
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3573545754904078990
+    },
+    {
+     "pos": [
+      -1897,
+      64,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2827651876056855020
+    },
+    {
+     "pos": [
+      -1897,
+      64,
+      1418
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6428576399199087900
+    },
+    {
+     "pos": [
+      -1897,
+      64,
+      1427
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5430579973621203210
+    },
+    {
+     "pos": [
+      -1897,
+      64,
+      1429
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6643040665044291930
+    },
+    {
+     "pos": [
+      -1897,
+      65,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7780763225106401647
+    },
+    {
+     "pos": [
+      -1897,
+      67,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8415061860269646023
+    },
+    {
+     "pos": [
+      -1897,
+      68,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6875515519001230938
+    },
+    {
+     "pos": [
+      -1896,
+      65,
+      1417
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6298510783327170596
+    },
+    {
+     "pos": [
+      -1896,
+      65,
+      1418
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1259065240702617601
+    },
+    {
+     "pos": [
+      -1896,
+      65,
+      1419
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4654831291798905987
+    },
+    {
+     "pos": [
+      -1896,
+      68,
+      1394
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2694368115253824703
+    },
+    {
+     "pos": [
+      -1894,
+      65,
+      1396
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 7667141054612505854
+    },
+    {
+     "pos": [
+      -1894,
+      66,
+      1397
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 3950142228821509744
+    },
+    {
+     "pos": [
+      -1893,
+      65,
+      1396
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -558299219398502591
+    },
+    {
+     "pos": [
+      -1893,
+      66,
+      1391
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3026041901167276216
+    },
+    {
+     "pos": [
+      -1893,
+      70,
+      1396
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4642148395132374657
+    },
+    {
+     "pos": [
+      -1892,
+      69,
+      1399
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5123035066226692393
+    }
+   ]
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -119,
+    120
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -95,
+    -123
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -80,
+    -79
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -84,
+    -46
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -77,
+    -11
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -79,
+    13
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -101,
+    47
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -88,
+    90
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -81,
+    120
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -56,
+    -124
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -44,
+    -93
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -43,
+    -60
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -65,
+    -26
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -65,
+    8
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -49,
+    47
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -58,
+    78
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -61,
+    123
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -26,
+    -130
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -12,
+    -90
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -33,
+    -67
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -25,
+    -27
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -25,
+    7
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -21,
+    54
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -17,
+    85
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    -14,
+    122
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    16,
+    -131
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    13,
+    -79
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    0,
+    -66
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    2,
+    -34
+   ],
+   "valid": true,
+   "pieces": [
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/tower_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      32,
+      86,
+      -544
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": 1,
+     "bb": [
+      28,
+      86,
+      -548,
+      32,
+      98,
+      -544
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -543,
+       "source_x": 30,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -549,
+       "source_x": 30,
+       "delta_y": -1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -546,
+       "source_x": 33,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -546,
+       "source_x": 27,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -544,
+       "source_x": 28,
+       "delta_y": 13,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/long_road_end",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      28,
+      86,
+      -534
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      28,
+      86,
+      -543,
+      32,
+      90,
+      -534
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -544,
+       "source_x": 30,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_spacer_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      28,
+      85,
+      -549
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      28,
+      85,
+      -553,
+      32,
+      89,
+      -549
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -548,
+       "source_x": 30,
+       "delta_y": 1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -554,
+       "source_x": 30,
+       "delta_y": -1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/hall_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      33,
+      86,
+      -540
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      33,
+      86,
+      -548,
+      42,
+      92,
+      -540
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -546,
+       "source_x": 32,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -549,
+       "source_x": 39,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/platform_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      21,
+      86,
+      -543
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      21,
+      86,
+      -548,
+      27,
+      92,
+      -543
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -546,
+       "source_x": 28,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/tower_top_2",
+     "processors": "minecraft:trail_ruins_tower_top_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      32,
+      99,
+      -544
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": -12,
+     "bb": [
+      28,
+      99,
+      -548,
+      32,
+      102,
+      -544
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -544,
+       "source_x": 28,
+       "delta_y": -13,
+       "source_ground_y": 86,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_2",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      28,
+      84,
+      -554
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 3,
+     "bb": [
+      28,
+      84,
+      -558,
+      32,
+      88,
+      -554
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -553,
+       "source_x": 30,
+       "delta_y": 1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -559,
+       "source_x": 30,
+       "delta_y": -1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -557,
+       "source_x": 33,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/one_room_3",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      41,
+      86,
+      -549
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": 1,
+     "bb": [
+      37,
+      86,
+      -553,
+      41,
+      90,
+      -549
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -548,
+       "source_x": 39,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_2",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      28,
+      83,
+      -559
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      28,
+      83,
+      -563,
+      32,
+      87,
+      -559
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -558,
+       "source_x": 30,
+       "delta_y": 1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -564,
+       "source_x": 30,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/one_room_1",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      39,
+      84,
+      -560
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 3,
+     "bb": [
+      33,
+      84,
+      -560,
+      39,
+      90,
+      -554
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -557,
+       "source_x": 32,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_4",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      28,
+      83,
+      -564
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      28,
+      83,
+      -568,
+      33,
+      87,
+      -564
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -563,
+       "source_x": 30,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -567,
+       "source_x": 34,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -566,
+       "source_x": 27,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -569,
+       "source_x": 30,
+       "delta_y": -1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/large_room_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      34,
+      83,
+      -563
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      34,
+      83,
+      -571,
+      44,
+      88,
+      -563
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -567,
+       "source_x": 33,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/decor/decor_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      27,
+      83,
+      -568
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      25,
+      83,
+      -568,
+      27,
+      86,
+      -564
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -566,
+       "source_x": 28,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_2",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      28,
+      82,
+      -569
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 5,
+     "bb": [
+      28,
+      82,
+      -573,
+      32,
+      86,
+      -569
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -568,
+       "source_x": 30,
+       "delta_y": 1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -574,
+       "source_x": 30,
+       "delta_y": -1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      28,
+      81,
+      -574
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 6,
+     "bb": [
+      28,
+      81,
+      -578,
+      32,
+      85,
+      -574
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -573,
+       "source_x": 30,
+       "delta_y": 1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -577,
+       "source_x": 33,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -579,
+       "source_x": 30,
+       "delta_y": -1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/large_room_1",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      33,
+      81,
+      -574
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 6,
+     "bb": [
+      33,
+      81,
+      -582,
+      43,
+      86,
+      -574
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -577,
+       "source_x": 32,
+       "delta_y": 0,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_2",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      28,
+      80,
+      -579
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 7,
+     "bb": [
+      28,
+      80,
+      -583,
+      32,
+      84,
+      -579
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -578,
+       "source_x": 30,
+       "delta_y": 1,
+       "source_ground_y": 87,
+       "dest_proj": "rigid"
+      }
+     ]
+    }
+   ],
+   "box": [
+    21,
+    80,
+    -583,
+    44,
+    102,
+    -534
+   ],
+   "suspicious": [
+    {
+     "pos": [
+      22,
+      88,
+      -545
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1573631738053661360
+    },
+    {
+     "pos": [
+      22,
+      90,
+      -546
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 9008223155355885994
+    },
+    {
+     "pos": [
+      23,
+      91,
+      -544
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7884004035941705024
+    },
+    {
+     "pos": [
+      24,
+      88,
+      -545
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -196543074675598317
+    },
+    {
+     "pos": [
+      24,
+      88,
+      -544
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6338167481250742077
+    },
+    {
+     "pos": [
+      24,
+      90,
+      -547
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1771392644135716630
+    },
+    {
+     "pos": [
+      24,
+      90,
+      -546
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6453368079766350768
+    },
+    {
+     "pos": [
+      25,
+      85,
+      -567
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7322792187810487839
+    },
+    {
+     "pos": [
+      25,
+      86,
+      -566
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 4783151968716550895
+    },
+    {
+     "pos": [
+      25,
+      91,
+      -546
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6624576622785390437
+    },
+    {
+     "pos": [
+      26,
+      85,
+      -565
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3105556282299742096
+    },
+    {
+     "pos": [
+      26,
+      86,
+      -565
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7695168078791154502
+    },
+    {
+     "pos": [
+      26,
+      88,
+      -547
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3447463968057098967
+    },
+    {
+     "pos": [
+      27,
+      85,
+      -565
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3260807691705221966
+    },
+    {
+     "pos": [
+      27,
+      86,
+      -566
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7546420029429907129
+    },
+    {
+     "pos": [
+      27,
+      86,
+      -565
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4465929073111317681
+    },
+    {
+     "pos": [
+      28,
+      83,
+      -581
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5110707230347345745
+    },
+    {
+     "pos": [
+      28,
+      85,
+      -571
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -721794244065034644
+    },
+    {
+     "pos": [
+      28,
+      86,
+      -567
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1796247850043559846
+    },
+    {
+     "pos": [
+      28,
+      88,
+      -546
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -583002891891626872
+    },
+    {
+     "pos": [
+      28,
+      89,
+      -541
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8554108709798009716
+    },
+    {
+     "pos": [
+      29,
+      86,
+      -570
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7618985926356126638
+    },
+    {
+     "pos": [
+      29,
+      88,
+      -536
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1218260121611523271
+    },
+    {
+     "pos": [
+      29,
+      94,
+      -546
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5626971110366293400
+    },
+    {
+     "pos": [
+      29,
+      101,
+      -544
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4699290882618936065
+    },
+    {
+     "pos": [
+      30,
+      83,
+      -579
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7269562905285125777
+    },
+    {
+     "pos": [
+      30,
+      85,
+      -578
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8075972861566960960
+    },
+    {
+     "pos": [
+      30,
+      86,
+      -566
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4787980846982121506
+    },
+    {
+     "pos": [
+      30,
+      87,
+      -554
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4831782142445230413
+    },
+    {
+     "pos": [
+      30,
+      89,
+      -552
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3288241600063907755
+    },
+    {
+     "pos": [
+      30,
+      90,
+      -547
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8804774812063852039
+    },
+    {
+     "pos": [
+      30,
+      96,
+      -545
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7724609564159088659
+    },
+    {
+     "pos": [
+      30,
+      99,
+      -544
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7172880713933094128
+    },
+    {
+     "pos": [
+      31,
+      85,
+      -563
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4015584570688189590
+    },
+    {
+     "pos": [
+      31,
+      86,
+      -557
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7365309211049260127
+    },
+    {
+     "pos": [
+      31,
+      90,
+      -545
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1237216166746299227
+    },
+    {
+     "pos": [
+      31,
+      97,
+      -546
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 3792277966052951196
+    },
+    {
+     "pos": [
+      32,
+      83,
+      -578
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8706085572264848569
+    },
+    {
+     "pos": [
+      32,
+      86,
+      -563
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7506391060398683332
+    },
+    {
+     "pos": [
+      32,
+      88,
+      -550
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -585056839381823308
+    },
+    {
+     "pos": [
+      32,
+      94,
+      -546
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1837581784834083873
+    },
+    {
+     "pos": [
+      32,
+      96,
+      -544
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8568984134633804233
+    },
+    {
+     "pos": [
+      32,
+      98,
+      -548
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6156703428212119123
+    },
+    {
+     "pos": [
+      33,
+      84,
+      -578
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5084154976404066874
+    },
+    {
+     "pos": [
+      33,
+      89,
+      -545
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4829146979737873436
+    },
+    {
+     "pos": [
+      33,
+      90,
+      -543
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1568318677692441125
+    },
+    {
+     "pos": [
+      34,
+      85,
+      -579
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3293634479327050940
+    },
+    {
+     "pos": [
+      34,
+      92,
+      -544
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 8947078865168564423
+    },
+    {
+     "pos": [
+      35,
+      87,
+      -559
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1720503465971359189
+    },
+    {
+     "pos": [
+      35,
+      87,
+      -556
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1866424292266055861
+    },
+    {
+     "pos": [
+      36,
+      82,
+      -575
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3535920236398665379
+    },
+    {
+     "pos": [
+      36,
+      88,
+      -557
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -2444668065460603508
+    },
+    {
+     "pos": [
+      36,
+      88,
+      -548
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -9195814640470490856
+    },
+    {
+     "pos": [
+      37,
+      83,
+      -576
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4455879481943054720
+    },
+    {
+     "pos": [
+      37,
+      85,
+      -566
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6116895387784507886
+    },
+    {
+     "pos": [
+      37,
+      85,
+      -564
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -7432098766610015300
+    },
+    {
+     "pos": [
+      37,
+      86,
+      -569
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -4965126645605129914
+    },
+    {
+     "pos": [
+      37,
+      86,
+      -559
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8394534841434880315
+    },
+    {
+     "pos": [
+      37,
+      87,
+      -569
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6891802661269430367
+    },
+    {
+     "pos": [
+      37,
+      87,
+      -557
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1455943976824137650
+    },
+    {
+     "pos": [
+      37,
+      88,
+      -557
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 9062262656173010708
+    },
+    {
+     "pos": [
+      37,
+      89,
+      -556
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1200295412553703421
+    },
+    {
+     "pos": [
+      37,
+      89,
+      -547
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3305569926391141058
+    },
+    {
+     "pos": [
+      38,
+      85,
+      -570
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2751722638282020854
+    },
+    {
+     "pos": [
+      38,
+      88,
+      -552
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -4635306142679555642
+    },
+    {
+     "pos": [
+      38,
+      89,
+      -550
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7379727088186424558
+    },
+    {
+     "pos": [
+      38,
+      89,
+      -548
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5836003330813871055
+    },
+    {
+     "pos": [
+      39,
+      83,
+      -581
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -925401516284343561
+    },
+    {
+     "pos": [
+      39,
+      84,
+      -575
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -594571318413383820
+    },
+    {
+     "pos": [
+      39,
+      88,
+      -552
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8397988044101225883
+    },
+    {
+     "pos": [
+      39,
+      89,
+      -558
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -874660527573680522
+    },
+    {
+     "pos": [
+      39,
+      89,
+      -557
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8755988750157308692
+    },
+    {
+     "pos": [
+      39,
+      89,
+      -550
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -9006591981241855664
+    },
+    {
+     "pos": [
+      40,
+      85,
+      -582
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6865543437615254567
+    },
+    {
+     "pos": [
+      40,
+      86,
+      -565
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4615956034637994103
+    },
+    {
+     "pos": [
+      40,
+      87,
+      -552
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2777372464239471743
+    },
+    {
+     "pos": [
+      40,
+      87,
+      -550
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5669805863124516163
+    },
+    {
+     "pos": [
+      40,
+      88,
+      -552
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3811634934957695195
+    },
+    {
+     "pos": [
+      40,
+      88,
+      -547
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -7278098469277232075
+    },
+    {
+     "pos": [
+      40,
+      89,
+      -551
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -9037649377228362373
+    },
+    {
+     "pos": [
+      40,
+      89,
+      -550
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6073443238234410804
+    },
+    {
+     "pos": [
+      41,
+      84,
+      -580
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5771988927965216556
+    },
+    {
+     "pos": [
+      41,
+      84,
+      -577
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 8336780925915783462
+    },
+    {
+     "pos": [
+      41,
+      84,
+      -568
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6154264307326820637
+    },
+    {
+     "pos": [
+      41,
+      91,
+      -546
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8514042519900940342
+    },
+    {
+     "pos": [
+      42,
+      84,
+      -565
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5238216131871566377
+    },
+    {
+     "pos": [
+      42,
+      85,
+      -566
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -670194855039438845
+    },
+    {
+     "pos": [
+      42,
+      89,
+      -543
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1953383893558714562
+    }
+   ]
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    25,
+    1
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    22,
+    55
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    3,
+    80
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    4,
+    117
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    35,
+    -127
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    44,
+    -83
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    50,
+    -60
+   ],
+   "valid": true,
+   "pieces": [
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/tower_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      800,
+      57,
+      -960
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": 1,
+     "bb": [
+      794,
+      57,
+      -966,
+      800,
+      69,
+      -960
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -967,
+       "source_x": 797,
+       "delta_y": -1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -961,
+       "source_x": 795,
+       "delta_y": 13,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -963,
+       "source_x": 801,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -959,
+       "source_x": 797,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -963,
+       "source_x": 793,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_spacer_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      795,
+      56,
+      -967
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      795,
+      56,
+      -971,
+      799,
+      60,
+      -967
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -966,
+       "source_x": 797,
+       "delta_y": 1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -972,
+       "source_x": 797,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/tower_top_4",
+     "processors": "minecraft:trail_ruins_tower_top_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      800,
+      70,
+      -960
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": -12,
+     "bb": [
+      794,
+      70,
+      -966,
+      800,
+      73,
+      -960
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -961,
+       "source_x": 795,
+       "delta_y": -13,
+       "source_ground_y": 57,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/hall_1",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      801,
+      57,
+      -957
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      801,
+      57,
+      -965,
+      806,
+      63,
+      -957
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -963,
+       "source_x": 800,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -963,
+       "source_x": 807,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -966,
+       "source_x": 803,
+       "delta_y": -1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/long_road_end",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      795,
+      57,
+      -950
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      795,
+      57,
+      -959,
+      799,
+      61,
+      -950
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -960,
+       "source_x": 797,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/platform_5",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      787,
+      57,
+      -960
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      787,
+      57,
+      -965,
+      793,
+      64,
+      -960
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -963,
+       "source_x": 794,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_4",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      795,
+      56,
+      -972
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      795,
+      56,
+      -976,
+      800,
+      60,
+      -972
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -971,
+       "source_x": 797,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -977,
+       "source_x": 797,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -972,
+       "source_x": 794,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -974,
+       "source_x": 801,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/stable_3",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      807,
+      57,
+      -965
+     ],
+     "rotation": "NONE",
+     "ground": 1,
+     "bb": [
+      807,
+      57,
+      -965,
+      813,
+      63,
+      -959
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -963,
+       "source_x": 806,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/one_room_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      805,
+      56,
+      -966
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": 2,
+     "bb": [
+      801,
+      56,
+      -970,
+      805,
+      60,
+      -966
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -965,
+       "source_x": 803,
+       "delta_y": 1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_4",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      795,
+      56,
+      -977
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      795,
+      56,
+      -981,
+      800,
+      60,
+      -977
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -976,
+       "source_x": 797,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -982,
+       "source_x": 797,
+       "delta_y": -1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -980,
+       "source_x": 794,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/decor/decor_6",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      794,
+      56,
+      -974
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      793,
+      56,
+      -974,
+      794,
+      60,
+      -970
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -972,
+       "source_x": 795,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/large_room_1",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      801,
+      56,
+      -971
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      801,
+      56,
+      -979,
+      811,
+      61,
+      -971
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -974,
+       "source_x": 800,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      795,
+      55,
+      -982
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 3,
+     "bb": [
+      795,
+      55,
+      -986,
+      799,
+      59,
+      -982
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -981,
+       "source_x": 797,
+       "delta_y": 1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -985,
+       "source_x": 800,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -987,
+       "source_x": 797,
+       "delta_y": -1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/decor/decor_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      794,
+      56,
+      -982
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      792,
+      56,
+      -982,
+      794,
+      59,
+      -978
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -980,
+       "source_x": 795,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/one_room_1",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      806,
+      55,
+      -988
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 3,
+     "bb": [
+      800,
+      55,
+      -988,
+      806,
+      61,
+      -982
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -985,
+       "source_x": 799,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      795,
+      54,
+      -987
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      795,
+      54,
+      -991,
+      799,
+      58,
+      -987
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -986,
+       "source_x": 797,
+       "delta_y": 1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -992,
+       "source_x": 797,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_3",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      795,
+      54,
+      -992
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      795,
+      54,
+      -996,
+      800,
+      58,
+      -992
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -991,
+       "source_x": 797,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -997,
+       "source_x": 797,
+       "delta_y": -1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -994,
+       "source_x": 794,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -993,
+       "source_x": 801,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      795,
+      53,
+      -997
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 5,
+     "bb": [
+      795,
+      53,
+      -1001,
+      799,
+      57,
+      -997
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -996,
+       "source_x": 797,
+       "delta_y": 1,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/decor/decor_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      794,
+      54,
+      -996
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      792,
+      54,
+      -996,
+      794,
+      57,
+      -992
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -994,
+       "source_x": 795,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/one_room_5",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      807,
+      54,
+      -996
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      801,
+      54,
+      -996,
+      807,
+      60,
+      -990
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -993,
+       "source_x": 800,
+       "delta_y": 0,
+       "source_ground_y": 58,
+       "dest_proj": "rigid"
+      }
+     ]
+    }
+   ],
+   "box": [
+    787,
+    53,
+    -1001,
+    813,
+    73,
+    -950
+   ],
+   "suspicious": [
+    {
+     "pos": [
+      787,
+      59,
+      -965
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6347515363619584876
+    },
+    {
+     "pos": [
+      787,
+      59,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6864966184950935100
+    },
+    {
+     "pos": [
+      789,
+      61,
+      -965
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -853848509404049495
+    },
+    {
+     "pos": [
+      789,
+      61,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5763071558151643025
+    },
+    {
+     "pos": [
+      790,
+      61,
+      -960
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -2643785253709825985
+    },
+    {
+     "pos": [
+      791,
+      63,
+      -964
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1274021477742827621
+    },
+    {
+     "pos": [
+      792,
+      56,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -9209759167254965750
+    },
+    {
+     "pos": [
+      792,
+      58,
+      -981
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -4389468821925179277
+    },
+    {
+     "pos": [
+      792,
+      59,
+      -980
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3130490153352121403
+    },
+    {
+     "pos": [
+      792,
+      61,
+      -962
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4870838449402015548
+    },
+    {
+     "pos": [
+      793,
+      56,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6533480044742604634
+    },
+    {
+     "pos": [
+      793,
+      56,
+      -993
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -9181807045011433798
+    },
+    {
+     "pos": [
+      793,
+      57,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6727309214797694046
+    },
+    {
+     "pos": [
+      793,
+      57,
+      -993
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7535789481078491497
+    },
+    {
+     "pos": [
+      793,
+      58,
+      -979
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5565538441451492827
+    },
+    {
+     "pos": [
+      793,
+      59,
+      -981
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7407166752024497999
+    },
+    {
+     "pos": [
+      793,
+      59,
+      -979
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7981162341898958979
+    },
+    {
+     "pos": [
+      793,
+      59,
+      -965
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6162065125160009795
+    },
+    {
+     "pos": [
+      793,
+      59,
+      -962
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7114829813098574055
+    },
+    {
+     "pos": [
+      794,
+      56,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -7119007557454230340
+    },
+    {
+     "pos": [
+      794,
+      56,
+      -993
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 9112218441284293847
+    },
+    {
+     "pos": [
+      794,
+      57,
+      -994
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5532145295231997906
+    },
+    {
+     "pos": [
+      794,
+      57,
+      -993
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -5382371617294860633
+    },
+    {
+     "pos": [
+      794,
+      58,
+      -981
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4813203148826313178
+    },
+    {
+     "pos": [
+      794,
+      58,
+      -979
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5373978059401072211
+    },
+    {
+     "pos": [
+      794,
+      59,
+      -981
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1960932883240200484
+    },
+    {
+     "pos": [
+      794,
+      59,
+      -979
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6463680126717599315
+    },
+    {
+     "pos": [
+      794,
+      59,
+      -973
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6640121252735836122
+    },
+    {
+     "pos": [
+      794,
+      59,
+      -972
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4121815551352655462
+    },
+    {
+     "pos": [
+      794,
+      60,
+      -973
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8026416285753054867
+    },
+    {
+     "pos": [
+      795,
+      58,
+      -951
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1489713979662135960
+    },
+    {
+     "pos": [
+      795,
+      59,
+      -969
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8446883633971031838
+    },
+    {
+     "pos": [
+      795,
+      59,
+      -961
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2918689230054262049
+    },
+    {
+     "pos": [
+      795,
+      60,
+      -965
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 5589562954764750725
+    },
+    {
+     "pos": [
+      795,
+      60,
+      -955
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5808451692988011110
+    },
+    {
+     "pos": [
+      795,
+      65,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 4934214402577367867
+    },
+    {
+     "pos": [
+      795,
+      67,
+      -964
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -5577123505063150932
+    },
+    {
+     "pos": [
+      796,
+      57,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7065752571170868606
+    },
+    {
+     "pos": [
+      796,
+      57,
+      -991
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -9190867490147923076
+    },
+    {
+     "pos": [
+      796,
+      59,
+      -979
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 3921949762022966310
+    },
+    {
+     "pos": [
+      796,
+      60,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3325673898780251473
+    },
+    {
+     "pos": [
+      796,
+      60,
+      -962
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3145767527477420897
+    },
+    {
+     "pos": [
+      796,
+      67,
+      -964
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6919400149944724302
+    },
+    {
+     "pos": [
+      796,
+      71,
+      -961
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5276688040085222370
+    },
+    {
+     "pos": [
+      797,
+      56,
+      -991
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2739942622621973103
+    },
+    {
+     "pos": [
+      797,
+      59,
+      -983
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7438380550558386450
+    },
+    {
+     "pos": [
+      798,
+      55,
+      -1000
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2517522008680332103
+    },
+    {
+     "pos": [
+      798,
+      57,
+      -999
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6715742813362603063
+    },
+    {
+     "pos": [
+      798,
+      57,
+      -983
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6779311463346285702
+    },
+    {
+     "pos": [
+      798,
+      59,
+      -976
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5722526911342165311
+    },
+    {
+     "pos": [
+      798,
+      59,
+      -971
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1378004865577596915
+    },
+    {
+     "pos": [
+      798,
+      60,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4337089139806766027
+    },
+    {
+     "pos": [
+      799,
+      58,
+      -975
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8036419370634832421
+    },
+    {
+     "pos": [
+      799,
+      60,
+      -977
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7916953784856476377
+    },
+    {
+     "pos": [
+      799,
+      69,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2684386989417677630
+    },
+    {
+     "pos": [
+      799,
+      70,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3273001885833361581
+    },
+    {
+     "pos": [
+      800,
+      57,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4493866249206863737
+    },
+    {
+     "pos": [
+      800,
+      58,
+      -985
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 5337551574566510901
+    },
+    {
+     "pos": [
+      800,
+      59,
+      -985
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4203741311064668659
+    },
+    {
+     "pos": [
+      801,
+      57,
+      -992
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7308650496505795268
+    },
+    {
+     "pos": [
+      802,
+      57,
+      -991
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6579588707540235259
+    },
+    {
+     "pos": [
+      802,
+      57,
+      -967
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7390140726937277375
+    },
+    {
+     "pos": [
+      802,
+      58,
+      -987
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2933442561268032186
+    },
+    {
+     "pos": [
+      802,
+      58,
+      -968
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8921542846200786427
+    },
+    {
+     "pos": [
+      802,
+      59,
+      -986
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -2153296835636288331
+    },
+    {
+     "pos": [
+      802,
+      59,
+      -968
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4104516940352429948
+    },
+    {
+     "pos": [
+      803,
+      56,
+      -988
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1733419810538589382
+    },
+    {
+     "pos": [
+      803,
+      57,
+      -994
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3453962783877225919
+    },
+    {
+     "pos": [
+      803,
+      57,
+      -967
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6673855842463466245
+    },
+    {
+     "pos": [
+      803,
+      58,
+      -983
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6874359686351716595
+    },
+    {
+     "pos": [
+      803,
+      58,
+      -968
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4020451488596907739
+    },
+    {
+     "pos": [
+      803,
+      59,
+      -988
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4911297283233631215
+    },
+    {
+     "pos": [
+      803,
+      59,
+      -965
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2423408475345824107
+    },
+    {
+     "pos": [
+      803,
+      59,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 7974409220117618201
+    },
+    {
+     "pos": [
+      803,
+      59,
+      -958
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4598397515397573291
+    },
+    {
+     "pos": [
+      803,
+      60,
+      -974
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8912983125097929643
+    },
+    {
+     "pos": [
+      803,
+      60,
+      -973
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6771493418759618637
+    },
+    {
+     "pos": [
+      803,
+      60,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4461334934274034288
+    },
+    {
+     "pos": [
+      803,
+      60,
+      -959
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3019834149959329552
+    },
+    {
+     "pos": [
+      804,
+      54,
+      -994
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -4688650136022366392
+    },
+    {
+     "pos": [
+      804,
+      56,
+      -992
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8391713379767664699
+    },
+    {
+     "pos": [
+      804,
+      57,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6064893095973100347
+    },
+    {
+     "pos": [
+      804,
+      58,
+      -969
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7562188866451857626
+    },
+    {
+     "pos": [
+      804,
+      58,
+      -968
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3407360482339798804
+    },
+    {
+     "pos": [
+      804,
+      58,
+      -967
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6433932897041475645
+    },
+    {
+     "pos": [
+      804,
+      59,
+      -969
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8218123118163478798
+    },
+    {
+     "pos": [
+      805,
+      56,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -7477846597651096553
+    },
+    {
+     "pos": [
+      805,
+      57,
+      -995
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4983783775786393339
+    },
+    {
+     "pos": [
+      805,
+      57,
+      -984
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8265874345705239359
+    },
+    {
+     "pos": [
+      805,
+      58,
+      -985
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2363321741218857754
+    },
+    {
+     "pos": [
+      805,
+      61,
+      -959
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3335348025971727848
+    },
+    {
+     "pos": [
+      806,
+      57,
+      -975
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -910194853356826012
+    },
+    {
+     "pos": [
+      806,
+      59,
+      -972
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5528965278219023854
+    },
+    {
+     "pos": [
+      806,
+      59,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7410039062484689368
+    },
+    {
+     "pos": [
+      806,
+      59,
+      -960
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1216222328272249447
+    },
+    {
+     "pos": [
+      806,
+      60,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 3911079111453638061
+    },
+    {
+     "pos": [
+      807,
+      58,
+      -994
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7797601183867797339
+    },
+    {
+     "pos": [
+      807,
+      59,
+      -973
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -7389359775615607547
+    },
+    {
+     "pos": [
+      807,
+      59,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 3743334876698956899
+    },
+    {
+     "pos": [
+      808,
+      59,
+      -972
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -708760558422808628
+    },
+    {
+     "pos": [
+      808,
+      59,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3120770144711652674
+    },
+    {
+     "pos": [
+      809,
+      59,
+      -971
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8027764299224758682
+    },
+    {
+     "pos": [
+      809,
+      60,
+      -974
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3224163987614556618
+    },
+    {
+     "pos": [
+      809,
+      61,
+      -963
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3057819735714043408
+    },
+    {
+     "pos": [
+      809,
+      61,
+      -962
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8197241315737941567
+    },
+    {
+     "pos": [
+      810,
+      59,
+      -976
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3802146765580052662
+    },
+    {
+     "pos": [
+      810,
+      59,
+      -960
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7769253023838795057
+    },
+    {
+     "pos": [
+      810,
+      61,
+      -961
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6903608477079765232
+    },
+    {
+     "pos": [
+      811,
+      59,
+      -964
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -5870768598446846625
+    },
+    {
+     "pos": [
+      811,
+      62,
+      -960
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8288793735763421562
+    },
+    {
+     "pos": [
+      812,
+      60,
+      -960
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7233442631736701884
+    }
+   ]
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    40,
+    -17
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    48,
+    10
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    51,
+    41
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    37,
+    75
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    43,
+    116
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    83,
+    -127
+   ],
+   "valid": true,
+   "pieces": [
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/tower_3",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1328,
+      47,
+      -2032
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": 1,
+     "bb": [
+      1322,
+      47,
+      -2038,
+      1328,
+      59,
+      -2032
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2039,
+       "source_x": 1325,
+       "delta_y": -1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2031,
+       "source_x": 1325,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2035,
+       "source_x": 1329,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2033,
+       "source_x": 1323,
+       "delta_y": 13,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2035,
+       "source_x": 1321,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_spacer_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1323,
+      46,
+      -2039
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      1323,
+      46,
+      -2043,
+      1327,
+      50,
+      -2039
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2038,
+       "source_x": 1325,
+       "delta_y": 1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2044,
+       "source_x": 1325,
+       "delta_y": -1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/long_road_end",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1323,
+      47,
+      -2022
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      1323,
+      47,
+      -2031,
+      1327,
+      51,
+      -2022
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2032,
+       "source_x": 1325,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/hall_1",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1329,
+      47,
+      -2029
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      1329,
+      47,
+      -2037,
+      1334,
+      53,
+      -2029
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2035,
+       "source_x": 1328,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2035,
+       "source_x": 1335,
+       "delta_y": -1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2038,
+       "source_x": 1331,
+       "delta_y": -1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/tower_top_3",
+     "processors": "minecraft:trail_ruins_tower_top_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1328,
+      60,
+      -2032
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": -12,
+     "bb": [
+      1322,
+      60,
+      -2038,
+      1328,
+      63,
+      -2032
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2033,
+       "source_x": 1323,
+       "delta_y": -13,
+       "source_ground_y": 47,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/large_hall_5",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1314,
+      47,
+      -2028
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 1,
+     "bb": [
+      1314,
+      47,
+      -2039,
+      1321,
+      53,
+      -2028
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2035,
+       "source_x": 1322,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_2",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1323,
+      45,
+      -2044
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 3,
+     "bb": [
+      1323,
+      45,
+      -2048,
+      1327,
+      49,
+      -2044
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2043,
+       "source_x": 1325,
+       "delta_y": 1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2049,
+       "source_x": 1325,
+       "delta_y": -1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2046,
+       "source_x": 1328,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/one_room_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1335,
+      46,
+      -2033
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 2,
+     "bb": [
+      1335,
+      46,
+      -2037,
+      1339,
+      50,
+      -2033
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2035,
+       "source_x": 1334,
+       "delta_y": 1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/tower/one_room_5",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1333,
+      46,
+      -2038
+     ],
+     "rotation": "CLOCKWISE_180",
+     "ground": 2,
+     "bb": [
+      1329,
+      46,
+      -2042,
+      1333,
+      50,
+      -2038
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2037,
+       "source_x": 1331,
+       "delta_y": 1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1323,
+      44,
+      -2049
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      1323,
+      44,
+      -2053,
+      1327,
+      48,
+      -2049
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2048,
+       "source_x": 1325,
+       "delta_y": 1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2054,
+       "source_x": 1325,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/one_room_1",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1334,
+      45,
+      -2049
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 3,
+     "bb": [
+      1328,
+      45,
+      -2049,
+      1334,
+      51,
+      -2043
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2046,
+       "source_x": 1327,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_3",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1323,
+      44,
+      -2054
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      1323,
+      44,
+      -2058,
+      1328,
+      48,
+      -2054
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2053,
+       "source_x": 1325,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2057,
+       "source_x": 1329,
+       "delta_y": -3,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2055,
+       "source_x": 1322,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2059,
+       "source_x": 1325,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/group_hall_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1329,
+      41,
+      -2050
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 7,
+     "bb": [
+      1329,
+      41,
+      -2064,
+      1339,
+      55,
+      -2050
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2057,
+       "source_x": 1328,
+       "delta_y": 3,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2054,
+       "source_x": 1337,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2060,
+       "source_x": 1332,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2060,
+       "source_x": 1337,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2054,
+       "source_x": 1332,
+       "delta_y": 3,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/decor/decor_3",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1322,
+      44,
+      -2057
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      1320,
+      44,
+      -2057,
+      1322,
+      48,
+      -2053
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2055,
+       "source_x": 1323,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_3",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1323,
+      44,
+      -2059
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      1323,
+      44,
+      -2063,
+      1328,
+      48,
+      -2059
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2058,
+       "source_x": 1325,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2061,
+       "source_x": 1322,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2064,
+       "source_x": 1325,
+       "delta_y": -1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/group_full_2",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1339,
+      41,
+      -2054
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 7,
+     "bb": [
+      1335,
+      41,
+      -2054,
+      1339,
+      55,
+      -2050
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2055,
+       "source_x": 1337,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/group_lower_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1330,
+      41,
+      -2060
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 7,
+     "bb": [
+      1330,
+      41,
+      -2064,
+      1334,
+      50,
+      -2060
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2059,
+       "source_x": 1332,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/group_lower_5",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1335,
+      41,
+      -2060
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 7,
+     "bb": [
+      1335,
+      41,
+      -2064,
+      1339,
+      50,
+      -2060
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2059,
+       "source_x": 1337,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/buildings/group_room_4",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1334,
+      44,
+      -2054
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      1330,
+      44,
+      -2054,
+      1334,
+      50,
+      -2050
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2055,
+       "source_x": 1332,
+       "delta_y": -3,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/decor/decor_6",
+     "processors": "minecraft:trail_ruins_houses_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1322,
+      44,
+      -2063
+     ],
+     "rotation": "CLOCKWISE_90",
+     "ground": 4,
+     "bb": [
+      1321,
+      44,
+      -2063,
+      1322,
+      48,
+      -2059
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2061,
+       "source_x": 1323,
+       "delta_y": 0,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1323,
+      43,
+      -2064
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 5,
+     "bb": [
+      1323,
+      43,
+      -2068,
+      1327,
+      47,
+      -2064
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2063,
+       "source_x": 1325,
+       "delta_y": 1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      },
+      {
+       "source_z": -2069,
+       "source_x": 1325,
+       "delta_y": -1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    },
+    {
+     "id": "minecraft:jigsaw",
+     "location": "minecraft:trail_ruins/roads/road_section_1",
+     "processors": "minecraft:trail_ruins_roads_archaeology",
+     "type": "minecraft:single_pool_element",
+     "pos": [
+      1323,
+      42,
+      -2069
+     ],
+     "rotation": "COUNTERCLOCKWISE_90",
+     "ground": 6,
+     "bb": [
+      1323,
+      42,
+      -2073,
+      1327,
+      46,
+      -2069
+     ],
+     "orientation": -1,
+     "junctions": [
+      {
+       "source_z": -2068,
+       "source_x": 1325,
+       "delta_y": 1,
+       "source_ground_y": 48,
+       "dest_proj": "rigid"
+      }
+     ]
+    }
+   ],
+   "box": [
+    1314,
+    41,
+    -2073,
+    1339,
+    63,
+    -2022
+   ],
+   "suspicious": [
+    {
+     "pos": [
+      1315,
+      52,
+      -2030
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6938085618184644544
+    },
+    {
+     "pos": [
+      1317,
+      48,
+      -2032
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -562768759741488430
+    },
+    {
+     "pos": [
+      1318,
+      49,
+      -2033
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1338352679190107967
+    },
+    {
+     "pos": [
+      1318,
+      49,
+      -2032
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6359580914094636335
+    },
+    {
+     "pos": [
+      1318,
+      50,
+      -2037
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7847145416905164772
+    },
+    {
+     "pos": [
+      1318,
+      52,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4993462953950664434
+    },
+    {
+     "pos": [
+      1319,
+      50,
+      -2038
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1716312466720264192
+    },
+    {
+     "pos": [
+      1319,
+      53,
+      -2038
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -9032693641801384482
+    },
+    {
+     "pos": [
+      1320,
+      46,
+      -2056
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7425767362892117724
+    },
+    {
+     "pos": [
+      1320,
+      46,
+      -2055
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8483859384878154518
+    },
+    {
+     "pos": [
+      1320,
+      50,
+      -2031
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4074783675249484089
+    },
+    {
+     "pos": [
+      1321,
+      45,
+      -2054
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -5720727043936074148
+    },
+    {
+     "pos": [
+      1321,
+      46,
+      -2055
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7358746078249533146
+    },
+    {
+     "pos": [
+      1321,
+      47,
+      -2055
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7914823971731252711
+    },
+    {
+     "pos": [
+      1321,
+      47,
+      -2054
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -2635996964312725053
+    },
+    {
+     "pos": [
+      1321,
+      48,
+      -2055
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -5993252206628451124
+    },
+    {
+     "pos": [
+      1322,
+      46,
+      -2054
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 9132588790207430850
+    },
+    {
+     "pos": [
+      1322,
+      47,
+      -2062
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7219848656414481069
+    },
+    {
+     "pos": [
+      1322,
+      47,
+      -2056
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5796374541116810519
+    },
+    {
+     "pos": [
+      1322,
+      48,
+      -2062
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5238796445161396151
+    },
+    {
+     "pos": [
+      1322,
+      48,
+      -2060
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4612111137363747255
+    },
+    {
+     "pos": [
+      1323,
+      47,
+      -2060
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7712519095716565800
+    },
+    {
+     "pos": [
+      1323,
+      47,
+      -2056
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7544293464802064834
+    },
+    {
+     "pos": [
+      1323,
+      48,
+      -2023
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4533611263612050892
+    },
+    {
+     "pos": [
+      1324,
+      47,
+      -2066
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8455200138630830980
+    },
+    {
+     "pos": [
+      1324,
+      60,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7620735678254068670
+    },
+    {
+     "pos": [
+      1325,
+      45,
+      -2073
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6464672286940936340
+    },
+    {
+     "pos": [
+      1325,
+      46,
+      -2053
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3923345725752657109
+    },
+    {
+     "pos": [
+      1325,
+      47,
+      -2052
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6471197066124138512
+    },
+    {
+     "pos": [
+      1325,
+      49,
+      -2046
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8141534090066569733
+    },
+    {
+     "pos": [
+      1325,
+      49,
+      -2040
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5020927248307821251
+    },
+    {
+     "pos": [
+      1325,
+      49,
+      -2032
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4907247137915774366
+    },
+    {
+     "pos": [
+      1325,
+      49,
+      -2024
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5944377944207467946
+    },
+    {
+     "pos": [
+      1325,
+      52,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1345848776064505864
+    },
+    {
+     "pos": [
+      1325,
+      59,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 8084001251861317069
+    },
+    {
+     "pos": [
+      1326,
+      44,
+      -2073
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3151674010121960210
+    },
+    {
+     "pos": [
+      1326,
+      47,
+      -2067
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7145628788646831787
+    },
+    {
+     "pos": [
+      1326,
+      48,
+      -2057
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8323164611176307669
+    },
+    {
+     "pos": [
+      1326,
+      48,
+      -2044
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2601546360408081568
+    },
+    {
+     "pos": [
+      1326,
+      49,
+      -2038
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6747202262090121769
+    },
+    {
+     "pos": [
+      1326,
+      50,
+      -2041
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8317053807960493917
+    },
+    {
+     "pos": [
+      1326,
+      55,
+      -2036
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7423945129609741320
+    },
+    {
+     "pos": [
+      1326,
+      55,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4787876051560759482
+    },
+    {
+     "pos": [
+      1326,
+      60,
+      -2036
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 1206043556493678262
+    },
+    {
+     "pos": [
+      1327,
+      49,
+      -2034
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6615029398260761942
+    },
+    {
+     "pos": [
+      1327,
+      55,
+      -2037
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 5616255684593679847
+    },
+    {
+     "pos": [
+      1328,
+      47,
+      -2062
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8012970817723033521
+    },
+    {
+     "pos": [
+      1328,
+      52,
+      -2033
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5962860867510165341
+    },
+    {
+     "pos": [
+      1329,
+      46,
+      -2058
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7593259223574440110
+    },
+    {
+     "pos": [
+      1329,
+      47,
+      -2039
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8864338695353219569
+    },
+    {
+     "pos": [
+      1329,
+      48,
+      -2040
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6165197354594337460
+    },
+    {
+     "pos": [
+      1329,
+      48,
+      -2039
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4210323359664193918
+    },
+    {
+     "pos": [
+      1330,
+      48,
+      -2062
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5959348083174034563
+    },
+    {
+     "pos": [
+      1330,
+      48,
+      -2041
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6039351208256405247
+    },
+    {
+     "pos": [
+      1330,
+      48,
+      -2040
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2738571152100705972
+    },
+    {
+     "pos": [
+      1330,
+      49,
+      -2047
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2408880436442454496
+    },
+    {
+     "pos": [
+      1330,
+      49,
+      -2041
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -9111837575840457398
+    },
+    {
+     "pos": [
+      1331,
+      44,
+      -2062
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6563117237469739143
+    },
+    {
+     "pos": [
+      1331,
+      47,
+      -2061
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 3800026116773435802
+    },
+    {
+     "pos": [
+      1331,
+      47,
+      -2045
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2245359018214003358
+    },
+    {
+     "pos": [
+      1331,
+      47,
+      -2044
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 7578846350030780062
+    },
+    {
+     "pos": [
+      1331,
+      48,
+      -2059
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7159028503419877967
+    },
+    {
+     "pos": [
+      1331,
+      48,
+      -2053
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 9217705309588117251
+    },
+    {
+     "pos": [
+      1331,
+      48,
+      -2041
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8473398337316278614
+    },
+    {
+     "pos": [
+      1331,
+      49,
+      -2046
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1355089425371709916
+    },
+    {
+     "pos": [
+      1331,
+      49,
+      -2036
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8975604304766461135
+    },
+    {
+     "pos": [
+      1331,
+      49,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 8384545774568585279
+    },
+    {
+     "pos": [
+      1331,
+      49,
+      -2033
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 6761406979065886055
+    },
+    {
+     "pos": [
+      1331,
+      50,
+      -2063
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3938995873359287706
+    },
+    {
+     "pos": [
+      1331,
+      50,
+      -2043
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5208445585810579155
+    },
+    {
+     "pos": [
+      1331,
+      51,
+      -2034
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7620348318412417281
+    },
+    {
+     "pos": [
+      1332,
+      42,
+      -2063
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8277929056405728089
+    },
+    {
+     "pos": [
+      1332,
+      45,
+      -2063
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8834120959546281069
+    },
+    {
+     "pos": [
+      1332,
+      46,
+      -2061
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -5325240389390405880
+    },
+    {
+     "pos": [
+      1332,
+      46,
+      -2053
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4188889734842039676
+    },
+    {
+     "pos": [
+      1332,
+      46,
+      -2051
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8135381593257698540
+    },
+    {
+     "pos": [
+      1332,
+      47,
+      -2052
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1898381807186885397
+    },
+    {
+     "pos": [
+      1332,
+      47,
+      -2046
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2959665387952871081
+    },
+    {
+     "pos": [
+      1332,
+      48,
+      -2059
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8487402886815253219
+    },
+    {
+     "pos": [
+      1332,
+      48,
+      -2045
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6544971900308290939
+    },
+    {
+     "pos": [
+      1332,
+      48,
+      -2040
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3907329811941497340
+    },
+    {
+     "pos": [
+      1332,
+      49,
+      -2044
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 9104191490356565261
+    },
+    {
+     "pos": [
+      1332,
+      49,
+      -2041
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4042173868125056565
+    },
+    {
+     "pos": [
+      1332,
+      50,
+      -2033
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7401595688403043846
+    },
+    {
+     "pos": [
+      1332,
+      51,
+      -2036
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -2540719693938318393
+    },
+    {
+     "pos": [
+      1333,
+      42,
+      -2063
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5519493235013392923
+    },
+    {
+     "pos": [
+      1333,
+      46,
+      -2063
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7346997610635727048
+    },
+    {
+     "pos": [
+      1333,
+      46,
+      -2058
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -3282320065293260147
+    },
+    {
+     "pos": [
+      1333,
+      46,
+      -2054
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7453961014563769196
+    },
+    {
+     "pos": [
+      1333,
+      46,
+      -2051
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8085365267894865711
+    },
+    {
+     "pos": [
+      1333,
+      47,
+      -2053
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7312360029086318861
+    },
+    {
+     "pos": [
+      1333,
+      47,
+      -2045
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4943155714213290105
+    },
+    {
+     "pos": [
+      1333,
+      48,
+      -2053
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 6982615978716843087
+    },
+    {
+     "pos": [
+      1333,
+      49,
+      -2059
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6987988521245172714
+    },
+    {
+     "pos": [
+      1333,
+      50,
+      -2032
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -83739154200554557
+    },
+    {
+     "pos": [
+      1333,
+      51,
+      -2036
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -4010861666089758589
+    },
+    {
+     "pos": [
+      1333,
+      51,
+      -2029
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -5583559784352892581
+    },
+    {
+     "pos": [
+      1334,
+      48,
+      -2055
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7727140675937385182
+    },
+    {
+     "pos": [
+      1334,
+      48,
+      -2054
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1904528487126307843
+    },
+    {
+     "pos": [
+      1335,
+      45,
+      -2058
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 8996437691680354810
+    },
+    {
+     "pos": [
+      1335,
+      47,
+      -2058
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1037519394062136061
+    },
+    {
+     "pos": [
+      1335,
+      49,
+      -2060
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -3032761467666059619
+    },
+    {
+     "pos": [
+      1335,
+      49,
+      -2051
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1534392493052972758
+    },
+    {
+     "pos": [
+      1336,
+      44,
+      -2061
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 8684639132895714168
+    },
+    {
+     "pos": [
+      1336,
+      46,
+      -2052
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 4214676343864660862
+    },
+    {
+     "pos": [
+      1336,
+      47,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 9129992071185074939
+    },
+    {
+     "pos": [
+      1336,
+      48,
+      -2054
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -1061865807670420567
+    },
+    {
+     "pos": [
+      1336,
+      48,
+      -2034
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 9145829467404491581
+    },
+    {
+     "pos": [
+      1336,
+      49,
+      -2063
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -6840386910684841645
+    },
+    {
+     "pos": [
+      1336,
+      49,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 5051239228078909301
+    },
+    {
+     "pos": [
+      1337,
+      46,
+      -2053
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -7573191078731653502
+    },
+    {
+     "pos": [
+      1337,
+      46,
+      -2052
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 5496583259822566192
+    },
+    {
+     "pos": [
+      1337,
+      47,
+      -2060
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -700188995727324136
+    },
+    {
+     "pos": [
+      1337,
+      47,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 4466013822382805469
+    },
+    {
+     "pos": [
+      1337,
+      47,
+      -2034
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": 7154009203160889188
+    },
+    {
+     "pos": [
+      1337,
+      48,
+      -2062
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8801965876391860660
+    },
+    {
+     "pos": [
+      1337,
+      48,
+      -2034
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6839315088752974874
+    },
+    {
+     "pos": [
+      1337,
+      49,
+      -2062
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7193510383758934258
+    },
+    {
+     "pos": [
+      1337,
+      49,
+      -2061
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -6149592688583174601
+    },
+    {
+     "pos": [
+      1337,
+      49,
+      -2035
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2191875555393229353
+    },
+    {
+     "pos": [
+      1337,
+      51,
+      -2053
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -8676796106529057269
+    },
+    {
+     "pos": [
+      1338,
+      48,
+      -2057
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2740742812394908184
+    },
+    {
+     "pos": [
+      1338,
+      48,
+      -2034
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -8057643578843397408
+    },
+    {
+     "pos": [
+      1338,
+      49,
+      -2062
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -391086361050211351
+    },
+    {
+     "pos": [
+      1338,
+      49,
+      -2051
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2523047946995045337
+    },
+    {
+     "pos": [
+      1338,
+      49,
+      -2034
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -2827820003994715962
+    },
+    {
+     "pos": [
+      1338,
+      53,
+      -2054
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": 7898402313917234108
+    },
+    {
+     "pos": [
+      1339,
+      47,
+      -2053
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_common",
+     "seed": -4191235522792062740
+    },
+    {
+     "pos": [
+      1339,
+      48,
+      -2063
+     ],
+     "loot": "minecraft:archaeology/trail_ruins_rare",
+     "seed": -1460141619480674790
+    }
+   ]
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    76,
+    -82
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    79,
+    -64
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    86,
+    -12
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    93,
+    3
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    90,
+    52
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    68,
+    73
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    83,
+    110
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    124,
+    -131
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    116,
+    -101
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    107,
+    -45
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    121,
+    -19
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    119,
+    17
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    110,
+    40
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    110,
+    83
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:trail_ruins",
+   "chunk": [
+    107,
+    126
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -114,
+    -107
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -122,
+    -77
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -105,
+    -44
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -109,
+    -11
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -116,
+    2
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -111,
+    41
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -124,
+    66
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -124,
+    109
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -86,
+    -110
+   ],
+   "valid": true,
+   "pieces": [
+    {
+     "id": "minecraft:tedp",
+     "location": null,
+     "processors": null,
+     "type": null,
+     "pos": [
+      null,
+      null,
+      null
+     ],
+     "rotation": null,
+     "ground": null,
+     "bb": [
+      -1376,
+      73,
+      -1760,
+      -1356,
+      87,
+      -1740
+     ],
+     "orientation": 3,
+     "junctions": null
+    }
+   ],
+   "box": [
+    -1376,
+    73,
+    -1760,
+    -1356,
+    87,
+    -1740
+   ],
+   "suspicious": [
+    {
+     "pos": [
+      -1364,
+      70,
+      -1746
+     ],
+     "loot": "minecraft:archaeology/desert_pyramid",
+     "seed": -374658594316218
+    },
+    {
+     "pos": [
+      -1364,
+      70,
+      -1745
+     ],
+     "loot": "minecraft:archaeology/desert_pyramid",
+     "seed": -374658594312122
+    },
+    {
+     "pos": [
+      -1364,
+      73,
+      -1745
+     ],
+     "loot": "minecraft:archaeology/desert_pyramid",
+     "seed": -374658594312119
+    },
+    {
+     "pos": [
+      -1363,
+      70,
+      -1746
+     ],
+     "loot": "minecraft:archaeology/desert_pyramid",
+     "seed": -374383716409274
+    },
+    {
+     "pos": [
+      -1362,
+      70,
+      -1743
+     ],
+     "loot": "minecraft:archaeology/desert_pyramid",
+     "seed": -374108838490042
+    },
+    {
+     "pos": [
+      -1361,
+      72,
+      -1744
+     ],
+     "loot": "minecraft:archaeology/desert_pyramid",
+     "seed": -373833960587192
+    },
+    {
+     "pos": [
+      -1361,
+      72,
+      -1742
+     ],
+     "loot": "minecraft:archaeology/desert_pyramid",
+     "seed": -373833960579000
+    }
+   ]
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -95,
+    -88
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -79,
+    -57
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -83,
+    -9
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -77,
+    2
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -83,
+    46
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -88,
+    72
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -76,
+    118
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -59,
+    -127
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -53,
+    -85
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -63,
+    -49
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -45,
+    -15
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -62,
+    2
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -50,
+    55
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -43,
+    73
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -51,
+    112
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -20,
+    -111
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -31,
+    -84
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -11,
+    -43
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -18,
+    -18
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -22,
+    22
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -16,
+    33
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -25,
+    84
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    -13,
+    114
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    2,
+    -121
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    9,
+    -91
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    8,
+    -53
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    0,
+    -17
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    1,
+    7
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    17,
+    54
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    8,
+    75
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    10,
+    98
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    47,
+    -124
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    54,
+    -74
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    40,
+    -44
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    49,
+    -23
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    51,
+    15
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    33,
+    40
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    48,
+    85
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    37,
+    101
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    81,
+    -117
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    66,
+    -93
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    80,
+    -42
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    82,
+    -10
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    87,
+    16
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    87,
+    54
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    87,
+    71
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    76,
+    117
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    96,
+    -109
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    115,
+    -88
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    105,
+    -41
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    96,
+    -19
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    117,
+    2
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    111,
+    32
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    103,
+    73
+   ],
+   "valid": false
+  },
+  {
+   "structure": "minecraft:desert_pyramid",
+   "chunk": [
+    119,
+    108
+   ],
+   "valid": false
+  }
+ ]
+}

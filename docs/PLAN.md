@@ -190,6 +190,12 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
 - **Ocean ruins** (Update Aquatic's): their suspicious sand and gravel through a structure hook on Core's
   loader (`CORE_REQUESTS.md` 2); the sniffer egg is in warm ruins' table.
 - **Music disc "Relic"** (trail ruins rare loot) with its sound.
+- **Done** (`docs/streams/structures.md`, branch `tt-structures`): trail ruins (1.20.1's files and jigsaw rules,
+  our own 1.20.1 assembly on Core's pools, `bury` through Core's `TerrainAdaptation`, the `capped` archaeology
+  worked out over each whole file), the pyramid cellar in whichever generator's pyramid, 1.20's well in 1.12.2
+  terrain (Caves & Cliffs' wells: its branch `tt-desert-well`), Update Aquatic's ocean ruins' suspicious sand and
+  gravel (by Core's `ocean_ruin` kind and the pieces' saved keys, no class links), Relic. Checked against a vanilla
+  1.20.1 server. Smithing template loot below is stream Sm's.
 - **Smithing template loot** in every structure the 1.12.2 game has: desert pyramid (dune), jungle temple
   (wild), nether fortress (rib), end city (spire), stronghold library (eye), woodland mansion (vex), and through
   `LootTableLoadEvent` in the family's structures by table name when installed: pillager outpost (sentry,

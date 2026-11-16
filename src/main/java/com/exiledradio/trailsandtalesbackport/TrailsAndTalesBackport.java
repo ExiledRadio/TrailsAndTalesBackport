@@ -68,6 +68,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.preInit();
         com.exiledradio.trailsandtalesbackport.sculk.SensorContent.preInit();
         com.exiledradio.trailsandtalesbackport.presentation1205.Presentation1205.preInit();
+        com.exiledradio.trailsandtalesbackport.structure.StructuresContent.preInit();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
         // type, so this class verifies on a server - a guarded method here would not.
@@ -87,6 +88,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.biome.CherryGroveContent.init();
         com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.init();
         com.exiledradio.trailsandtalesbackport.sculk.SensorContent.init();
+        com.exiledradio.trailsandtalesbackport.structure.StructuresContent.init();
     }
 
     @Mod.EventHandler

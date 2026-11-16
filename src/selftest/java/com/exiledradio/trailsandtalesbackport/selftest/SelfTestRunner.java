@@ -68,6 +68,7 @@ public final class SelfTestRunner {
             new EffectParticlesSelfTest(),
             new FutureMcSelfTest(),
             new Presentation1205SelfTest(),
+            new StructuresSelfTest(),
     };
 
     private final List<String> wanted;
