@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.common.wood;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStandingSign;
@@ -29,6 +31,8 @@ import java.util.Random;
  * as an oak sign's. The tile is {@link Tile}, a {@link TileEntitySign} of our own class: vanilla's
  * renderer draws only vanilla's sign texture, so ours draws these, and every {@code instanceof
  * TileEntitySign} check (editing, other mods' sign dyeing) still holds.
+ *
+ * <p>Both are {@link Waterloggable}, as 1.20's signs are (with Fluidlogged API; dry without it).
  */
 public final class WoodSign {
 
@@ -58,7 +62,7 @@ public final class WoodSign {
         return null;
     }
 
-    public static final class Standing extends BlockStandingSign {
+    public static final class Standing extends BlockStandingSign implements Waterloggable {
         final WoodKind kind;
         Item item;
 
@@ -85,7 +89,7 @@ public final class WoodSign {
         }
     }
 
-    public static final class Wall extends BlockWallSign {
+    public static final class Wall extends BlockWallSign implements Waterloggable {
         final WoodKind kind;
         Item item;
 

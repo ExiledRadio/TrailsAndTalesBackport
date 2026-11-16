@@ -81,5 +81,5 @@ Package `cherry`, shared wood code in `common/wood`. Config `cherry` (`enabled`)
 
 *   Bee nests on cherry trees (`cherry_bees_005`): Buzzy Bees' nests; needs a hook from it.
 *   Cherry groves in the world: stream G.
-*   Waterlogging of signs, stairs, slabs, fences, gates and trapdoors: Core's adapter, later.
+*   Waterlogging of signs, stairs, slabs, fences, trapdoors and leaves: done (`waterlog.md`; fence gates are dry, as 1.20's).
 *   Hanging signs: stream H. Boats: stream Bo.

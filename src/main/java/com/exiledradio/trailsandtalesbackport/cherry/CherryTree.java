@@ -1,5 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.cherry;
 
+import com.exiledradio.backportcore.waterlog.Waterlogging;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockRotatedPillar;
@@ -34,6 +36,9 @@ import java.util.Set;
  * lowest rows grow hanging leaves from their rim (1 in 6), each sometimes one longer (1 in 3).
  *
  * <p>The numbers are the data file's; the placement walks are written from what the two placers produce.
+ *
+ * <p>Water: 1.20's {@code replaceable_by_trees} holds {@code water}, so a tree may grow into it. Logs replace it;
+ * a leaf placed into a water source keeps it ({@code FoliagePlacer.tryPlaceLeaf}), with Fluidlogged API.
  */
 public class CherryTree extends WorldGenAbstractTree {
 
@@ -48,8 +53,12 @@ public class CherryTree extends WorldGenAbstractTree {
     private IBlockState log;
     private IBlockState leaf;
 
+    /** {@code setBlockAndNotifyAdequately}'s flags, for the leaves placed through {@link Waterlogging}. */
+    private final int flags;
+
     public CherryTree(boolean notify) {
         super(notify);
+        this.flags = notify ? 3 : net.minecraftforge.common.ForgeModContainer.fixVanillaCascading ? 2 | 16 : 2;
     }
 
     @Override
@@ -223,16 +232,17 @@ public class CherryTree extends WorldGenAbstractTree {
             return false;
         }
         BlockPos at = pos.toImmutable();
-        setBlockAndNotifyAdequately(world, at, this.leaf);
+        Waterlogging.placeKeepingWater(world, at, this.leaf, this.flags);
         this.leaves.add(at);
         return true;
     }
 
-    /** 1.20's {@code TreeFeature.validTreePos}: air, leaves, or a replaceable plant. */
+    /** 1.20's {@code TreeFeature.validTreePos}: air, or {@code replaceable_by_trees} (leaves, replaceable plants, water). */
     private static boolean free(World world, BlockPos pos) {
         IBlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
         return block.isAir(state, world, pos) || block.isLeaves(state, world, pos)
+                || block == Blocks.WATER || block == Blocks.FLOWING_WATER
                 || (block.isReplaceable(world, pos) && state.getMaterial() != Material.WATER && state.getMaterial() != Material.LAVA);
     }
 }
