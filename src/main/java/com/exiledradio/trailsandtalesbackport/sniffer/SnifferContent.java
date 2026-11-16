@@ -188,7 +188,33 @@ public final class SnifferContent {
         Compat.compost(0.3F, pitcherPod);
         Compat.compost(0.85F, torchflowerItem);
         Compat.compost(0.85F, pitcherPlantItem);
+        suspiciousStew();
     }
+
+    /**
+     * 1.20's torchflower in suspicious stew: Night Vision for 5 seconds ({@code Blocks.TORCHFLOWER}'s
+     * {@code FlowerBlock(MobEffects.NIGHT_VISION, 5.0F)}), crafted or from a brown mooshroom fed one. Suspicious stew is
+     * Village &amp; Pillage's (1.14), so without it there is none (Rule 1: an interaction with another mod's content);
+     * with a Village &amp; Pillage too old for {@code StewEffects.add}, the torchflower is not in its stew.
+     */
+    private static void suspiciousStew() {
+        if (!Owners.present(Owners.VILLAGE_AND_PILLAGE) || torchflowerItem == null) {
+            return;
+        }
+        try {
+            Class.forName("com.exiledradio.villagerbackport.flora.StewEffects")
+                    .getMethod("add", ItemStack.class, net.minecraft.potion.Potion.class, int.class)
+                    .invoke(null, new ItemStack(torchflowerItem), net.minecraft.init.MobEffects.NIGHT_VISION, 100);
+            torchflowerStew = true;
+        } catch (NoSuchMethodException | ClassNotFoundException e) {
+            TrailsAndTalesBackport.LOGGER.info("Village & Pillage has no StewEffects.add: torchflowers are not in its suspicious stew.");
+        } catch (ReflectiveOperationException | RuntimeException e) {
+            TrailsAndTalesBackport.LOGGER.warn("Could not add the torchflower to suspicious stew.", e);
+        }
+    }
+
+    /** For the self-test: Village &amp; Pillage took the torchflower. */
+    public static boolean torchflowerStew;
 
     @SubscribeEvent
     public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
@@ -269,7 +295,31 @@ public final class SnifferContent {
         } catch (ReflectiveOperationException | RuntimeException e) {
             TrailsAndTalesBackport.LOGGER.warn("Could not make torchflowers and pitcher plants flowers to bees.", e);
         }
+        beeGrowsTorchflowers();
     }
+
+    /**
+     * 1.20.6's {@code BeeGrowCropGoal}: a bee grows a {@code CropBlock} below it one stage, and the torchflower
+     * crop's last stage is the torchflower ({@code TorchflowerCropBlock.getStateForAge(2)}). The pitcher crop is no
+     * {@code CropBlock} (a double plant), so 1.20.6's bees leave it alone, and so do these. Needs Buzzy Bees' grower
+     * hook ({@code BeeFlowers.addGrower}); an older Buzzy Bees leaves the crop to grow on its own.
+     */
+    private static void beeGrowsTorchflowers() {
+        try {
+            Class<?> api = Class.forName("com.exiledradio.buzzybeesbackport.api.BeeFlowers");
+            java.util.function.Function<IBlockState, IBlockState> grower =
+                    state -> torchflowerCrop != null && state.getBlock() == torchflowerCrop ? torchflowerCrop.grown(state) : null;
+            api.getMethod("addGrower", java.util.function.Function.class).invoke(null, grower);
+            beesGrowCrops = true;
+        } catch (NoSuchMethodException e) {
+            TrailsAndTalesBackport.LOGGER.info("Buzzy Bees has no grower hook (older than its 1.20 crops change): bees do not grow torchflower crops.");
+        } catch (ReflectiveOperationException | RuntimeException e) {
+            TrailsAndTalesBackport.LOGGER.warn("Could not let bees grow torchflower crops.", e);
+        }
+    }
+
+    /** For the self-test: Buzzy Bees took the torchflower crop's grower. */
+    public static boolean beesGrowCrops;
 
     /** Little Sniffs: a player fed a snifflet. */
     static void grantLittleSniffs(net.minecraft.entity.player.EntityPlayerMP player) {

@@ -52,6 +52,107 @@ public final class LeftoversSelfTest implements SelfTest {
         stepSounds(c);
         signs(c);
         snifferHead(c);
+        wolves(c);
+        snifferCrops(c);
+    }
+
+    private static boolean applied(String patch) {
+        for (String a : Asm.APPLIED) {
+            if (a.startsWith(patch + " ")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void wolves(Check c) throws Exception {
+        c.ok(applied("P5"), "P5 is applied (EntityWolf): " + Asm.APPLIED);
+        c.ok(applied("P6"), "P6 is applied (WorldEntitySpawner)");
+        net.minecraft.entity.passive.EntityWolf first = new net.minecraft.entity.passive.EntityWolf(c.world);
+        BlockPos at = c.area().up(2);
+        first.setPosition(at.getX() + 0.5D, at.getY(), at.getZ() + 0.5D);
+        net.minecraft.entity.IEntityLivingData pack = first.onInitialSpawn(c.world.getDifficultyForLocation(at), null);
+        com.exiledradio.trailsandtalesbackport.wolf.WolfData d1 = com.exiledradio.trailsandtalesbackport.wolf.WolfData.of(first);
+        c.ok(pack instanceof com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.PackData, "the first wolf of a pack hands on pack data");
+        c.ok(d1 != null && d1.variant == com.exiledradio.trailsandtalesbackport.wolf.WolfVariant.forBiome(c.world.getBiome(at)),
+                "and takes its biome's variant: " + (d1 == null ? null : d1.variant));
+        net.minecraft.entity.passive.EntityWolf second = new net.minecraft.entity.passive.EntityWolf(c.world);
+        second.setPosition(at.getX() + 0.5D, at.getY(), at.getZ() + 0.5D);
+        second.onInitialSpawn(c.world.getDifficultyForLocation(at), new com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.PackData(com.exiledradio.trailsandtalesbackport.wolf.WolfVariant.ASHEN));
+        c.eq(com.exiledradio.trailsandtalesbackport.wolf.WolfVariant.ASHEN, com.exiledradio.trailsandtalesbackport.wolf.WolfData.of(second).variant, "the pack's next wolf takes the pack's variant, whatever its biome");
+
+        NBTTagCompound summon = new NBTTagCompound();
+        summon.setString("id", "minecraft:wolf");
+        summon.setString("variant", "snowy");
+        net.minecraft.entity.Entity summoned = net.minecraft.entity.EntityList.createEntityFromNBT(summon, c.world);
+        c.ok(summoned instanceof net.minecraft.entity.passive.EntityWolf
+                && com.exiledradio.trailsandtalesbackport.wolf.WolfData.of((net.minecraft.entity.passive.EntityWolf) summoned).variant == com.exiledradio.trailsandtalesbackport.wolf.WolfVariant.SNOWY,
+                "summon wolf {variant:snowy} is snowy");
+        NBTTagCompound saved = summoned.writeToNBT(new NBTTagCompound());
+        c.eq("minecraft:snowy", saved.getString("variant"), "the variant is saved at the top level too");
+
+        c.eq(4.0D, first.getEntityAttribute(net.minecraft.entity.SharedMonsterAttributes.ATTACK_DAMAGE).getBaseValue(),
+                "a wild wolf deals 4, as 1.20.6 (the 1.12.2 constructor already sets it)");
+
+        c.world.spawnEntity(first);
+        boolean panic = false;
+        for (net.minecraft.entity.ai.EntityAITasks.EntityAITaskEntry e : first.tasks.taskEntries) {
+            panic |= e.action instanceof com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.Panic && e.priority == 1;
+        }
+        c.ok(panic, "a wolf has the 1.20.6 panic goal at priority 1");
+        c.ok(!new com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.Panic(first).shouldExecute(), "a wolf neither burning nor freezing does not panic");
+        first.setRevengeTarget(new EntityZombie(c.world));
+        c.ok(!new com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.Panic(first).shouldExecute(), "nor when hurt (1.20.6 wolves fight back)");
+        first.setRevengeTarget(null);
+
+        first.setTamedBy(Players.real(c.world, "owner"));
+        net.minecraft.entity.player.EntityPlayerMP stranger = Players.real(c.world, "stranger");
+        stranger.setHeldItem(net.minecraft.util.EnumHand.MAIN_HAND, new net.minecraft.item.ItemStack(net.minecraft.init.Items.DYE, 1, 1));
+        net.minecraft.item.EnumDyeColor before = first.getCollarColor();
+        net.minecraft.util.EnumActionResult r = net.minecraftforge.common.ForgeHooks.onInteractEntity(stranger, first, net.minecraft.util.EnumHand.MAIN_HAND);
+        c.ok(r == net.minecraft.util.EnumActionResult.PASS && first.getCollarColor() == before, "only the owner dyes the collar (" + r + ")");
+        first.setDead();
+
+        c.eq(0.04F, com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.spawningChance(Biomes.MESA_ROCK), "wooded badlands: 0.04");
+        c.eq(0.03F, com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.spawningChance(Biomes.MESA), "badlands: 0.03");
+        c.eq(0.03F, com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.spawningChance(Biomes.MUTATED_MESA), "eroded badlands: 0.03");
+        c.eq(0.1F, com.exiledradio.trailsandtalesbackport.wolf.WolfHooks.spawningChance(Biomes.PLAINS), "plains keep 0.1");
+    }
+
+    private static void snifferCrops(Check c) {
+        boolean bees = net.minecraftforge.fml.common.Loader.isModLoaded("buzzybeesbackport");
+        boolean vp = net.minecraftforge.fml.common.Loader.isModLoaded("villagerbackport");
+        com.exiledradio.trailsandtalesbackport.sniffer.BlockTorchflowerCrop crop = com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.torchflowerCrop;
+        if (bees) {
+            c.ok(com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.beesGrowCrops, "Buzzy Bees took the torchflower crop grower");
+            try {
+                java.lang.reflect.Method grow = Class.forName("com.exiledradio.buzzybeesbackport.api.BeeFlowers")
+                        .getMethod("grow", net.minecraft.block.state.IBlockState.class);
+                net.minecraft.block.state.IBlockState one = (net.minecraft.block.state.IBlockState) grow.invoke(null, crop.getDefaultState());
+                c.ok(one != null && one.getBlock() == crop && one.getValue(com.exiledradio.trailsandtalesbackport.sniffer.BlockTorchflowerCrop.AGE) == 1, "a bee grows the crop to age 1");
+                net.minecraft.block.state.IBlockState two = (net.minecraft.block.state.IBlockState) grow.invoke(null,
+                        crop.getDefaultState().withProperty(com.exiledradio.trailsandtalesbackport.sniffer.BlockTorchflowerCrop.AGE, 1));
+                c.ok(two != null && two.getBlock() == com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.torchflower, "and then into a torchflower");
+            } catch (ReflectiveOperationException e) {
+                c.fail("BeeFlowers.grow: " + e);
+            }
+        } else {
+            c.ok(!com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.beesGrowCrops, "without Buzzy Bees nothing is registered");
+        }
+        if (vp) {
+            c.ok(com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.torchflowerStew, "Village and Pillage took the torchflower for suspicious stew");
+            try {
+                Object entry = Class.forName("com.exiledradio.villagerbackport.flora.StewEffects")
+                        .getMethod("forStack", net.minecraft.item.ItemStack.class)
+                        .invoke(null, new net.minecraft.item.ItemStack(com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.torchflowerItem));
+                c.ok(entry != null && entry.getClass().getField("effect").get(entry) == net.minecraft.init.MobEffects.NIGHT_VISION
+                        && ((Integer) entry.getClass().getField("ticks").get(entry)) == 100, "torchflower stew: Night Vision, 5 s");
+            } catch (ReflectiveOperationException e) {
+                c.fail("StewEffects.forStack: " + e);
+            }
+        } else {
+            c.ok(!com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent.torchflowerStew, "without Village and Pillage there is no stew");
+        }
     }
 
     private static void snifferHead(Check c) throws Exception {

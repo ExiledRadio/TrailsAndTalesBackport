@@ -394,7 +394,11 @@ Everything earlier passes left out is built, or is another mod's and said so whe
   (`docs/streams/presentation1205.md`, patch P4).
 - 1.20.5's per-effect potion particles (`docs/streams/effectparticles.md`, patch P3); Future MC pairs for this mod's
   copies (`docs/streams/futuremc.md`: Future MC 0.2.x has no 1.20 content).
-- The sniffer's 50-degree head turn limit (`docs/streams/sniffer.md`).
+- The sniffer's 50-degree head turn limit; bees growing the torchflower crop (Buzzy Bees `bb-tt-crops`,
+  `BeeFlowers.addGrower`); torchflower suspicious stew (Village & Pillage `vp-torchflower-stew`,
+  `StewEffects.add`) (`docs/streams/sniffer.md`).
+- Wolves: one variant per spawned pack and the `variant` tag (P5), badlands spawn chances (P6), the 1.20.6
+  panic goal, owner-only collar dyeing (`docs/streams/wolves.md`).
 - Backport Core (`core-tt`): Narrator Hotkey, the 1.20.5 menu look, the panorama motion, Adventuring Time, the
   underwater fog, F3 + 3's network charts (`CORE_REQUESTS.md` 10, 11).
 - Update Aquatic (`ua-turtle-scute`): the scute reads "Turtle Scute" while a 1.20.5 backport is installed.

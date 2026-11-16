@@ -149,15 +149,18 @@ classes.
 *   Packets reaching a real client (only their encoding is tested), natural spawning in real biomes, taming by a
     real player in game.
 
-## Left out, and why
+## Built after the first pass (branch `tt-leftovers`)
 
-*   **Pack variant**: 1.20 gives a whole spawned pack the first wolf's variant (`WolfPackData`); 1.12.2 spawns
-    each wolf of a pack on its own, so each takes the variant of the biome it stands in. They differ only for a
-    pack straddling a biome border.
-*   **`/summon` with a variant tag** or a variant in a spawn egg's data: 1.12.2 cannot pass 1.20's `variant` tag
-    to the capability; a summoned wolf takes its biome's.
-*   **Wooded badlands' creature spawn chance** (0.04, 1.12.2's mesa plateaus use the default): biome-wide, not the
-    wolf's.
-*   **Wild wolves' attack damage** (1.12.2: 2, 1.20: 4) and the dye-the-collar-owner-only check, the
-    on-fire/freezing panic goal: older than 1.20.5, not in this stream's plan.
-*   **Dispensers** do not put wolf armor on or shear it off: 1.20.5's do neither (only horse armor and saddles).
+*   **Pack variant** (patch P5, `WolfHooks.initialSpawn`): 1.20.5's `WolfPackData`. The first wolf of a spawned pack
+    takes its biome's variant and hands it on in the spawn data 1.12.2 passes from wolf to wolf, so the whole pack
+    shares it, also across a biome border.
+*   **The `variant` tag** (P5): read and written at the entity's top level as 1.20.5 does, so
+    `/summon minecraft:wolf ~ ~ ~ {variant:"minecraft:ashen"}` (or `"ashen"`) and a spawn egg's `EntityTag` set it.
+*   **Creature spawn chance at chunk generation** (P6): badlands 0.03, wooded badlands 0.04, as 1.20.5's biome
+    builders (1.12.2: 0.1 everywhere).
+*   **The panic goal**: 1.20.6's `WolfPanicGoal` at priority 1: a wolf runs (to water first) when on fire or, with
+    Caves & Cliffs, freezing in powder snow; never just because it was hurt.
+*   **Collar dyeing**: only the owner dyes a collar (1.20.5's `mobInteract`); anyone else's dye does nothing.
+*   **Wild wolves' attack damage** was never 2: 1.12.2's constructor calls `setTamed(false)`, which sets 4, as
+    1.20.6's attributes. The self-test checks it.
+*   Dispensers neither put wolf armor on nor shear it off, as 1.20.5's.

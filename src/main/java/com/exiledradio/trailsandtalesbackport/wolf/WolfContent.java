@@ -201,6 +201,9 @@ public final class WolfContent {
         }
         WolfArmor.updateModifier(wolf, data);
         tamedHealth(wolf, data);
+        // 1.20.6's WolfPanicGoal (priority 1): on fire or freezing, the wolf runs. Added as the entity joins, never
+        // from a goal.
+        wolf.tasks.addTask(1, new WolfHooks.Panic(wolf));
     }
 
     @SubscribeEvent
@@ -377,6 +380,11 @@ public final class WolfContent {
             return;
         }
         if (!wolf.isOwner(player)) {
+            // 1.20.5's mobInteract: only the owner dyes the collar (1.12.2 let anyone). Nothing happens otherwise.
+            if (net.minecraftforge.oredict.DyeUtils.isDye(stack)) {
+                event.setCanceled(true);
+                event.setCancellationResult(EnumActionResult.PASS);
+            }
             return;
         }
         if (WolfArmor.isWolfArmor(stack) && !data.hasArmor() && !wolf.isChild()) {

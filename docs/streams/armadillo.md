@@ -128,10 +128,12 @@ The archaeology stream is not on this branch, so the test registers a stand-in `
     adults, panic running, spiders actually fleeing, natural spawning in a real savanna, the dispenser with the
     archaeology stream's real brush (the stand-in has the same name and durability).
 
-## Left out, and why
+## Elsewhere
 
-*   **Game events** (roll up, unroll, shed, brush): they wait for Core's vibrations (`CORE_REQUESTS.md` 3).
-*   **Wolf armor** and the scute's use in it: stream W.
-*   **26.x's baby armadillo model**: a 26.x change, not 1.20's.
-*   **1.20.5 renamed the turtle's scute to "Turtle Scute"**: that item is Update Aquatic's (and vanilla 1.12.2's
-    has no scute at all), so nothing here.
+*   **Game events** (roll up, unroll, shed, brush): the calibrated sculk sensor stream's (`tt-sensor`), on Core's
+    game events (`CORE_REQUESTS.md` 3).
+*   **Wolf armor** and the scute's use in it: stream W (`docs/streams/wolves.md`).
+*   **The badlands' creature spawn chance** (0.03, 1.20.5): patch P6, with the wolves' (`docs/streams/wolves.md`).
+*   **"Turtle Scute"** (1.20.5's rename of the turtle's scute): Update Aquatic's item, renamed there while a 1.20.5
+    backport is installed (branch `ua-turtle-scute` of Update Aquatic).
+*   26.x's baby armadillo model is a 26.x change, not 1.20's: no backport of 1.20 has it.

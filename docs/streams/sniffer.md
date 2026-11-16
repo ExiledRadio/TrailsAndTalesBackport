@@ -116,15 +116,18 @@ random: first seed after 420-4160 ticks). `-Pselftest=all`: **`pass=521 fail=0`*
 *   Panic, swimming, temptation following a real player, looking at players, a whole hatch on scheduled ticks
     over 20 minutes, the composter with Village & Pillage, Wild Update's mud.
 
-## Left out, and why
+## Built after the first pass (branch `tt-leftovers`)
 
-*   **Game events**: 1.20's digging shake and the egg's block-place event wait for Core's vibrations
-    (`CORE_REQUESTS.md` 3).
-*   **Bees growing the crops**: 1.20's bees grow both crops (the pitcher crop through its own grow, which places
-    the top half). Buzzy Bees' growable hook only raises an `age` property, which would leave a torchflower
-    crop at age 1 for ever and a pitcher crop without its top, so neither crop is registered with it. Needs a
-    grow callback in Buzzy Bees' `BeeFlowers` (its maintainer's call).
-*   **Suspicious stew** from torchflowers (night vision, 5 s): suspicious stew is Village & Pillage's; nothing
-    to hook into yet.
-*   ~~Head turn limit~~ built on `tt-leftovers`: `SnifferHead` gives the look helper and the body helper 1.20's
-    50 degrees (1.12.2 fixes 75 in both).
+*   **Bees grow the torchflower crop** (with Buzzy Bees' `BeeFlowers.addGrower`, branch `bb-tt-crops` of Buzzy Bees):
+    1.20.6's `BeeGrowCropGoal` grows a `CropBlock` one stage, and the torchflower crop's last stage is the
+    torchflower. The pitcher crop is no `CropBlock` (a double plant), so 1.20.6's bees leave it alone, and so do
+    these. With an older Buzzy Bees the crop grows on its own only.
+*   **Torchflower suspicious stew** (with Village & Pillage's `StewEffects.add`, branch `vp-torchflower-stew`):
+    Night Vision for 5 seconds, crafted or from a brown mooshroom fed one. Suspicious stew is Village & Pillage's
+    (1.14): without it there is none.
+*   **Head turn limit**: `SnifferHead` gives the look helper and the body helper 1.20's 50 degrees (1.12.2 fixes 75).
+
+## Elsewhere
+
+*   **Game events** (the digging shake, the egg's block-place event): the calibrated sculk sensor stream's
+    (`tt-sensor`), on Core's game events.

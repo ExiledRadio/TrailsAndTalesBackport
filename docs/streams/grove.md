@@ -165,9 +165,10 @@ With **Backport Core `core-locate-biome`** (its dev jar as `deps/BackportCore-lo
     step-aside, so it would add second nests there; that is Buzzy Bees', fixed on its main branch.
 *   A world made with an older C&C without `Editions.CHERRY`: it would place no groves in 1.18 terrain.
 
-## Not done
+## Elsewhere
 
-*   Adventuring Time: Core request 11.2. (`/locate biome`, 11.1, is on Core's `core-locate-biome` branch.)
-*   1.20's underwater fog color: Core request 10 of Wild Update (the family has no fog hook yet).
+*   Adventuring Time: built in Backport Core (`core-tt`, request 11.2; the cherry grove is in it with no call from
+    here). `/locate biome` (11.1) is on Core's `core-locate-biome` branch.
+*   1.20's underwater fog color: Backport Core's `water.WaterColors` (`core-tt`); Update Aquatic reads it.
 *   The glow squid spawn entry is Caves & Cliffs'; amethyst geodes, glow lichen, tuff and copper in the grove come
     from C&C's own 1.12 generation where installed.
