@@ -87,6 +87,8 @@ Wild Update Backport on its `wu-core-game-events` branch when both are installed
     pot (insert, empty hand, projectile), bookshelf (in, out) and head-on-note-block events with their sources.
 *   With Wild Update Backport's dev jar (56/0): no copy of ours, the recipe takes Wild's sensor, Wild's sensor
     resonates amethyst.
+*   With Caves & Cliffs Backport's dev jar (67/0): the recipe takes its `amethyst_shard`, its `amethyst_block`
+    resonates (the stand-ins step aside).
 *   Whole suite: 3948/0. Wild Update Backport's vibration, sculk, warden and allay tests with this mod installed:
     405/0.
 
@@ -104,7 +106,8 @@ Wild Update Backport on its `wu-core-game-events` branch when both are installed
 *   **Getting a sculk sensor without Wild Update Backport**: 1.20's come from the deep dark and ancient cities,
     which are Wild Update Backport's. Our copy is creative-only until a fallback source is decided (Decided 3
     covers items whose structure's owner is absent; the sensor is not on that list yet).
-*   **Amethyst**: the shard and block copies (PLAN, "Copies this adds") are not built yet; with neither Caves &
+*   **Amethyst**: the shard and block copies (PLAN, "Copies this adds") are stream Sm's (`tt-smithing`), not
+    built yet; with neither Caves &
     Cliffs Backport nor a `gemAmethyst` mod installed the calibrated sensor has no recipe and nothing resonates.
 *   **Wild Update Backport's sensor keeps 1.19.2's timings** (40 ticks active, 1 of cooldown) with this mod
     installed; only its hearing (1.20's `#vibrations`) and resonance follow 1.20.

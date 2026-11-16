@@ -16,7 +16,7 @@ import net.minecraftforge.oredict.OreDictionary;
 /**
  * Test builds only: stand-ins under the names of this mod's planned amethyst copy ({@code amethyst_shard},
  * {@code amethyst_block}, PLAN.md "Copies this adds"), so the calibrated sensor's recipe and resonance can be
- * tested without Caves &amp; Cliffs Backport. Registers nothing once the real copy exists (its content class is
+ * tested without Caves &amp; Cliffs Backport. Registers nothing with Caves &amp; Cliffs installed or once the real copy exists (its content class is
  * looked for by name; update the name here when the copy lands).
  */
 @Mod.EventBusSubscriber(modid = TrailsAndTalesBackport.MOD_ID)
@@ -29,6 +29,9 @@ public final class TestAmethyst {
     }
 
     private static boolean copyExists() {
+        if (net.minecraftforge.fml.common.Loader.isModLoaded("cavesandcliffsbackport")) {
+            return true; // Caves & Cliffs Backport's own amethyst is used
+        }
         try {
             Class.forName("com.exiledradio.trailsandtalesbackport.amethyst.AmethystContent", false, TestAmethyst.class.getClassLoader());
             return true;
@@ -62,10 +65,18 @@ public final class TestAmethyst {
     }
 
     static Block amethystBlock() {
-        return block != null ? block : ForgeRegistries.BLOCKS.getValue(Content.id("amethyst_block"));
+        if (block != null) {
+            return block;
+        }
+        Block cc = ForgeRegistries.BLOCKS.getValue(new net.minecraft.util.ResourceLocation("cavesandcliffsbackport", "amethyst_block"));
+        return cc != null && cc != net.minecraft.init.Blocks.AIR ? cc : ForgeRegistries.BLOCKS.getValue(Content.id("amethyst_block"));
     }
 
     static Item amethystShard() {
-        return shard != null ? shard : ForgeRegistries.ITEMS.getValue(Content.id("amethyst_shard"));
+        if (shard != null) {
+            return shard;
+        }
+        Item cc = ForgeRegistries.ITEMS.getValue(new net.minecraft.util.ResourceLocation("cavesandcliffsbackport", "amethyst_shard"));
+        return cc != null ? cc : ForgeRegistries.ITEMS.getValue(Content.id("amethyst_shard"));
     }
 }
