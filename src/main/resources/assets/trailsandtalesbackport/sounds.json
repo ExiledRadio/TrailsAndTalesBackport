@@ -2607,38 +2607,5 @@
       }
     ],
     "subtitle": "subtitles.trailsandtalesbackport.item.honeycomb.wax_on"
-  },
-  "music.overworld.cherry_grove": {
-    "sounds": [
-      {
-        "name": "trailsandtalesbackport:music/game/bromeliad",
-        "stream": true,
-        "volume": 0.4,
-        "weight": 3
-      },
-      {
-        "name": "minecraft:music/game/calm2",
-        "stream": true
-      },
-      {
-        "name": "trailsandtalesbackport:music/game/echo_in_the_wind",
-        "stream": true,
-        "volume": 0.4,
-        "weight": 3
-      },
-      {
-        "name": "trailsandtalesbackport:music/game/left_to_bloom",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "minecraft:music/game/calm1",
-        "stream": true
-      },
-      {
-        "name": "minecraft:music/game/calm3",
-        "stream": true
-      }
-    ]
   }
 }

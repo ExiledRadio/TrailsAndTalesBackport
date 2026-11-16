@@ -44,7 +44,7 @@ import java.util.function.Predicate;
  *   <li><b>Bees</b> (Buzzy Bees Backport, by name): cherry logs carry nests and the grove's chance per tree is 1.20's
  *       5% ({@code cherry_bees_005}); cherry leaves and pink petals are flowers to bees, as 1.20's {@code flowers}
  *       block and item tags list them ({@link #bees}).</li>
- *   <li><b>Music</b>: 1.20's {@code music.overworld.cherry_grove}, client side ({@code biome.client}).</li>
+ *   <li><b>Music</b>: 1.20's {@code music.overworld.cherry_grove}, played by 1.20's biome music ({@code music.BiomeMusic}).</li>
  * </ul>
  */
 @Mod.EventBusSubscriber(modid = TrailsAndTalesBackport.MOD_ID)

@@ -255,6 +255,11 @@ public final class ModConfig {
         @Config.Comment("1.20 adds A Familiar Room to the music that plays in every overworld biome.")
         @Config.LangKey("config.trailsandtalesbackport.lookAndFeel.gameMusic")
         public boolean gameMusic = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("1.20's biome music: Bromeliad, Crescent Dunes, Echo in the Wind and the older tracks in jungles, deserts, badlands, forests, old growth taigas and the cherry grove, and 1.20's lists in Caves & Cliffs' 1.18 biomes.")
+        @Config.LangKey("config.trailsandtalesbackport.lookAndFeel.biomeMusic")
+        public boolean biomeMusic = true;
     }
 
     // ------------------------------------------------------------------------------------------
