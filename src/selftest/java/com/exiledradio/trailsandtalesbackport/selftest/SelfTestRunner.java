@@ -62,6 +62,7 @@ public final class SelfTestRunner {
             new CherryGroveSelfTest(),
             new FlatSelfTest(),
             new WaterlogSelfTest(),
+            new SmithingSelfTest(),
     };
 
     private final List<String> wanted;

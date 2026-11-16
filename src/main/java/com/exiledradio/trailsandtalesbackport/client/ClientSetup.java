@@ -53,6 +53,7 @@ public final class ClientSetup {
         com.exiledradio.trailsandtalesbackport.heads.client.HeadsClient.init();
         com.exiledradio.trailsandtalesbackport.sign.client.SignClient.init();
         com.exiledradio.trailsandtalesbackport.biome.client.CherryGroveClient.init();
+        com.exiledradio.trailsandtalesbackport.smithing.client.SmithingClient.init();
     }
 
     /** Client post-init: work that must come after every mod's own setup (renderers that replace others'). */

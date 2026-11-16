@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "trailsandtalesbackport:block/medium_amethyst_bud"
+  }
+}

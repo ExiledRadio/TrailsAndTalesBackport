@@ -11,6 +11,12 @@ go ahead (`PLAN.md`, *Decided* 2 and 6). The V&P side is written up for its main
 
 ## 1. Smithing templates and armor trims (the delicate one)
 
+**Status (2026-11-16): built in Core 1.4.0** (Core branch `core-armor-trims`, not merged): `SmithingTemplates` and
+`ArmorTrims` with the API below (patterns take a `Supplier<Item>` template and an asset id; materials take a
+predicate, examples, a palette and a color, plus `darkerOn`), the client rendering, and textures built at runtime
+rather than shipped. This mod uses them (stream Sm); no local shim. Still asked of Village & Pillage: its own
+template slot (below); until then this mod opens its 1.20 container on V&P's table.
+
 ### What 1.20 does
 
 The smithing table has three inputs: **template**, **base**, **addition**. Netherite upgrades need the
