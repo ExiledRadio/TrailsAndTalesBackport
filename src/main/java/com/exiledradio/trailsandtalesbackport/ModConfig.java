@@ -104,6 +104,11 @@ public final class ModConfig {
     @Config.Comment("The piglin head, and mob heads on note blocks.")
     public static final Heads heads = new Heads();
 
+    @Setting.Feature(icon = "minecraft:comparator")
+    @Config.LangKey("config.trailsandtalesbackport.compat")
+    @Config.Comment("How this mod behaves alongside other mods.")
+    public static final Compat compat = new Compat();
+
     @Setting.Feature(icon = "minecraft:book")
     @Config.LangKey("config.trailsandtalesbackport.misc")
     @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
@@ -117,6 +122,18 @@ public final class ModConfig {
     // ------------------------------------------------------------------------------------------
     // Categories. Each stream owns exactly one.
     // ------------------------------------------------------------------------------------------
+
+    public static final class Compat {
+        @Config.RequiresMcRestart
+        @Config.Comment({"When another installed mod adds the same blocks and items (stripped logs, bamboo, chain): OURS hides the",
+                "other mod's, THEIRS hides ours, BOTH hides nothing."})
+        @Config.LangKey("config.trailsandtalesbackport.compat.duplicates")
+        public com.exiledradio.backportcore.duplicate.DuplicateBlocks.Keep duplicates = com.exiledradio.backportcore.duplicate.DuplicateBlocks.Keep.OURS;
+
+        @Config.Comment("Convert blocks and items left behind by another mod that added them, when that mod is removed from a world.")
+        @Config.LangKey("config.trailsandtalesbackport.compat.convertRemoved")
+        public boolean convertRemoved = true;
+    }
 
     public static final class Cherry {
         @Config.RequiresMcRestart
@@ -239,6 +256,12 @@ public final class ModConfig {
     }
 
     public static final class Misc {
+        @Config.Comment({"1.20.5's effect particles: one particle per effect in its own color (ambient ones fainter), and fewer of",
+                "them, in place of one blended color. Shown while 1.20.5 or later is the newest installed version. Client only."})
+        @Setting.Client
+        @Config.LangKey("config.trailsandtalesbackport.misc.effectParticles")
+        public boolean effectParticles = true;
+
         @Config.RequiresMcRestart
         @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
         @Config.LangKey("config.trailsandtalesbackport.misc.enabled")

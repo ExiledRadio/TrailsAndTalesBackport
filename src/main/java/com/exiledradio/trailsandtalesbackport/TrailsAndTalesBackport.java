@@ -53,6 +53,7 @@ public final class TrailsAndTalesBackport {
         NetworkHandler.init();
         com.exiledradio.trailsandtalesbackport.cherry.CherryContent.preInit();
         com.exiledradio.trailsandtalesbackport.bamboo.BambooWoodContent.preInit();
+        com.exiledradio.trailsandtalesbackport.migrate.FutureMcPairs.preInit();
         com.exiledradio.trailsandtalesbackport.bookshelf.BookshelfContent.preInit();
         com.exiledradio.trailsandtalesbackport.hangingsign.HangingSignContent.preInit();
         com.exiledradio.trailsandtalesbackport.sign.SignsContent.preInit();

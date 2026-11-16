@@ -12,3 +12,4 @@ Each patch's hook checks its own config and `Presentation.isAtLeast(...)`, so wi
 
 | # | Feature | Target (MCP / SRG) | Change | Why no event does it |
 | --- | --- | --- | --- | --- |
+| P20 | 1.20.5 effect particles (`misc.effectParticles`, `effectparticles`) | `EntityLivingBase.updatePotionEffects` / `func_70679_bo` (Forge-patched) | after `dataManager.get(POTION_EFFECTS).intValue()`, `ALOAD 0` + `EffectParticles.effectColor(I, EntityLivingBase)I`: the client draws 1.20.6's per-effect particle and gets 0 back for an entity the server sent a list for; otherwise the color is unchanged | The swirl is drawn inside the entity's own tick from the one blended color; no event runs there, and an event-side particle would leave 1.12.2's blended swirl on top |
