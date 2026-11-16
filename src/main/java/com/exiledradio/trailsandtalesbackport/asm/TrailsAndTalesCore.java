@@ -27,6 +27,7 @@ public final class TrailsAndTalesCore implements IFMLLoadingPlugin {
             "com.exiledradio.trailsandtalesbackport.asm.PickBlockTransformer",
             "com.exiledradio.trailsandtalesbackport.asm.StepSoundTransformer",
             "com.exiledradio.trailsandtalesbackport.asm.EffectParticlesTransformer", // P3
+            "com.exiledradio.trailsandtalesbackport.asm.ChunkFailureTransformer", // P4
     };
 
     @Override

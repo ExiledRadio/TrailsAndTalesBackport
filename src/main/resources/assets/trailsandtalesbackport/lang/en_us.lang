@@ -302,3 +302,10 @@ subtitles.trailsandtalesbackport.item.dye.use=Dye stains
 subtitles.trailsandtalesbackport.item.glow_ink_sac.use=Glow Ink Sac splotches
 subtitles.trailsandtalesbackport.item.honeycomb.wax_on=Wax on
 subtitles.trailsandtalesbackport.item.ink_sac.use=Ink Sac splotches
+
+# --- presentation1205 ---
+config.trailsandtalesbackport.presentation1205=1.20.5 World Warnings and Viossa
+config.trailsandtalesbackport.presentation1205.chunkToasts=Chunk Load and Save Failure Toasts
+config.trailsandtalesbackport.presentation1205.lowDiskSpace=Low Disk Space Warnings
+config.trailsandtalesbackport.presentation1205.recoverWorld=World Recovery Screen
+config.trailsandtalesbackport.presentation1205.viossa=Viossa in the Language List
