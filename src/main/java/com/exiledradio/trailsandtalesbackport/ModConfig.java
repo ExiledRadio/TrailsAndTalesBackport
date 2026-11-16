@@ -247,6 +247,10 @@ public final class ModConfig {
         @Config.Comment("1.20's death messages: /kill reads \"was killed\" and the world border \"left the confines of this world\".")
         @Config.LangKey("config.trailsandtalesbackport.misc.deathMessages")
         public boolean deathMessages = true;
+
+        @Config.Comment("1.20's step sounds: walking on a carpet, moss carpet, snow layer or roots plays it and, muffled, the block below; on petals, a lily pad or glow lichen it plays that block.")
+        @Config.LangKey("config.trailsandtalesbackport.misc.stepSounds")
+        public boolean stepSounds = true;
     }
 
     public static final class LookAndFeel {

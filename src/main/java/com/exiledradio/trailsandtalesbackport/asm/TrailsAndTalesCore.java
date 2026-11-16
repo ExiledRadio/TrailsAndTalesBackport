@@ -24,6 +24,8 @@ public final class TrailsAndTalesCore implements IFMLLoadingPlugin {
 
     /** Every patch, in PATCHES.md order. */
     public static final String[] TRANSFORMERS = {
+            "com.exiledradio.trailsandtalesbackport.asm.PickBlockTransformer",
+            "com.exiledradio.trailsandtalesbackport.asm.StepSoundTransformer",
     };
 
     @Override
