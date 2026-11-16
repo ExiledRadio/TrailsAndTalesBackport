@@ -126,5 +126,5 @@ random: first seed after 420-4160 ticks). `-Pselftest=all`: **`pass=521 fail=0`*
     grow callback in Buzzy Bees' `BeeFlowers` (its maintainer's call).
 *   **Suspicious stew** from torchflowers (night vision, 5 s): suspicious stew is Village & Pillage's; nothing
     to hook into yet.
-*   **Head turn limit**: 1.20 limits the sniffer's head to 50 degrees from its body; 1.12.2's look helper has its
-    own fixed limit and no hook.
+*   ~~Head turn limit~~ built on `tt-leftovers`: `SnifferHead` gives the look helper and the body helper 1.20's
+    50 degrees (1.12.2 fixes 75 in both).

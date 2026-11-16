@@ -51,6 +51,19 @@ public final class LeftoversSelfTest implements SelfTest {
         deathMessages(c);
         stepSounds(c);
         signs(c);
+        snifferHead(c);
+    }
+
+    private static void snifferHead(Check c) throws Exception {
+        com.exiledradio.trailsandtalesbackport.sniffer.EntitySniffer sniffer = new com.exiledradio.trailsandtalesbackport.sniffer.EntitySniffer(c.world);
+        c.ok(sniffer.getLookHelper().getClass().getSimpleName().equals("Look"), "the sniffer's look helper is 1.20's");
+        java.lang.reflect.Field f = net.minecraftforge.fml.relauncher.ReflectionHelper.findField(net.minecraft.entity.EntityLiving.class, "bodyHelper", "field_70762_j");
+        net.minecraft.entity.EntityBodyHelper body = (net.minecraft.entity.EntityBodyHelper) f.get(sniffer);
+        sniffer.renderYawOffset = 0.0F;
+        sniffer.rotationYawHead = 80.0F;
+        body.updateRenderAngles();
+        c.eq(50.0F, net.minecraft.util.math.MathHelper.wrapDegrees(sniffer.rotationYawHead - sniffer.renderYawOffset),
+                "standing, the body follows a head turned 80 degrees to 50 (1.20's getMaxHeadYRot)");
     }
 
     private static void music(Check c) {
