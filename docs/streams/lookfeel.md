@@ -97,18 +97,33 @@ jar, 1.20.6's language files), with the paths in its header.
 *   The menu tracks playing (Core's player picks them; the pool is tested).
 *   Other languages' vanilla text in game.
 
+## Built after the first pass (branch `tt-leftovers`)
+
+*   **1.20's biome music** (`music.BiomeMusic`, client `music.client`; config `lookAndFeel.biomeMusic`): all 17 of
+    1.20.6's `music.overworld.*` lists, track for track with their weights and volumes, as Backport Core's "1.20"
+    music step: jungles, sparse jungles, bamboo jungles, deserts, badlands, forests (birch and dark forests too),
+    flower forests, old growth taigas and the cherry grove play their music where the game music would. In Caves &
+    Cliffs' eight 1.18 biomes (its "1.18" step chooses them) the same biome's 1.20 list plays. The sound lists are
+    written at load from the tracks installed: 1.12.2's own under their old names (Clark is `calm2` ...), this mod's
+    five, Caves & Cliffs' 1.18 tracks, Wild Update's swamp tracks; a missing mod's tracks are left out. The cherry
+    grove's own step is gone (this replaces it). Swamp and deep dark music are 1.19's (Wild Update).
+*   **Narrator Hotkey** (1.20.2): Backport Core's, on the `core-tt` branch (patch P32 and the option; request 10.8).
+*   **Dimension-change screen** (1.20.5, `lookfeel.client.DimensionScreen`): to or from the Nether the portal's
+    animated texture fills "Loading terrain...", to or from the End the end portal's effect (1.20.6's
+    `rendertype_end_portal` shader in fixed function, with 1.20.6's textures); a respawn after death and every
+    other change keep the menu background.
+*   **Ctrl + pick block** (1.20.5, patch P1): no "(+NBT)" line, and a named block gives a named item.
+*   **Third-person shield arm** (1.20.5, `lookfeel.client.ArmPoses` on Core's player model hook): the blocking arm
+    follows the head (pitch clamped to -80..25 degrees, yaw to -30..30), as `HumanoidModel.poseBlockingArm`.
+*   Combined step sounds and the `/kill` and world border death messages turned out to be 1.20's (not 1.20.5's):
+    they are stream X's (`misc.StepSounds`, patch P2; `misc.DeathMessages`), config `misc.stepSounds` and
+    `misc.deathMessages`.
+*   The corrupted-world screen, the chunk and disk-space toasts and Viossa: branch `tt-leftovers-screens`.
+    Per-effect potion particles: branch `tt-leftovers-fx`.
+
 ## Not done (with reasons)
 
-*   1.20.5's menu look on every screen: Core's (request 10.5). Panorama motion (10.6).
-*   Narrator Hotkey (1.20.2): needs a patch (request 10.8).
-*   F3 + 3 (network charts): 1.12.2 keeps no packet history to chart.
-*   1.20's biome music (Bromeliad in jungles and forests, Crescent Dunes in deserts and badlands, Echo in the Wind in
-    cherry groves, flower forests, lush caves and badlands): 1.12.2 has no biome music; Caves & Cliffs' 1.18 biome
-    step owns the regions, and 1.20's lists mix in 1.18 and 1.19 tracks this mod does not ship. Left for when
-    those are coordinated.
-*   Smaller 1.20.5 pieces: the portal-texture screens between dimensions, the corrupted-world backup screen, the
-    chunk and disk-space toasts, combined step sounds, per-effect potion particles, the third-person shield arm,
-    `/kill`'s "was killed" and the world border's death message (1.12.2 uses other damage sources), Ctrl + pick
-    block without "(+NBT)", and the new languages. Each needs a patch or is a different mechanic, not presentation.
+*   1.20.5's menu look on every screen and the panorama motion: Core's (requests 10.5, 10.6), on `core-tt`.
+*   F3 + 3 (network charts): see `CORE_REQUESTS.md` 10.9.
 *   Buttons, check boxes and the Accessibility and Language icons: 1.20.2's sprites match 1.15's textures pixel for
     pixel, so nothing to replace.

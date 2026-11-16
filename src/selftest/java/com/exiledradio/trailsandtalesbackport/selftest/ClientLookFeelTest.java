@@ -47,13 +47,14 @@ public final class ClientLookFeelTest {
     private int fail;
     private int phase;
     private File shots;
+    private ClientLeftovers leftovers;
 
     public static void register() {
         MinecraftForge.EVENT_BUS.register(new ClientLookFeelTest());
         TrailsAndTalesBackport.LOGGER.info("CLIENT SELFTEST registered");
     }
 
-    private void ok(boolean condition, String what) {
+    void ok(boolean condition, String what) {
         if (condition) {
             this.pass++;
             TrailsAndTalesBackport.LOGGER.info("CLIENT SELFTEST ok {}", what);
@@ -90,6 +91,9 @@ public final class ClientLookFeelTest {
             } else if (this.phase == 1 && mc.world != null && mc.player != null && this.ticks >= 40) {
                 this.phase = 2;
                 loading(mc);
+                this.ticks = 0;
+                this.leftovers = new ClientLeftovers(mc, this.shots, this::ok);
+            } else if (this.phase == 2 && this.leftovers.tick(++this.ticks)) {
                 finish(mc);
             }
         } catch (Throwable t) {

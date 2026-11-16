@@ -58,7 +58,7 @@ public final class DimensionScreen {
     /** The dimension of the last client tick: the one being left when the screen opens. */
     private static Integer lastDimension;
     /** For the open screen. */
-    static volatile Reason reason = Reason.OTHER;
+    public static volatile Reason reason = Reason.OTHER;
     /** For the client self-test: the reason of the last screen opened, and how many frames this class drew. */
     public static volatile Reason lastReason;
     public static volatile int framesDrawn;

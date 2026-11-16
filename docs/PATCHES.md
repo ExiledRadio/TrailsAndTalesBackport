@@ -12,3 +12,9 @@ Each patch's hook checks its own config and `Presentation.isAtLeast(...)`, so wi
 
 | # | Feature | Target (MCP / SRG) | Change | Why no event does it |
 | --- | --- | --- | --- | --- |
+| P1 | Lf (1.20.5) | `Minecraft.storeTEInStack` / `func_184119_a` `(ItemStack, TileEntity)ItemStack` (client) | each returned stack passes through `LookHooks.pickedBlock(stack)`: 1.12.2's one "(+NBT)" lore line comes off (and an empty `display` tag), and a block with a `CustomName` gives an item of that name | 1.20.5 dropped the lore (24w09a, components; `Minecraft.addCustomNbtData`) and hands a named block's name to the item (`collectComponents`). The lore is written inside the method Forge's `onPickBlock` calls; nothing sees the stack between it and the creative-inventory packet. |
+| P2 | X (1.20) | `Entity.move` / `func_70091_d` `(MoverType, DDD)V` | its one `this.playStepSound(blockpos, block)` (`INVOKEVIRTUAL`) becomes `StepSounds.playStepSound(this, blockpos, block)` (`INVOKESTATIC`, same stack) | 1.20's `Player.playStepSound`: a carpet, moss carpet, snow layer or roots on top plays both (`#combination_step_sound_blocks`), petals, a lily pad, glow lichen and the rest play themselves (`#inside_step_sound_blocks`). The step sound is the entity's own protected method; no event names a step. Every entity that is not a player goes on to its own `playStepSound` (a cached `MethodHandle`, virtual), so overrides keep working. |
+
+Both target classes are patched by Forge, so they are javac-built: no ProGuard frames to keep (the dev runs cover the
+stack shape). P1 is client-only; P2 runs on both sides. The self-tests check which applied (`-Pselftest=leftovers` on
+the server for P2, `runClient -Pselftest=client` for P1).

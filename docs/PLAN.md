@@ -20,7 +20,8 @@ The 1.20.2 villager trade rebalance is still an experiment in current Java and s
 | Every new block, item, mob, biome, structure, advancement and music disc of 1.20.x; the changes to existing blocks, items and mobs that a player sees | Commands, data packs, data components, display entities, the debug and options screens: 1.12.2 can't take them and players never see them |
 | Archaeology in the older structures we can reach (desert pyramids, desert wells; ocean ruins through Update Aquatic) | Sculk sensor vibration-frequency rework: Wild Update's sensor, its job (we only tell its owner) |
 | Hanging signs for every wood, ours and the family's (Rule 2) | Diamond ore distribution in deepslate (1.20.2): Caves & Cliffs' deepslate |
-| Smithing templates on Village & Pillage's smithing table (Rule 2, through Backport Core) | Ambient music tracks (nice to have; listed under *Later*) |
+| Smithing templates on Village & Pillage's smithing table (Rule 2, through Backport Core) | |
+| 1.20's biome music, and 1.20's lists in Caves & Cliffs' 1.18 biomes | |
 
 ## Who owns what
 
@@ -380,7 +381,17 @@ ore-dictionary items, then our copy.
    before it).
 4. Languages through the family tool; waterlogging when Core's adapter exists.
 
-## Later
+## The items once left out (branch `tt-leftovers`, 2026-11-16)
 
-- 1.20's ambient music tracks (Aaron Cherof) by biome, through a music event: nice to have.
-- Future MC pairs for whatever of ours Future MC also adds (cherry? none in Future MC 0.2.x; checked per stream).
+Everything earlier passes left out is built, or is another mod's and said so where it lives:
+
+- 1.20's biome music by biome (Aaron Cherof's tracks and the rest; also 1.20's lists in Caves & Cliffs' 1.18
+  biomes): `music`, `docs/streams/lookfeel.md`.
+- 1.20.5: dimension-change portal screens, Ctrl + pick block (P1), the shield arm; 1.20: combined step sounds (P2),
+  the `/kill` and world border death messages; the brushing arm pose; signs' wax-on particles, back text and glow
+  over other mods' renderers, the back's selectors and scores (`docs/streams/signs.md`, `docs/PATCHES.md`).
+- Branch `tt-leftovers-screens`: the corrupted-world screen, the chunk and disk-space toasts and warning, Viossa.
+- Branch `tt-leftovers-fx`: per-effect potion particles; Future MC pairs (`docs/streams/futuremc.md`).
+- Backport Core (`core-tt`): Narrator Hotkey, the 1.20.5 menu look, the panorama motion, Adventuring Time, the
+  underwater fog (`CORE_REQUESTS.md` 10, 11). F3 + 3's network charts are request 10.9.
+- Update Aquatic (`ua-turtle-scute`): the scute reads "Turtle Scute" while a 1.20.5 backport is installed.
