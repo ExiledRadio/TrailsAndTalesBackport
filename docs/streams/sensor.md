@@ -78,8 +78,8 @@ Wild Update Backport on its `wu-core-game-events` branch when both are installed
 
 ## Tested (`./gradlew runServer -Pselftest=sensor`, port 25614)
 
-*   Without Wild Update Backport (67/0): 1.20 rules on; both blocks' states and metadata; the recipe (with
-    test-only `amethyst_shard`/`amethyst_block` stand-ins, `TestAmethyst`); facing from the placer; a vibration 5
+*   Without Wild Update Backport (67/0): 1.20 rules on; both blocks' states and metadata; the recipe (with this
+    mod's amethyst copy, `smithing.copy.AmethystCopies`, or Caves & Cliffs Backport's); facing from the placer; a vibration 5
     blocks off arriving, power 11, comparator 8, no power out of the back, strong power only below, active ->
     cooldown -> inactive; a redstone block behind: eat (8) unheard, explode (15) heard; the listener saved; the
     sculk sensor deaf at 9 blocks and to its own placing; stepping on it: active next tick at 15, frequency 1, the
@@ -88,7 +88,7 @@ Wild Update Backport on its `wu-core-game-events` branch when both are installed
 *   With Wild Update Backport's dev jar (56/0): no copy of ours, the recipe takes Wild's sensor, Wild's sensor
     resonates amethyst.
 *   With Caves & Cliffs Backport's dev jar (67/0): the recipe takes its `amethyst_shard`, its `amethyst_block`
-    resonates (the stand-ins step aside).
+    resonates.
 *   Whole suite: 3948/0. Wild Update Backport's vibration, sculk, warden and allay tests with this mod installed:
     405/0.
 

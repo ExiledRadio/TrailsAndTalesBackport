@@ -144,7 +144,8 @@ public final class SensorSelfTest implements SelfTest {
         c.eq(10, cal.activeTicks(), "calibrated: active 10 ticks");
 
         // --- recipe --------------------------------------------------------------------------------
-        Item shard = TestAmethyst.amethystShard();
+        // Caves & Cliffs Backport's shard, else this mod's copy (smithing.copy.AmethystCopies).
+        Item shard = com.exiledradio.trailsandtalesbackport.common.Owners.item(com.exiledradio.trailsandtalesbackport.common.Owners.CAVES_AND_CLIFFS, "amethyst_shard");
         if (c.ok(shard != null, "an amethyst shard for the recipe")) {
             ItemStack a = new ItemStack(shard);
             ItemStack s = new ItemStack(SensorContent.sensorItem());
@@ -208,7 +209,8 @@ public final class SensorSelfTest implements SelfTest {
         pig.setPosition(sp.getX() + 0.5D, sp.getY() + 0.5D, sp.getZ() + 0.5D);
         Ears ears = new Ears(sp.west(3));
         GameEvents.add(c.world, ears);
-        net.minecraft.block.Block amethyst = TestAmethyst.amethystBlock();
+        net.minecraft.block.Block amethyst = com.exiledradio.trailsandtalesbackport.common.Owners.block(
+                com.exiledradio.trailsandtalesbackport.common.Owners.CAVES_AND_CLIFFS, "amethyst_block");
         c.ok(amethyst != null && GameEventTags.resonates(amethyst.getDefaultState()), "the amethyst block resonates");
         if (copy == null) {
             // Wild Update Backport's sensor (1.19.2's stepOn: active at once) resonates through Core's SensorActivation.

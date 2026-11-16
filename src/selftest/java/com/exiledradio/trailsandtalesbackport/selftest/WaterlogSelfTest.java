@@ -57,7 +57,9 @@ public final class WaterlogSelfTest implements SelfTest {
         }
         return path.endsWith("_slab") || path.endsWith("_stairs") || path.endsWith("_fence") || path.endsWith("_trapdoor")
                 || path.endsWith("_sign") // standing, wall, hanging and wall hanging signs
-                || path.equals("chain") || path.equals("decorated_pot") || path.equals("cherry_leaves");
+                || path.equals("chain") || path.equals("decorated_pot") || path.equals("cherry_leaves")
+                // The amethyst copy (stream Sm): 1.20.6's AmethystClusterBlock is a SimpleWaterloggedBlock.
+                || path.endsWith("_amethyst_bud") || path.equals("amethyst_cluster");
     }
 
     @Override

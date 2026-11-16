@@ -147,6 +147,17 @@ public final class ArchaeologySelfTest implements SelfTest {
             if (name.equals(ArchaeologyLoot.OCEAN_RUIN_WARM) && Owners.ours("sniffer_egg") != null) {
                 expect++;
             }
+            if (name.equals(ArchaeologyLoot.TRAIL_RUINS_RARE)) {
+                // 1.20.6: the 7 sherds, the wayfinder, raiser, shaper and host templates, and Relic (12), as far as they exist.
+                for (String id : new String[] {"wayfinder", "raiser", "shaper", "host"}) {
+                    if (Owners.ours(id + "_armor_trim_smithing_template") != null) {
+                        expect++;
+                    }
+                }
+                if (Owners.ours("music_disc_relic") != null) {
+                    expect++;
+                }
+            }
             if (name.equals(ArchaeologyLoot.TRAIL_RUINS_COMMON)) {
                 expect = 25 + (Owners.ours("oak_hanging_sign") != null ? 2 : 0)
                         + (Owners.present(Owners.CAVES_AND_CLIFFS) ? 4 : 0);
