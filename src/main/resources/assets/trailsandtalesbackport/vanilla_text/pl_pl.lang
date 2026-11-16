@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Osadnik zombie ryczy
 subtitles.entity.zombie_villager.cure=Osadnik zombie sapie
 subtitles.item.armor.equip=Przywdziano zbroję
 subtitles.item.armor.equip_elytra=Szelest elytr
+death.attack.genericKill=Gracz %1$s został zabity
+death.attack.genericKill.player=%1$s został zabity podczas walki z %2$s
+death.attack.outsideBorder=Gracz %1$s opuścił granice tego świata
+death.attack.outsideBorder.player=Gracz %1$s opuścił granice tego świata podczas walki z %2$s

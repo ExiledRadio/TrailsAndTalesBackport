@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Vocifération de zombie-villageois
 subtitles.entity.zombie_villager.cure=Zombie-villageois qui s'agite
 subtitles.item.armor.equip=Armure équipée
 subtitles.item.armor.equip_elytra=Froissement d'élytres
+death.attack.genericKill=%1$s s'est fait tuer
+death.attack.genericKill.player=%1$s s'est fait tuer en combattant (un(e)) %2$s
+death.attack.outsideBorder=%1$s a quitté les confins de ce monde
+death.attack.outsideBorder.player=%1$s a quitté les confins de ce monde en combattant (un(e)) %2$s

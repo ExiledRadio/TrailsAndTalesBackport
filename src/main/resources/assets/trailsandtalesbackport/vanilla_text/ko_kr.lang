@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=좀비 주민이 울부짖음
 subtitles.entity.zombie_villager.cure=좀비 주민이 킁킁거림
 subtitles.item.armor.equip=장비를 장착함
 subtitles.item.armor.equip_elytra=겉날개가 바스락거림
+death.attack.genericKill=%1$s이(가) 죽었습니다
+death.attack.genericKill.player=%1$s이(가) %2$s과(와) 싸우는 도중 죽었습니다
+death.attack.outsideBorder=%1$s이(가) 세계의 한계를 벗어났습니다
+death.attack.outsideBorder.player=%1$s이(가) %2$s과(와) 싸우다가 세계의 한계를 벗어났습니다

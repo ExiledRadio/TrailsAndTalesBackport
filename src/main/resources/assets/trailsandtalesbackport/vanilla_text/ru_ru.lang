@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Крестьянин-зомби кр�
 subtitles.entity.zombie_villager.cure=Крестьянин-зомби сопит
 subtitles.item.armor.equip=Снаряжение надето
 subtitles.item.armor.equip_elytra=Шуршание элитр
+death.attack.genericKill=%1$s был убит
+death.attack.genericKill.player=%1$s был убит, сражаясь с %2$s
+death.attack.outsideBorder=%1$s покинул пределы этого мира
+death.attack.outsideBorder.player=%1$s покинул пределы этого мира, пока боролся с %2$s

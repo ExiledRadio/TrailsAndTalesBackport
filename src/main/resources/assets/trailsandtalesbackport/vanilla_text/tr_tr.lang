@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Zombi Köylü bağırıyor
 subtitles.entity.zombie_villager.cure=Zombi Köylü burnunu çekiyor
 subtitles.item.armor.equip=Ekipman kuşanıldı
 subtitles.item.armor.equip_elytra=Elitra hışırdadı
+death.attack.genericKill=%1$s öldürüldü
+death.attack.genericKill.player=%1$s, %2$s ile savaşırken öldürüldü
+death.attack.outsideBorder=%1$s bu dünyanın sınırlarını terk etti
+death.attack.outsideBorder.player=%1$s, %2$s ile savaşırken bu dünyanın sınırlarını terk etti

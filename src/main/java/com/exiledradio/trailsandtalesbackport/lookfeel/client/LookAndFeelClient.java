@@ -80,6 +80,7 @@ public final class LookAndFeelClient {
         }
         LoadingScreens.register(LoadingRevision.PANORAMA_1_20_5, new LoadingScreen1205());
         MinecraftForge.EVENT_BUS.register(new LookAndFeelClient());
+        MinecraftForge.EVENT_BUS.register(new DimensionScreen());
         setIcon();
         // `runClient -Pselftest=client`: the client check, reached by name (a release jar has no test classes).
         String selftest = System.getProperty(TrailsAndTalesBackport.MOD_ID + ".selftest");

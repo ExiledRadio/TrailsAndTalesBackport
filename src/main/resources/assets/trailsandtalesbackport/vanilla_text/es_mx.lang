@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Aldeano zombi curado
 subtitles.entity.zombie_villager.cure=Aldeano zombi respirando fuerte
 subtitles.item.armor.equip=Armadura equipada
 subtitles.item.armor.equip_elytra=Ruido de elytra
+death.attack.genericKill=%1$s murió
+death.attack.genericKill.player=%1$s murió mientras peleaba con %2$s
+death.attack.outsideBorder=%1$s dejó los confines de este mundo
+death.attack.outsideBorder.player=%1$s dejó los confines de este mundo mientras peleaba con %2$s

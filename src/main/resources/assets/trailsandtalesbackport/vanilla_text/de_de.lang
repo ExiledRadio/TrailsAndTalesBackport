@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Zombiedorfbewohner geheilt
 subtitles.entity.zombie_villager.cure=Zombiedorfbewohner zischt
 subtitles.item.armor.equip=Ausrüstung wird angelegt
 subtitles.item.armor.equip_elytra=Elytren rascheln
+death.attack.genericKill=%1$s wurde getötet
+death.attack.genericKill.player=%1$s wurde im Kampf gegen %2$s getötet
+death.attack.outsideBorder=%1$s verließ die Grenzen dieser Welt
+death.attack.outsideBorder.player=%1$s verließ im Kampf gegen %2$s die Grenzen dieser Welt

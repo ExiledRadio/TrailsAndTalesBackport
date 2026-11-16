@@ -75,3 +75,7 @@ subtitles.entity.zombie_villager.converted=Zombiedorpeling schreeuwt
 subtitles.entity.zombie_villager.cure=Zombiedorpeling snuift
 subtitles.item.armor.equip=Harnas wordt aangetrokken
 subtitles.item.armor.equip_elytra=Dekschild ruist
+death.attack.genericKill=%1$s werd gedood
+death.attack.genericKill.player=%1$s werd gedood tijdens een gevecht met %2$s
+death.attack.outsideBorder=%1$s verliet de begrenzingen van de wereld
+death.attack.outsideBorder.player=%1$s verliet de begrenzingen van de wereld tijdens een gevecht met %2$s
