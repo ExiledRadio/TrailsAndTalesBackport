@@ -118,12 +118,12 @@ jar, 1.20.6's language files), with the paths in its header.
 *   Combined step sounds and the `/kill` and world border death messages turned out to be 1.20's (not 1.20.5's):
     they are stream X's (`misc.StepSounds`, patch P2; `misc.DeathMessages`), config `misc.stepSounds` and
     `misc.deathMessages`.
-*   The corrupted-world screen, the chunk and disk-space toasts and Viossa: branch `tt-leftovers-screens`.
-    Per-effect potion particles: branch `tt-leftovers-fx`.
+*   The Failed to Load World screen, the chunk and disk-space toasts and Viossa: `docs/streams/presentation1205.md`.
+    Per-effect potion particles: `docs/streams/effectparticles.md`.
 
-## Not done (with reasons)
+## In Backport Core (branch `core-tt`)
 
 *   1.20.5's menu look on every screen and the panorama motion: Core's (requests 10.5, 10.6), on `core-tt`.
-*   F3 + 3 (network charts): see `CORE_REQUESTS.md` 10.9.
+*   F3 + 3 (network charts): built in Backport Core (`core-tt`, request 10.9).
 *   Buttons, check boxes and the Accessibility and Language icons: 1.20.2's sprites match 1.15's textures pixel for
     pixel, so nothing to replace.

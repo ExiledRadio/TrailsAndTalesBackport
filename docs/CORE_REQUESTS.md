@@ -263,7 +263,9 @@ These pieces are single slots, so they belong to Core; each has a small local sh
    keys are Core's. Asked for: the two charts, the byte count from a Netty handler on the client's
    `NetworkManager` channel and the ping from a Core packet (absent server side: the chart says so), behind a
    `debugKey(Keyboard.KEY_3, null, ...)` (10.2's no-help-line form) this mod registers for 1.20.2.
-   *Meanwhile:* F3 + 3 does nothing.
+   *Built* on Core's `core-tt` branch (0fe79e5): F3 + 3 is Core's own key from 1.20.2 (`DebugKeys.coreKey`), with
+   1.20.6's bandwidth and ping charts and 1.20.2's "Debug charts" line. Nothing to register here. With 10.2 also
+   built there, F3 + 1 and F3 + 2 can pass `null` and drop this mod's help lines once that Core is released.
 
 ## 11. Biomes: `/locate biome` and Adventuring Time (stream G)
 

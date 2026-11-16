@@ -390,8 +390,11 @@ Everything earlier passes left out is built, or is another mod's and said so whe
 - 1.20.5: dimension-change portal screens, Ctrl + pick block (P1), the shield arm; 1.20: combined step sounds (P2),
   the `/kill` and world border death messages; the brushing arm pose; signs' wax-on particles, back text and glow
   over other mods' renderers, the back's selectors and scores (`docs/streams/signs.md`, `docs/PATCHES.md`).
-- Branch `tt-leftovers-screens`: the corrupted-world screen, the chunk and disk-space toasts and warning, Viossa.
-- Branch `tt-leftovers-fx`: per-effect potion particles; Future MC pairs (`docs/streams/futuremc.md`).
+- 1.20.5's Failed to Load World screen, chunk and low disk space toasts and warning, Viossa
+  (`docs/streams/presentation1205.md`, patch P4).
+- 1.20.5's per-effect potion particles (`docs/streams/effectparticles.md`, patch P3); Future MC pairs for this mod's
+  copies (`docs/streams/futuremc.md`: Future MC 0.2.x has no 1.20 content).
+- The sniffer's 50-degree head turn limit (`docs/streams/sniffer.md`).
 - Backport Core (`core-tt`): Narrator Hotkey, the 1.20.5 menu look, the panorama motion, Adventuring Time, the
-  underwater fog (`CORE_REQUESTS.md` 10, 11). F3 + 3's network charts are request 10.9.
+  underwater fog, F3 + 3's network charts (`CORE_REQUESTS.md` 10, 11).
 - Update Aquatic (`ua-turtle-scute`): the scute reads "Turtle Scute" while a 1.20.5 backport is installed.
