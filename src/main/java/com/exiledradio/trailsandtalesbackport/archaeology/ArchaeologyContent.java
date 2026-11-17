@@ -265,7 +265,8 @@ public final class ArchaeologyContent {
         World world = projectile.world;
         BlockPos pos = ray.getBlockPos();
         IBlockState state = world.getBlockState(pos);
-        if (state.getBlock() != decoratedPot || !isImpactProjectile(projectile) || !mayInteract(projectile, world, pos)) {
+        if (state.getBlock() != decoratedPot || !isImpactProjectile(projectile) || !mayInteract(projectile, world, pos)
+                || !com.exiledradio.trailsandtalesbackport.mechanics.NewGameRules.projectilesCanBreakBlocks(world)) {
             return;
         }
         decoratedPot.shatter(world, pos, state, projectile);

@@ -154,6 +154,15 @@ config.trailsandtalesbackport.mechanics.redyeing=Re-dye Beds, Wool and Carpets
 config.trailsandtalesbackport.mechanics.slimeJumpBoost=Jump Boost on Slimes
 config.trailsandtalesbackport.mechanics.chorusFallDistance=Chorus Fruit Resets Falls
 config.trailsandtalesbackport.mechanics.arrowNames=Arrows Keep Names
+config.trailsandtalesbackport.mechanics.enchantingGaps=Enchanting Through Plants and Snow
+config.trailsandtalesbackport.mechanics.blockSounds=1.20.2 Block Sounds
+config.trailsandtalesbackport.mechanics.batModel=1.20.3 Bat Model
+config.trailsandtalesbackport.mechanics.hopperPickup=Hoppers Blocked by Full Blocks
+config.trailsandtalesbackport.mechanics.pearlSound=Ender Pearl Landing Sound
+config.trailsandtalesbackport.mechanics.entityNames=Names of Looked-At Entities
+config.trailsandtalesbackport.mechanics.gameRules=1.20 Game Rules
+config.trailsandtalesbackport.mechanics.barrierParticles=No Barrier Landing Particles
+config.trailsandtalesbackport.mechanics.witherColor=1.20 Wither Color
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Axe strips
@@ -463,8 +472,21 @@ config.trailsandtalesbackport.mechanics.redyeing.tooltip=1.20: beds, wool and ca
 config.trailsandtalesbackport.mechanics.slimeJumpBoost.tooltip=1.20: Jump Boost makes slimes and magma cubes jump higher.
 config.trailsandtalesbackport.mechanics.chorusFallDistance.tooltip=1.20: teleporting by eating chorus fruit resets fall distance, so the landing does no fall damage built up before.
 config.trailsandtalesbackport.mechanics.arrowNames.tooltip=1.20.3: an arrow item with a custom name shot from a bow keeps the name, and picking the arrow up gives the named item back.
+config.trailsandtalesbackport.mechanics.enchantingGaps.tooltip=1.20: bookshelves power an enchanting table through grass, snow layers, vines, fire, water and other replaceable blocks (1.12.2: only through air), and each shelf needs only the one block between it and the table clear.
+config.trailsandtalesbackport.mechanics.blockSounds.tooltip=1.20.2 and 1.20.5's block sounds: jukeboxes and tripwire hooks sound like wood, levers, repeaters and comparators like stone; sponges, wet sponges and cobwebs have their own sounds, and a sponge makes a sound when it soaks up water.
+config.trailsandtalesbackport.mechanics.batModel.tooltip=1.20.3's bat: its new model, texture and animations.
+config.trailsandtalesbackport.mechanics.hopperPickup.tooltip=1.20.5: a hopper with a full block on top no longer picks up items lying on that block (it still takes from a container there).
+config.trailsandtalesbackport.mechanics.pearlSound.tooltip=1.20.3: a player's thrown ender pearl plays a teleport sound where it lands.
+config.trailsandtalesbackport.mechanics.entityNames.tooltip=1.20.3: the custom name of an entity that is not a mob, such as a minecart or a boat, shows while you look at it.
+config.trailsandtalesbackport.mechanics.gameRules.tooltip=1.20.2 to 1.20.5's game rules: enderPearlsVanishOnDeath, projectilesCanBreakBlocks, playersNetherPortalDefaultDelay, playersNetherPortalCreativeDelay and spawnChunkRadius; and randomTickSpeed also sets how fast snow and ice form and cauldrons fill in the rain (0 stops them).
+config.trailsandtalesbackport.mechanics.barrierParticles.tooltip=1.20.2: landing on a barrier makes no particles.
+config.trailsandtalesbackport.mechanics.witherColor.tooltip=1.20: Wither's particles are the lighter gray-brown of 1.20.
 config.trailsandtalesbackport.lookAndFeel.tooltip=1.20's look: the cherry grove panorama, the title logo, splashes, menu music and the rest.
 config.trailsandtalesbackport.lookAndFeel.enabled.tooltip=1.20's title screen, splashes, menu music, options and loading screen through Backport Core.
 config.trailsandtalesbackport.lookAndFeel.gameMusic.tooltip=1.20 adds A Familiar Room to the music that plays in every overworld biome.
 config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=1.20's biome music: Bromeliad, Crescent Dunes, Echo in the Wind and the older tracks in jungles, deserts, badlands, forests, old growth taigas and the cherry grove, and 1.20's lists in Caves & Cliffs' 1.18 biomes.
 # --- end config tooltips ---
+
+# --- mechanics ---
+subtitles.trailsandtalesbackport.block.sponge.absorb=Sponge sucks
+subtitles.trailsandtalesbackport.entity.player.teleport=Player teleports

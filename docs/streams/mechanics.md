@@ -36,6 +36,38 @@ of this mod in Backport Core's settings screen (`ModConfig.mechanics`), on by de
   takes the name, keeps the item (`trailsandtalesbackport:item` in the arrow's Forge data, as 1.20.3's
   `pickupItemStack`) and gives it back when picked up.
 
+
+### The low-impact 1.20.x items (second round)
+
+- **Enchanting through replaceable blocks (1.20, 23w12a, MC-2474; P13, `enchantingGaps`).** A bookshelf at one of
+  the 32 places two blocks out counts when the one block halfway to it, at its own height, is air or a replaceable
+  block (grass, ferns, dead bushes, vines, fire, snow layers, water, lava: 1.20's `#replaceable`, read as 1.12.2's
+  replaceable materials). Forge's per-shelf power is kept. Particles follow the same test (client).
+- **Block sounds (1.20.2, 23w31a; 1.20.5, 24w10a; P15, `blockSounds`).** Jukeboxes and tripwire hooks sound like
+  wood, levers, repeaters and comparators like stone; sponges and wet sponges (per state) and cobwebs get 1.20's
+  own sounds; a sponge soaking up water plays `block.sponge.absorb`.
+- **The 1.20.3 bat (`batModel`, client).** `BatModel`'s parts and 32x32 texture, posed by `BatAnimation`'s flying
+  and resting keyframes (`tools/mechanics/bat_animations.py`); off, 1.12.2's renderer.
+- **Hoppers under full blocks (1.20.5, 24w04a; P14, `hopperPickup`).** A hopper block whose block above has a full
+  collision box (not a beehive or bee nest) picks up no items; hopper minecarts are unchanged. In 1.12.2 this only
+  shows for items inside that block, as 1.12.2's pickup box already stops at the top of the block above.
+- **Ender pearl landing sound (1.20.3, 23w43a; `pearlSound`).** `entity.player.teleport` where a player's pearl lands.
+- **Names of looked-at entities (1.20.3; P20, `entityNames`, client).** A custom name of an entity that is not a mob
+  shows while it is under the crosshair.
+- **Game rules (`gameRules`).** `enderPearlsVanishOnDeath` (1.20.2, P17), `projectilesCanBreakBlocks` (1.20.3,
+  decorated pots), `playersNetherPortalDefaultDelay` / `playersNetherPortalCreativeDelay` (1.20.3, P18),
+  `spawnChunkRadius` (1.20.5, read by `SpawnChunks.effectiveRadius`; Tricky Trials' radius 0 still wins), and
+  `randomTickSpeed` for snow, ice and cauldrons in the rain (1.20.2, P19).
+- **Barrier landings (1.20.2; P16, `barrierParticles`).** No dust when landing on a barrier.
+- **Wither's color (1.20; `witherColor`).** 7561558 instead of 3484199.
+
+Checked and left alone: re-dyeing (done in the first round); camels and sniffers panic while leashed (1.20.2) already
+(their panic behaviors ignore the lead); spiders fear armadillos (1.20.5) already in the armadillo stream; shulker
+bullets and llama spit never broke armor stands in 1.12.2 (their damage is not "player" or "arrow"); special arrows
+already pick up as themselves. Not done: `maxCommandForkCount` (1.12.2 has no command forks); 1.20.5's mob item
+pickup change (a side effect of item components); 1.20.5's bees and parrots overshooting and the shulker bullet's
+melee hitbox (no 1.12.2 code to match found); end portal arrival tickets (1.12.2 has no chunk tickets).
+
 ## How it works
 
 - P8 sets `checkAndPerformAttack`'s distance argument on its first line to a value that answers 1.20.2's question
@@ -65,6 +97,13 @@ of this mod in Backport Core's settings screen (`ModConfig.mechanics`), on by de
 - Re-dyeing: blue wool to red, lime bed to red, mixed carpets to black, white wool still dyes, red on red is no
   recipe.
 
+- `-Pselftest=mechanicslow` (`MechanicsLowSelfTest`): a real `ContainerEnchantment` offers level 30 through grass,
+  snow and vines (off: at most 8), stone halfway blocks one shelf only; `pullItems` skips an item inside a stone block
+  above (off: takes it), not under air or a slab, minecart-aligned positions unchanged; every swapped sound type and
+  the sponge's states, and the absorb sound heard by a world listener; barrier landings; each game rule (pearls of a
+  dead player, portal delays, the snow/ice chance at 0, 3 and 300, `spawnChunkRadius` and Tricky Trials' 0); the
+  pearl sound (and none for a teleport without a pearl); Wither's color. Each with its setting off.
+
 ## Not done, not tested
 
 - `EntityAIAttackMelee.shouldExecute`'s case with no path (1.20.2 starts the goal when already in melee range) keeps
@@ -73,3 +112,6 @@ of this mod in Backport Core's settings screen (`ModConfig.mechanics`), on by de
   1.12.2's (twice its reach); 1.20.2 measures it from the bear's center.
 - Arrows shot by dispensers do not take a name (1.20.3's dispensers do); only bows that find ammunition as vanilla's.
 - Not tested in a client: shields and named arrows were only checked on the server.
+- Not tested in a client: the bat, P13's particles, P20, and hearing the new sounds; P19 allows at most one snow or
+  ice try per chunk per tick, so very high `randomTickSpeed` values are slower than 1.20.2's; raising
+  `spawnChunkRadius` keeps new chunks loaded only once something else loads them (1.12.2 has no chunk tickets).

@@ -155,6 +155,15 @@ config.trailsandtalesbackport.mechanics.redyeing=Betten, Wolle und Teppiche umf�
 config.trailsandtalesbackport.mechanics.slimeJumpBoost=Sprungkraft bei Schleimen
 config.trailsandtalesbackport.mechanics.chorusFallDistance=Chorusfrucht setzt Fallhöhe zurück
 config.trailsandtalesbackport.mechanics.arrowNames=Pfeile behalten Namen
+config.trailsandtalesbackport.mechanics.enchantingGaps=Verzaubern durch Pflanzen und Schnee
+config.trailsandtalesbackport.mechanics.blockSounds=Blockgeräusche (1.20.2)
+config.trailsandtalesbackport.mechanics.batModel=Fledermausmodell (1.20.3)
+config.trailsandtalesbackport.mechanics.hopperPickup=Volle Blöcke blockieren Trichter
+config.trailsandtalesbackport.mechanics.pearlSound=Landegeräusch der Enderperle
+config.trailsandtalesbackport.mechanics.entityNames=Namen angesehener Objekte
+config.trailsandtalesbackport.mechanics.gameRules=Spielregeln (1.20)
+config.trailsandtalesbackport.mechanics.barrierParticles=Keine Landepartikel auf Barrieren
+config.trailsandtalesbackport.mechanics.witherColor=Farbe von Verdorrung (1.20)
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Axt schabt
@@ -464,8 +473,21 @@ config.trailsandtalesbackport.mechanics.redyeing.tooltip=1.20: Betten, Wolle und
 config.trailsandtalesbackport.mechanics.slimeJumpBoost.tooltip=1.20: Sprungkraft lässt Schleime und Magmawürfel höher springen.
 config.trailsandtalesbackport.mechanics.chorusFallDistance.tooltip=1.20: Die Teleportation durch das Essen einer Chorusfrucht setzt die Fallhöhe zurück, sodass die Landung keinen vorher aufgebauten Fallschaden verursacht.
 config.trailsandtalesbackport.mechanics.arrowNames.tooltip=1.20.3: Ein Pfeil-Gegenstand mit eigenem Namen behält den Namen, wenn er mit einem Bogen verschossen wird, und beim Aufheben gibt es den benannten Gegenstand zurück.
+config.trailsandtalesbackport.mechanics.enchantingGaps.tooltip=1.20: Bücherregale verstärken einen Zaubertisch auch durch Gras, Schneeschichten, Ranken, Feuer, Wasser und andere ersetzbare Blöcke (1.12.2: nur durch Luft), und bei jedem Regal muss nur der eine Block zwischen ihm und dem Tisch frei sein.
+config.trailsandtalesbackport.mechanics.blockSounds.tooltip=Blockgeräusche aus 1.20.2 und 1.20.5: Plattenspieler und Haken klingen nach Holz, Hebel, Verstärker und Komparatoren nach Stein; Schwämme, nasse Schwämme und Spinnennetze haben eigene Geräusche, und ein Schwamm macht ein Geräusch, wenn er Wasser aufsaugt.
+config.trailsandtalesbackport.mechanics.batModel.tooltip=Die Fledermaus aus 1.20.3: ihr neues Modell, ihre neue Textur und ihre neuen Animationen.
+config.trailsandtalesbackport.mechanics.hopperPickup.tooltip=1.20.5: Ein Trichter mit einem vollen Block darauf sammelt keine Gegenstände mehr ein, die auf diesem Block liegen (aus einem Behälter dort nimmt er weiterhin).
+config.trailsandtalesbackport.mechanics.pearlSound.tooltip=1.20.3: Eine von einem Spieler geworfene Enderperle spielt dort, wo sie landet, ein Teleportgeräusch ab.
+config.trailsandtalesbackport.mechanics.entityNames.tooltip=1.20.3: Der eigene Name eines Objekts, das keine Kreatur ist, etwa einer Lore oder eines Boots, wird angezeigt, während man es ansieht.
+config.trailsandtalesbackport.mechanics.gameRules.tooltip=Spielregeln aus 1.20.2 bis 1.20.5: enderPearlsVanishOnDeath, projectilesCanBreakBlocks, playersNetherPortalDefaultDelay, playersNetherPortalCreativeDelay und spawnChunkRadius; außerdem bestimmt randomTickSpeed auch, wie schnell sich Schnee und Eis bilden und Kessel sich im Regen füllen (0 stoppt das).
+config.trailsandtalesbackport.mechanics.barrierParticles.tooltip=1.20.2: Die Landung auf einer Barriere erzeugt keine Partikel.
+config.trailsandtalesbackport.mechanics.witherColor.tooltip=1.20: Die Partikel von Verdorrung haben das hellere Graubraun aus 1.20.
 config.trailsandtalesbackport.lookAndFeel.tooltip=Das Erscheinungsbild von 1.20: das Kirschberghain-Panorama, das Titellogo, die Menüsprüche, die Menümusik und der Rest.
 config.trailsandtalesbackport.lookAndFeel.enabled.tooltip=Hauptmenü, Menüsprüche, Menümusik, Optionen und Ladebildschirm aus 1.20 über Backport Core.
 config.trailsandtalesbackport.lookAndFeel.gameMusic.tooltip=1.20 fügt A Familiar Room zur Musik hinzu, die in jedem Oberwelt-Biom läuft.
 config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=Die Biom-Musik aus 1.20: Bromeliad, Crescent Dunes, Echo in the Wind und die älteren Stücke in Dschungeln, Wüsten, Tafelbergen, Wäldern, Urtaigas und dem Kirschberghain sowie die Listen aus 1.20 in den 1.18-Biomen von Caves & Cliffs.
 # --- end config tooltips ---
+
+# --- mechanics ---
+subtitles.trailsandtalesbackport.block.sponge.absorb=Schwamm saugt auf
+subtitles.trailsandtalesbackport.entity.player.teleport=Spieler teleportiert

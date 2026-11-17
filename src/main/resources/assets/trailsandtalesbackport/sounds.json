@@ -3270,5 +3270,186 @@
         "stream": true
       }
     ]
+  },
+  "block.sponge.break": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/break1",
+      "trailsandtalesbackport:block/sponge/break2",
+      "trailsandtalesbackport:block/sponge/break3",
+      "trailsandtalesbackport:block/sponge/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.sponge.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/step1",
+      "trailsandtalesbackport:block/sponge/step2",
+      "trailsandtalesbackport:block/sponge/step3",
+      "trailsandtalesbackport:block/sponge/step4",
+      "trailsandtalesbackport:block/sponge/step5",
+      "trailsandtalesbackport:block/sponge/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.sponge.place": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/break1",
+      "trailsandtalesbackport:block/sponge/break2",
+      "trailsandtalesbackport:block/sponge/break3",
+      "trailsandtalesbackport:block/sponge/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.sponge.hit": {
+    "sounds": [
+      {
+        "name": "trailsandtalesbackport:block/sponge/step1",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sponge/step2",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sponge/step3",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sponge/step4",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sponge/step5",
+        "volume": 0.8
+      },
+      {
+        "name": "trailsandtalesbackport:block/sponge/step6",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.sponge.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/step1",
+      "trailsandtalesbackport:block/sponge/step2",
+      "trailsandtalesbackport:block/sponge/step3",
+      "trailsandtalesbackport:block/sponge/step4",
+      "trailsandtalesbackport:block/sponge/step5",
+      "trailsandtalesbackport:block/sponge/step6"
+    ]
+  },
+  "block.sponge.absorb": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/absorb1",
+      "trailsandtalesbackport:block/sponge/absorb2",
+      "trailsandtalesbackport:block/sponge/absorb3"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.block.sponge.absorb"
+  },
+  "block.wet_sponge.break": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/wet_sponge/break1",
+      "trailsandtalesbackport:block/sponge/wet_sponge/break2",
+      "trailsandtalesbackport:block/sponge/wet_sponge/break3",
+      "trailsandtalesbackport:block/sponge/wet_sponge/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.wet_sponge.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/wet_sponge/step1",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step2",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step3",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.wet_sponge.place": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/wet_sponge/break1",
+      "trailsandtalesbackport:block/sponge/wet_sponge/break2",
+      "trailsandtalesbackport:block/sponge/wet_sponge/break3",
+      "trailsandtalesbackport:block/sponge/wet_sponge/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.wet_sponge.hit": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/wet_sponge/step1",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step2",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step3",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.wet_sponge.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/sponge/wet_sponge/step1",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step2",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step3",
+      "trailsandtalesbackport:block/sponge/wet_sponge/step4"
+    ]
+  },
+  "block.cobweb.break": {
+    "sounds": [
+      "trailsandtalesbackport:block/cobweb/break1",
+      "trailsandtalesbackport:block/cobweb/break2",
+      "trailsandtalesbackport:block/cobweb/break3",
+      "trailsandtalesbackport:block/cobweb/break4",
+      "trailsandtalesbackport:block/cobweb/break5",
+      "trailsandtalesbackport:block/cobweb/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.cobweb.step": {
+    "sounds": [
+      "trailsandtalesbackport:block/cobweb/step1",
+      "trailsandtalesbackport:block/cobweb/step2",
+      "trailsandtalesbackport:block/cobweb/step3",
+      "trailsandtalesbackport:block/cobweb/step4",
+      "trailsandtalesbackport:block/cobweb/step5",
+      "trailsandtalesbackport:block/cobweb/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.cobweb.place": {
+    "sounds": [
+      "trailsandtalesbackport:block/cobweb/break1",
+      "trailsandtalesbackport:block/cobweb/break2",
+      "trailsandtalesbackport:block/cobweb/break3",
+      "trailsandtalesbackport:block/cobweb/break4",
+      "trailsandtalesbackport:block/cobweb/break5",
+      "trailsandtalesbackport:block/cobweb/break6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.cobweb.hit": {
+    "sounds": [
+      "trailsandtalesbackport:block/cobweb/step1",
+      "trailsandtalesbackport:block/cobweb/step2",
+      "trailsandtalesbackport:block/cobweb/step3",
+      "trailsandtalesbackport:block/cobweb/step4",
+      "trailsandtalesbackport:block/cobweb/step5",
+      "trailsandtalesbackport:block/cobweb/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.cobweb.fall": {
+    "sounds": [
+      "trailsandtalesbackport:block/cobweb/step1",
+      "trailsandtalesbackport:block/cobweb/step2",
+      "trailsandtalesbackport:block/cobweb/step3",
+      "trailsandtalesbackport:block/cobweb/step4",
+      "trailsandtalesbackport:block/cobweb/step5",
+      "trailsandtalesbackport:block/cobweb/step6"
+    ]
+  },
+  "entity.player.teleport": {
+    "sounds": [
+      "trailsandtalesbackport:mob/endermen/portal",
+      "trailsandtalesbackport:mob/endermen/portal2"
+    ],
+    "subtitle": "subtitles.trailsandtalesbackport.entity.player.teleport"
   }
 }

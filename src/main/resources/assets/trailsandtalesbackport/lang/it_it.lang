@@ -155,6 +155,15 @@ config.trailsandtalesbackport.mechanics.redyeing=Ritingere letti, lana e tappeti
 config.trailsandtalesbackport.mechanics.slimeJumpBoost=Salto potenziato sugli slime
 config.trailsandtalesbackport.mechanics.chorusFallDistance=Il frutto di chorus azzera le cadute
 config.trailsandtalesbackport.mechanics.arrowNames=Le frecce mantengono il nome
+config.trailsandtalesbackport.mechanics.enchantingGaps=Incantare attraverso piante e neve
+config.trailsandtalesbackport.mechanics.blockSounds=Suoni dei blocchi (1.20.2)
+config.trailsandtalesbackport.mechanics.batModel=Modello del pipistrello (1.20.3)
+config.trailsandtalesbackport.mechanics.hopperPickup=Tramogge bloccate da blocchi pieni
+config.trailsandtalesbackport.mechanics.pearlSound=Suono di atterraggio della perla di ender
+config.trailsandtalesbackport.mechanics.entityNames=Nomi delle entità osservate
+config.trailsandtalesbackport.mechanics.gameRules=Regole di gioco (1.20)
+config.trailsandtalesbackport.mechanics.barrierParticles=Nessuna particella atterrando sulle barriere
+config.trailsandtalesbackport.mechanics.witherColor=Colore di Avvizzimento (1.20)
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Ascia scorteccia
@@ -464,8 +473,21 @@ config.trailsandtalesbackport.mechanics.redyeing.tooltip=1.20: letti, lana e tap
 config.trailsandtalesbackport.mechanics.slimeJumpBoost.tooltip=1.20: Salto potenziato fa saltare più in alto slime e cubi di magma.
 config.trailsandtalesbackport.mechanics.chorusFallDistance.tooltip=1.20: teletrasportarsi mangiando un frutto di chorus azzera la distanza di caduta, così l'atterraggio non infligge i danni da caduta accumulati prima.
 config.trailsandtalesbackport.mechanics.arrowNames.tooltip=1.20.3: una freccia con un nome personalizzato scoccata con un arco mantiene il nome, e raccoglierla restituisce l'oggetto con il nome.
+config.trailsandtalesbackport.mechanics.enchantingGaps.tooltip=1.20: le librerie potenziano un tavolo per incantesimi anche attraverso erba, strati di neve, rampicanti, fuoco, acqua e altri blocchi sostituibili (1.12.2: solo attraverso l'aria), e per ogni libreria basta che sia libero il solo blocco tra essa e il tavolo.
+config.trailsandtalesbackport.mechanics.blockSounds.tooltip=Suoni dei blocchi della 1.20.2 e della 1.20.5: giradischi e ganci per filo d'inciampo suonano come legno, leve, ripetitori e comparatori come pietra; spugne, spugne bagnate e ragnatele hanno suoni propri, e una spugna emette un suono quando assorbe acqua.
+config.trailsandtalesbackport.mechanics.batModel.tooltip=Il pipistrello della 1.20.3: il nuovo modello, la texture e le animazioni.
+config.trailsandtalesbackport.mechanics.hopperPickup.tooltip=1.20.5: una tramoggia con un blocco pieno sopra non raccoglie più gli oggetti che giacciono su quel blocco (continua a prendere da un contenitore che si trovi lì).
+config.trailsandtalesbackport.mechanics.pearlSound.tooltip=1.20.3: una perla di ender lanciata da un giocatore riproduce un suono di teletrasporto dove atterra.
+config.trailsandtalesbackport.mechanics.entityNames.tooltip=1.20.3: il nome personalizzato di un'entità che non è una creatura, come un vagonetto o una barca, viene mostrato mentre la si guarda.
+config.trailsandtalesbackport.mechanics.gameRules.tooltip=Regole di gioco dalla 1.20.2 alla 1.20.5: enderPearlsVanishOnDeath, projectilesCanBreakBlocks, playersNetherPortalDefaultDelay, playersNetherPortalCreativeDelay e spawnChunkRadius; inoltre randomTickSpeed regola anche la velocità con cui si formano neve e ghiaccio e i calderoni si riempiono sotto la pioggia (0 li ferma).
+config.trailsandtalesbackport.mechanics.barrierParticles.tooltip=1.20.2: atterrare su una barriera non produce particelle.
+config.trailsandtalesbackport.mechanics.witherColor.tooltip=1.20: le particelle di Avvizzimento hanno il grigio-marrone più chiaro della 1.20.
 config.trailsandtalesbackport.lookAndFeel.tooltip=L'aspetto della 1.20: il panorama del boschetto di ciliegi, il logo del titolo, i testi iniziali, la musica del menù e il resto.
 config.trailsandtalesbackport.lookAndFeel.enabled.tooltip=La schermata del titolo, i testi iniziali, la musica del menù, le opzioni e la schermata di caricamento della 1.20 tramite Backport Core.
 config.trailsandtalesbackport.lookAndFeel.gameMusic.tooltip=La 1.20 aggiunge A Familiar Room alla musica che suona in ogni bioma dell'Overworld.
 config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=La musica dei biomi della 1.20: Bromeliad, Crescent Dunes, Echo in the Wind e i brani più vecchi nelle giungle, nei deserti, nei calanchi, nelle foreste, nelle taighe secolari e nel boschetto di ciliegi, e gli elenchi della 1.20 nei biomi della 1.18 di Caves & Cliffs.
 # --- end config tooltips ---
+
+# --- mechanics ---
+subtitles.trailsandtalesbackport.block.sponge.absorb=Spugna assorbe
+subtitles.trailsandtalesbackport.entity.player.teleport=Giocatore si teletrasporta
