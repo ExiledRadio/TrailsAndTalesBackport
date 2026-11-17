@@ -155,6 +155,15 @@ config.trailsandtalesbackport.mechanics.redyeing=Перекрашивание к
 config.trailsandtalesbackport.mechanics.slimeJumpBoost=Прыгучесть у слизней
 config.trailsandtalesbackport.mechanics.chorusFallDistance=Плод коруса сбрасывает падение
 config.trailsandtalesbackport.mechanics.arrowNames=Стрелы сохраняют название
+config.trailsandtalesbackport.mechanics.enchantingGaps=Зачаровывание через растения и снег
+config.trailsandtalesbackport.mechanics.blockSounds=Звуки блоков (1.20.2)
+config.trailsandtalesbackport.mechanics.batModel=Модель летучей мыши (1.20.3)
+config.trailsandtalesbackport.mechanics.hopperPickup=Полные блоки перекрывают воронки
+config.trailsandtalesbackport.mechanics.pearlSound=Звук приземления эндер-жемчуга
+config.trailsandtalesbackport.mechanics.entityNames=Названия сущностей под взглядом
+config.trailsandtalesbackport.mechanics.gameRules=Игровые правила (1.20)
+config.trailsandtalesbackport.mechanics.barrierParticles=Без частиц приземления на барьерах
+config.trailsandtalesbackport.mechanics.witherColor=Цвет иссушения (1.20)
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Обтёсывание топором
@@ -464,8 +473,21 @@ config.trailsandtalesbackport.mechanics.redyeing.tooltip=1.20: кровати, �
 config.trailsandtalesbackport.mechanics.slimeJumpBoost.tooltip=1.20: Прыгучесть заставляет слизней и магмовых кубов прыгать выше.
 config.trailsandtalesbackport.mechanics.chorusFallDistance.tooltip=1.20: телепортация после поедания плода коруса сбрасывает высоту падения, так что приземление не наносит накопленного ранее урона от падения.
 config.trailsandtalesbackport.mechanics.arrowNames.tooltip=1.20.3: стрела с собственным названием, выпущенная из лука, сохраняет его, а подобранная возвращается как предмет с этим названием.
+config.trailsandtalesbackport.mechanics.enchantingGaps.tooltip=1.20: книжные полки усиливают чародейский стол и через траву, слои снега, лианы, огонь, воду и другие заменяемые блоки (1.12.2: только через воздух), а для каждой полки свободным должен быть лишь один блок между ней и столом.
+config.trailsandtalesbackport.mechanics.blockSounds.tooltip=Звуки блоков из 1.20.2 и 1.20.5: проигрыватели и крюки звучат как дерево, рычаги, повторители и компараторы — как камень; у губок, мокрых губок и паутины свои звуки, а губка издаёт звук, впитывая воду.
+config.trailsandtalesbackport.mechanics.batModel.tooltip=Летучая мышь из 1.20.3: её новые модель, текстура и анимации.
+config.trailsandtalesbackport.mechanics.hopperPickup.tooltip=1.20.5: воронка с полным блоком сверху больше не подбирает предметы, лежащие на этом блоке (из контейнера там она по-прежнему забирает).
+config.trailsandtalesbackport.mechanics.pearlSound.tooltip=1.20.3: брошенный игроком эндер-жемчуг издаёт звук телепортации в месте приземления.
+config.trailsandtalesbackport.mechanics.entityNames.tooltip=1.20.3: собственное название сущности, которая не является мобом, например вагонетки или лодки, показывается, пока на неё смотришь.
+config.trailsandtalesbackport.mechanics.gameRules.tooltip=Игровые правила из 1.20.2–1.20.5: enderPearlsVanishOnDeath, projectilesCanBreakBlocks, playersNetherPortalDefaultDelay, playersNetherPortalCreativeDelay и spawnChunkRadius; а randomTickSpeed также задаёт, как быстро образуются снег и лёд и наполняются котлы под дождём (0 останавливает это).
+config.trailsandtalesbackport.mechanics.barrierParticles.tooltip=1.20.2: приземление на барьер не создаёт частиц.
+config.trailsandtalesbackport.mechanics.witherColor.tooltip=1.20: частицы эффекта «Иссушение» более светлого серо-коричневого цвета из 1.20.
 config.trailsandtalesbackport.lookAndFeel.tooltip=Облик 1.20: панорама вишнёвой рощи, логотип главного меню, сплэши, музыка меню и остальное.
 config.trailsandtalesbackport.lookAndFeel.enabled.tooltip=Главное меню, сплэши, музыка меню, настройки и экран загрузки из 1.20 через Backport Core.
 config.trailsandtalesbackport.lookAndFeel.gameMusic.tooltip=В 1.20 трек A Familiar Room добавлен в музыку, которая играет во всех биомах обычного мира.
 config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=Музыка биомов из 1.20: Bromeliad, Crescent Dunes, Echo in the Wind и более старые треки в джунглях, пустынях, бесплодных землях, лесах, реликтовых тайгах и вишнёвой роще, а также подборки 1.20 в биомах 1.18 из Caves & Cliffs.
 # --- end config tooltips ---
+
+# --- mechanics ---
+subtitles.trailsandtalesbackport.block.sponge.absorb=Губка впитывает
+subtitles.trailsandtalesbackport.entity.player.teleport=Игрок телепортируется

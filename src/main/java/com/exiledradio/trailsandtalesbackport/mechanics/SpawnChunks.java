@@ -26,6 +26,15 @@ public final class SpawnChunks {
         return ModConfig.mechanics.spawnChunks;
     }
 
+    /**
+     * {@link #radius}, or, while it is above 0, the overworld's {@code spawnChunkRadius} game rule (1.20.5, added by
+     * {@link NewGameRules}). A radius of 0 set by another backport wins over the rule.
+     */
+    public static int effectiveRadius() {
+        int r = radius;
+        return r > 0 ? NewGameRules.spawnChunkRadius(r) : r;
+    }
+
     /** Replaces the body of {@code World.isSpawnChunk(x, z)}. */
     public static boolean isSpawnChunk(World world, int x, int z) {
         BlockPos spawn = world.getSpawnPoint();
@@ -34,7 +43,7 @@ public final class SpawnChunks {
             int dz = z * 16 + 8 - spawn.getZ();
             return dx >= -128 && dx <= 128 && dz >= -128 && dz <= 128;
         }
-        int r = radius;
+        int r = effectiveRadius();
         return r > 0 && Math.abs(x - (spawn.getX() >> 4)) <= r && Math.abs(z - (spawn.getZ() >> 4)) <= r;
     }
 
@@ -43,7 +52,7 @@ public final class SpawnChunks {
         if (!enabled()) {
             return 192;
         }
-        int r = radius;
+        int r = effectiveRadius();
         return r > 0 ? r * 16 : -16;
     }
 
@@ -57,7 +66,7 @@ public final class SpawnChunks {
         if (!enabled()) {
             return 625;
         }
-        int side = 2 * Math.max(radius, 0) + 1;
+        int side = 2 * Math.max(effectiveRadius(), 0) + 1;
         return side * side;
     }
 }

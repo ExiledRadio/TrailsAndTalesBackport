@@ -70,6 +70,7 @@ public final class SelfTestRunner {
             new Presentation1205SelfTest(),
             new StructuresSelfTest(),
             new MechanicsSelfTest(),
+            new MechanicsLowSelfTest(),
     };
 
     private final List<String> wanted;

@@ -36,6 +36,14 @@ public final class TrailsAndTalesCore implements IFMLLoadingPlugin {
             "com.exiledradio.trailsandtalesbackport.asm.SpawnChunkTransformer", // P10
             "com.exiledradio.trailsandtalesbackport.asm.SlimeJumpTransformer", // P11
             "com.exiledradio.trailsandtalesbackport.asm.ArrowPickupTransformer", // P12
+            "com.exiledradio.trailsandtalesbackport.asm.EnchantingTableTransformer", // P13
+            "com.exiledradio.trailsandtalesbackport.asm.HopperTransformer", // P14
+            "com.exiledradio.trailsandtalesbackport.asm.SpongeTransformer", // P15
+            "com.exiledradio.trailsandtalesbackport.asm.BarrierTransformer", // P16
+            "com.exiledradio.trailsandtalesbackport.asm.EnderPearlTransformer", // P17
+            "com.exiledradio.trailsandtalesbackport.asm.PortalTimeTransformer", // P18
+            "com.exiledradio.trailsandtalesbackport.asm.PrecipitationTransformer", // P19
+            "com.exiledradio.trailsandtalesbackport.asm.EntityNameTransformer", // P20
     };
 
     @Override

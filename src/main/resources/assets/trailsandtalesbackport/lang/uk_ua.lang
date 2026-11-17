@@ -155,6 +155,15 @@ config.trailsandtalesbackport.mechanics.redyeing=Перефарбування л
 config.trailsandtalesbackport.mechanics.slimeJumpBoost=Стрибучість у слизів
 config.trailsandtalesbackport.mechanics.chorusFallDistance=Хорус-плід скидає падіння
 config.trailsandtalesbackport.mechanics.arrowNames=Стріли зберігають назву
+config.trailsandtalesbackport.mechanics.enchantingGaps=Зачарування крізь рослини та сніг
+config.trailsandtalesbackport.mechanics.blockSounds=Звуки блоків (1.20.2)
+config.trailsandtalesbackport.mechanics.batModel=Модель кажана (1.20.3)
+config.trailsandtalesbackport.mechanics.hopperPickup=Повні блоки перекривають лійки
+config.trailsandtalesbackport.mechanics.pearlSound=Звук приземлення перлини Енду
+config.trailsandtalesbackport.mechanics.entityNames=Назви сутностей під поглядом
+config.trailsandtalesbackport.mechanics.gameRules=Ігрові правила (1.20)
+config.trailsandtalesbackport.mechanics.barrierParticles=Без частинок приземлення на бар'єрах
+config.trailsandtalesbackport.mechanics.witherColor=Колір висушування (1.20)
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Сокира скрегоче
@@ -464,8 +473,21 @@ config.trailsandtalesbackport.mechanics.redyeing.tooltip=1.20: ліжка, во�
 config.trailsandtalesbackport.mechanics.slimeJumpBoost.tooltip=1.20: Стрибучість змушує слизів і магмові куби стрибати вище.
 config.trailsandtalesbackport.mechanics.chorusFallDistance.tooltip=1.20: телепортація після поїдання хорус-плоду скидає висоту падіння, тож приземлення не завдає раніше накопиченої шкоди від падіння.
 config.trailsandtalesbackport.mechanics.arrowNames.tooltip=1.20.3: стріла з власною назвою, випущена з лука, зберігає назву, а піднята повертається як предмет із цією назвою.
+config.trailsandtalesbackport.mechanics.enchantingGaps.tooltip=1.20: книжкові полиці підсилюють стіл зачарування й крізь траву, шари снігу, лози, вогонь, воду та інші замінні блоки (1.12.2: лише крізь повітря), а для кожної полиці вільним має бути лише один блок між нею та столом.
+config.trailsandtalesbackport.mechanics.blockSounds.tooltip=Звуки блоків з 1.20.2 та 1.20.5: програвачі й гаки для розтяжки звучать як дерево, важелі, повторювачі й компаратори — як камінь; губки, мокрі губки й павутиння мають власні звуки, а губка видає звук, вбираючи воду.
+config.trailsandtalesbackport.mechanics.batModel.tooltip=Кажан з 1.20.3: його нові модель, текстура й анімації.
+config.trailsandtalesbackport.mechanics.hopperPickup.tooltip=1.20.5: лійка з повним блоком згори більше не підбирає предмети, що лежать на цьому блоці (з контейнера там вона й далі забирає).
+config.trailsandtalesbackport.mechanics.pearlSound.tooltip=1.20.3: кинута гравцем перлина Енду відтворює звук телепортації там, де приземляється.
+config.trailsandtalesbackport.mechanics.entityNames.tooltip=1.20.3: власна назва сутності, яка не є істотою, як-от вагонетки чи човна, показується, поки на неї дивишся.
+config.trailsandtalesbackport.mechanics.gameRules.tooltip=Ігрові правила з 1.20.2–1.20.5: enderPearlsVanishOnDeath, projectilesCanBreakBlocks, playersNetherPortalDefaultDelay, playersNetherPortalCreativeDelay та spawnChunkRadius; а randomTickSpeed також визначає, як швидко утворюються сніг і лід та наповнюються казани під дощем (0 зупиняє це).
+config.trailsandtalesbackport.mechanics.barrierParticles.tooltip=1.20.2: приземлення на бар'єр не створює частинок.
+config.trailsandtalesbackport.mechanics.witherColor.tooltip=1.20: частинки ефекту «Висушування» мають світліший сіро-коричневий колір з 1.20.
 config.trailsandtalesbackport.lookAndFeel.tooltip=Вигляд 1.20: панорама вишневого гаю, логотип головного меню, спливні тексти, музика меню та решта.
 config.trailsandtalesbackport.lookAndFeel.enabled.tooltip=Головне меню, спливні тексти, музика меню, налаштування та екран завантаження з 1.20 через Backport Core.
 config.trailsandtalesbackport.lookAndFeel.gameMusic.tooltip=У 1.20 трек A Familiar Room додано до музики, що звучить в усіх біомах Верхнього світу.
 config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=Музика біомів з 1.20: Bromeliad, Crescent Dunes, Echo in the Wind і старіші треки в джунглях, пустелях, безплідних землях, лісах, одвічних тайгах і вишневому гаю, а також добірки 1.20 у біомах 1.18 з Caves & Cliffs.
 # --- end config tooltips ---
+
+# --- mechanics ---
+subtitles.trailsandtalesbackport.block.sponge.absorb=Губка всмоктує
+subtitles.trailsandtalesbackport.entity.player.teleport=Гравець телепортується

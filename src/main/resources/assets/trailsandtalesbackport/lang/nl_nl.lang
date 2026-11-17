@@ -155,6 +155,15 @@ config.trailsandtalesbackport.mechanics.redyeing=Bedden, wol en tapijt opnieuw v
 config.trailsandtalesbackport.mechanics.slimeJumpBoost=Sprongversterking bij slijmen
 config.trailsandtalesbackport.mechanics.chorusFallDistance=Chorusvrucht reset vallen
 config.trailsandtalesbackport.mechanics.arrowNames=Pijlen houden hun naam
+config.trailsandtalesbackport.mechanics.enchantingGaps=Betoveren door planten en sneeuw
+config.trailsandtalesbackport.mechanics.blockSounds=Blokgeluiden (1.20.2)
+config.trailsandtalesbackport.mechanics.batModel=Vleermuismodel (1.20.3)
+config.trailsandtalesbackport.mechanics.hopperPickup=Trechters geblokkeerd door volle blokken
+config.trailsandtalesbackport.mechanics.pearlSound=Landingsgeluid van enderparels
+config.trailsandtalesbackport.mechanics.entityNames=Namen van bekeken entiteiten
+config.trailsandtalesbackport.mechanics.gameRules=Spelregels (1.20)
+config.trailsandtalesbackport.mechanics.barrierParticles=Geen landingsdeeltjes op barrières
+config.trailsandtalesbackport.mechanics.witherColor=Kleur van Verschrompeling (1.20)
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Bijl schraapt
@@ -464,8 +473,21 @@ config.trailsandtalesbackport.mechanics.redyeing.tooltip=1.20: bedden, wol en ta
 config.trailsandtalesbackport.mechanics.slimeJumpBoost.tooltip=1.20: Sprongversterking laat slijmen en magmakubussen hoger springen.
 config.trailsandtalesbackport.mechanics.chorusFallDistance.tooltip=1.20: teleporteren door een chorusvrucht te eten reset de valafstand, zodat de landing geen eerder opgebouwde valschade doet.
 config.trailsandtalesbackport.mechanics.arrowNames.tooltip=1.20.3: een pijl met een eigen naam die met een boog wordt afgeschoten houdt zijn naam, en oprapen geeft het benoemde voorwerp terug.
+config.trailsandtalesbackport.mechanics.enchantingGaps.tooltip=1.20: boekenkasten versterken een betoveringstafel ook door gras, sneeuwlagen, lianen, vuur, water en andere vervangbare blokken (1.12.2: alleen door lucht), en bij elke kast hoeft alleen het ene blok tussen de kast en de tafel vrij te zijn.
+config.trailsandtalesbackport.mechanics.blockSounds.tooltip=Blokgeluiden van 1.20.2 en 1.20.5: platenspelers en struikeldraadhaken klinken als hout, hendels, versterkers en vergelijkers als steen; sponzen, natte sponzen en spinnenwebben hebben eigen geluiden, en een spons maakt geluid als hij water opzuigt.
+config.trailsandtalesbackport.mechanics.batModel.tooltip=De vleermuis van 1.20.3: zijn nieuwe model, textuur en animaties.
+config.trailsandtalesbackport.mechanics.hopperPickup.tooltip=1.20.5: een trechter met een vol blok erop raapt geen voorwerpen meer op die op dat blok liggen (uit een container daar haalt hij nog wel).
+config.trailsandtalesbackport.mechanics.pearlSound.tooltip=1.20.3: een door een speler gegooide enderparel speelt een teleportatiegeluid af waar hij landt.
+config.trailsandtalesbackport.mechanics.entityNames.tooltip=1.20.3: de eigen naam van een entiteit die geen wezen is, zoals een mijnkar of een boot, wordt getoond zolang je ernaar kijkt.
+config.trailsandtalesbackport.mechanics.gameRules.tooltip=Spelregels van 1.20.2 tot 1.20.5: enderPearlsVanishOnDeath, projectilesCanBreakBlocks, playersNetherPortalDefaultDelay, playersNetherPortalCreativeDelay en spawnChunkRadius; en randomTickSpeed bepaalt ook hoe snel sneeuw en ijs zich vormen en ketels zich vullen in de regen (0 stopt dat).
+config.trailsandtalesbackport.mechanics.barrierParticles.tooltip=1.20.2: landen op een barrière maakt geen deeltjes.
+config.trailsandtalesbackport.mechanics.witherColor.tooltip=1.20: de deeltjes van Verschrompeling hebben het lichtere grijsbruin van 1.20.
 config.trailsandtalesbackport.lookAndFeel.tooltip=Het uiterlijk van 1.20: het kersenboomgaardpanorama, het titellogo, de splashteksten, de menumuziek en de rest.
 config.trailsandtalesbackport.lookAndFeel.enabled.tooltip=Het hoofdmenu, de splashteksten, de menumuziek, de instellingen en het laadscherm uit 1.20 via Backport Core.
 config.trailsandtalesbackport.lookAndFeel.gameMusic.tooltip=1.20 voegt A Familiar Room toe aan de muziek die in elk bioom van de bovenwereld speelt.
 config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=De biomemuziek uit 1.20: Bromeliad, Crescent Dunes, Echo in the Wind en de oudere nummers in oerwouden, woestijnen, badlands, bossen, oertaiga's en de kersenboomgaard, en de lijsten uit 1.20 in de 1.18-biomen van Caves & Cliffs.
 # --- end config tooltips ---
+
+# --- mechanics ---
+subtitles.trailsandtalesbackport.block.sponge.absorb=Spons absorbeert
+subtitles.trailsandtalesbackport.entity.player.teleport=Speler teleporteert

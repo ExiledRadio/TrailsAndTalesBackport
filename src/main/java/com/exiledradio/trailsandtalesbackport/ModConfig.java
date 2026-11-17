@@ -357,6 +357,46 @@ public final class ModConfig {
         @Config.Comment("1.20.3: an arrow item with a custom name shot from a bow keeps the name, and picking the arrow up gives the named item back.")
         @Config.LangKey("config.trailsandtalesbackport.mechanics.arrowNames")
         public boolean arrowNames = true;
+
+        @Config.Comment({"1.20: bookshelves power an enchanting table through grass, snow layers, vines, fire, water and other",
+                "replaceable blocks (1.12.2: only through air), and each shelf needs only the one block between it and the table clear."})
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.enchantingGaps")
+        public boolean enchantingGaps = true;
+
+        @Config.Comment({"1.20.2 and 1.20.5's block sounds: jukeboxes and tripwire hooks sound like wood, levers, repeaters and",
+                "comparators like stone; sponges, wet sponges and cobwebs have their own sounds, and a sponge makes a sound when it soaks up water."})
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.blockSounds")
+        public boolean blockSounds = true;
+
+        @Config.Comment("1.20.3's bat: its new model, texture and animations.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.batModel")
+        public boolean batModel = true;
+
+        @Config.Comment("1.20.5: a hopper with a full block on top no longer picks up items lying on that block (it still takes from a container there).")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.hopperPickup")
+        public boolean hopperPickup = true;
+
+        @Config.Comment("1.20.3: a player's thrown ender pearl plays a teleport sound where it lands.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.pearlSound")
+        public boolean pearlSound = true;
+
+        @Config.Comment("1.20.3: the custom name of an entity that is not a mob, such as a minecart or a boat, shows while you look at it.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.entityNames")
+        public boolean entityNames = true;
+
+        @Config.Comment({"1.20.2 to 1.20.5's game rules: enderPearlsVanishOnDeath, projectilesCanBreakBlocks,",
+                "playersNetherPortalDefaultDelay, playersNetherPortalCreativeDelay and spawnChunkRadius; and randomTickSpeed",
+                "also sets how fast snow and ice form and cauldrons fill in the rain (0 stops them)."})
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.gameRules")
+        public boolean gameRules = true;
+
+        @Config.Comment("1.20.2: landing on a barrier makes no particles.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.barrierParticles")
+        public boolean barrierParticles = true;
+
+        @Config.Comment("1.20: Wither's particles are the lighter gray-brown of 1.20.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.witherColor")
+        public boolean witherColor = true;
     }
 
     public static final class LookAndFeel {

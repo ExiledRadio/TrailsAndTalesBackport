@@ -155,6 +155,15 @@ config.trailsandtalesbackport.mechanics.redyeing=重新染色床、羊毛和地�
 config.trailsandtalesbackport.mechanics.slimeJumpBoost=史莱姆的跳跃提升
 config.trailsandtalesbackport.mechanics.chorusFallDistance=紫颂果重置摔落
 config.trailsandtalesbackport.mechanics.arrowNames=箭保留名称
+config.trailsandtalesbackport.mechanics.enchantingGaps=隔着植物和雪附魔
+config.trailsandtalesbackport.mechanics.blockSounds=方块音效（1.20.2）
+config.trailsandtalesbackport.mechanics.batModel=蝙蝠模型（1.20.3）
+config.trailsandtalesbackport.mechanics.hopperPickup=完整方块阻挡漏斗
+config.trailsandtalesbackport.mechanics.pearlSound=末影珍珠落地音效
+config.trailsandtalesbackport.mechanics.entityNames=注视实体的名称
+config.trailsandtalesbackport.mechanics.gameRules=游戏规则（1.20）
+config.trailsandtalesbackport.mechanics.barrierParticles=屏障无落地粒子
+config.trailsandtalesbackport.mechanics.witherColor=凋零颜色（1.20）
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=斧：削皮
@@ -464,8 +473,21 @@ config.trailsandtalesbackport.mechanics.redyeing.tooltip=1.20：任何颜色的�
 config.trailsandtalesbackport.mechanics.slimeJumpBoost.tooltip=1.20：跳跃提升使史莱姆和岩浆怪跳得更高。
 config.trailsandtalesbackport.mechanics.chorusFallDistance.tooltip=1.20：吃紫颂果传送会重置摔落距离，因此落地时不会受到之前积累的摔落伤害。
 config.trailsandtalesbackport.mechanics.arrowNames.tooltip=1.20.3：用弓射出的自定义名称的箭会保留名称，捡起时返还带名称的物品。
+config.trailsandtalesbackport.mechanics.enchantingGaps.tooltip=1.20：书架可以隔着草、雪、藤蔓、火、水和其他可替换方块为附魔台提供加成（1.12.2：只能隔着空气），且每个书架只需它与附魔台之间的那一格空出即可。
+config.trailsandtalesbackport.mechanics.blockSounds.tooltip=1.20.2和1.20.5的方块音效：唱片机和绊线钩听起来像木头，拉杆、中继器和比较器像石头；海绵、湿海绵和蜘蛛网有各自的音效，海绵吸水时也会发出声音。
+config.trailsandtalesbackport.mechanics.batModel.tooltip=1.20.3的蝙蝠：新的模型、纹理和动画。
+config.trailsandtalesbackport.mechanics.hopperPickup.tooltip=1.20.5：上方有完整方块的漏斗不再拾取落在该方块上的物品（仍会从那里的容器中取出物品）。
+config.trailsandtalesbackport.mechanics.pearlSound.tooltip=1.20.3：玩家扔出的末影珍珠会在落地处播放传送音效。
+config.trailsandtalesbackport.mechanics.entityNames.tooltip=1.20.3：注视不是生物的实体（如矿车或船）时会显示其自定义名称。
+config.trailsandtalesbackport.mechanics.gameRules.tooltip=1.20.2至1.20.5的游戏规则：enderPearlsVanishOnDeath、projectilesCanBreakBlocks、playersNetherPortalDefaultDelay、playersNetherPortalCreativeDelay和spawnChunkRadius；此外randomTickSpeed也决定雨中雪和冰的形成速度以及炼药锅的注水速度（为0时停止）。
+config.trailsandtalesbackport.mechanics.barrierParticles.tooltip=1.20.2：落在屏障上不会产生粒子。
+config.trailsandtalesbackport.mechanics.witherColor.tooltip=1.20：凋零的粒子变为1.20中更浅的灰褐色。
 config.trailsandtalesbackport.lookAndFeel.tooltip=1.20 的外观：樱花树林全景图、标题徽标、闪烁标语、菜单音乐等。
 config.trailsandtalesbackport.lookAndFeel.enabled.tooltip=通过 Backport Core 提供 1.20 的标题界面、闪烁标语、菜单音乐、选项和加载界面。
 config.trailsandtalesbackport.lookAndFeel.gameMusic.tooltip=1.20 在所有主世界生物群系播放的音乐中加入了 A Familiar Room。
 config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=1.20 的生物群系音乐：丛林、沙漠、恶地、森林、原始针叶林和樱花树林会播放 Bromeliad、Crescent Dunes、Echo in the Wind 以及旧曲目，Caves & Cliffs 的 1.18 生物群系则使用 1.20 的曲目列表。
 # --- end config tooltips ---
+
+# --- mechanics ---
+subtitles.trailsandtalesbackport.block.sponge.absorb=海绵：吸水
+subtitles.trailsandtalesbackport.entity.player.teleport=玩家：传送

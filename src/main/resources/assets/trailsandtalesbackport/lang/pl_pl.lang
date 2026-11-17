@@ -155,6 +155,15 @@ config.trailsandtalesbackport.mechanics.redyeing=Ponowne farbowanie łóżek, we
 config.trailsandtalesbackport.mechanics.slimeJumpBoost=Wzmocnienie skoku u szlamów
 config.trailsandtalesbackport.mechanics.chorusFallDistance=Owoc refrenu resetuje upadek
 config.trailsandtalesbackport.mechanics.arrowNames=Strzały zachowują nazwę
+config.trailsandtalesbackport.mechanics.enchantingGaps=Zaklinanie przez rośliny i śnieg
+config.trailsandtalesbackport.mechanics.blockSounds=Dźwięki bloków (1.20.2)
+config.trailsandtalesbackport.mechanics.batModel=Model nietoperza (1.20.3)
+config.trailsandtalesbackport.mechanics.hopperPickup=Pełne bloki blokują leje
+config.trailsandtalesbackport.mechanics.pearlSound=Dźwięk lądowania enderperły
+config.trailsandtalesbackport.mechanics.entityNames=Nazwy oglądanych bytów
+config.trailsandtalesbackport.mechanics.gameRules=Zasady gry (1.20)
+config.trailsandtalesbackport.mechanics.barrierParticles=Brak cząsteczek lądowania na barierach
+config.trailsandtalesbackport.mechanics.witherColor=Kolor obumierania (1.20)
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Siekiera zeskrobuje
@@ -464,8 +473,21 @@ config.trailsandtalesbackport.mechanics.redyeing.tooltip=1.20: łóżka, wełnę
 config.trailsandtalesbackport.mechanics.slimeJumpBoost.tooltip=1.20: Wzmocnienie skoku sprawia, że szlamy i kostki magmy skaczą wyżej.
 config.trailsandtalesbackport.mechanics.chorusFallDistance.tooltip=1.20: teleportacja po zjedzeniu owocu refrenu resetuje wysokość upadku, więc lądowanie nie zadaje wcześniej zebranych obrażeń od upadku.
 config.trailsandtalesbackport.mechanics.arrowNames.tooltip=1.20.3: strzała z własną nazwą wystrzelona z łuku zachowuje nazwę, a po podniesieniu wraca jako przedmiot z nazwą.
+config.trailsandtalesbackport.mechanics.enchantingGaps.tooltip=1.20: biblioteczki wzmacniają stół do zaklinania także przez trawę, warstwy śniegu, pnącza, ogień, wodę i inne zastępowalne bloki (1.12.2: tylko przez powietrze), a przy każdej biblioteczce wolny musi być tylko ten jeden blok między nią a stołem.
+config.trailsandtalesbackport.mechanics.blockSounds.tooltip=Dźwięki bloków z 1.20.2 i 1.20.5: szafy grające i zaczepy na linkę brzmią jak drewno, dźwignie, przekaźniki i komparatory jak kamień; gąbki, mokre gąbki i pajęczyny mają własne dźwięki, a gąbka wydaje dźwięk, gdy wchłania wodę.
+config.trailsandtalesbackport.mechanics.batModel.tooltip=Nietoperz z 1.20.3: jego nowy model, tekstura i animacje.
+config.trailsandtalesbackport.mechanics.hopperPickup.tooltip=1.20.5: lej z pełnym blokiem na sobie nie podnosi już przedmiotów leżących na tym bloku (nadal pobiera z pojemnika, który tam stoi).
+config.trailsandtalesbackport.mechanics.pearlSound.tooltip=1.20.3: enderperła rzucona przez gracza odtwarza dźwięk teleportacji w miejscu lądowania.
+config.trailsandtalesbackport.mechanics.entityNames.tooltip=1.20.3: własna nazwa bytu, który nie jest stworzeniem, np. wagonika lub łódki, wyświetla się, gdy się na niego patrzy.
+config.trailsandtalesbackport.mechanics.gameRules.tooltip=Zasady gry od 1.20.2 do 1.20.5: enderPearlsVanishOnDeath, projectilesCanBreakBlocks, playersNetherPortalDefaultDelay, playersNetherPortalCreativeDelay i spawnChunkRadius; a randomTickSpeed ustala też, jak szybko powstają śnieg i lód oraz napełniają się kotły w deszczu (0 je zatrzymuje).
+config.trailsandtalesbackport.mechanics.barrierParticles.tooltip=1.20.2: lądowanie na barierze nie tworzy cząsteczek.
+config.trailsandtalesbackport.mechanics.witherColor.tooltip=1.20: cząsteczki efektu Obumieranie mają jaśniejszy szarobrązowy kolor z 1.20.
 config.trailsandtalesbackport.lookAndFeel.tooltip=Wygląd 1.20: panorama wiśniowego gaju, logo ekranu tytułowego, przytytuły, muzyka menu i reszta.
 config.trailsandtalesbackport.lookAndFeel.enabled.tooltip=Ekran tytułowy, przytytuły, muzyka menu, opcje i ekran wczytywania z 1.20 przez Backport Core.
 config.trailsandtalesbackport.lookAndFeel.gameMusic.tooltip=1.20 dodaje A Familiar Room do muzyki, która gra w każdym biomie Nadziemia.
 config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=Muzyka biomów z 1.20: Bromeliad, Crescent Dunes, Echo in the Wind i starsze utwory w dżunglach, na pustyniach, badlandach, w lasach, starodrzewach i wiśniowym gaju oraz zestawy z 1.20 w biomach 1.18 z Caves & Cliffs.
 # --- end config tooltips ---
+
+# --- mechanics ---
+subtitles.trailsandtalesbackport.block.sponge.absorb=Gąbka nasiąka
+subtitles.trailsandtalesbackport.entity.player.teleport=Gracz teleportuje się

@@ -89,6 +89,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.init();
         com.exiledradio.trailsandtalesbackport.sculk.SensorContent.init();
         com.exiledradio.trailsandtalesbackport.structure.StructuresContent.init();
+        com.exiledradio.trailsandtalesbackport.mechanics.BlockSounds.apply();
     }
 
     @Mod.EventHandler
