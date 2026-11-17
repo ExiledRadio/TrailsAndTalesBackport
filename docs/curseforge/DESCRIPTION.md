@@ -1,0 +1,104 @@
+# Trails & Tales Backport
+
+All of 1.20 Trails & Tales, with 1.20.5's armadillo and wolf armor, on Minecraft 1.12.2. It needs Backport Core on the client and the server.
+
+> 💬 [Join the Discord](https://discord.gg/kxQvMDJBTN) for bug reports and questions.
+
+## Cherry groves
+
+Cherry groves grow on mountain slopes. Pink cherry trees drop petals as you walk under them, and pink petals cover the grass in clumps of one to four. Cherry wood comes in every 1.20 shape, with its own sounds.
+
+<!-- PENDING image: tt-cherry-grove -->
+
+## Bamboo wood
+
+Nine bamboo make a block of bamboo. It strips, saws into planks and mosaic, and builds everything planks build. Bamboo rafts float a little higher than boats.
+
+<!-- PENDING image: tt-bamboo -->
+
+## Archaeology
+
+Brush suspicious sand and gravel to dig up what is buried in it: pottery sherds, emeralds, the sniffer egg and more. Suspicious sand sits under desert wells and in a new room below desert pyramids. Ocean ruins have it too.
+
+Trail ruins are half buried in gravel in taigas, birch forests and jungles. Their suspicious gravel holds seven sherds of their own, four armor trim templates and the music disc Relic.
+
+Four sherds or bricks make a decorated pot with a picture on each side. Pots hold one stack of one item.
+
+<!-- PENDING image: tt-trail-ruins -->
+
+<!-- PENDING image: tt-dig-site -->
+
+## The sniffer
+
+The sniffer is the first mob brought back from the past. Hatch one from a sniffer egg and it sniffs around grass, dirt and moss, then digs up torchflower seeds and pitcher pods. Those grow into flowers found nowhere else.
+
+<!-- PENDING image: tt-sniffer -->
+
+## Camels
+
+Camels spawn in desert villages. Two players can ride one, high enough that zombies can't reach. Press jump to dash.
+
+<!-- PENDING image: tt-camel -->
+
+## Armadillos and wolves
+
+Armadillos live in savannas and badlands and roll up when something scares them. They drop scutes, and a brush gets one too. Six scutes make wolf armor, which you can dye and repair.
+
+Wolves now come in nine variants, each from its own biome. Tamed wolves have more health.
+
+<!-- PENDING image: tt-armadillo -->
+
+<!-- PENDING image: tt-wolves -->
+
+## Armor trims
+
+Smithing templates turn up in structures all over the world. Put one on the smithing table with a piece of armor and an ingot, gem or crystal to trim it. There are sixteen patterns in ten materials, and they show on the armor you wear. Upgrading to netherite needs its template now.
+
+<!-- PENDING image: tt-trims -->
+
+## Blocks
+
+*   Hanging signs in every wood, hung under a block or on a bracket.
+*   Signs have a back side and can be edited after placing. Wax them with honeycomb to lock the text.
+*   Chiseled bookshelves hold six books you can see, and give comparator signals.
+*   The calibrated sculk sensor listens for only the vibration you set with redstone.
+*   Mob heads on note blocks play that mob's sound.
+*   Piglin heads, whose ears flap when powered.
+
+<!-- PENDING image: tt-shop -->
+
+<!-- PENDING image: tt-study -->
+
+<!-- PENDING image: tt-sensor -->
+
+## The rest of 1.20
+
+You also get 1.20's mechanics changes, dyeing beds, wool and carpet to another color, the 1.20.3 bat, cherry and bamboo boats, 1.20's music for the cherry grove and other biomes, and 1.20.5's title screen, splashes and loading screen.
+
+Every feature can be turned off in Backport Core's settings screen, under Mod Options.
+
+<!-- PENDING image: tt-settings -->
+
+## Compatibility
+
+**Caves & Cliffs Backport**: in its 1.18 worlds, cherry groves generate where 1.20 puts them. The brush and the copper trim use its copper, the calibrated sensor its amethyst, and sniffer eggs hatch twice as fast on its moss. Without it, cherry groves grow in 1.12's mountains and this mod brings its own copper and amethyst.
+
+**Village & Pillage Backport**: camels spawn in its desert villages, and its smithing table takes the templates. Bamboo is its bamboo. Without it, this mod has its own bamboo and smithing table.
+
+**Update Aquatic Backport**: its ocean ruins get suspicious sand and gravel, and warm ruins hold sniffer eggs.
+
+**Nether Update, Wild Update, Buzzy Bees**: crimson, warped and mangrove hanging signs, templates in bastions and ancient cities, mud for the sniffer, and honeycomb wax on signs.
+
+**OptiFine**: works, shaders included.
+
+**Fluidlogged API** (optional): cherry leaves, cherry and bamboo stairs, slabs, fences, trapdoors and signs, hanging signs, chains and decorated pots hold water. Without it they stay dry and everything else works.
+
+## Requirements
+
+Minecraft 1.12.2 with Forge 14.23.5.2847 or newer, and [Backport Core](https://www.curseforge.com/minecraft/mc-mods/backport-core) 1.4.0 or newer. The CurseForge app installs Backport Core with it. [Fluidlogged API](https://www.curseforge.com/minecraft/mc-mods/fluidlogged-api) 3.3.3 or newer is optional, for waterlogged blocks.
+
+***
+
+Also by me: [Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport), all of 1.14 on 1.12.2, [Update Aquatic Backport](https://www.curseforge.com/minecraft/mc-mods/update-aquatic-backport), all of 1.13 on 1.12.2, [Buzzy Bees Backport](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport), all of 1.15 on 1.12.2, [Nether Update Backport](https://www.curseforge.com/minecraft/mc-mods/nether-update-backport), all of 1.16 on 1.12.2, [Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-and-cliffs-backport), all of 1.17 and 1.18 on 1.12.2, [Wild Update Backport](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport), all of 1.19 on 1.12.2, and [Enchantment Recipes](https://www.curseforge.com/minecraft/mc-mods/rlcraft-enchantment-recipes), which lets you craft enchanted books from mod materials.
+
+Not affiliated with Mojang.
