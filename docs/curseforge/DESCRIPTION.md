@@ -79,13 +79,17 @@ Every feature can be turned off in Backport Core's settings screen, under Mod Op
 
 ## Compatibility
 
-**[Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-and-cliffs-backport)**: in its 1.18 worlds, cherry groves generate where 1.20 puts them. The brush and the copper trim use its copper, the calibrated sensor its amethyst, and sniffer eggs hatch twice as fast on its moss. Without it, cherry groves grow in 1.12's mountains and this mod brings its own copper and amethyst.
+**[Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-cliffs-backport)**: in its 1.18 worlds, cherry groves generate where 1.20 puts them. The brush and the copper trim use its copper, the calibrated sensor its amethyst, desert wells get suspicious sand, and sniffer eggs hatch twice as fast on its moss. Without it, cherry groves grow in 1.12's mountains and this mod brings its own copper and amethyst.
 
 **[Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport)**: camels spawn in its desert villages, and its smithing table takes the templates. Bamboo is its bamboo. Without it, this mod has its own bamboo and smithing table.
 
 **[Update Aquatic Backport](https://www.curseforge.com/minecraft/mc-mods/update-aquatic-backport)**: its ocean ruins get suspicious sand and gravel, and warm ruins hold sniffer eggs.
 
-**[Nether Update](https://www.curseforge.com/minecraft/mc-mods/nether-update-backport), [Wild Update](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport), [Buzzy Bees](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport)**: crimson, warped and mangrove hanging signs, templates in bastions and ancient cities, mud for the sniffer, and honeycomb wax on signs.
+**[Buzzy Bees Backport](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport)**: honeycomb waxes signs and hanging signs.
+
+**[Nether Update Backport](https://www.curseforge.com/minecraft/mc-mods/nether-update-backport)**: crimson and warped hanging signs, the snout and netherite upgrade templates in bastions, and the piglin head. Hanging signs use its chain; without it, this mod has its own chain.
+
+**[Wild Update Backport](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport)**: mangrove hanging signs, the ward and silence templates in ancient cities, and mud for the sniffer to dig. The calibrated sculk sensor is made from its sculk sensor; without it, this mod has its own.
 
 **OptiFine**: works, shaders included.
 
@@ -97,6 +101,6 @@ Minecraft 1.12.2 with Forge 14.23.5.2847 or newer, and [Backport Core](https://w
 
 ***
 
-Also by me: [Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport), all of 1.14 on 1.12.2, [Update Aquatic Backport](https://www.curseforge.com/minecraft/mc-mods/update-aquatic-backport), all of 1.13 on 1.12.2, [Buzzy Bees Backport](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport), all of 1.15 on 1.12.2, [Nether Update Backport](https://www.curseforge.com/minecraft/mc-mods/nether-update-backport), all of 1.16 on 1.12.2, [Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-and-cliffs-backport), all of 1.17 and 1.18 on 1.12.2, [Wild Update Backport](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport), all of 1.19 on 1.12.2, and [Enchantment Recipes](https://www.curseforge.com/minecraft/mc-mods/rlcraft-enchantment-recipes), which lets you craft enchanted books from mod materials.
+Also by me: [Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport), all of 1.14 on 1.12.2, [Update Aquatic Backport](https://www.curseforge.com/minecraft/mc-mods/update-aquatic-backport), all of 1.13 on 1.12.2, [Buzzy Bees Backport](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport), all of 1.15 on 1.12.2, [Nether Update Backport](https://www.curseforge.com/minecraft/mc-mods/nether-update-backport), all of 1.16 on 1.12.2, [Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-cliffs-backport), all of 1.17 and 1.18 on 1.12.2, [Wild Update Backport](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport), all of 1.19 on 1.12.2, and [Enchantment Recipes](https://www.curseforge.com/minecraft/mc-mods/rlcraft-enchantment-recipes), which lets you craft enchanted books from mod materials.
 
 Not affiliated with Mojang.
