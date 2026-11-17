@@ -79,6 +79,8 @@ public final class StructuresSelfTest implements SelfTest {
         world(c);
         pyramid(c);
         well(c);
+        generationTicks(c);
+        relicJukebox(c);
         if (net.minecraftforge.fml.common.Loader.isModLoaded("updateaquaticbackport")) {
             oceanRuins(c);
         }
@@ -114,6 +116,8 @@ public final class StructuresSelfTest implements SelfTest {
             return;
         }
         int warm = 0, cold = 0, starts = 0, checked = 0, placed = 0, worked = 0, fell = 0;
+        List<BlockPos> inWorld = new ArrayList<BlockPos>();
+        List<StructureBoundingBox> built = new ArrayList<StructureBoundingBox>();
         BlockPos from = BlockPos.ORIGIN;
         for (int n = 0; n < 6; n++) {
             BlockPos at = ruins.nearest(world, from, 100);
@@ -138,6 +142,7 @@ public final class StructuresSelfTest implements SelfTest {
             }
             starts++;
             StructureBoundingBox b = start.getBoundingBox();
+            built.add(b);
             for (int x = (b.minX >> 4) - 1; x <= (b.maxX >> 4) + 2; x++) {
                 for (int z = (b.minZ >> 4) - 1; z <= (b.maxZ >> 4) + 2; z++) {
                     world.getChunk(x, z);
@@ -156,6 +161,7 @@ public final class StructuresSelfTest implements SelfTest {
                         String table = te.writeToNBT(new NBTTagCompound()).getString("LootTable");
                         if (table.endsWith("ocean_ruin_warm") || table.endsWith("ocean_ruin_cold")) {
                             placed++;
+                            inWorld.add(i.pos);
                             warm += table.endsWith("warm") ? 1 : 0;
                             cold += table.endsWith("cold") ? 1 : 0;
                         }
@@ -168,6 +174,11 @@ public final class StructuresSelfTest implements SelfTest {
         c.ok(worked > 0, worked + " suspicious blocks worked out (at most 5 a piece)");
         // A worked-out block is set only where the ruin really put sand or gravel; nearly all are.
         c.ok(placed > 0 && (placed + fell) * 10 >= checked * 8, placed + " (+" + fell + " fallen) of " + checked + " in the world (" + warm + " warm, " + cold + " cold)");
+        c.eq(0, fell, "no ocean ruin suspicious block fell during generation (1.20's world generation sends no updates)");
+        for (StructureBoundingBox bb : built) {
+            populateAround(world, bb, 3);
+        }
+        stays(c, "ocean ruins", inWorld);
     }
 
     // ---- data
@@ -567,10 +578,13 @@ public final class StructuresSelfTest implements SelfTest {
         }
         com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport.LOGGER.info("SELFTEST structures: built ruins: {} suspicious gravel worked out, {} in the world ({} fallen since), {} common, {} rare", want.size(), in, fell, common, rare);
         c.eq(want.size(), in, "suspicious gravel in the world where worked out (" + in + "/" + want.size() + ")");
+        c.eq(0, fell, "none fell during generation (1.20's world generation sends no updates)");
+        com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport.LOGGER.info("SELFTEST structures: {} chunk populations marked so far",
+                com.exiledradio.trailsandtalesbackport.archaeology.Population.marked());
         c.eq(want.size(), tables, "each with its table and seed");
         int ticking = 0;
         for (BlockPos p : want.keySet()) {
-            ticking += world.isBlockTickPending(p, gravel) ? 1 : 0;
+            ticking += pendingTick(world, p) ? 1 : 0;
         }
         c.eq(0, ticking, "none waits for a tick (1.20's world generation gives them none, so one over air stays)");
         c.ok(common > 0 && rare > 0, common + " common and " + rare + " rare");
@@ -582,6 +596,25 @@ public final class StructuresSelfTest implements SelfTest {
             }
         }
         c.eq(0, extra, "no other suspicious gravel in the ruins' box");
+        List<BlockPos> placedGravel = new ArrayList<BlockPos>();
+        for (BlockPos p : want.keySet()) {
+            if (world.getBlockState(p).getBlock() == gravel) {
+                placedGravel.add(p);
+            }
+        }
+        populateAround(world, all, 3);
+        if (stays(c, "trail ruins", placedGravel)) {
+            BlockPos held = null;
+            for (BlockPos p : placedGravel) {
+                if (held == null && !overNothing(world, p) && world.getBlockState(p.down()).getBlockHardness(world, p.down()) >= 0) {
+                    held = p;
+                }
+            }
+            c.ok(held != null, "trail ruins: one suspicious gravel held up by a block");
+            if (held != null) {
+                disturb(c, "trail ruins", held);
+            }
+        }
     }
 
     private void pyramid(Check c) throws Exception {
@@ -660,6 +693,14 @@ public final class StructuresSelfTest implements SelfTest {
         com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport.LOGGER.info("SELFTEST structures: pyramid at {}: {} suspicious sand, {} in the world", b, spots.size(), in);
         c.eq(spots.size(), in, "the pyramid's suspicious sand is in the world (" + in + "/" + spots.size() + ")");
         c.eq(spots.size(), tables, "with the desert pyramid table and 1.20's seed");
+        List<BlockPos> placedSand = new ArrayList<BlockPos>();
+        for (BlockPos p : spots) {
+            if (world.getBlockState(p).getBlock() == sand) {
+                placedSand.add(p);
+            }
+        }
+        populateAround(world, b, 3);
+        stays(c, "desert pyramid", placedSand);
         // The cellar's middle: blue terracotta at (16, -4, 13) in the piece.
         BlockPos middle = DesertPyramidsAccess.pos(pyramid, 16, -4, 13);
         c.eq(Blocks.STAINED_HARDENED_CLAY, world.getBlockState(middle).getBlock(), "the cellar's floor at " + middle);
@@ -671,6 +712,7 @@ public final class StructuresSelfTest implements SelfTest {
     private void well(Check c) {
         WorldServer world = c.world;
         BlockPos corner = c.area();
+        c.fill(corner.add(0, -9, 0), corner.add(31, -9, 31), Blocks.STONE.getDefaultState());
         c.fill(corner.add(0, -8, 0), corner.add(31, -1, 31), Blocks.SAND.getDefaultState());
         BlockPos at = corner.add(16, 0, 16);
         c.ok(DesertWells.place(world, at), "a well on sand");
@@ -689,9 +731,17 @@ public final class StructuresSelfTest implements SelfTest {
             }
         }
         c.eq(2, sus, "two suspicious sand under the well");
+        List<BlockPos> wellSand = new ArrayList<BlockPos>();
+        for (BlockPos p : BlockPos.getAllInBox(water.add(-1, -2, -1), water.add(1, -1, 1))) {
+            if (world.getBlockState(p).getBlock() == sand) {
+                wellSand.add(p.toImmutable());
+            }
+        }
+        stays(c, "desert well", wellSand);
 
         // The decoration event: denied, and the same draws make 1.20's well.
         BlockPos corner2 = c.area();
+        c.fill(corner2.add(0, -9, 0), corner2.add(31, -9, 31), Blocks.STONE.getDefaultState());
         c.fill(corner2.add(0, -8, 0), corner2.add(31, -1, 31), Blocks.SAND.getDefaultState());
         ChunkPos chunk = new ChunkPos(new BlockPos(corner2.getX() + 8, 0, corner2.getZ() + 8));
         Random always = new Random(5L) {
@@ -706,6 +756,201 @@ public final class StructuresSelfTest implements SelfTest {
         BlockPos top = world.getHeight(new BlockPos((chunk.x << 4) + 8, 0, (chunk.z << 4) + 8));
         c.ok(world.getBlockState(top.down()).getBlock() == Blocks.SANDSTONE || world.getBlockState(top.down()).getBlock() == Blocks.STONE_SLAB,
                 "1.20's well stands where 1.12.2's would: " + world.getBlockState(top.down()));
+    }
+
+    // ---- generation ticks and Relic
+
+    /**
+     * The suspicious blocks a structure put in the world, once the chunks around have populated too, wait for no tick
+     * and are all still there after every pending tick of the world has run (1.20's world generation gives them none).
+     *
+     * @return true when there was at least one and all stayed
+     */
+    private boolean stays(Check c, String what, List<BlockPos> spots) {
+        WorldServer world = c.world;
+        int ticking = 0;
+        List<Block> blocks = new ArrayList<Block>();
+        for (BlockPos p : spots) {
+            Block b = world.getBlockState(p).getBlock();
+            blocks.add(b);
+            ticking += pendingTick(world, p) ? 1 : 0;
+        }
+        c.eq(0, ticking, what + ": none of " + spots.size() + " suspicious blocks waits for a tick");
+        int fallen = run(world);
+        int stayed = 0, overNothing = 0;
+        for (int i = 0; i < spots.size(); i++) {
+            if (world.getBlockState(spots.get(i)).getBlock() == blocks.get(i)) {
+                stayed++;
+                overNothing += overNothing(world, spots.get(i)) ? 1 : 0;
+            }
+        }
+        com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport.LOGGER.info("SELFTEST structures: {}: {} of {} suspicious blocks still in place after the world's ticks ({} falling blocks landed meanwhile), {} of them over air or water",
+                what, stayed, spots.size(), fallen, overNothing);
+        c.eq(spots.size(), stayed, what + ": every suspicious block still in place after the world's ticks (" + overNothing + " over air or water)");
+        return !spots.isEmpty() && stayed == spots.size();
+    }
+
+    /**
+     * Runs the world on: every pending block tick, then every falling block until it lands (1.12.2's falling block
+     * takes its block away on its first update), then the ticks that set off, until nothing more falls.
+     *
+     * @return how many falling blocks were run
+     */
+    private static int run(WorldServer world) {
+        int ran = 0;
+        Pools.settle(world);
+        for (int round = 0; round < 50; round++) {
+            List<net.minecraft.entity.item.EntityFallingBlock> falling = world.getEntities(
+                    net.minecraft.entity.item.EntityFallingBlock.class, e -> e != null && !e.isDead);
+            if (falling.isEmpty()) {
+                break;
+            }
+            for (net.minecraft.entity.item.EntityFallingBlock e : falling) {
+                ran++;
+                for (int t = 0; t < 400 && !e.isDead; t++) {
+                    e.onUpdate();
+                }
+                e.setDead();
+            }
+            Pools.settle(world);
+        }
+        return ran;
+    }
+
+    /**
+     * Loads and so populates {@code ring} more chunks on each side of a box than building it did: the later population
+     * of neighboring chunks, whose features set blocks next to the structure's (1.12.2 with notifying flags).
+     */
+    private static void populateAround(WorldServer world, StructureBoundingBox b, int ring) {
+        for (int x = (b.minX >> 4) - 1 - ring; x <= (b.maxX >> 4) + 2 + ring; x++) {
+            for (int z = (b.minZ >> 4) - 1 - ring; z <= (b.maxZ >> 4) + 2 + ring; z++) {
+                world.getChunk(x, z);
+            }
+        }
+    }
+
+    /**
+     * A player breaks the block under one: the neighbor update schedules its fall, and it falls. Both are put back
+     * afterwards, so a later run in this world finds the structure whole.
+     */
+    private void disturb(Check c, String what, BlockPos pos) {
+        WorldServer world = c.world;
+        Block b = world.getBlockState(pos).getBlock();
+        net.minecraft.block.state.IBlockState support = world.getBlockState(pos.down());
+        NBTTagCompound loot = world.getTileEntity(pos).writeToNBT(new NBTTagCompound());
+        world.setBlockState(pos.down(), Blocks.AIR.getDefaultState(), 3);
+        c.ok(pendingTick(world, pos), what + ": breaking the block under " + pos + " schedules its fall");
+        Pools.settle(world);
+        List<net.minecraft.entity.item.EntityFallingBlock> falling = world.getEntitiesWithinAABB(
+                net.minecraft.entity.item.EntityFallingBlock.class, new net.minecraft.util.math.AxisAlignedBB(pos).grow(1));
+        c.ok(fallsAway(world, pos, falling), what + ": the disturbed one falls (" + falling.size() + " falling)");
+        falling.forEach(net.minecraft.entity.Entity::setDead);
+        world.setBlockState(pos.down(), support, 2);
+        Archaeology.set(world, pos, b == Block.getBlockFromName("trailsandtalesbackport:suspicious_gravel"),
+                new ResourceLocation(loot.getString("LootTable")), loot.getLong("LootTableSeed"));
+    }
+
+    /** @return true when exactly one falling block is there and, after its first update, the block is gone */
+    private static boolean fallsAway(WorldServer world, BlockPos pos, List<net.minecraft.entity.item.EntityFallingBlock> falling) {
+        if (falling.size() != 1) {
+            return false;
+        }
+        falling.get(0).onUpdate();
+        return world.getBlockState(pos).getBlock() != falling.get(0).getBlock().getBlock();
+    }
+
+    /**
+     * @return true when a block tick waits at this position. 1.12.2's {@code isBlockTickPending} looks only at the
+     * ticks being run this tick; {@code getPendingBlockUpdates} hands over the whole column, kept.
+     */
+    static boolean pendingTick(WorldServer world, BlockPos pos) {
+        List<net.minecraft.world.NextTickListEntry> all = world.getPendingBlockUpdates(
+                new StructureBoundingBox(pos.getX(), 0, pos.getZ(), pos.getX() + 1, 255, pos.getZ() + 1), false);
+        if (all != null) {
+            for (net.minecraft.world.NextTickListEntry e : all) {
+                if (e.position.equals(pos)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Population as 1.12.2 runs it (Population marks the chunk): a suspicious block set by name over air and one set by
+     * this mod's structure code, then a feature setting a block beside them with a notifying flag. Neither gets a tick,
+     * both stay after the world's ticks; afterwards a player placing a block beside one makes it fall.
+     */
+    private void generationTicks(Check c) {
+        WorldServer world = c.world;
+        c.ok(!com.exiledradio.trailsandtalesbackport.archaeology.Population.active(world), "no chunk is populating while the test runs");
+        BlockPos corner = c.area();
+        BlockPos byName = corner.add(8, 10, 8);
+        BlockPos ours = corner.add(12, 10, 8);
+        int cx = byName.getX() >> 4, cz = byName.getZ() >> 4;
+        Block sand = Block.getBlockFromName("trailsandtalesbackport:suspicious_sand");
+        com.exiledradio.trailsandtalesbackport.archaeology.Population.begin(world, cx, cz);
+        c.ok(com.exiledradio.trailsandtalesbackport.archaeology.Population.active(world), "the chunk is populating");
+        world.setBlockState(byName, sand.getDefaultState(), 3);
+        Archaeology.set(world, ours, false, Archaeology.table("minecraft:archaeology/desert_well"), 7L);
+        world.setBlockState(byName.east(), Blocks.STONE.getDefaultState(), 3);
+        world.setBlockState(ours.east(), Blocks.STONE.getDefaultState(), 3);
+        com.exiledradio.trailsandtalesbackport.archaeology.Population.end(world, cx, cz);
+        c.ok(!com.exiledradio.trailsandtalesbackport.archaeology.Population.active(world), "population over");
+        c.ok(!pendingTick(world, byName) && !pendingTick(world, ours),
+                "set and updated while populating: no tick (1.20's WorldGenRegion calls no onPlace and sends no updates)");
+        Pools.settle(world);
+        c.eq(sand, world.getBlockState(byName).getBlock(), "set by name over air: still there after the world's ticks");
+        c.eq(sand, world.getBlockState(ours).getBlock(), "set by the structure code over air: still there after the world's ticks");
+        // A player places a block beside it.
+        world.setBlockState(byName.west(), Blocks.DIRT.getDefaultState(), 3);
+        c.ok(pendingTick(world, byName), "a player's block beside it schedules the fall");
+        Pools.settle(world);
+        List<net.minecraft.entity.item.EntityFallingBlock> falling = world.getEntitiesWithinAABB(
+                net.minecraft.entity.item.EntityFallingBlock.class, new net.minecraft.util.math.AxisAlignedBB(byName).grow(1));
+        c.ok(fallsAway(world, byName, falling), "and it falls (" + falling.size() + " falling)");
+        c.eq(sand, world.getBlockState(ours).getBlock(), "the other one, not disturbed, stays");
+        falling.forEach(net.minecraft.entity.Entity::setDead);
+    }
+
+    /** P7: a jukebox playing Relic gives 14, as 1.20; vanilla's discs (and Nether Update's Pigstep) keep theirs. */
+    private void relicJukebox(Check c) {
+        boolean p7 = com.exiledradio.trailsandtalesbackport.asm.Asm.APPLIED.contains("P7 BlockJukebox.getComparatorInputOverride");
+        c.ok(p7, "P7 is applied (BlockJukebox.getComparatorInputOverride): " + com.exiledradio.trailsandtalesbackport.asm.Asm.APPLIED);
+        BlockPos at = c.area().add(4, 0, 4);
+        c.ok(StructuresContent.relic != null, "Relic is registered");
+        c.eq(14, jukebox(c, at, StructuresContent.relic), "a jukebox playing Relic: comparator 14");
+        c.eq(1, jukebox(c, at, net.minecraft.init.Items.RECORD_13), "13: 1");
+        c.eq(2, jukebox(c, at, net.minecraft.init.Items.RECORD_CAT), "cat: 2");
+        c.eq(12, jukebox(c, at, net.minecraft.init.Items.RECORD_WAIT), "wait: 12");
+        c.eq(0, jukebox(c, at, null), "an empty jukebox: 0");
+        if (net.minecraftforge.fml.common.Loader.isModLoaded("netherupdatebackport")) {
+            net.minecraft.item.Item pigstep = net.minecraft.item.Item.getByNameOrId("netherupdatebackport:music_disc_pigstep");
+            c.ok(pigstep != null, "Nether Update's Pigstep is there");
+            if (pigstep != null) {
+                c.eq(13, jukebox(c, at, pigstep), "with Nether Update's P2: Pigstep still 13");
+            }
+            c.eq(14, jukebox(c, at, StructuresContent.relic), "with Nether Update's P2: Relic still 14");
+        }
+        if (net.minecraftforge.fml.common.Loader.isModLoaded("wildupdatebackport")) {
+            jukebox(c, at, StructuresContent.relic);
+            net.minecraft.block.state.IBlockState s = c.world.getBlockState(at);
+            com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport.LOGGER.info("SELFTEST structures: with Wild Update, a jukebox playing Relic: comparator {}, power source {}",
+                    s.getComparatorInputOverride(c.world, at), s.canProvidePower());
+            c.eq(14, s.getComparatorInputOverride(c.world, at), "with Wild Update's P5: Relic still 14");
+        }
+        c.world.setBlockState(at, Blocks.AIR.getDefaultState(), 2);
+    }
+
+    /** @return the comparator signal of a jukebox at {@code at} holding {@code disc} (null: none) */
+    private static int jukebox(Check c, BlockPos at, net.minecraft.item.Item disc) {
+        WorldServer world = c.world;
+        world.setBlockState(at, Blocks.JUKEBOX.getDefaultState().withProperty(net.minecraft.block.BlockJukebox.HAS_RECORD, disc != null), 2);
+        TileEntity te = world.getTileEntity(at);
+        if (te instanceof net.minecraft.block.BlockJukebox.TileEntityJukebox) {
+            ((net.minecraft.block.BlockJukebox.TileEntityJukebox) te).setRecord(disc == null ? net.minecraft.item.ItemStack.EMPTY : new net.minecraft.item.ItemStack(disc));
+        }
+        return world.getBlockState(at).getComparatorInputOverride(world, at);
     }
 
     /** Nothing holds a block up there: air or a liquid below. */

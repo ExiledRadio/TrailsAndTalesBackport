@@ -175,6 +175,10 @@ public final class StructuresContent {
                 for (StructureComponent pyramid : DesertPyramids.pyramidsIn((WorldServer) world, box)) {
                     Random r = new Random(world.getSeed() ^ ChunkPos.asLong(chunkX, chunkZ) * 341873128712L);
                     DesertPyramids.apply(world, pyramid, new DesertPyramids.BoundingBoxes(pyramid.getBoundingBox()), box, r);
+                    // The pyramid's sand and the cellar under it (down to 1.20's floor, 15 under the piece's bottom).
+                    StructureBoundingBox b = pyramid.getBoundingBox();
+                    Archaeology.unscheduleFalling(world, Archaeology.clip(
+                            new StructureBoundingBox(b.minX, b.minY - 15, b.minZ, b.maxX, b.maxY, b.maxZ), box));
                 }
                 OceanRuins.populate(world, box);
             } catch (RuntimeException e) {

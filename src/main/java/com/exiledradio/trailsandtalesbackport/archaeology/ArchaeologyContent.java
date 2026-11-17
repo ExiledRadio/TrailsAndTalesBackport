@@ -123,6 +123,7 @@ public final class ArchaeologyContent {
         }
         BlockOwnership.declare(TrailsAndTalesBackport.MOD_ID, names.toArray(new String[0]));
         ArchaeologyLoot.register();
+        Population.register();
     }
 
     @SubscribeEvent

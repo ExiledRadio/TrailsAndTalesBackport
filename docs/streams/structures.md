@@ -132,13 +132,27 @@ own owners' items (the smithing templates of ancient cities, bastions and shipwr
 
 ## Not done
 
-*   **Jukebox comparator**: 1.12.2's jukebox gives a modded disc's item id offset, not 1.20's 14 for Relic.
 *   The other 17 languages: the family's `build_langs.py` pass.
 
-*   **Placed blocks get no tick** (`Archaeology.unschedule`): 1.20's world generation places blocks without
-    `onPlace`, so a suspicious block it puts over air or water stays until a neighbor changes. 1.12.2's
-    `onBlockAdded` schedules the fall check; each suspicious block set here has that one tick taken back out (the
-    rest of the column's pending ticks are put back).
+*   **Placed blocks get no tick** (`archaeology.Population`): 1.20's world generation places blocks into a
+    `WorldGenRegion` without `onPlace` and without neighbor or shape updates, so a suspicious block it puts over air
+    or water stays until the world runs and a neighbor changes. 1.12.2 populates straight into the world. While any
+    chunk of a world populates (from Forge's `PopulateChunkEvent.Pre` to this mod's last `IWorldGenerator`, weight
+    `Integer.MAX_VALUE`; its first, weight `Integer.MIN_VALUE`, marks the chunk for a generator that fires no event),
+    the suspicious blocks' `onBlockAdded` and `neighborChanged` schedule nothing. That covers this mod's structures,
+    other mods placing the blocks by name (Caves & Cliffs' 1.20 well) and later features in neighboring chunks setting
+    blocks beside them with notifying flags. The set is emptied at the start of every server tick. A block set outside
+    population by the structure code (`Archaeology.set`) still has its one tick taken back out (`Archaeology.unschedule`).
+*   **The structures' plain sand and gravel get no tick either** (`Archaeology.unscheduleFalling`): 1.12.2's
+    `onBlockAdded` schedules the fall of every sand and gravel block a structure sets from a world generator (Backport
+    Core's scattered driver, this mod's generator), and one that falls takes the suspicious block beside it along. After
+    a trail ruins piece, a desert pyramid with its cellar, a well and each ocean ruin piece (Update Aquatic's, whose sand
+    and gravel this stream turns suspicious) is placed in a chunk, the pending ticks of the falling blocks inside it are
+    taken back. Without this, Update Aquatic's test world lost 33 of 311 ocean-ruin suspicious blocks (and trail ruins 1
+    of 86) once the world ran; with it, none.
+*   **Relic's comparator signal** (P7, `docs/PATCHES.md`): a jukebox playing Relic gives 14, as 1.20. 1.12.2 counts
+    the signal from the disc's item id; P7 turns exactly Relic's id offset into 14 at each return of
+    `BlockJukebox.getComparatorInputOverride`, so it stacks with Nether Update's P2 (Pigstep 13) in either order.
 
 ## Not tested
 
@@ -149,12 +163,18 @@ own owners' items (the smithing templates of ancient cities, bastions and shipwr
 
 ## Known differences
 
-*   1.12.2's population sends neighbor updates that 1.20's world generation never does (flowing water around ocean
-    ruins, later features with notifying flags). A neighbor update makes a suspicious block over air or water fall,
-    as it would in vanilla once the world runs; so some of those fall a little sooner than in vanilla (in the Update
-    Aquatic test world 33 of 311 ocean-ruin ones were gone when the world was opened again, 1 of 86 in trail ruins).
+*   A neighbor update after population still makes a suspicious block over air or water fall, as in 1.20 once the
+    world runs (water still flowing when the chunk starts ticking, a player).
 
 ## Tested headlessly
+
+**Gaps closed after 0.1.0** (generation ticks, Relic's comparator), `-Pselftest=all` on fresh worlds, seed 1013:
+alone **5117/0**; Caves & Cliffs 1.0.0 dev jar in `eclipse/mods` **5110/0** (as is, its height coremod off), the same
+jar with its coremod manifest **5110/0**, and in its 1.18 world type (`level-type=cavesandcliffs`) **5101/0**.
+`-Pselftest=structures` with Update Aquatic 1.1.1: 369/0, and a second run in the same world 369/0 (all 311 ocean-ruin
+and 86 trail-ruins suspicious blocks still there; without the fix 33 and 1 were gone, which the test now reports).
+With Nether Update 1.0.0 and Wild Update 1.0.0 (dev jars given their release manifests, so their P2 and P5 load
+beside P7): 366/0, Relic 14, Pigstep 13.
 
 `./gradlew runServer -Pselftest=all -PdeployDir= -PcoreDeployDir=` (fresh Default world, seed 1013, port 25945):
 **`SELFTEST DONE pass=4217 fail=0`**. `python -I tools/check_assets.py`: **80 blocks, 1145 states, 92 item models,
