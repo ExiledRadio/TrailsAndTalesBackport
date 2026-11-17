@@ -324,8 +324,10 @@ Exactly as Update Aquatic Backport's plan:
 - **Registration**: your own `@Mod.EventBusSubscriber` class, through `common/Content`.
 - **Languages (Rule 4)**: every user-facing string is an `en_us.lang` key written by a generator; vanilla names
   through `assets.name(...)`; `python tools/lang/vanilla_keys.py` lists them as vanilla. The 18 languages come
-  from the family's tool (`tools/lang/build_langs.py`, from Backport Core's `languages` branch) once it is
-  merged; until then streams leave them to the integrator.
+  from the family's tool, `tools/lang/build_langs.py` (copied unchanged from Wild Update / Caves & Cliffs; settings
+  in `tools/lang/langs.json`, Mojang 1.20.6's files; forced matches in `tools/lang/vanilla_map.txt`; our own text in
+  `tools/lang/translations/<code>.lang`). After any `en_us` change: `config` (if a @Config comment changed), `todo`,
+  translate into `translations/`, `build`, `snapshot`, and delete `tools/lang/todo/`. `check` must report 0 errors.
 - **Docs**: `docs/streams/<stream>.md` with a changelog section, how it works, tested, not tested.
 
 ## Build and test
@@ -395,7 +397,7 @@ ore-dictionary items, then our copy.
 3. G, Sg, Sm (**done**, with the copper, amethyst and smithing table copies), Sc (**done**, stream Sc) and the other copies above (all decided 2026-11-07); St's trail ruins
    and ocean ruins when Core has the template loader (desert pyramid and well and the template loot can go
    before it).
-4. Languages through the family tool; waterlogging (**done**, `docs/streams/waterlog.md`).
+4. Languages through the family tool (**done**, branch `tt-langs`); waterlogging (**done**, `docs/streams/waterlog.md`).
 
 ## The items once left out (branch `tt-leftovers`, 2026-11-16)
 

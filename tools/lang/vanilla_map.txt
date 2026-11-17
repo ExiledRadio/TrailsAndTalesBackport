@@ -1,0 +1,35 @@
+# our.key = mojang.key forces a match; our.key = ! forces "ours". Read by build_langs.py.
+# Armor trim names (the tool has no trim_material/trim_pattern rule).
+trim_material.trailsandtalesbackport.amethyst = trim_material.minecraft.amethyst
+trim_material.trailsandtalesbackport.copper = trim_material.minecraft.copper
+trim_material.trailsandtalesbackport.diamond = trim_material.minecraft.diamond
+trim_material.trailsandtalesbackport.emerald = trim_material.minecraft.emerald
+trim_material.trailsandtalesbackport.gold = trim_material.minecraft.gold
+trim_material.trailsandtalesbackport.iron = trim_material.minecraft.iron
+trim_material.trailsandtalesbackport.lapis = trim_material.minecraft.lapis
+trim_material.trailsandtalesbackport.netherite = trim_material.minecraft.netherite
+trim_material.trailsandtalesbackport.quartz = trim_material.minecraft.quartz
+trim_material.trailsandtalesbackport.redstone = trim_material.minecraft.redstone
+trim_pattern.trailsandtalesbackport.coast = trim_pattern.minecraft.coast
+trim_pattern.trailsandtalesbackport.dune = trim_pattern.minecraft.dune
+trim_pattern.trailsandtalesbackport.eye = trim_pattern.minecraft.eye
+trim_pattern.trailsandtalesbackport.host = trim_pattern.minecraft.host
+trim_pattern.trailsandtalesbackport.raiser = trim_pattern.minecraft.raiser
+trim_pattern.trailsandtalesbackport.rib = trim_pattern.minecraft.rib
+trim_pattern.trailsandtalesbackport.sentry = trim_pattern.minecraft.sentry
+trim_pattern.trailsandtalesbackport.shaper = trim_pattern.minecraft.shaper
+trim_pattern.trailsandtalesbackport.silence = trim_pattern.minecraft.silence
+trim_pattern.trailsandtalesbackport.snout = trim_pattern.minecraft.snout
+trim_pattern.trailsandtalesbackport.spire = trim_pattern.minecraft.spire
+trim_pattern.trailsandtalesbackport.tide = trim_pattern.minecraft.tide
+trim_pattern.trailsandtalesbackport.vex = trim_pattern.minecraft.vex
+trim_pattern.trailsandtalesbackport.ward = trim_pattern.minecraft.ward
+trim_pattern.trailsandtalesbackport.wayfinder = trim_pattern.minecraft.wayfinder
+trim_pattern.trailsandtalesbackport.wild = trim_pattern.minecraft.wild
+# F3 + 1 / F3 + 2 (1.20.2's chart keys) have no Mojang help line: ours.
+debug.profiler_chart.help = !
+debug.fps_charts.help = !
+# Mojang has these: the sign edit screens' titles and 1.20.5's blur option tooltip (.tooltip keys are ours by default).
+gui.trailsandtalesbackport.sign.edit = sign.edit
+gui.trailsandtalesbackport.hanging_sign.edit = hanging_sign.edit
+options.accessibility.menu_background_blurriness.tooltip = options.accessibility.menu_background_blurriness.tooltip
