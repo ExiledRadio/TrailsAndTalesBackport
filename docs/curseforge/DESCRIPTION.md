@@ -79,13 +79,13 @@ Every feature can be turned off in Backport Core's settings screen, under Mod Op
 
 ## Compatibility
 
-**Caves & Cliffs Backport**: in its 1.18 worlds, cherry groves generate where 1.20 puts them. The brush and the copper trim use its copper, the calibrated sensor its amethyst, and sniffer eggs hatch twice as fast on its moss. Without it, cherry groves grow in 1.12's mountains and this mod brings its own copper and amethyst.
+**[Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-and-cliffs-backport)**: in its 1.18 worlds, cherry groves generate where 1.20 puts them. The brush and the copper trim use its copper, the calibrated sensor its amethyst, and sniffer eggs hatch twice as fast on its moss. Without it, cherry groves grow in 1.12's mountains and this mod brings its own copper and amethyst.
 
-**Village & Pillage Backport**: camels spawn in its desert villages, and its smithing table takes the templates. Bamboo is its bamboo. Without it, this mod has its own bamboo and smithing table.
+**[Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport)**: camels spawn in its desert villages, and its smithing table takes the templates. Bamboo is its bamboo. Without it, this mod has its own bamboo and smithing table.
 
-**Update Aquatic Backport**: its ocean ruins get suspicious sand and gravel, and warm ruins hold sniffer eggs.
+**[Update Aquatic Backport](https://www.curseforge.com/minecraft/mc-mods/update-aquatic-backport)**: its ocean ruins get suspicious sand and gravel, and warm ruins hold sniffer eggs.
 
-**Nether Update, Wild Update, Buzzy Bees**: crimson, warped and mangrove hanging signs, templates in bastions and ancient cities, mud for the sniffer, and honeycomb wax on signs.
+**[Nether Update](https://www.curseforge.com/minecraft/mc-mods/nether-update-backport), [Wild Update](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport), [Buzzy Bees](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport)**: crimson, warped and mangrove hanging signs, templates in bastions and ancient cities, mud for the sniffer, and honeycomb wax on signs.
 
 **OptiFine**: works, shaders included.
 
