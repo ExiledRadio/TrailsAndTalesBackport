@@ -69,6 +69,7 @@ public final class SelfTestRunner {
             new FutureMcSelfTest(),
             new Presentation1205SelfTest(),
             new StructuresSelfTest(),
+            new MechanicsSelfTest(),
     };
 
     private final List<String> wanted;

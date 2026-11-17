@@ -146,6 +146,14 @@ config.trailsandtalesbackport.misc.effectParticles=Effect Particles
 config.trailsandtalesbackport.misc.enabled=Enabled
 config.trailsandtalesbackport.misc.deathMessages=1.20 Death Messages
 config.trailsandtalesbackport.misc.stepSounds=1.20 Step Sounds
+config.trailsandtalesbackport.mechanics=Mechanics
+config.trailsandtalesbackport.mechanics.meleeReach=1.20.2 Mob Melee Reach
+config.trailsandtalesbackport.mechanics.shieldPitch=Shields Block at Any Pitch
+config.trailsandtalesbackport.mechanics.spawnChunks=1.20.5 Spawn Chunks
+config.trailsandtalesbackport.mechanics.redyeing=Re-dye Beds, Wool and Carpets
+config.trailsandtalesbackport.mechanics.slimeJumpBoost=Jump Boost on Slimes
+config.trailsandtalesbackport.mechanics.chorusFallDistance=Chorus Fruit Resets Falls
+config.trailsandtalesbackport.mechanics.arrowNames=Arrows Keep Names
 
 # --- common ---
 subtitles.trailsandtalesbackport.item.axe.strip=Axe strips
