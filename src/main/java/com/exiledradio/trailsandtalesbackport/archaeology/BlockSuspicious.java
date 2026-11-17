@@ -29,7 +29,9 @@ import java.util.Random;
  *
  * <ul>
  *   <li>{@code dusted} 0-3, in metadata; the brushing itself is in {@link TileSuspicious}.</li>
- *   <li>Every placement and neighbor change schedules a tick 2 ticks later. The tick lets the tile entity
+ *   <li>Every placement and neighbor change schedules a tick 2 ticks later, except while a chunk populates
+ *       ({@link Population}): 1.20's world generation places blocks with neither, so one a structure puts over air
+ *       stays until the world runs and a neighbor changes. The tick lets the tile entity
  *       wind its brushing back ({@link TileSuspicious#checkReset}) and, with nothing solid below, the block
  *       falls like sand. A falling suspicious block never becomes a block again: where it lands it breaks
  *       with the block-break particles and sound, and drops nothing (vanilla's falling block with its drop
@@ -107,14 +109,20 @@ public class BlockSuspicious extends BlockFalling {
 
     // --- ticks and falling -----------------------------------------------------------------------
 
+    /** 1.20's {@code onPlace}; nothing while a chunk populates, as 1.20's world generation calls no {@code onPlace}. */
     @Override
     public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
-        world.scheduleUpdate(pos, this, TICK_DELAY);
+        if (!Population.active(world)) {
+            world.scheduleUpdate(pos, this, TICK_DELAY);
+        }
     }
 
+    /** 1.20's {@code updateShape}; nothing while a chunk populates, as 1.20's world generation sends no updates. */
     @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos) {
-        world.scheduleUpdate(pos, this, TICK_DELAY);
+        if (!Population.active(world)) {
+            world.scheduleUpdate(pos, this, TICK_DELAY);
+        }
     }
 
     @Override

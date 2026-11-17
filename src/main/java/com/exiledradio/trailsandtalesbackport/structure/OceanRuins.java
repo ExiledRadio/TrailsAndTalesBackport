@@ -71,6 +71,9 @@ public final class OceanRuins {
                             Archaeology.set(world, i.pos, gravel, Archaeology.table(i.nbt.getString("LootTable")), i.nbt.getLong("LootTableSeed"));
                         }
                     }
+                    // The ruin's plain sand and gravel too: in 1.20 they get no tick either, and one falling drags its
+                    // suspicious neighbor along.
+                    Archaeology.unscheduleFalling(world, Archaeology.clip(c.getBoundingBox(), box));
                 }
             }
         }

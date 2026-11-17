@@ -116,6 +116,7 @@ public class TrailRuinsPiece extends JigsawPiece implements TerrainAdaptation.Ad
         if (this.element != null) {
             Archaeology.place(world, suspicious(world.getSeed()), chunk);
         }
+        Archaeology.unscheduleFalling(world, Archaeology.clip(getBoundingBox(), chunk));
         return true;
     }
 

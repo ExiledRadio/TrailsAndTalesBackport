@@ -117,6 +117,7 @@ public final class DesertWells {
         BlockPos second = cross[random.nextInt(cross.length)].down(2);
         Archaeology.set(world, first, false, TABLE, VanillaRandom.asLong(first));
         Archaeology.set(world, second, false, TABLE, VanillaRandom.asLong(second));
+        Archaeology.unscheduleFalling(world, new net.minecraft.world.gen.structure.StructureBoundingBox(pos.add(-2, -2, -2), pos.add(2, 4, 2)));
         return true;
     }
 }

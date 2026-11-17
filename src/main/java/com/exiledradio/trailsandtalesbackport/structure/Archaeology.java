@@ -524,6 +524,47 @@ public final class Archaeology {
         }
     }
 
+    /**
+     * 1.20's world generation schedules no tick for the blocks a structure places, so its sand and gravel over air or
+     * water stay put until the world runs and a neighbor changes. 1.12.2's {@code onBlockAdded} schedules the fall of
+     * every falling block a structure sets outside the generator's own decoration (Backport Core's scattered driver and
+     * this mod's generators run as world generators), and a plain gravel block that falls takes the suspicious one beside
+     * it along. This takes back the pending ticks of the falling blocks inside {@code box} (both corners included); every
+     * other tick of those columns is put back as it was.
+     *
+     * @param box a piece's box clipped to the populate step's box
+     */
+    public static void unscheduleFalling(World world, @Nullable StructureBoundingBox box) {
+        if (box == null || !(world instanceof net.minecraft.world.WorldServer)) {
+            return;
+        }
+        net.minecraft.world.WorldServer server = (net.minecraft.world.WorldServer) world;
+        // getPendingBlockUpdates takes whole columns, its max x and z exclusive.
+        List<net.minecraft.world.NextTickListEntry> taken = server.getPendingBlockUpdates(
+                new StructureBoundingBox(box.minX, 0, box.minZ, box.maxX + 1, 255, box.maxZ + 1), true);
+        if (taken == null) {
+            return;
+        }
+        long now = server.getTotalWorldTime();
+        for (net.minecraft.world.NextTickListEntry e : taken) {
+            if (box.isVecInside(e.position) && e.getBlock() instanceof net.minecraft.block.BlockFalling
+                    && server.getBlockState(e.position).getBlock() == e.getBlock()) {
+                continue;
+            }
+            server.scheduleBlockUpdate(e.position, e.getBlock(), (int) Math.max(0L, e.scheduledTime - now), e.priority);
+        }
+    }
+
+    /** @return the part of {@code a} inside {@code b}, or null when they do not meet */
+    @Nullable
+    public static StructureBoundingBox clip(StructureBoundingBox a, StructureBoundingBox b) {
+        if (!a.intersectsWith(b)) {
+            return null;
+        }
+        return new StructureBoundingBox(Math.max(a.minX, b.minX), Math.max(a.minY, b.minY), Math.max(a.minZ, b.minZ),
+                Math.min(a.maxX, b.maxX), Math.min(a.maxY, b.maxY), Math.min(a.maxZ, b.maxZ));
+    }
+
     private static boolean loot(World world, BlockPos pos, ResourceLocation table, long seed) {
         unschedule(world, pos);
         TileEntity te = world.getTileEntity(pos);
