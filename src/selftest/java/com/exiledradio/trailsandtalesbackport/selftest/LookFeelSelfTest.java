@@ -244,6 +244,34 @@ public final class LookFeelSelfTest implements SelfTest {
             }
             c.ok(found, "en_us.lang has " + key);
         }
+        // Rule 4: the 18 languages each have exactly en_us's keys (written by tools/lang/build_langs.py).
+        java.util.Set<String> enKeys = keys(en);
+        java.util.Map<String, String> enMap = map(en);
+        for (String code : LANGS) {
+            if (code.equals("en_us")) {
+                continue;
+            }
+            List<String> l = lines(new ResourceLocation(ID, "lang/" + code + ".lang"));
+            java.util.Set<String> k = keys(l);
+            c.ok(k.equals(enKeys), code + ".lang has en_us's " + enKeys.size() + " keys: " + k.size());
+            c.ok(!String.valueOf(map(l).get("config.trailsandtalesbackport.cherry.enabled.tooltip")).equals(enMap.get("config.trailsandtalesbackport.cherry.enabled.tooltip")),
+                    code + ".lang's own text is translated");
+        }
+    }
+
+    private static java.util.Set<String> keys(List<String> lines) {
+        return map(lines).keySet();
+    }
+
+    private static java.util.Map<String, String> map(List<String> lines) {
+        java.util.Map<String, String> out = new java.util.LinkedHashMap<>();
+        for (String line : lines) {
+            if (!line.isEmpty() && !line.startsWith("#") && line.contains("=")) {
+                String[] kv = line.split("=", 2);
+                out.put(kv[0], kv[1]);
+            }
+        }
+        return out;
     }
 
     // ------------------------------------------------------------------------------------------
