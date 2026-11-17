@@ -284,12 +284,15 @@ Packet ids 0-4 are `common`'s. Potions, enchantments and sounds have no numbers 
 
 ### X. Other changes
 
-- Beds, carpets and wool dyeable to any color in the crafting grid (1.20).
+- Beds, carpets and wool dyeable to any color in the crafting grid (1.20). **Done** (`docs/streams/mechanics.md`).
 - Bat's new model and texture (1.20.3): our renderer in place of vanilla's (client).
 - Smaller visible 1.20.x rules that need no patches, collected as they are found: polished blackstone button
   break time (NU's block, Rule 2 note only), slimes and magma cubes affected by Jump Boost, shields blocking
   while looking straight up, chorus fruit resetting fall distance, arrows keeping custom names, sponge sounds.
   Each is checked against what 1.12.2 can do without patching before it is built.
+  **Done** (branch `tt-mechanics`, `docs/streams/mechanics.md`): Jump Boost on slimes and magma cubes, shields
+  looking up (1.20.3), chorus fruit and fall distance, named arrows (1.20.3); with the audit's 1.20.2 mob melee
+  reach and 1.20.5 spawn chunks (radius 2; Tricky Trials takes it to 0).
 
 ## Rule 2 integrations (all soft: `Loader.isModLoaded` and names)
 

@@ -119,6 +119,11 @@ public final class ModConfig {
     @Config.Comment("1.20's smaller changes to existing blocks, items and mobs.")
     public static final Misc misc = new Misc();
 
+    @Setting.Feature(icon = "minecraft:iron_sword")
+    @Config.LangKey("config.trailsandtalesbackport.mechanics")
+    @Config.Comment("1.20's changes to how mobs fight, shields block and the spawn area stays loaded, and smaller 1.20 rules.")
+    public static final Mechanics mechanics = new Mechanics();
+
     @Setting.Feature(icon = "minecraft:painting")
     @Config.LangKey("config.trailsandtalesbackport.lookAndFeel")
     @Config.Comment("1.20's look: the cherry grove panorama, the title logo, splashes, menu music and the rest.")
@@ -318,6 +323,40 @@ public final class ModConfig {
         @Config.Comment("1.20's step sounds: walking on a carpet, moss carpet, snow layer or roots plays it and, muffled, the block below; on petals, a lily pad or glow lichen it plays that block.")
         @Config.LangKey("config.trailsandtalesbackport.misc.stepSounds")
         public boolean stepSounds = true;
+    }
+
+    public static final class Mechanics {
+        @Config.Comment({"1.20.2's mob melee reach: a mob hits only what its own box, widened by 0.83 blocks to each side (not up",
+                "or down), touches, and only what it can see. No hits through thin walls or from below a mounted rider; tall",
+                "mobs like endermen reach higher. Applies to every melee AI built on vanilla's."})
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.meleeReach")
+        public boolean meleeReach = true;
+
+        @Config.Comment("1.20.3: a raised shield blocks by the way the player faces, whatever the pitch, so it also blocks while looking straight up or down.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.shieldPitch")
+        public boolean shieldPitch = true;
+
+        @Config.Comment({"1.20.5's spawn chunks: the area kept loaded around the world spawn is 5 by 5 chunks (radius 2) instead",
+                "of 1.12.2's 17 by 17, and the game prepares only that area when a world starts."})
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.spawnChunks")
+        public boolean spawnChunks = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("1.20: beds, wool and carpets of any color can be dyed another color in the crafting grid (1.12.2: only white ones).")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.redyeing")
+        public boolean redyeing = true;
+
+        @Config.Comment("1.20: Jump Boost makes slimes and magma cubes jump higher.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.slimeJumpBoost")
+        public boolean slimeJumpBoost = true;
+
+        @Config.Comment("1.20: teleporting by eating chorus fruit resets fall distance, so the landing does no fall damage built up before.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.chorusFallDistance")
+        public boolean chorusFallDistance = true;
+
+        @Config.Comment("1.20.3: an arrow item with a custom name shot from a bow keeps the name, and picking the arrow up gives the named item back.")
+        @Config.LangKey("config.trailsandtalesbackport.mechanics.arrowNames")
+        public boolean arrowNames = true;
     }
 
     public static final class LookAndFeel {
