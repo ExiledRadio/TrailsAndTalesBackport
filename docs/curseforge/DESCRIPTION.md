@@ -8,13 +8,13 @@ All of 1.20 Trails & Tales, with 1.20.5's armadillo and wolf armor, on Minecraft
 
 Cherry groves grow on mountain slopes. Pink cherry trees drop petals as you walk under them, and pink petals cover the grass in clumps of one to four. Cherry wood comes in every 1.20 shape, with its own sounds.
 
-<!-- PENDING image: tt-cherry-grove -->
+![A cherry wood pavilion in a cherry grove](https://media.forgecdn.net/attachments/2226/642/tt-cherry-grove-jpg.jpg)
 
 ## Bamboo wood
 
 Nine bamboo make a block of bamboo. It strips, saws into planks and mosaic, and builds everything planks build. Bamboo rafts float a little higher than boats.
 
-<!-- PENDING image: tt-bamboo -->
+![A bamboo hut on stilts by a jungle lake](https://media.forgecdn.net/attachments/2226/640/tt-bamboo-jpg.jpg)
 
 ## Archaeology
 
@@ -24,21 +24,21 @@ Trail ruins are half buried in gravel in taigas, birch forests and jungles. Thei
 
 Four sherds or bricks make a decorated pot with a picture on each side. Pots hold one stack of one item.
 
-<!-- PENDING image: tt-trail-ruins -->
+![Trail ruins being dug out in a jungle](https://media.forgecdn.net/attachments/2226/648/tt-trail-ruins-jpg.jpg)
 
-<!-- PENDING image: tt-dig-site -->
+![Brushing suspicious sand at a desert well](https://media.forgecdn.net/attachments/2226/643/tt-dig-site-jpg.jpg)
 
 ## The sniffer
 
 The sniffer is the first mob brought back from the past. Hatch one from a sniffer egg and it sniffs around grass, dirt and moss, then digs up torchflower seeds and pitcher pods. Those grow into flowers found nowhere else.
 
-<!-- PENDING image: tt-sniffer -->
+![A sniffer and a snifflet in a moss garden](https://media.forgecdn.net/attachments/2226/646/tt-sniffer-jpg.jpg)
 
 ## Camels
 
 Camels spawn in desert villages. Two players can ride one, high enough that zombies can't reach. Press jump to dash.
 
-<!-- PENDING image: tt-camel -->
+![A camel and a wandering trader in a desert village](https://media.forgecdn.net/attachments/2226/641/tt-camel-jpg.jpg)
 
 ## Armadillos and wolves
 
@@ -46,15 +46,15 @@ Armadillos live in savannas and badlands and roll up when something scares them.
 
 Wolves now come in nine variants, each from its own biome. Tamed wolves have more health.
 
-<!-- PENDING image: tt-armadillo -->
+![Armadillos in the badlands](https://media.forgecdn.net/attachments/2226/639/tt-armadillo-jpg.jpg)
 
-<!-- PENDING image: tt-wolves -->
+![A wolf in wolf armor by a campfire, black wolves in the taiga](https://media.forgecdn.net/attachments/2226/650/tt-wolves-jpg.jpg)
 
 ## Armor trims
 
 Smithing templates turn up in structures all over the world. Put one on the smithing table with a piece of armor and an ingot, gem or crystal to trim it. There are sixteen patterns in ten materials, and they show on the armor you wear. Upgrading to netherite needs its template now.
 
-<!-- PENDING image: tt-trims -->
+![Trimmed armor in a smithy](https://media.forgecdn.net/attachments/2226/649/tt-trims-jpg.jpg)
 
 ## Blocks
 
@@ -65,19 +65,17 @@ Smithing templates turn up in structures all over the world. Put one on the smit
 *   Mob heads on note blocks play that mob's sound.
 *   Piglin heads, whose ears flap when powered.
 
-<!-- PENDING image: tt-shop -->
+![Hanging signs on a village street](https://media.forgecdn.net/attachments/2226/645/tt-shop-jpg.jpg)
 
-<!-- PENDING image: tt-study -->
+![Chiseled bookshelves in a study](https://media.forgecdn.net/attachments/2226/647/tt-study-jpg.jpg)
 
-<!-- PENDING image: tt-sensor -->
+![A calibrated sculk sensor lighting redstone lamps](https://media.forgecdn.net/attachments/2226/644/tt-sensor-jpg.jpg)
 
 ## The rest of 1.20
 
 You also get 1.20's mechanics changes, dyeing beds, wool and carpet to another color, the 1.20.3 bat, cherry and bamboo boats, 1.20's music for the cherry grove and other biomes, and 1.20.5's title screen, splashes and loading screen.
 
 Every feature can be turned off in Backport Core's settings screen, under Mod Options.
-
-<!-- PENDING image: tt-settings -->
 
 ## Compatibility
 
