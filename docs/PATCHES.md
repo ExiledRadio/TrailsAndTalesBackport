@@ -45,3 +45,17 @@ P1-P6's target classes are patched by Forge, so they are javac-built: no ProGuar
 stack shape); P7 changes no frame either way. P1 is client-only; P2 runs on both sides; P3 changes only the client branch of its method; P4 runs on the server (integrated or dedicated); P5, P6 and P7 run on both sides (their hooks act on the server). `-Pselftest=structures` checks P7 (alone, and with
 Nether Update and Wild Update in `eclipse/mods`). The self-tests check which applied (`-Pselftest=leftovers` on
 the server for P2, `runClient -Pselftest=client` for P1).
+
+## Release-jar check
+
+The dev runs recompile Minecraft with javac, so they never see Mojang's ProGuard stack-map frames, which drop a local once
+vanilla stops reading it. Before a release, boot the release jar on a plain Forge 14.23.5.2847 dedicated server:
+
+    ./gradlew build
+    tools/release/boot-server.sh <server dir> build/boot.log <BackportCore jar> build/libs/TrailsAndTalesBackport-<version>.jar
+
+The script empties the server's `mods/`, puts in the jars named, deletes the world and boots with
+`-Dtrailsandtalesbackport.loadPatched=true`. `PatchCheck` then loads and verifies every class P1 to P20 patch (24 on a
+server, 26 on a client) and logs `PATCHCHECK ok N` or `PATCHCHECK FAIL <class>`. With other family mods, add their
+`-D<modid>.loadPatched=true` through `JVM_ARGS`; the script then wants one `PATCHCHECK ok` line per mod. A patch with a
+new target class adds it to `PatchCheck`.
