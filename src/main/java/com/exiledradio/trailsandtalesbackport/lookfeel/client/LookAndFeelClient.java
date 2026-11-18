@@ -2,6 +2,7 @@ package com.exiledradio.trailsandtalesbackport.lookfeel.client;
 
 import com.exiledradio.backportcore.presentation.Contribution;
 import com.exiledradio.backportcore.presentation.LoadingRevision;
+import com.exiledradio.backportcore.presentation.LookArea;
 import com.exiledradio.backportcore.presentation.Presentation;
 import com.exiledradio.backportcore.presentation.client.LoadingScreens;
 import com.exiledradio.trailsandtalesbackport.ModConfig;
@@ -130,7 +131,7 @@ public final class LookAndFeelClient {
      */
     @SubscribeEvent
     public void onKey(InputEvent.KeyInputEvent event) {
-        if (Keyboard.getEventKey() == Keyboard.KEY_F3 && !Keyboard.getEventKeyState()) {
+        if (Keyboard.getEventKey() == Keyboard.KEY_F3 && !Keyboard.getEventKeyState() && Presentation.isAtLeast(LookArea.DEBUG, "1.20.2")) {
             applyCharts(Minecraft.getMinecraft());
         }
     }
@@ -140,7 +141,8 @@ public final class LookAndFeelClient {
     /** 1.20.2: Multiplayer's and World Selection's Cancel reads Back. */
     @SubscribeEvent
     public void onInit(GuiScreenEvent.InitGuiEvent.Post event) {
-        if (!(event.getGui() instanceof GuiMultiplayer) && !(event.getGui() instanceof GuiWorldSelection)) {
+        if (!(event.getGui() instanceof GuiMultiplayer) && !(event.getGui() instanceof GuiWorldSelection)
+                || !Presentation.isAtLeast(LookArea.MENUS, "1.20.2")) {
             return;
         }
         String cancel = I18n.format("gui.cancel");
@@ -155,7 +157,7 @@ public final class LookAndFeelClient {
     /** 1.20.6 {@code VideoSettingsScreen.mouseScrolled}: Ctrl + scroll steps GUI Scale (Auto counts as one above the most). */
     @SubscribeEvent
     public void onMouse(GuiScreenEvent.MouseInputEvent.Pre event) {
-        if (!(event.getGui() instanceof GuiVideoSettings) || !GuiScreen.isCtrlKeyDown()) {
+        if (!(event.getGui() instanceof GuiVideoSettings) || !GuiScreen.isCtrlKeyDown() || !Presentation.isAtLeast(LookArea.VIDEO, "1.20")) {
             return;
         }
         int wheel = Mouse.getEventDWheel();
@@ -188,25 +190,44 @@ public final class LookAndFeelClient {
 
     // ---- Application icon ----
 
-    /** 1.20's window icon, 16 and 32 pixels, as 1.12.2's {@code Minecraft.setWindowIcon} sets it (not on macOS). */
+    /**
+     * 1.20's window icon, 16 and 32 pixels, as 1.12.2's {@code Minecraft.setWindowIcon} sets it (not on macOS), while
+     * the menus look like 1.20 or later (Core's Look &amp; Feel page); otherwise 1.12.2's own, from vanilla's jar.
+     */
     static void setIcon() {
         if (Util.getOSType() == Util.EnumOS.OSX) {
             return;
         }
+        boolean ours = Presentation.isAtLeast(LookArea.MENUS, "1.20");
+        if (ours == iconSet && iconChecked) {
+            return;
+        }
+        iconChecked = true;
         try {
-            ByteBuffer small = icon("icon_16x16.png");
-            ByteBuffer large = icon("icon_32x32.png");
+            ByteBuffer small = icon("icon_16x16.png", ours);
+            ByteBuffer large = icon("icon_32x32.png", ours);
             if (small != null && large != null) {
                 Display.setIcon(new ByteBuffer[] {small, large});
-                iconSet = true;
+                iconSet = ours;
             }
         } catch (Exception e) {
             TrailsAndTalesBackport.LOGGER.warn("Look and feel: the window icon was not set ({})", e.toString());
         }
     }
 
-    private static ByteBuffer icon(String name) throws Exception {
-        InputStream in = LookAndFeelClient.class.getResourceAsStream("/assets/" + TrailsAndTalesBackport.MOD_ID + "/textures/gui/icon/" + name);
+    private static boolean iconChecked;
+
+    /** Core's Look &amp; Feel page changed: the icon follows it. */
+    @SubscribeEvent
+    public void onConfigChanged(net.minecraftforge.fml.client.event.ConfigChangedEvent.PostConfigChangedEvent event) {
+        if ("backportcore".equals(event.getModID())) {
+            setIcon();
+        }
+    }
+
+    private static ByteBuffer icon(String name, boolean ours) throws Exception {
+        InputStream in = ours ? LookAndFeelClient.class.getResourceAsStream("/assets/" + TrailsAndTalesBackport.MOD_ID + "/textures/gui/icon/" + name)
+                : Minecraft.getMinecraft().getResourcePackRepository().rprDefaultResourcePack.getInputStream(new ResourceLocation("icons/" + name));
         if (in == null) {
             return null;
         }
