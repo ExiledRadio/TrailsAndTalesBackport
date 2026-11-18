@@ -31,7 +31,7 @@ Each patch's hook checks its own config and `Presentation.isAtLeast(...)`, so wi
 | P17 | Mechanics (1.20.2) | `EntityEnderPearl.onUpdate` / `func_70071_h_` `()V` | its one `isEntityAlive()` becomes `NewGameRules.pearlOwnerAlive(thrower)` (same stack) | the `enderPearlsVanishOnDeath` game rule; the pearl removes itself inside its own tick. |
 | P18 | Mechanics (1.20.3) | `EntityPlayer.getMaxInPortalTime` / `func_82145_z` `()I` | body becomes `return NewGameRules.portalTime(this)` | the `playersNetherPortalDefaultDelay` and `playersNetherPortalCreativeDelay` game rules; the delay is the player's own method. |
 | P19 | Mechanics (1.20.2) | `WorldServer.updateBlocks` / `func_147456_g` `()V` | the `this.rand.nextInt(16)` right after `provider.canDoRainSnowIce(chunk)` becomes `NewGameRules.precipitationRoll(this.rand, 16, this)` (`ALOAD 0` pushed before the call) | 1.20.2's `ServerLevel.tickChunk` tries snow and ice `randomTickSpeed` times at 1 in 48 (1.12.2: once at 1 in 16). Kept to at most one try per chunk per tick, with 1.20.2's chance of at least one. |
-| P20 | Mechanics (1.20.3, client) | `Render.canRenderName` / `func_177070_b` `(Entity)Z` | body becomes `return MechanicsClient.canRenderName(entity)` | 1.20.3's `EntityRenderer.shouldShowName`: a custom name also shows while the entity is under the crosshair. Renderers that override it (mobs, item frames) keep theirs. |
+| P20 | Mechanics (1.20.3, client) | `Render.canRenderName` / `func_177070_b` `(Entity)Z` | body becomes `return MechanicsClient.canRenderName(entity)` | 1.20.3's `EntityRenderer.shouldShowName`: a custom name also shows while the entity is under the crosshair (any entity it hits, from `objectMouseOver`: 1.12.2's `pointedEntity` is only ever a living entity or an item frame). Renderers that override it (mobs, item frames) keep theirs. |
 
 P13 to P20 change no frame either: P13's store goes into a live local of a Forge-patched class, P15 and P16 add
 straight-line methods, P18 and P20 replace whole bodies. `-Pselftest=mechanicslow` checks P13 to P19 on the server (P13's
@@ -45,3 +45,17 @@ P1-P6's target classes are patched by Forge, so they are javac-built: no ProGuar
 stack shape); P7 changes no frame either way. P1 is client-only; P2 runs on both sides; P3 changes only the client branch of its method; P4 runs on the server (integrated or dedicated); P5, P6 and P7 run on both sides (their hooks act on the server). `-Pselftest=structures` checks P7 (alone, and with
 Nether Update and Wild Update in `eclipse/mods`). The self-tests check which applied (`-Pselftest=leftovers` on
 the server for P2, `runClient -Pselftest=client` for P1).
+
+## Release-jar check
+
+The dev runs recompile Minecraft with javac, so they never see Mojang's ProGuard stack-map frames, which drop a local once
+vanilla stops reading it. Before a release, boot the release jar on a plain Forge 14.23.5.2847 dedicated server:
+
+    ./gradlew build
+    tools/release/boot-server.sh <server dir> build/boot.log <BackportCore jar> build/libs/TrailsAndTalesBackport-<version>.jar
+
+The script empties the server's `mods/`, puts in the jars named, deletes the world and boots with
+`-Dtrailsandtalesbackport.loadPatched=true`. `PatchCheck` then loads and verifies every class P1 to P20 patch (24 on a
+server, 26 on a client) and logs `PATCHCHECK ok N` or `PATCHCHECK FAIL <class>`. With other family mods, add their
+`-D<modid>.loadPatched=true` through `JVM_ARGS`; the script then wants one `PATCHCHECK ok` line per mod. A patch with a
+new target class adds it to `PatchCheck`.

@@ -376,6 +376,19 @@ public class EntityCamel extends AbstractHorse {
         return !this.plainTravel && super.canBeSteered();
     }
 
+    /**
+     * Whether this side moves the camel: on the rider's own client. 1.12.2's {@code EntityLiving} answers
+     * {@code canBeSteered() && ...}, which {@link #canBeSteered} turns false while the camel moves itself; then
+     * {@code EntityLivingBase.travel} (run only on the server or where this is true) skipped every ridden move on
+     * the rider's client, and a ridden camel never moved. So this answers as {@code Entity} does, for the steering
+     * rider ({@link #getControllingPassenger} is a player on a saddled camel, or nobody).
+     */
+    @Override
+    public boolean canPassengerSteer() {
+        Entity controller = getControllingPassenger();
+        return controller instanceof EntityPlayer && ((EntityPlayer) controller).isUser();
+    }
+
     /** 1.20's flying speed for a mob a player rides: a tenth of its speed, in place of 1.12.2's 0.02. */
     @Override
     public void moveRelative(float strafe, float up, float forward, float friction) {

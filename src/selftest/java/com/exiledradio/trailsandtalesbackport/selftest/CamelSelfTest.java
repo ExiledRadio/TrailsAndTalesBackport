@@ -52,6 +52,7 @@ public final class CamelSelfTest implements SelfTest {
         c.world.getWorldInfo().setWorldTotalTime(c.world.getTotalWorldTime() + 200);
         registration(c);
         riding(c);
+        ridden(c);
         dash(c);
         sitting(c);
         randomSitting(c);
@@ -176,6 +177,96 @@ public final class CamelSelfTest implements SelfTest {
         c.ok(copy.isHorseSaddled(), "the saddle is saved");
         for (EntityCamel e : new EntityCamel[] {camel, bare, baby, copy}) {
             e.setDead();
+        }
+    }
+
+    /**
+     * The rider's forward key moves a saddled camel, and still moves 1.12.2's horse, donkey and mule and a pig with a
+     * carrot on a stick (a llama only carries its rider). The rider is a {@link Players#driver}, whose mount moves on
+     * the server as it does on the rider's own client.
+     */
+    private void ridden(Check c) {
+        BlockPos area = c.area();
+        String[] names = {"camel", "horse", "donkey", "mule", "llama", "pig"};
+        double[] least = {2.0D, 3.0D, 2.0D, 2.0D, 0.0D, 1.0D};
+        for (int i = 0; i < names.length; i++) {
+            String name = names[i];
+            EntityPlayerMP rider = Players.driver(c.world, "driver" + name);
+            net.minecraft.entity.EntityLiving mount;
+            switch (name) {
+                case "camel": mount = new EntityCamel(c.world); break;
+                case "horse": mount = new net.minecraft.entity.passive.EntityHorse(c.world); break;
+                case "donkey": mount = new net.minecraft.entity.passive.EntityDonkey(c.world); break;
+                case "mule": mount = new net.minecraft.entity.passive.EntityMule(c.world); break;
+                case "llama": mount = new net.minecraft.entity.passive.EntityLlama(c.world); break;
+                default: mount = new EntityPig(c.world); break;
+            }
+            mount.setLocationAndAngles(area.getX() + 2.5D + 5 * i, area.getY(), area.getZ() + 2.5D, 0.0F, 0.0F);
+            mount.onInitialSpawn(c.world.getDifficultyForLocation(new BlockPos(mount)), null);
+            c.world.spawnEntity(mount);
+            if (mount instanceof net.minecraft.entity.passive.AbstractHorse) {
+                net.minecraft.entity.passive.AbstractHorse horse = (net.minecraft.entity.passive.AbstractHorse) mount;
+                horse.setHorseTamed(true);
+                if (!(mount instanceof net.minecraft.entity.passive.EntityLlama)) {
+                    rider.setHeldItem(EnumHand.MAIN_HAND, new ItemStack(Items.SADDLE));
+                    if (mount instanceof EntityCamel) {
+                        ((EntityCamel) mount).processInteract(rider, EnumHand.MAIN_HAND);
+                    } else {
+                        net.minecraft.inventory.ContainerHorseChest chest = net.minecraftforge.fml.relauncher.ReflectionHelper.getPrivateValue(
+                                net.minecraft.entity.passive.AbstractHorse.class, horse, "horseChest", "field_110296_bG");
+                        chest.setInventorySlotContents(0, new ItemStack(Items.SADDLE));
+                    }
+                    c.ok(horse.isHorseSaddled(), name + ": saddled");
+                }
+            }
+            if (mount instanceof EntityPig) {
+                ((EntityPig) mount).setSaddled(true);
+            }
+            rider.setHeldItem(EnumHand.MAIN_HAND, mount instanceof EntityPig ? new ItemStack(Items.CARROT_ON_A_STICK) : ItemStack.EMPTY);
+            rider.setPosition(mount.posX, mount.posY, mount.posZ - 2.0D);
+            c.ok(rider.startRiding(mount, true) && rider.getRidingEntity() == mount, name + ": the rider gets on");
+            if (mount instanceof EntityCamel) {
+                // The cause of 1.0.0's still camel: 1.12.2's EntityLiving.canPassengerSteer() asks canBeSteered(),
+                // which the camel turns off while it moves itself, so its rider's client never ran the move.
+                try {
+                    java.lang.reflect.Field plain = EntityCamel.class.getDeclaredField("plainTravel");
+                    plain.setAccessible(true);
+                    plain.setBoolean(mount, true);
+                    c.ok(mount.canPassengerSteer(), "camel: its driving rider still moves it while it moves itself (the rider's client runs the move)");
+                    plain.setBoolean(mount, false);
+                } catch (ReflectiveOperationException e) {
+                    c.ok(false, "camel: plainTravel " + e);
+                }
+            }
+            tick(c, 5, mount);
+            double z = mount.posZ;
+            double x = mount.posX;
+            rider.rotationYaw = 0.0F;
+            rider.setEntityActionState(0.0F, 1.0F, false, false);
+            tick(c, 40, mount);
+            rider.setEntityActionState(0.0F, 0.0F, false, false);
+            double moved = mount.posZ - z;
+            if (least[i] > 0.0D) {
+                c.ok(moved >= least[i], name + ": the rider's forward key moves it: " + String.format("%.2f", moved)
+                        + " blocks in 2 s (on the ground " + mount.onGround + ", steered by " + mount.getControllingPassenger() + ")");
+            } else {
+                c.ok(Math.abs(moved) < 0.5D, name + ": the rider's forward key does not steer it: " + String.format("%.2f", moved));
+            }
+            c.ok(Math.abs(mount.posX - x) < 0.5D, name + ": straight ahead");
+            rider.dismountRidingEntity();
+            mount.setDead();
+        }
+    }
+
+    /** Ticks any mount and its riders as the server's entity loop does. */
+    private static void tick(Check c, int ticks, net.minecraft.entity.Entity mount) {
+        for (int i = 0; i < ticks; i++) {
+            c.world.getWorldInfo().setWorldTotalTime(c.world.getTotalWorldTime() + 1);
+            mount.ticksExisted++;
+            mount.onUpdate();
+            for (net.minecraft.entity.Entity rider : mount.getPassengers()) {
+                mount.updatePassenger(rider);
+            }
         }
     }
 

@@ -3,6 +3,7 @@
 First full release: all of 1.20 Trails & Tales and 1.20.5's armadillo and wolf armor on Minecraft 1.12.2. Since the betas:
 
 *   **All 18 languages**: German, Spanish (5 variants), French, Italian, Japanese, Korean, Dutch, Polish, Brazilian Portuguese, Russian, Turkish, Ukrainian and Chinese (Simplified and Traditional).
+*   **Camels can be ridden**: in the betas a saddled camel stood still under its rider.
 *   **Suspicious sand and gravel stay put**: those that generate over air or water no longer fall before you dig them.
 *   **Relic gives a comparator signal of 14** from a jukebox, as in 1.20.
 *   **1.20's changes to things 1.12.2 already has**, each with its own setting on the Mechanics page:

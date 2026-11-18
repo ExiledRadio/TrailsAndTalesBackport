@@ -67,6 +67,48 @@ public final class MechanicsLowSelfTest implements SelfTest {
         gameRules(c);
         pearlSound(c);
         wither(c);
+        languages(c);
+    }
+
+    // ---- the settings' names -----------------------------------------------------------------------------------
+
+    /** The 20 languages with their own translations; Viossa (vp_vl) translates vanilla's text only, as 1.20's does. */
+    static final String[] LANGUAGES = {"de_de", "en_us", "es_ar", "es_es", "es_mx", "es_uy", "es_ve", "fr_fr", "it_it",
+            "ja_jp", "ko_kr", "nl_nl", "pl_pl", "pt_br", "ru_ru", "tr_tr", "uk_ua", "zh_cn", "zh_tw"};
+
+    /** Every Mechanics setting, and the page itself, is named (with its tooltip) in every translated language. */
+    private static void languages(Check c) throws Exception {
+        java.util.List<String> keys = new java.util.ArrayList<String>();
+        keys.add("config.trailsandtalesbackport.mechanics");
+        for (java.lang.reflect.Field f : com.exiledradio.trailsandtalesbackport.ModConfig.Mechanics.class.getFields()) {
+            net.minecraftforge.common.config.Config.LangKey key = f.getAnnotation(net.minecraftforge.common.config.Config.LangKey.class);
+            c.ok(key != null, "the Mechanics setting " + f.getName() + " has a lang key");
+            if (key != null) {
+                keys.add(key.value());
+            }
+        }
+        c.ok(keys.size() > 10, "the Mechanics page has its settings: " + (keys.size() - 1));
+        for (String lang : LANGUAGES) {
+            java.util.Properties p = new java.util.Properties();
+            java.io.InputStream in = MechanicsLowSelfTest.class.getResourceAsStream("/assets/trailsandtalesbackport/lang/" + lang + ".lang");
+            c.ok(in != null, lang + ".lang is in the jar");
+            if (in == null) {
+                continue;
+            }
+            try {
+                p.load(new java.io.InputStreamReader(in, java.nio.charset.StandardCharsets.UTF_8));
+            } finally {
+                in.close();
+            }
+            java.util.List<String> missing = new java.util.ArrayList<String>();
+            for (String key : keys) {
+                String name = p.getProperty(key);
+                if (name == null || name.trim().isEmpty() || p.getProperty(key + ".tooltip") == null) {
+                    missing.add(key);
+                }
+            }
+            c.ok(missing.isEmpty(), lang + ": every Mechanics setting is named, with its tooltip" + (missing.isEmpty() ? "" : ", missing " + missing));
+        }
     }
 
     private static boolean applied(String what) {
