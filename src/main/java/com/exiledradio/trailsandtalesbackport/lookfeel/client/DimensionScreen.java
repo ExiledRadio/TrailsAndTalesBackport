@@ -98,8 +98,9 @@ public final class DimensionScreen {
         return Reason.OTHER;
     }
 
+    /** @return true while the game's world-loading screens look like 1.20.5 or later (Core's Look &amp; Feel page) */
     static boolean active() {
-        return Presentation.isAtLeast("1.20.5");
+        return Presentation.isAtLeast(com.exiledradio.backportcore.presentation.LookArea.LOADING, "1.20.5");
     }
 
     @SubscribeEvent
