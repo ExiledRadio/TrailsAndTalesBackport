@@ -29,4 +29,23 @@ final class Players {
         player.connection = new NetHandlerPlayServer(server, new NetworkManager(EnumPacketDirection.SERVERBOUND), player);
         return player;
     }
+
+    /**
+     * A player that moves its own mount, as the rider's own client does ({@code EntityPlayerSP.isUser()}): with it,
+     * {@code canPassengerSteer()} is true on the server and the mount's ridden travel runs here, from the player's
+     * {@code moveForward} and {@code moveStrafing}.
+     */
+    static EntityPlayerMP driver(WorldServer world, String name) {
+        MinecraftServer server = world.getMinecraftServer();
+        EntityPlayerMP player = new EntityPlayerMP(server, world,
+                new GameProfile(UUID.nameUUIDFromBytes(("selftest:" + name).getBytes()), "Test" + name),
+                new PlayerInteractionManager(world)) {
+            @Override
+            public boolean isUser() {
+                return true;
+            }
+        };
+        player.connection = new NetHandlerPlayServer(server, new NetworkManager(EnumPacketDirection.SERVERBOUND), player);
+        return player;
+    }
 }

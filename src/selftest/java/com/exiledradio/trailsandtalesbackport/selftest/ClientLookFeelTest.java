@@ -48,6 +48,7 @@ public final class ClientLookFeelTest {
     private int phase;
     private File shots;
     private ClientLeftovers leftovers;
+    private ClientReleaseChecks release;
 
     public static void register() {
         MinecraftForge.EVENT_BUS.register(new ClientLookFeelTest());
@@ -81,6 +82,8 @@ public final class ClientLookFeelTest {
                 File world = new File(new File(mc.gameDir, "saves"), WORLD);
                 FileUtils.deleteQuietly(world);
                 LoadingScreen1205.capture = new File(this.shots, "loading.png");
+                // A window in the background must not pause the integrated server.
+                mc.gameSettings.pauseOnLostFocus = false;
                 this.ticks = 0;
                 // The integrated server would run the server self-tests for "client" and stop itself.
                 System.clearProperty(TrailsAndTalesBackport.MOD_ID + ".selftest");
@@ -94,6 +97,9 @@ public final class ClientLookFeelTest {
                 this.ticks = 0;
                 this.leftovers = new ClientLeftovers(mc, this.shots, this::ok);
             } else if (this.phase == 2 && this.leftovers.tick(++this.ticks)) {
+                this.phase = 4;
+                this.release = new ClientReleaseChecks(mc, this.shots, this::ok);
+            } else if (this.phase == 4 && this.release.tick()) {
                 finish(mc);
             }
         } catch (Throwable t) {
