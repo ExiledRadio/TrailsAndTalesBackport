@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=Die Biom-Musik aus 
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Schwamm saugt auf
 subtitles.trailsandtalesbackport.entity.player.teleport=Spieler teleportiert
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Pappelholzhängeschild
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Pappelholzhängeschild
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Pappelholzwandhängeschild

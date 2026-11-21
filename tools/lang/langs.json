@@ -1,7 +1,7 @@
 {
   "modid": "trailsandtalesbackport",
   "lang_dir": "src/main/resources/assets/trailsandtalesbackport/lang",
-  "mojang_versions": ["1.20.6"],
+  "mojang_versions": ["26.3", "1.20.6"],
   "config_classes": ["src/main/java/com/exiledradio/trailsandtalesbackport/ModConfig.java"],
   "ours_prefixes": ["config.", "commands.", "gui.", "jei.", "itemGroup.", "generator."],
   "banned_words": ["Future MC", "FutureMC", "Raids Backport", "RAIDS_BACKPORT", "Crossbows Backport", "Oceanic Expanse", "Deeper Depths", "Aqua Acrobatics"],

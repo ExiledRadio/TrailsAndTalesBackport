@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=1.20의 생물 군�
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=스펀지가 빨아들임
 subtitles.trailsandtalesbackport.entity.player.teleport=플레이어가 순간이동함
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=포플러나무 매다는 표지판
+tile.trailsandtalesbackport.poplar_hanging_sign.name=포플러나무 매다는 표지판
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=포플러나무 벽 매다는 표지판

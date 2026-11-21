@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=La musique des biom
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Éponge qui absorbe
 subtitles.trailsandtalesbackport.entity.player.teleport=Joueur qui se téléporte
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Pancarte suspendue en peuplier
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Pancarte suspendue en peuplier
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Pancarte suspendue murale en peuplier

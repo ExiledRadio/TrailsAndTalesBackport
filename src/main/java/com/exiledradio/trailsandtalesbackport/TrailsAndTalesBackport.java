@@ -86,6 +86,7 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.heads.HeadsContent.init();
         com.exiledradio.trailsandtalesbackport.sign.SignsContent.init();
         com.exiledradio.trailsandtalesbackport.biome.CherryGroveContent.init();
+        com.exiledradio.trailsandtalesbackport.cherry.CherryContent.init();
         com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.init();
         com.exiledradio.trailsandtalesbackport.sculk.SensorContent.init();
         com.exiledradio.trailsandtalesbackport.structure.StructuresContent.init();

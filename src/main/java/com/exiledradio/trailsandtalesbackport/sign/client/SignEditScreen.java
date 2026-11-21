@@ -52,6 +52,9 @@ public class SignEditScreen extends GuiScreen {
     private final TileEntitySign sign;
     private final boolean front;
     private final boolean hanging;
+    /** 26.2's flat texture for this sign, looked up once per screen ({@link #flatTexture}). */
+    private ResourceLocation flat;
+    private boolean flatChecked;
     private final int lineHeight;
     private final int maxWidth;
     private final String[] messages = new String[4];
@@ -248,11 +251,23 @@ public class SignEditScreen extends GuiScreen {
         GlStateManager.disableLighting();
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         GlStateManager.pushMatrix();
+        if (!this.flatChecked) {
+            this.flat = this.hanging ? null : flatTexture(this.sign.getBlockType());
+            this.flatChecked = true;
+        }
+        ResourceLocation flat;
         if (this.hanging) {
             GlStateManager.translate(0.0F, -13.0F, 0.0F);
             GlStateManager.scale(4.5F, 4.5F, 1.0F);
             this.mc.getTextureManager().bindTexture(hangingTexture(this.sign.getBlockType()));
             drawModalRectWithCustomSizedTexture(-8, -8, 0.0F, 0.0F, 16, 16, 16.0F, 16.0F);
+        } else if ((flat = this.flat) != null) {
+            // 26.2: the sign drawn flat from gui/signs/<wood> at 3.9x, 27 below the text's center (12 high on a wall).
+            GlStateManager.translate(0.0F, 27.0F, 0.0F);
+            GlStateManager.scale(3.9F, 3.9F, 1.0F);
+            this.mc.getTextureManager().bindTexture(flat);
+            int shown = this.sign.getBlockType() instanceof BlockStandingSign ? 26 : 12;
+            drawModalRectWithCustomSizedTexture(-12, -13, 0.0F, 0.0F, 24, shown, 24.0F, 26.0F);
         } else {
             GlStateManager.translate(0.0F, 31.0F, 0.0F);
             GlStateManager.scale(62.500004F, 62.500004F, -62.500004F);
@@ -316,6 +331,35 @@ public class SignEditScreen extends GuiScreen {
         tessellator.draw();
         GlStateManager.disableColorLogic();
         GlStateManager.enableTexture2D();
+    }
+
+    /**
+     * 26.2's flat sign texture for a standing or wall sign, {@code <namespace>:textures/gui/signs/<wood>.png} from the
+     * sign block's name ({@code trailsandtalesbackport:cherry_wall_sign} gives cherry, Game Drops Backport's
+     * {@code poplar_sign} poplar, 1.12.2's own sign {@code minecraft:} oak), when the newest installed version is 26.2
+     * or later and a mod or resource pack has the file; else null, and the sign is drawn as 1.20's model.
+     */
+    @javax.annotation.Nullable
+    static ResourceLocation flatTexture(Block block) {
+        if (!com.exiledradio.backportcore.presentation.Presentation.isAtLeast(com.exiledradio.backportcore.presentation.LookArea.MENUS, "26.2")
+                || block.getRegistryName() == null) {
+            return null;
+        }
+        String ns = block.getRegistryName().getNamespace();
+        String path = block.getRegistryName().getPath();
+        String wood = "minecraft".equals(ns) ? "oak"
+                : path.endsWith("_wall_sign") ? path.substring(0, path.length() - "_wall_sign".length())
+                : path.endsWith("_sign") ? path.substring(0, path.length() - "_sign".length()) : null;
+        if (wood == null) {
+            return null;
+        }
+        ResourceLocation gui = new ResourceLocation(ns, "textures/gui/signs/" + wood + ".png");
+        try {
+            net.minecraft.client.Minecraft.getMinecraft().getResourceManager().getResource(gui).close();
+            return gui;
+        } catch (java.io.IOException | RuntimeException e) {
+            return null;
+        }
     }
 
     /** {@code gui/hanging_signs/<wood>.png}, the wood from the block's name ({@code oak_hanging_sign}). */

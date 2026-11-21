@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=1.20 的生物群�
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=海绵：吸水
 subtitles.trailsandtalesbackport.entity.player.teleport=玩家：传送
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=悬挂式杨木告示牌
+tile.trailsandtalesbackport.poplar_hanging_sign.name=悬挂式杨木告示牌
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=墙上的悬挂式杨木告示牌

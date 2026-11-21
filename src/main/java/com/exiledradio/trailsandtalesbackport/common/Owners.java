@@ -34,6 +34,8 @@ public final class Owners {
     public static final String CAVES_AND_CLIFFS = "cavesandcliffsbackport";
     /** Owns sculk and the sculk sensor, mangrove wood, mud bricks, chest boats and ancient cities. */
     public static final String WILD_UPDATE = "wildupdatebackport";
+    /** Game Drops Backport (26.x): poplar. */
+    public static final String GAME_DROPS = "gamedropsbackport";
 
     private Owners() {
     }

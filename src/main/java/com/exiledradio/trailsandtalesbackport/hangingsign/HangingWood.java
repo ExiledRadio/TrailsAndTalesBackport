@@ -27,7 +27,9 @@ public enum HangingWood {
     BAMBOO("bamboo", "bamboo_wood_hanging_sign", null, -1),
     CRIMSON("crimson", "nether_wood_hanging_sign", Owners.NETHER_UPDATE, -1),
     WARPED("warped", "nether_wood_hanging_sign", Owners.NETHER_UPDATE, -1),
-    MANGROVE("mangrove", "hanging_sign", Owners.WILD_UPDATE, -1);
+    MANGROVE("mangrove", "hanging_sign", Owners.WILD_UPDATE, -1),
+    /** 26.3's poplar, Game Drops Backport's wood (its request 1). */
+    POPLAR("poplar", "hanging_sign", Owners.GAME_DROPS, -1);
 
     public final String name;
     /** 1.20's sound set: "hanging_sign" gives block.hanging_sign.break and the rest. */
@@ -75,6 +77,8 @@ public enum HangingWood {
                 return stack(Owners.theirs(this.mod, "stripped_warped_stem"));
             case MANGROVE:
                 return stack(Owners.theirs(this.mod, "stripped_mangrove_log"));
+            case POPLAR:
+                return stack(Owners.theirs(this.mod, "stripped_poplar_log"));
             default:
                 Item stripped = Owners.theirs(Owners.VILLAGE_AND_PILLAGE, "stripped_" + this.name + "_log");
                 if (stripped == null) {

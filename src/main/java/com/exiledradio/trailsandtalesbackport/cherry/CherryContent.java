@@ -1,6 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.cherry;
 
 import com.exiledradio.backportcore.ownership.BlockOwnership;
+import com.exiledradio.backportcore.structure.JigsawPools;
 import com.exiledradio.trailsandtalesbackport.ModConfig;
 import com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport;
 import com.exiledradio.trailsandtalesbackport.common.BlockPotted;
@@ -60,6 +61,24 @@ public final class CherryContent {
     }
 
     /** Pre-init: tell Backport Core which blocks this mod ships first. */
+    /**
+     * Init: 26.3's {@code cherry_checked} and {@code cherry_bees_005}, which Game Drops Backport's camps grow in their
+     * jigsaw pools, are this mod's worldgen cherry where a cherry sapling would survive (the bee nest needs a bee
+     * backport and is left out, as everywhere in this mod). Registered at init, after the camps' preInit fallback.
+     */
+    public static void init() {
+        if (!enabled()) {
+            return;
+        }
+        JigsawPools.FeaturePlacer cherry = (world, pos, random, feature) -> {
+            if (sapling != null && sapling.canPlaceBlockAt(world, pos)) {
+                new CherryTree(false).generate(world, random, pos);
+            }
+        };
+        JigsawPools.feature("minecraft:cherry_checked", cherry);
+        JigsawPools.feature("minecraft:cherry_bees_005", cherry);
+    }
+
     public static void preInit() {
         if (enabled()) {
             BlockOwnership.declare(TrailsAndTalesBackport.MOD_ID, "cherry_log", "cherry_wood", "stripped_cherry_log",

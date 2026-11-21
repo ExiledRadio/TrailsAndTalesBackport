@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=La musica dei biomi
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Spugna assorbe
 subtitles.trailsandtalesbackport.entity.player.teleport=Giocatore si teletrasporta
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Insegna di pioppo
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Insegna di pioppo
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Insegna di pioppo a parete

@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=Музика біо
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Губка всмоктує
 subtitles.trailsandtalesbackport.entity.player.teleport=Гравець телепортується
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Тополева вивіска
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Тополева вивіска
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Тополева настінна вивіска

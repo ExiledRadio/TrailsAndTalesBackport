@@ -492,3 +492,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=1.20's biome music:
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Sponge sucks
 subtitles.trailsandtalesbackport.entity.player.teleport=Player teleports
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Poplar Hanging Sign
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Poplar Hanging Sign
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Poplar Wall Hanging Sign

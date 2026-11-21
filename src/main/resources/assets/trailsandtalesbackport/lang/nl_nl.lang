@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=De biomemuziek uit 
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Spons absorbeert
 subtitles.trailsandtalesbackport.entity.player.teleport=Speler teleporteert
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Populierenhouten hangbord
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Populierenhouten hangbord
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Populierenhouten uithangbord

@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=A música dos bioma
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Esponja absorve
 subtitles.trailsandtalesbackport.entity.player.teleport=Jogador teletransporta-se
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Placa Suspensa de Álamo
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Placa Suspensa de Álamo
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Placa Suspensa de Álamo de Parede

@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=Музыка био
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Губка впитывает
 subtitles.trailsandtalesbackport.entity.player.teleport=Игрок телепортируется
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Тополевая подвесная табличка
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Тополевая подвесная табличка
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Тополевая настенная подвесная табличка

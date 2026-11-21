@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=La música de los b
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=Esponja absorbiendo
 subtitles.trailsandtalesbackport.entity.player.teleport=Jugador(a) teletransportándose
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=Letrero colgante de álamo
+tile.trailsandtalesbackport.poplar_hanging_sign.name=Letrero colgante de álamo
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=Letrero colgante de álamo en pared

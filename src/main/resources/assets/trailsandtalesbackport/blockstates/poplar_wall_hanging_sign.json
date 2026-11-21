@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "trailsandtalesbackport:poplar_hanging_sign"
+    },
+    "facing=south": {
+      "model": "trailsandtalesbackport:poplar_hanging_sign"
+    },
+    "facing=west": {
+      "model": "trailsandtalesbackport:poplar_hanging_sign"
+    },
+    "facing=east": {
+      "model": "trailsandtalesbackport:poplar_hanging_sign"
+    }
+  }
+}

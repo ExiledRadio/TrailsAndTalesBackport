@@ -40,6 +40,7 @@ public final class HangingSignSelfTest implements SelfTest {
         }
         c.eq(false, HangingSignContent.CEILING.containsKey(HangingWood.CRIMSON), "no crimson sign without Nether Update");
         c.eq(false, HangingSignContent.CEILING.containsKey(HangingWood.MANGROVE), "no mangrove sign without Wild Update");
+        c.eq(false, HangingSignContent.CEILING.containsKey(HangingWood.POPLAR), "no poplar sign without Game Drops");
         c.ok(HangingSignContent.chain != null, "chain copy registered without Nether Update");
 
         BlockHangingSign.Ceiling oak = HangingSignContent.CEILING.get(HangingWood.OAK);

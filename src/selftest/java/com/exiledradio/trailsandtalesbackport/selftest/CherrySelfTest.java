@@ -49,6 +49,7 @@ public final class CherrySelfTest implements SelfTest {
         if (!c.ok(set != null, "cherry stream registered")) {
             return;
         }
+        jigsawFeatures(c, set);
         registration(c, set);
         recipesAndFuel(c, set);
         stripping(c, set);
@@ -458,5 +459,38 @@ public final class CherrySelfTest implements SelfTest {
         c.world.setBlockState(pot, CherryContent.pottedSapling.getDefaultState());
         c.world.destroyBlock(pot, true);
         c.eq(1, Drops.count(c.world, pot, Items.FLOWER_POT) + 0, "broken potted sapling drops the pot");
+    }
+
+    /** Game Drops Backport's camps: cherry_checked and cherry_bees_005 grow this mod's cherry through Core's JigsawPools. */
+    private static void jigsawFeatures(Check c, WoodSet set) {
+        for (String id : new String[] {"minecraft:cherry_checked", "minecraft:cherry_bees_005"}) {
+            Object placer;
+            try {
+                java.lang.reflect.Method m = com.exiledradio.backportcore.structure.JigsawPools.class.getDeclaredMethod("featurePlacer",
+                        com.google.gson.JsonElement.class);
+                m.setAccessible(true);
+                placer = m.invoke(null, new com.google.gson.JsonPrimitive(id));
+            } catch (ReflectiveOperationException e) {
+                c.ok(false, id + ": JigsawPools.featurePlacer reachable: " + e);
+                continue;
+            }
+            if (!c.ok(placer != null, id + " has a placer")) {
+                continue;
+            }
+            BlockPos ground = new BlockPos(id.endsWith("checked") ? 2200 : 2240, 80, 2200);
+            for (BlockPos p : BlockPos.getAllInBox(ground.add(-6, 0, -6), ground.add(6, 16, 6))) {
+                c.world.setBlockState(p, p.getY() == 80 ? Blocks.GRASS.getDefaultState() : Blocks.AIR.getDefaultState(), 2);
+            }
+            ((com.exiledradio.backportcore.structure.JigsawPools.FeaturePlacer) placer).place(c.world, ground.up(), new java.util.Random(3L),
+                    new com.google.gson.JsonPrimitive(id));
+            c.eq(set.log, c.world.getBlockState(ground.up()).getBlock(), id + " grows a cherry log on grass");
+            c.world.setBlockState(ground, Blocks.STONE.getDefaultState(), 2);
+            for (BlockPos p : BlockPos.getAllInBox(ground.add(-6, 1, -6), ground.add(6, 16, 6))) {
+                c.world.setBlockState(p, Blocks.AIR.getDefaultState(), 2);
+            }
+            ((com.exiledradio.backportcore.structure.JigsawPools.FeaturePlacer) placer).place(c.world, ground.up(), new java.util.Random(3L),
+                    new com.google.gson.JsonPrimitive(id));
+            c.ok(c.world.isAirBlock(ground.up()), id + " places nothing where a sapling could not stand (stone)");
+        }
     }
 }

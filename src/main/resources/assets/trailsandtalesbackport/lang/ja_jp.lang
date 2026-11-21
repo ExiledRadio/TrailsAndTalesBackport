@@ -493,3 +493,8 @@ config.trailsandtalesbackport.lookAndFeel.biomeMusic.tooltip=1.20 のバイオ�
 # --- mechanics ---
 subtitles.trailsandtalesbackport.block.sponge.absorb=スポンジが吸収する
 subtitles.trailsandtalesbackport.entity.player.teleport=プレイヤーがテレポートする
+
+# --- hangingsign-poplar ---
+item.trailsandtalesbackport.poplar_hanging_sign.name=ポプラの吊り看板
+tile.trailsandtalesbackport.poplar_hanging_sign.name=ポプラの吊り看板
+tile.trailsandtalesbackport.poplar_wall_hanging_sign.name=壁に付けられたポプラの吊り看板

@@ -1,3 +1,9 @@
+# 1.0.2
+
+*   **Poplar hanging signs** with Game Drops Backport: two chains over six stripped poplar logs make six, as for every other wood.
+*   **Cherry trees at Game Drops Backport's abandoned camps** are this mod's full cherry trees.
+*   **26.2's sign editing screen** with Game Drops Backport: the sign is drawn flat, as in today's game, for the woods whose flat picture a mod or resource pack has (cherry, bamboo and poplar from the backports); others keep the 1.20 look.
+
 # 1.0.1
 
 *   **Torchflowers glow**: planted or potted, a torchflower gives off light level 10, between a soul torch and a redstone torch. Not in Minecraft; turn off **Glowing Torchflowers** on the Sniffer settings page for vanilla's unlit flowers.
