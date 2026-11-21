@@ -356,6 +356,13 @@ public final class SnifferSelfTest implements SelfTest {
         Advancement little = c.world.getMinecraftServer().getAdvancementManager().getAdvancement(SnifferAdvancements.FEED_SNIFFLET);
         c.ok(little != null && player.getAdvancements().getProgress(little).isDone(), "Little Sniffs");
         c.eq(2, player.getHeldItemMainhand().getCount(), "one seed eaten");
+        // 26.1's age lock (Core's AgeLockable, held by Game Drops Backport): a snifflet starts again at -48000.
+        com.exiledradio.backportcore.mechanics.AgeLockable lockable = baby;
+        c.eq(-48000, lockable.startAge(), "a snifflet's start age is 26.3's -48000");
+        c.ok(lockable.isBaby() && lockable.getAge() == baby.getGrowingAge(), "its age is the growing age");
+        lockable.setAge(-100);
+        c.eq(-100, baby.getGrowingAge(), "and set through it");
+        baby.setGrowingAge(-EntitySniffer.BABY_AGE_TICKS + 4800);
 
         // Saved: state survives as IDLING, the cooldown and explored spots are kept.
         net.minecraft.nbt.NBTTagCompound tag = new net.minecraft.nbt.NBTTagCompound();

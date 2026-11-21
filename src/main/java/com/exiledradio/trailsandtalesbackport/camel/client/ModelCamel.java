@@ -18,6 +18,9 @@ import java.util.Map;
  * stand up, idle and dash by their clocks), the head turned within 30 degrees and tipped back as the dash cools
  * down, the saddle and bridle shown when saddled and the reins when also ridden, and a baby at 0.45 size moved
  * down 29.35 pixels ({@code 1.834375} blocks after scaling).
+ *
+ * <p>Built with {@code baby}, 26.1's {@code BabyCamelModel} instead: its own parts (64 x 64, for
+ * {@code camel_baby.png}) and animations ({@code CamelBabyAnimation}), drawn at full size and never saddled.
  */
 public class ModelCamel extends ModelBase {
 
@@ -32,8 +35,37 @@ public class ModelCamel extends ModelBase {
     private final AnimatedPart[] saddleParts;
     private final AnimatedPart[] ridingParts;
     private final Map<String, AnimatedPart> parts = new HashMap<String, AnimatedPart>();
+    /** 26.1's baby model: no baby scale, the baby animations. */
+    private final boolean baby;
 
     public ModelCamel() {
+        this(false);
+    }
+
+    public ModelCamel(boolean baby) {
+        this.baby = baby;
+        if (baby) {
+            // 26.3's BabyCamelModel.createBodyLayer.
+            this.textureWidth = 64;
+            this.textureHeight = 64;
+            this.root = part("root", null, 0.0F, 0.0F, 0.0F);
+            AnimatedPart body = part("body", this.root, 0.0F, 7.0F, 0.0F);
+            box(body, 0, 14, -4.5F, -4.0F, -8.0F, 9, 8, 16, 0.0F, false);
+            box(part("tail", body, 0.0F, -1.5F, 8.05F), 50, 38, -1.5F, -0.5F, 0.0F, 3, 9, 0, 0.0F, false);
+            this.head = part("head", body, 0.0F, 1.0F, -7.5F);
+            box(this.head, 20, 0, -2.5F, -3.0F, -7.5F, 5, 5, 7, 0.0F, false);
+            box(this.head, 0, 0, -2.5F, -12.0F, -7.5F, 5, 9, 5, 0.0F, false);
+            box(this.head, 0, 14, -2.5F, -12.0F, -10.5F, 5, 4, 3, 0.0F, false);
+            box(part("right_ear", this.head, -2.5F, -11.0F, -4.0F), 37, 0, -3.0F, -0.5F, -1.0F, 3, 1, 2, 0.0F, false);
+            box(part("left_ear", this.head, 2.5F, -11.0F, -4.0F), 47, 0, 0.0F, -0.5F, -1.0F, 3, 1, 2, 0.0F, false);
+            box(part("right_front_leg", this.root, -3.0F, 11.5F, -5.5F), 36, 14, -1.5F, -0.5F, -1.5F, 3, 13, 3, 0.0F, false);
+            box(part("left_front_leg", this.root, 3.0F, 11.5F, -5.5F), 48, 14, -1.5F, -0.5F, -1.5F, 3, 13, 3, 0.0F, false);
+            box(part("left_hind_leg", this.root, 3.0F, 11.5F, 5.5F), 12, 38, -1.5F, -0.5F, -1.5F, 3, 13, 3, 0.0F, false);
+            box(part("right_hind_leg", this.root, -3.0F, 11.5F, 5.5F), 0, 38, -1.5F, -0.5F, -1.5F, 3, 13, 3, 0.0F, false);
+            this.saddleParts = new AnimatedPart[0];
+            this.ridingParts = new AnimatedPart[0];
+            return;
+        }
         this.textureWidth = 128;
         this.textureHeight = 128;
         this.root = part("root", null, 0.0F, 0.0F, 0.0F);
@@ -103,6 +135,15 @@ public class ModelCamel extends ModelBase {
         // 1.20's animateWalk: the walk's time from the limb swing, its strength from the swing amount.
         long walkTime = (long) (limbSwing * 50.0F * MAX_WALK_ANIMATION_SPEED);
         float walkScale = Math.min(limbSwingAmount * WALK_ANIMATION_SCALE_FACTOR, 1.0F);
+        if (this.baby) {
+            CamelBabyAnimations.CAMEL_BABY_WALK.apply(this.parts, walkTime, walkScale);
+            animate(camel.sitAnimation, CamelBabyAnimations.CAMEL_BABY_SIT, ageInTicks);
+            animate(camel.sitPoseAnimation, CamelBabyAnimations.CAMEL_BABY_SIT_POSE, ageInTicks);
+            animate(camel.sitUpAnimation, CamelBabyAnimations.CAMEL_BABY_STANDUP, ageInTicks);
+            animate(camel.idleAnimation, CamelBabyAnimations.CAMEL_BABY_IDLE, ageInTicks);
+            animate(camel.dashAnimation, CamelBabyAnimations.CAMEL_BABY_DASH, ageInTicks);
+            return;
+        }
         CamelAnimations.CAMEL_WALK.apply(this.parts, walkTime, walkScale);
         animate(camel.sitAnimation, CamelAnimations.CAMEL_SIT, ageInTicks);
         animate(camel.sitPoseAnimation, CamelAnimations.CAMEL_SIT_POSE, ageInTicks);
@@ -134,7 +175,7 @@ public class ModelCamel extends ModelBase {
     public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
                        float headPitch, float scale) {
         setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
-        if (this.isChild) {
+        if (this.isChild && !this.baby) {
             GlStateManager.pushMatrix();
             GlStateManager.scale(BABY_SCALE, BABY_SCALE, BABY_SCALE);
             GlStateManager.translate(0.0F, BABY_Y_OFFSET, 0.0F);

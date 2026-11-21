@@ -1,5 +1,6 @@
 package com.exiledradio.trailsandtalesbackport.sniffer.client;
 
+import com.exiledradio.backportcore.presentation.VanillaRevisions;
 import com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport;
 import com.exiledradio.trailsandtalesbackport.sniffer.EntitySniffer;
 import com.exiledradio.trailsandtalesbackport.sniffer.SnifferContent;
@@ -30,6 +31,7 @@ import java.util.Random;
 public final class SnifferClient extends SnifferSide {
 
     static final ResourceLocation TEXTURE = new ResourceLocation(TrailsAndTalesBackport.MOD_ID, "textures/entity/sniffer/sniffer.png");
+    static final ResourceLocation BABY_TEXTURE = new ResourceLocation(TrailsAndTalesBackport.MOD_ID, "textures/entity/sniffer/snifflet.png");
     private static TextureAtlasSprite glint;
 
     private SnifferClient() {
@@ -88,15 +90,34 @@ public final class SnifferClient extends SnifferSide {
         }
     }
 
-    /** 1.20's {@code SnifferRenderer}: shadow 1.1, one texture. */
+    /**
+     * 1.20's {@code SnifferRenderer}: shadow 1.1, one texture. While Core's {@code VanillaRevisions.babyModels()}
+     * (26.1 installed, as with Game Drops Backport), a snifflet is 26.3's: the {@code sniffer_baby} model and
+     * {@code snifflet.png}.
+     */
     static final class Render extends RenderLiving<EntitySniffer> {
+        private final ModelSniffer adult;
+        private final ModelSniffer baby = new ModelSniffer(true);
+
         Render(RenderManager manager) {
             super(manager, new ModelSniffer(), 1.1F);
+            this.adult = (ModelSniffer) this.mainModel;
+        }
+
+        /** @return true when this one is drawn as 26.1's baby */
+        static boolean modernBaby(EntitySniffer entity) {
+            return entity.isChild() && VanillaRevisions.babyModels();
+        }
+
+        @Override
+        public void doRender(EntitySniffer entity, double x, double y, double z, float entityYaw, float partialTicks) {
+            this.mainModel = modernBaby(entity) ? this.baby : this.adult;
+            super.doRender(entity, x, y, z, entityYaw, partialTicks);
         }
 
         @Override
         protected ResourceLocation getEntityTexture(EntitySniffer entity) {
-            return TEXTURE;
+            return modernBaby(entity) ? BABY_TEXTURE : TEXTURE;
         }
     }
 

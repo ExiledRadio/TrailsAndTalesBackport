@@ -1,6 +1,7 @@
 package com.exiledradio.trailsandtalesbackport.sniffer;
 
 import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.mechanics.AgeLockable;
 import com.exiledradio.trailsandtalesbackport.common.Vibrations;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -53,8 +54,11 @@ import javax.annotation.Nullable;
  * digs for 160-180 ticks dropping a torchflower seed or a pitcher pod (the {@code gameplay/sniffer_digging}
  * loot table) 120 ticks in, then stands up happy and does not dig again for 9600 ticks. Its state is sent
  * to the client, which plays the matching animation and sounds.
+ *
+ * <p>For 26.1's age lock ({@link AgeLockable}, Game Drops Backport's golden dandelion), a snifflet starts at -48000
+ * (26.3's {@code Sniffer.getBabyStartAge}), so a locked or unlocked snifflet goes back to -48000, not -24000.
  */
-public class EntitySniffer extends EntityAnimal {
+public class EntitySniffer extends EntityAnimal implements AgeLockable {
 
     public static final float WIDTH = 1.9F;
     public static final float HEIGHT = 1.75F;
@@ -450,6 +454,28 @@ public class EntitySniffer extends EntityAnimal {
         if (this.world.getGameRules().getBoolean("doMobLoot")) {
             this.world.spawnEntity(new EntityXPOrb(this.world, this.posX, this.posY, this.posZ, this.rand.nextInt(7) + 1));
         }
+    }
+
+    // --- AgeLockable: the growing age, starting at -48000 ---------------------------------------------------
+
+    @Override
+    public boolean isBaby() {
+        return isChild();
+    }
+
+    @Override
+    public int getAge() {
+        return getGrowingAge();
+    }
+
+    @Override
+    public void setAge(int age) {
+        setGrowingAge(age);
+    }
+
+    @Override
+    public int startAge() {
+        return -BABY_AGE_TICKS;
     }
 
     @Override

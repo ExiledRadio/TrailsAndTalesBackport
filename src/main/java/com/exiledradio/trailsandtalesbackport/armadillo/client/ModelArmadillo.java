@@ -20,6 +20,10 @@ import java.util.Map;
  * Then 1.20.5's keyframe animations: the walk by the limb swing (speed 16.5, strength x 2.5), and rolling out,
  * rolling up and peeking by their clocks. A baby is drawn at 0.6 size, 16.02 pixels down
  * ({@code AgeableHierarchicalModel(0.6, 16.02)}).
+ *
+ * <p>Built with {@code baby}, 26.1's {@code BabyArmadilloModel} instead: its own parts (64 x 64, for
+ * {@code armadillo_baby.png}) and animations ({@code BabyArmadilloAnimation}), drawn at full size, walking only
+ * while out of its shell (26.3's {@code ArmadilloModel}).
  */
 public class ModelArmadillo extends ModelBase {
 
@@ -38,10 +42,40 @@ public class ModelArmadillo extends ModelBase {
     private final AnimatedPart head;
     private final AnimatedPart tail;
     private final Map<String, AnimatedPart> parts = new HashMap<String, AnimatedPart>();
+    /** 26.1's baby model: no baby scale, the baby animations. */
+    private final boolean baby;
 
     public ModelArmadillo() {
+        this(false);
+    }
+
+    public ModelArmadillo(boolean baby) {
+        this.baby = baby;
         this.textureWidth = 64;
         this.textureHeight = 64;
+        if (baby) {
+            // 26.3's BabyArmadilloModel.createBodyLayer (its "tail" holds a cube named right_ear_cube, as 26.3's does).
+            this.root = part("root", null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+            this.body = part("body", this.root, 0.0F, 20.0F, 0.5F, 0.0F, 0.0F, 0.0F);
+            box(this.body, 0, 0, -2.5F, -2.0F, -3.5F, 5, 4, 7, 0.3F);
+            box(this.body, 0, 11, -2.5F, -2.0F, -3.0F, 5, 4, 6, 0.0F);
+            this.tail = part("tail", this.body, 0.0F, 0.0F, 3.4F, 0.0F, 0.0F, 0.0F);
+            box(part("right_ear_cube", this.tail, 0.0F, 1.5F, 1.0F, -1.0472F, 0.0F, 0.0F), 22, 11, -0.5F, -0.5F, -2.0F, 1, 1, 4, 0.0F);
+            this.head = part("head", this.body, 0.0F, 0.0F, -3.2F, 0.0F, 0.0F, 0.0F);
+            AnimatedPart headCube = part("head_cube", this.head, 0.0F, 0.0F, 0.0F, 0.7417649F, 0.0F, 0.0F);
+            box(headCube, 20, 17, -1.0F, -2.0F, -4.0F, 2, 2, 4, 0.0F);
+            mirrored(part("right_ear", headCube, -1.0F, -2.0F, -0.3F, -0.4363F, -0.1134F, 0.0524F), 28, 8, -1.8F, -2.0F, 0.0F, 2, 3, 0);
+            box(part("left_ear", headCube, 1.0F, -2.0F, -0.3F, -0.4363F, 0.1134F, -0.0524F), 28, 8, -0.2F, -2.0F, 0.0F, 2, 3, 0, 0.0F);
+            this.rightHindLeg = part("right_hind_leg", this.root, -1.5F, 22.0F, 2.5F, 0.0F, 0.0F, 0.0F);
+            mirrored(this.rightHindLeg, 20, 27, -1.0F, 0.0F, -1.0F, 2, 2, 2);
+            this.leftHindLeg = part("left_hind_leg", this.root, 1.5F, 22.0F, 2.5F, 0.0F, 0.0F, 0.0F);
+            box(this.leftHindLeg, 20, 27, -1.0F, 0.0F, -1.0F, 2, 2, 2, 0.0F);
+            box(part("right_front_leg", this.root, 1.5F, 22.0F, -1.5F, 0.0F, 0.0F, 0.0F), 20, 23, -1.0F, 0.0F, -1.0F, 2, 2, 2, 0.0F);
+            mirrored(part("left_front_leg", this.root, -1.5F, 22.0F, -1.5F, 0.0F, 0.0F, 0.0F), 24, 0, -1.0F, 0.0F, -1.0F, 2, 2, 2);
+            this.cube = part("cube", this.root, 0.0F, 20.7F, 0.5F, 0.0F, 0.0F, 0.0F);
+            box(this.cube, 0, 25, -3.0F, -3.0F, -3.0F, 6, 6, 6, 0.3F);
+            return;
+        }
         this.root = part("root", null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
         this.body = part("body", this.root, 0.0F, 21.0F, 4.0F, 0.0F, 0.0F, 0.0F);
         box(this.body, 0, 20, -4.0F, -7.0F, -10.0F, 8, 8, 12, 0.3F);
@@ -78,6 +112,11 @@ public class ModelArmadillo extends ModelBase {
         part.cubeList.add(new ModelBox(part, u, v, x, y, z, w, h, d, grow));
     }
 
+    /** 26.3's {@code texOffs(u, v).mirror().addBox(x, y, z, w, h, d)}. */
+    private static void mirrored(AnimatedPart part, int u, int v, float x, float y, float z, int w, int h, int d) {
+        part.cubeList.add(new ModelBox(part, u, v, x, y, z, w, h, d, 0.0F, true));
+    }
+
     @Override
     public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
                                   float headPitch, float scale, Entity entity) {
@@ -105,6 +144,15 @@ public class ModelArmadillo extends ModelBase {
         // 1.20's animateWalk: the walk's time from the limb swing, its strength from the swing amount.
         long walkTime = (long) (limbSwing * 50.0F * MAX_WALK_ANIMATION_SPEED);
         float walkScale = Math.min(limbSwingAmount * WALK_ANIMATION_SCALE_FACTOR, 1.0F);
+        if (this.baby) {
+            if (!armadillo.shouldHideInShell()) {
+                BabyArmadilloAnimations.ARMADILLO_BABY_WALK.apply(this.parts, walkTime, walkScale);
+            }
+            animate(armadillo.rollOutAnimation, BabyArmadilloAnimations.ARMADILLO_BABY_ROLL_OUT, ageInTicks);
+            animate(armadillo.rollUpAnimation, BabyArmadilloAnimations.ARMADILLO_BABY_ROLL_UP, ageInTicks);
+            animate(armadillo.peekAnimation, BabyArmadilloAnimations.ARMADILLO_BABY_PEEK, ageInTicks);
+            return;
+        }
         ArmadilloAnimations.ARMADILLO_WALK.apply(this.parts, walkTime, walkScale);
         animate(armadillo.rollOutAnimation, ArmadilloAnimations.ARMADILLO_ROLL_OUT, ageInTicks);
         animate(armadillo.rollUpAnimation, ArmadilloAnimations.ARMADILLO_ROLL_UP, ageInTicks);
@@ -121,7 +169,7 @@ public class ModelArmadillo extends ModelBase {
     public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
                        float headPitch, float scale) {
         setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
-        if (this.isChild) {
+        if (this.isChild && !this.baby) {
             GlStateManager.pushMatrix();
             GlStateManager.scale(BABY_SCALE, BABY_SCALE, BABY_SCALE);
             GlStateManager.translate(0.0F, BABY_Y_OFFSET / 16.0F, 0.0F);

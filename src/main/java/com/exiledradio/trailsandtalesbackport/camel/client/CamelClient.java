@@ -1,5 +1,6 @@
 package com.exiledradio.trailsandtalesbackport.camel.client;
 
+import com.exiledradio.backportcore.presentation.VanillaRevisions;
 import com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport;
 import com.exiledradio.trailsandtalesbackport.camel.EntityCamel;
 
@@ -29,6 +30,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 public final class CamelClient {
 
     static final ResourceLocation TEXTURE = new ResourceLocation(TrailsAndTalesBackport.MOD_ID, "textures/entity/camel/camel.png");
+    static final ResourceLocation BABY_TEXTURE = new ResourceLocation(TrailsAndTalesBackport.MOD_ID, "textures/entity/camel/camel_baby.png");
     static final ResourceLocation COOLDOWN = new ResourceLocation(TrailsAndTalesBackport.MOD_ID, "textures/gui/jump_bar_cooldown.png");
     private static final String JUMP_POWER_COUNTER = "field_110320_a";
     private static final String JUMP_POWER = "field_110321_bQ";
@@ -90,15 +92,34 @@ public final class CamelClient {
         mc.getTextureManager().bindTexture(Gui.ICONS);
     }
 
-    /** 1.20's {@code CamelRenderer}: shadow 0.7, one texture. */
+    /**
+     * 1.20's {@code CamelRenderer}: shadow 0.7, one texture. While Core's {@code VanillaRevisions.babyModels()}
+     * (26.1 installed, as with Game Drops Backport), a baby is 26.3's: {@code BabyCamelModel} and
+     * {@code camel_baby.png}.
+     */
     static final class Render extends RenderLiving<EntityCamel> {
+        private final ModelCamel adult;
+        private final ModelCamel baby = new ModelCamel(true);
+
         Render(RenderManager manager) {
             super(manager, new ModelCamel(), 0.7F);
+            this.adult = (ModelCamel) this.mainModel;
+        }
+
+        /** @return true when this one is drawn as 26.1's baby */
+        static boolean modernBaby(EntityCamel entity) {
+            return entity.isChild() && VanillaRevisions.babyModels();
+        }
+
+        @Override
+        public void doRender(EntityCamel entity, double x, double y, double z, float entityYaw, float partialTicks) {
+            this.mainModel = modernBaby(entity) ? this.baby : this.adult;
+            super.doRender(entity, x, y, z, entityYaw, partialTicks);
         }
 
         @Override
         protected ResourceLocation getEntityTexture(EntityCamel entity) {
-            return TEXTURE;
+            return modernBaby(entity) ? BABY_TEXTURE : TEXTURE;
         }
     }
 }
