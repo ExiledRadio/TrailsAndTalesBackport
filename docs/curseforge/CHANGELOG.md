@@ -1,8 +1,6 @@
 # 1.0.1
 
-*   **Torchflowers glow**: planted or potted, a torchflower gives off light level 10, between a soul torch and a
-    redstone torch. Not in Minecraft; turn off **Glowing Torchflowers** on the Sniffer settings page for vanilla's unlit
-    flowers.
+*   **Torchflowers glow**: planted or potted, a torchflower gives off light level 10, between a soul torch and a redstone torch. Not in Minecraft; turn off **Glowing Torchflowers** on the Sniffer settings page for vanilla's unlit flowers.
 
 # 1.0.0
 
