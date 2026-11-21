@@ -92,7 +92,7 @@ public final class SnifferContent {
 
     /** Null when the stream is off. */
     public static BlockTorchflower torchflower;
-    public static BlockPotted pottedTorchflower;
+    public static BlockTorchflower.Potted pottedTorchflower;
     public static BlockTorchflowerCrop torchflowerCrop;
     public static BlockPitcherCrop pitcherCrop;
     public static BlockPitcherPlant pitcherPlant;
@@ -152,7 +152,7 @@ public final class SnifferContent {
             return;
         }
         torchflower = Content.block(event.getRegistry(), "torchflower", new BlockTorchflower(), null);
-        pottedTorchflower = Content.block(event.getRegistry(), "potted_torchflower", new BlockPotted(), null);
+        pottedTorchflower = Content.block(event.getRegistry(), "potted_torchflower", new BlockTorchflower.Potted(), null);
         pottedTorchflower.setCreativeTab(null);
         torchflowerCrop = Content.block(event.getRegistry(), "torchflower_crop", new BlockTorchflowerCrop(), null);
         pitcherCrop = Content.block(event.getRegistry(), "pitcher_crop", new BlockPitcherCrop(), null);

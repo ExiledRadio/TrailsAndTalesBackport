@@ -221,6 +221,11 @@ public final class ModConfig {
         @Config.Comment("The sniffer, its egg, torchflowers and pitcher plants. Off, nothing is registered.")
         @Config.LangKey("config.trailsandtalesbackport.sniffer.enabled")
         public boolean enabled = true;
+
+        @Config.Comment({"Not in Minecraft: torchflowers, planted or potted, give off light level 10. Off, as in",
+                "Minecraft, they give none. A flower already placed updates when it or a block next to it changes."})
+        @Config.LangKey("config.trailsandtalesbackport.sniffer.torchflowerLight")
+        public boolean torchflowerLight = true;
     }
 
     public static final class Camels {

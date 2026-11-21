@@ -1,9 +1,11 @@
 package com.exiledradio.trailsandtalesbackport.selftest;
 
+import com.exiledradio.trailsandtalesbackport.ModConfig;
 import com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport;
 import com.exiledradio.trailsandtalesbackport.common.Owners;
 import com.exiledradio.trailsandtalesbackport.sniffer.BlockPitcherCrop;
 import com.exiledradio.trailsandtalesbackport.sniffer.BlockSnifferEgg;
+import com.exiledradio.trailsandtalesbackport.sniffer.BlockTorchflower;
 import com.exiledradio.trailsandtalesbackport.sniffer.BlockTorchflowerCrop;
 import com.exiledradio.trailsandtalesbackport.sniffer.EntitySniffer;
 import com.exiledradio.trailsandtalesbackport.sniffer.Half;
@@ -31,6 +33,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.EnumSkyBlock;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 import java.util.HashSet;
@@ -54,6 +57,7 @@ public final class SnifferSelfTest implements SelfTest {
         registration(c);
         recipes(c);
         torchflowerCrop(c);
+        torchflowerLight(c);
         pitcherCrop(c);
         pitcherPlant(c);
         egg(c);
@@ -123,6 +127,35 @@ public final class SnifferSelfTest implements SelfTest {
     private BlockPos farmland(Check c, BlockPos at) {
         c.world.setBlockState(at, Blocks.FARMLAND.getDefaultState().withProperty(BlockFarmland.MOISTURE, 7), 2);
         return at;
+    }
+
+    /** Not vanilla (sniffer.torchflowerLight): torchflowers and their pot give off light, none with the setting off. */
+    private void torchflowerLight(Check c) {
+        BlockPos area = c.area();
+        BlockPos at = area.add(4, 0, 4);
+        // World.checkLight works only with every chunk 17 blocks round loaded.
+        for (int dx = -2; dx <= 2; dx++) {
+            for (int dz = -2; dz <= 2; dz++) {
+                c.world.getChunkProvider().provideChunk((at.getX() >> 4) + dx, (at.getZ() >> 4) + dz);
+            }
+        }
+        c.world.setBlockState(at.down(), Blocks.GRASS.getDefaultState());
+        c.world.setBlockState(at, SnifferContent.torchflower.getDefaultState());
+        c.eq(BlockTorchflower.LIGHT, c.world.getLightFor(EnumSkyBlock.BLOCK, at), "light: a torchflower glows");
+        c.eq(BlockTorchflower.LIGHT - 1, c.world.getLightFor(EnumSkyBlock.BLOCK, at.north()), "light: it spreads to the next block");
+        c.world.setBlockToAir(at);
+        c.eq(0, c.world.getLightFor(EnumSkyBlock.BLOCK, at), "light: gone with the flower");
+        c.world.setBlockState(at, SnifferContent.pottedTorchflower.getDefaultState());
+        c.eq(BlockTorchflower.LIGHT, c.world.getLightFor(EnumSkyBlock.BLOCK, at), "light: a potted torchflower glows");
+        c.world.setBlockToAir(at);
+        ModConfig.sniffer.torchflowerLight = false;
+        try {
+            c.world.setBlockState(at, SnifferContent.torchflower.getDefaultState());
+            c.eq(0, c.world.getLightFor(EnumSkyBlock.BLOCK, at), "light: setting off, a torchflower gives none");
+        } finally {
+            ModConfig.sniffer.torchflowerLight = true;
+        }
+        c.world.setBlockToAir(at);
     }
 
     private void torchflowerCrop(Check c) {

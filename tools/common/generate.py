@@ -35,6 +35,7 @@ NAMES = {
     "calibratedSculkSensor": "Calibrated Sculk Sensor",
     "heads": "Mob Heads",
     "misc": "Other Changes",
+    "torchflowerLight": "Glowing Torchflowers",
     "enabled": "Enabled",
 }
 
