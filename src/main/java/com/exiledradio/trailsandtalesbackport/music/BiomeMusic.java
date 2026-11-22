@@ -33,6 +33,11 @@ import java.util.Map;
  * which runs after its "1.18" one, swaps each for 1.20's list ({@code music.client.BiomeMusicClient}). Swamp and deep
  * dark music are 1.19's, Wild Update's.
  *
+ * <p>26.2 added fingerspit's Ebb, Home, Memories, Nightly and Shores to 17 of these lists (26.3's {@code sounds.json},
+ * weight 2, volume 0.4, but Nightly at full volume in the dripstone caves, as vanilla has it). Game Drops Backport
+ * ships those tracks, so they join the lists only with it installed ({@link #ADDED_26_2}). 26.2's eighteenth, Ebb in
+ * the swamp, has no list here: swamp music is 1.19's.
+ *
  * <p>No client types: the self-test reads the table and the biome mapping on a server.
  */
 @Mod.EventBusSubscriber(modid = TrailsAndTalesBackport.MOD_ID)
@@ -54,6 +59,12 @@ public final class BiomeMusic {
     /** 1.20.6's music biomes (the part of each event name after {@code music.overworld.}), in sounds.json order. */
     static final Map<String, List<Entry>> LISTS = new LinkedHashMap<String, List<Entry>>();
     private static final Map<String, SoundEvent> EVENTS = new LinkedHashMap<String, SoundEvent>();
+
+    /** 26.2's additions to the lists ({@link #add}), by music biome: fingerspit's tracks. */
+    public static final Map<String, List<Entry>> ADDED_26_2 = new LinkedHashMap<String, List<Entry>>();
+    /** fingerspit's five tracks, 26.2's, which Game Drops Backport ships. */
+    public static final String[] FINGERSPIT = {"ebb", "home", "memories", "nightly", "shores"};
+    private static final String GAME_DROPS = "gamedropsbackport";
 
     /** 1.18's music biomes, whose lists 1.20 rewrote; Caves &amp; Cliffs chooses where they play. */
     public static final String[] REGIONS_1_18 = {"lush_caves", "dripstone_caves", "meadow", "grove", "snowy_slopes",
@@ -100,6 +111,25 @@ public final class BiomeMusic {
                 "living_mice", "mice_on_venus", "oxygene", "subwoofer_lullaby", "wet_hands");
         list("stony_peaks", "danny", "dry_hands", "haggstrom", "living_mice", "mice_on_venus", "stand_tall:2:0.4",
                 "subwoofer_lullaby", "wending::0.4", "wet_hands");
+
+        // 26.2: fingerspit's tracks, Game Drops Backport's files.
+        add("badlands", "memories:2:0.4");
+        add("bamboo_jungle", "home:2:0.4");
+        add("cherry_grove", "home:2:0.4", "memories:2:0.4", "nightly:2:0.4");
+        add("desert", "memories:2:0.4");
+        add("dripstone_caves", "ebb:2:0.4", "nightly:2", "shores:2:0.4");
+        add("flower_forest", "memories:2:0.4", "shores:2:0.4");
+        add("forest", "memories:2:0.4", "shores:2:0.4");
+        add("frozen_peaks", "ebb:2:0.4", "home:2:0.4", "nightly:2:0.4");
+        add("grove", "shores:2:0.4");
+        add("jagged_peaks", "ebb:2:0.4", "nightly:2:0.4");
+        add("jungle", "home:2:0.4");
+        add("lush_caves", "shores:2:0.4");
+        add("meadow", "home:2:0.4");
+        add("old_growth_taiga", "shores:2:0.4");
+        add("snowy_slopes", "nightly:2:0.4");
+        add("sparse_jungle", "home:2:0.4");
+        add("stony_peaks", "nightly:2:0.4");
     }
 
     /**
@@ -134,12 +164,27 @@ public final class BiomeMusic {
         MODERN.put("dark_forest", "forest");
         MODERN.put("old_growth_pine_taiga", "old_growth_taiga");
         MODERN.put("old_growth_spruce_taiga", "old_growth_taiga");
+        // 26.3: Game Drops Backport's dappled forest plays the forest's music.
+        MODERN.put("dappled_forest", "forest");
     }
 
     private BiomeMusic() {
     }
 
     private static void list(String biome, String... entries) {
+        LISTS.put(biome, Collections.unmodifiableList(parse(entries)));
+    }
+
+    /** A later version's entries at the end of a music biome's list. */
+    private static void add(String biome, String... entries) {
+        List<Entry> added = parse(entries);
+        List<Entry> all = new ArrayList<Entry>(LISTS.get(biome));
+        all.addAll(added);
+        LISTS.put(biome, Collections.unmodifiableList(all));
+        ADDED_26_2.put(biome, Collections.unmodifiableList(added));
+    }
+
+    private static List<Entry> parse(String... entries) {
         List<Entry> out = new ArrayList<Entry>();
         for (String e : entries) {
             String[] p = e.split(":", -1);
@@ -147,7 +192,7 @@ public final class BiomeMusic {
             float volume = p.length > 2 && !p[2].isEmpty() ? Float.parseFloat(p[2]) : 1.0F;
             out.add(new Entry(p[0], weight, volume));
         }
-        LISTS.put(biome, Collections.unmodifiableList(out));
+        return out;
     }
 
     private static void map(String music, String... paths) {
@@ -218,7 +263,7 @@ public final class BiomeMusic {
     /**
      * @return the sound file of a 1.20.6 track name ({@code namespace:music/game/...}) from the mod that ships it, or
      *         null when that mod is not installed: 1.12.2's own, this mod's, Caves &amp; Cliffs' 1.18 tracks, Wild
-     *         Update's swamp tracks
+     *         Update's swamp tracks, Game Drops' 26.2 tracks
      */
     @Nullable
     public static String file(String track) {
@@ -231,8 +276,18 @@ public final class BiomeMusic {
                 return TrailsAndTalesBackport.MOD_ID + ":music/game/" + track;
             }
         }
-        String owner = track.startsWith("swamp/") ? "wildupdatebackport" : "cavesandcliffsbackport";
+        String owner = track.startsWith("swamp/") ? "wildupdatebackport"
+                : isFingerspit(track) ? GAME_DROPS : "cavesandcliffsbackport";
         return shipped(owner, "music/game/" + track) ? owner + ":music/game/" + track : null;
+    }
+
+    private static boolean isFingerspit(String track) {
+        for (String t : FINGERSPIT) {
+            if (t.equals(track)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static boolean shipped(String namespace, String path) {

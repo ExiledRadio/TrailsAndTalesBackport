@@ -12,6 +12,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.init.Biomes;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.scoreboard.ScoreObjective;
@@ -198,6 +199,33 @@ public final class LeftoversSelfTest implements SelfTest {
         c.eq(cc ? "cavesandcliffsbackport:music/game/stand_tall" : null, BiomeMusic.file("stand_tall"), "Stand Tall only with Caves & Cliffs");
         boolean wu = BiomeMusic.class.getResource("/assets/wildupdatebackport/sounds/music/game/swamp/aerie.ogg") != null;
         c.eq(wu ? "wildupdatebackport:music/game/swamp/aerie" : null, BiomeMusic.file("swamp/aerie"), "Aerie only with Wild Update");
+
+        // 26.2: fingerspit's tracks in 17 lists (26.3's sounds.json), with Game Drops Backport's files only.
+        c.eq(17, BiomeMusic.ADDED_26_2.size(), "26.2 adds to 17 music biomes");
+        int added = 0;
+        java.util.Set<String> fingerspit = new java.util.HashSet<String>(java.util.Arrays.asList(BiomeMusic.FINGERSPIT));
+        for (java.util.Map.Entry<String, List<BiomeMusic.Entry>> a : BiomeMusic.ADDED_26_2.entrySet()) {
+            List<BiomeMusic.Entry> all = BiomeMusic.lists().get(a.getKey());
+            c.ok(all != null && all.subList(all.size() - a.getValue().size(), all.size()).equals(a.getValue()),
+                    a.getKey() + ": 26.2's tracks end the list");
+            for (BiomeMusic.Entry e : a.getValue()) {
+                added++;
+                boolean quiet = !("dripstone_caves".equals(a.getKey()) && "nightly".equals(e.track));
+                c.ok(fingerspit.contains(e.track) && e.weight == 2 && e.volume == (quiet ? 0.4F : 1.0F),
+                        a.getKey() + ": " + e.track + " weight 2, volume " + (quiet ? "0.4" : "1 (as vanilla)"));
+            }
+        }
+        c.eq(26, added, "26.2's 26 biome entries");
+        c.eq(3, BiomeMusic.ADDED_26_2.get("cherry_grove").size(), "cherry grove: Home, Memories, Nightly");
+        c.ok(!BiomeMusic.ADDED_26_2.containsKey("swamp"), "no swamp list here (1.19's)");
+        boolean gd = BiomeMusic.class.getResource("/assets/gamedropsbackport/sounds/music/game/ebb.ogg") != null;
+        for (String t : BiomeMusic.FINGERSPIT) {
+            c.eq(gd ? "gamedropsbackport:music/game/" + t : null, BiomeMusic.file(t), t + " only with Game Drops");
+        }
+        Biome dappled = new Biome(new Biome.BiomeProperties("Dappled Forest")) {
+        };
+        dappled.setRegistryName(new ResourceLocation("gamedropsbackport", "dappled_forest"));
+        c.eq("forest", BiomeMusic.musicOf(dappled), "26.3's dappled forest plays the forest's music");
 
         JsonObject json = new JsonParser().parse(BiomeMusic.soundsJson()).getAsJsonObject();
         c.eq(17, json.entrySet().size(), "the sound lists name 17 events");
