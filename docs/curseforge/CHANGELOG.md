@@ -1,5 +1,6 @@
-# 1.0.3
+# 1.0.4
 
+*   Trail ruins are laid out by Backport Core's shared modern jigsaw placer, block for block as before.
 *   **26.1's baby camels, snifflets and armadillos** with Game Drops Backport: each has its own model, texture and animations, as in today's game, instead of a shrunken adult. Without Game Drops (or with Backport Core's modern textures off) they keep the 1.20 look.
 *   **Golden dandelions put a snifflet back to the start of its 48000 ticks** with Game Drops Backport, as in 26.1, not to a normal baby's 24000.
 

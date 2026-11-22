@@ -3,6 +3,7 @@ package com.exiledradio.trailsandtalesbackport.structure;
 import com.exiledradio.backportcore.structure.JigsawElement;
 import com.exiledradio.backportcore.structure.JigsawPiece;
 import com.exiledradio.backportcore.structure.JigsawPools;
+import com.exiledradio.backportcore.structure.ModernJigsaw;
 import com.exiledradio.backportcore.structure.TemplatePlacement;
 import com.exiledradio.backportcore.structure.TerrainAdaptation;
 import com.google.gson.JsonElement;
@@ -28,7 +29,7 @@ import java.util.Random;
  * with the common or rare table ({@link Archaeology}). As 1.20.1's piece it tells the terrain how it meets the ground
  * ({@link TerrainAdaptation.AdaptingPiece}: rigid, its ground level delta, its jigsaw junctions) for {@code bury}.
  */
-public class TrailRuinsPiece extends JigsawPiece implements TerrainAdaptation.AdaptingPiece {
+public class TrailRuinsPiece extends JigsawPiece implements TerrainAdaptation.AdaptingPiece, ModernJigsaw.Joined {
 
     public static final String SAVE_NAME = "TTB_TrailRuinsPiece";
 
@@ -46,12 +47,9 @@ public class TrailRuinsPiece extends JigsawPiece implements TerrainAdaptation.Ad
         super(element, position, groundLevelDelta, rotation, box);
     }
 
-    void setPivot(BlockPos pivot) {
-        this.pivot = pivot;
-    }
-
     /** {@code PoolElementStructurePiece.addJunction}. */
-    void addJunction(int x, int groundY, int z) {
+    @Override
+    public void addJunction(int x, int groundY, int z) {
         int n = this.junctions.length;
         this.junctions = Arrays.copyOf(this.junctions, n + 3);
         this.junctions[n] = x;
