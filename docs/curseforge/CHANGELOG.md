@@ -9,6 +9,7 @@ Needs Backport Core 1.4.4 or newer.
 
 *   **Poplar hanging signs** with Game Drops Backport: two chains over six stripped poplar logs make six, as for every other wood.
 *   **Cherry trees at Game Drops Backport's abandoned camps** are this mod's full cherry trees.
+*   **fingerspit's music in the biomes** with Game Drops Backport: Ebb, Home, Memories, Nightly and Shores join the music of forests, jungles, badlands, deserts, the cherry grove, the mountains and the caves, as in 26.2. Game Drops Backport's dappled forest plays the forest's music.
 *   **26.2's sign editing screen** with Game Drops Backport: the sign is drawn flat, as in today's game, for the woods whose flat picture a mod or resource pack has (cherry, bamboo and poplar from the backports); others keep the 1.20 look.
 
 # 1.0.1

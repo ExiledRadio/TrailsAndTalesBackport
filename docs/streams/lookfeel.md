@@ -107,6 +107,12 @@ jar, 1.20.6's language files), with the paths in its header.
     written at load from the tracks installed: 1.12.2's own under their old names (Clark is `calm2` ...), this mod's
     five, Caves & Cliffs' 1.18 tracks, Wild Update's swamp tracks; a missing mod's tracks are left out. The cherry
     grove's own step is gone (this replaces it). Swamp and deep dark music are 1.19's (Wild Update).
+    **26.2's additions** (`BiomeMusic.ADDED_26_2`, branch `gd-paintings-music`): fingerspit's Ebb, Home, Memories,
+    Nightly and Shores end 17 lists as 26.3's `sounds.json` has them (26 entries, weight 2, volume 0.4; Nightly in
+    the dripstone caves at full volume, as vanilla). The files are Game Drops Backport's, so like every track here
+    they are written only when that mod is installed. 26.2's Ebb in the swamp has no list here. 26.3's dappled
+    forest (Game Drops') plays the forest's list. Tested: `-Pselftest=leftovers` 156/0 alone and 156/0 with Game
+    Drops' jar in `eclipse/mods`; Game Drops' client self-test reads the merged lists from the sound handler.
 *   **Narrator Hotkey** (1.20.2): Backport Core's, on the `core-tt` branch (patch P32 and the option; request 10.8).
 *   **Dimension-change screen** (1.20.5, `lookfeel.client.DimensionScreen`): to or from the Nether the portal's
     animated texture fills "Loading terrain...", to or from the End the end portal's effect (1.20.6's
