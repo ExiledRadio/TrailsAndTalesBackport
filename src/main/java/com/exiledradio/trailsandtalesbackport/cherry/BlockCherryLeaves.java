@@ -210,4 +210,11 @@ public class BlockCherryLeaves extends BlockLeaves implements Waterloggable {
             }
         }
     }
+
+    /** A full collision box: water neither runs out of waterlogged leaves nor in (26.3's canPassThroughWall). */
+    @Override
+    public Boolean waterFlowsThrough(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos,
+                                     net.minecraft.util.EnumFacing side) {
+        return false;
+    }
 }
