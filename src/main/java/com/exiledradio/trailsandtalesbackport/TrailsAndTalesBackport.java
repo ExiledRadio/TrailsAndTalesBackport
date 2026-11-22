@@ -67,6 +67,8 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.biome.CherryGroveContent.preInit();
         com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.preInit();
         com.exiledradio.trailsandtalesbackport.sculk.SensorContent.preInit();
+        // Boats are Backport Core's (boat/; Core's placer covers their game event); ours saved before load as Core's.
+        com.exiledradio.trailsandtalesbackport.boat.BoatContent.preInit();
         com.exiledradio.trailsandtalesbackport.presentation1205.Presentation1205.preInit();
         com.exiledradio.trailsandtalesbackport.structure.StructuresContent.preInit();
 

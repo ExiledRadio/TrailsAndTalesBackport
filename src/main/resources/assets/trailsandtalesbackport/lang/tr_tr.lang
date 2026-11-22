@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Asılı Çarpık Tabela
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Asılı Çarpık Duvar Tabelası
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Tekne
-entity.trailsandtalesbackport.chest_boat.name=Sandıklı Tekne
 item.trailsandtalesbackport.bamboo_chest_raft.name=Sandıklı Bambu Sal
 item.trailsandtalesbackport.bamboo_raft.name=Bambu Sal
 item.trailsandtalesbackport.cherry_boat.name=Kiraz Ağacı Tekne

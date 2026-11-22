@@ -92,8 +92,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Warped Hanging Sign
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Warped Wall Hanging Sign
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Boat
-entity.trailsandtalesbackport.chest_boat.name=Boat with Chest
 item.trailsandtalesbackport.bamboo_chest_raft.name=Bamboo Raft with Chest
 item.trailsandtalesbackport.bamboo_raft.name=Bamboo Raft
 item.trailsandtalesbackport.cherry_boat.name=Cherry Boat

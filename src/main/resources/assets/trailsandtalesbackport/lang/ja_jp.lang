@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=歪んだ吊り看板
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=壁に付けられた歪んだ吊り看板
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=ボート
-entity.trailsandtalesbackport.chest_boat.name=チェスト付きのボート
 item.trailsandtalesbackport.bamboo_chest_raft.name=チェスト付きの竹のイカダ
 item.trailsandtalesbackport.bamboo_raft.name=竹のイカダ
 item.trailsandtalesbackport.cherry_boat.name=サクラのボート

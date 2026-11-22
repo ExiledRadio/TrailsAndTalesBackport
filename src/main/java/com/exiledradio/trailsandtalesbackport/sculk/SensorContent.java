@@ -1,6 +1,5 @@
 package com.exiledradio.trailsandtalesbackport.sculk;
 
-import com.exiledradio.backportcore.gameevent.GameEventEmitters;
 import com.exiledradio.backportcore.gameevent.GameEventTags;
 import com.exiledradio.backportcore.gameevent.GameEvents;
 import com.exiledradio.backportcore.gameevent.SensorActivation;
@@ -82,9 +81,6 @@ public final class SensorContent {
     }
 
     public static void preInit() {
-        // This mod's boats and rafts place an entity (heard with any backport's game events on).
-        GameEventEmitters.addEntityPlacer(stack -> stack.getItem().getClass().getName()
-                .startsWith("com.exiledradio.trailsandtalesbackport.boat."));
         if (!enabled()) {
             return;
         }

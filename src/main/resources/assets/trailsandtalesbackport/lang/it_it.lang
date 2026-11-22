@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Insegna distorta
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Insegna distorta a parete
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Barca
-entity.trailsandtalesbackport.chest_boat.name=Barca con baule
 item.trailsandtalesbackport.bamboo_chest_raft.name=Zattera di bambù con baule
 item.trailsandtalesbackport.bamboo_raft.name=Zattera di bambù
 item.trailsandtalesbackport.cherry_boat.name=Barca di ciliegio

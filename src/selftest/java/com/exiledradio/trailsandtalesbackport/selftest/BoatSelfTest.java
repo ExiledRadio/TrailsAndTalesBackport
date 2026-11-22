@@ -2,9 +2,11 @@ package com.exiledradio.trailsandtalesbackport.selftest;
 
 import com.exiledradio.trailsandtalesbackport.boat.BoatContent;
 import com.exiledradio.trailsandtalesbackport.boat.BoatWood;
-import com.exiledradio.trailsandtalesbackport.boat.EntityModBoat;
-import com.exiledradio.trailsandtalesbackport.boat.EntityModChestBoat;
-import com.exiledradio.trailsandtalesbackport.boat.ItemModBoat;
+import com.exiledradio.trailsandtalesbackport.common.Content;
+import com.exiledradio.backportcore.boat.EntityWoodBoat;
+import com.exiledradio.backportcore.boat.EntityWoodChestBoat;
+import com.exiledradio.backportcore.boat.Boats;
+import com.exiledradio.backportcore.boat.ItemWoodBoat;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -43,6 +45,9 @@ public final class BoatSelfTest implements SelfTest {
         c.eq("trailsandtalesbackport:cherry_chest_boat", chestBoat.getRegistryName().toString(), "chest boat name");
         c.eq("trailsandtalesbackport:bamboo_chest_raft", chestRaft.getRegistryName().toString(), "chest raft name");
         c.eq(1, boat.getItemStackLimit(new ItemStack(boat)), "boats stack to 1");
+        c.eq(Boats.BOAT, Boats.renamedTo(Content.id("boat")), "our old boats load as Core's");
+        c.eq(Boats.CHEST_BOAT, Boats.renamedTo(Content.id("chest_boat")), "our old chest boats load as Core's");
+        c.ok(BoatWood.BAMBOO.core() != null && BoatWood.BAMBOO.core().raft, "bamboo is a raft in Core");
         c.eq(1200, TileEntityFurnace.getItemBurnTime(new ItemStack(raft)), "rafts burn 1200");
 
         ItemStack cherry = new ItemStack(Item.REGISTRY.getObject(new net.minecraft.util.ResourceLocation("trailsandtalesbackport:cherry_planks")));
@@ -68,12 +73,13 @@ public final class BoatSelfTest implements SelfTest {
         player.prevPosZ = player.posZ;
         ItemStack held = new ItemStack(boat);
         player.setHeldItem(EnumHand.MAIN_HAND, held);
-        ((ItemModBoat) boat).onItemRightClick(c.world, player, EnumHand.MAIN_HAND);
-        EntityModBoat placed = first(c, area, EntityModBoat.class);
-        c.ok(placed != null && !(placed instanceof EntityModChestBoat), "a cherry boat was placed on the water");
+        ((ItemWoodBoat) boat).onItemRightClick(c.world, player, EnumHand.MAIN_HAND);
+        EntityWoodBoat placed = first(c, area, EntityWoodBoat.class);
+        c.ok(placed != null && !(placed instanceof EntityWoodChestBoat), "a cherry boat was placed on the water");
         c.eq(0, held.getCount(), "the item is used");
         if (placed != null) {
-            c.eq(BoatWood.CHERRY, placed.wood(), "it is cherry");
+            c.eq(BoatWood.CHERRY.core(), placed.getWood(), "it is cherry");
+            c.eq("backportcore:boat", net.minecraft.entity.EntityList.getKey(placed).toString(), "it is Backport Core's boat");
             c.eq(boat, placed.getItemBoat(), "and is picked as the cherry boat");
             for (int i = 0; i < 40; i++) {
                 placed.onUpdate();
@@ -85,12 +91,12 @@ public final class BoatSelfTest implements SelfTest {
         }
 
         // Riders: a raft seats its rider higher than a boat does.
-        EntityModBoat r = new EntityModBoat(c.world, area.getX() + 7.5, area.getY() - 1, area.getZ() + 7.5, BoatWood.BAMBOO);
-        EntityModBoat b = new EntityModBoat(c.world, area.getX() + 7.5, area.getY() - 1, area.getZ() + 7.5, BoatWood.CHERRY);
+        EntityWoodBoat r = new EntityWoodBoat(c.world, area.getX() + 7.5, area.getY() - 1, area.getZ() + 7.5, BoatWood.BAMBOO.core());
+        EntityWoodBoat b = new EntityWoodBoat(c.world, area.getX() + 7.5, area.getY() - 1, area.getZ() + 7.5, BoatWood.CHERRY.core());
         c.ok(r.getMountedYOffset() > b.getMountedYOffset(), "a raft's rider sits higher: " + r.getMountedYOffset());
 
         // Chest boats: one rider, a 27-slot chest, contents saved and dropped.
-        EntityModChestBoat chest = new EntityModChestBoat(c.world, area.getX() + 7.5, area.getY() - 1, area.getZ() + 9.5, BoatWood.BAMBOO);
+        EntityWoodChestBoat chest = new EntityWoodChestBoat(c.world, area.getX() + 7.5, area.getY() - 1, area.getZ() + 9.5, BoatWood.BAMBOO.core());
         c.world.spawnEntity(chest);
         EntityPig pig = new EntityPig(c.world);
         pig.setPosition(chest.posX, chest.posY, chest.posZ);
@@ -103,9 +109,9 @@ public final class BoatSelfTest implements SelfTest {
         pig.dismountRidingEntity();
         pig.setDead();
         pig2.setDead();
-        c.eq(27, chest.inventory().getSizeInventory(), "27 slots");
-        chest.inventory().setInventorySlotContents(0, new ItemStack(Items.DIAMOND, 3));
-        chest.inventory().setInventorySlotContents(26, new ItemStack(Items.APPLE, 5));
+        c.eq(27, chest.getSizeInventory(), "27 slots");
+        chest.setInventorySlotContents(0, new ItemStack(Items.DIAMOND, 3));
+        chest.setInventorySlotContents(26, new ItemStack(Items.APPLE, 5));
 
         player.setSneaking(true);
         chest.processInitialInteract(player, EnumHand.MAIN_HAND);
@@ -116,12 +122,12 @@ public final class BoatSelfTest implements SelfTest {
         NBTTagCompound tag = new NBTTagCompound();
         chest.writeToNBTOptional(tag);
         Entity loaded = EntityList.createEntityFromNBT(tag, c.world);
-        c.ok(loaded instanceof EntityModChestBoat, "saved and loaded as a chest boat: " + loaded);
-        if (loaded instanceof EntityModChestBoat) {
-            EntityModChestBoat l = (EntityModChestBoat) loaded;
-            c.eq(BoatWood.BAMBOO, l.wood(), "keeps its wood");
-            c.eq(3, l.inventory().getStackInSlot(0).getCount(), "keeps its diamonds");
-            c.eq(Items.APPLE, l.inventory().getStackInSlot(26).getItem(), "keeps its last slot");
+        c.ok(loaded instanceof EntityWoodChestBoat, "saved and loaded as a chest boat: " + loaded);
+        if (loaded instanceof EntityWoodChestBoat) {
+            EntityWoodChestBoat l = (EntityWoodChestBoat) loaded;
+            c.eq(BoatWood.BAMBOO.core(), l.getWood(), "keeps its wood");
+            c.eq(3, l.getStackInSlot(0).getCount(), "keeps its diamonds");
+            c.eq(Items.APPLE, l.getStackInSlot(26).getItem(), "keeps its last slot");
         }
         chest.attackEntityFrom(DamageSource.causePlayerDamage(player), 50.0F);
         c.ok(chest.isDead, "chest raft broken");

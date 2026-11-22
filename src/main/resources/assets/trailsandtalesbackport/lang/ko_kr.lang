@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=뒤틀린 매다는 표지�
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=뒤틀린 벽 매다는 표지판
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=보트
-entity.trailsandtalesbackport.chest_boat.name=상자가 실린 보트
 item.trailsandtalesbackport.bamboo_chest_raft.name=상자가 실린 대나무 뗏목
 item.trailsandtalesbackport.bamboo_raft.name=대나무 뗏목
 item.trailsandtalesbackport.cherry_boat.name=벚나무 보트

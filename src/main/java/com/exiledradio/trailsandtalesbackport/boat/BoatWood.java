@@ -8,7 +8,10 @@ import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nullable;
 
-/** The woods of this mod that float: cherry boats and bamboo rafts. Order is saved in synced data only. */
+/**
+ * The woods of this mod that float: cherry boats and bamboo rafts. Their boats are Backport Core's
+ * ({@link com.exiledradio.backportcore.boat.BoatWood}), each wood registered there as {@code trailsandtalesbackport:<name>}.
+ */
 public enum BoatWood {
     CHERRY("cherry", false, "cherry_planks"),
     BAMBOO("bamboo", true, "bamboo_planks");
@@ -40,9 +43,10 @@ public enum BoatWood {
         return b == null ? null : new ItemStack(b, count);
     }
 
-    public static BoatWood byIndex(int i) {
-        BoatWood[] all = values();
-        return i >= 0 && i < all.length ? all[i] : CHERRY;
+    /** @return Backport Core's wood for this one, or null when its boats are not in this game */
+    @Nullable
+    public com.exiledradio.backportcore.boat.BoatWood core() {
+        return com.exiledradio.backportcore.boat.BoatWood.find(com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport.MOD_ID + ":" + this.name);
     }
 
     @Nullable

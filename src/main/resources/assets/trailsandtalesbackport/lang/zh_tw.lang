@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=懸掛式扭曲蕈木告示
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=牆上的懸掛式扭曲蕈木告示牌
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=船
-entity.trailsandtalesbackport.chest_boat.name=儲物箱船
 item.trailsandtalesbackport.bamboo_chest_raft.name=儲物箱竹筏
 item.trailsandtalesbackport.bamboo_raft.name=竹筏
 item.trailsandtalesbackport.cherry_boat.name=櫻花木船
