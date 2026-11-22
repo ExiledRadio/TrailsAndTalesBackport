@@ -1,3 +1,9 @@
+# 1.0.4
+
+*   Trail ruins are laid out by Backport Core's shared modern jigsaw placer, block for block as before.
+
+Needs Backport Core 1.4.4 or newer.
+
 # 1.0.2
 
 *   **Poplar hanging signs** with Game Drops Backport: two chains over six stripped poplar logs make six, as for every other wood.

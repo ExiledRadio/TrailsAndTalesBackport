@@ -41,8 +41,9 @@ data version.
     piece's floor at the surface (its middle's `WORLD_SURFACE_WG`, from Core's `TerrainHeights`) minus 15, then
     breadth first to depth 7, each jigsaw (shuffled) trying its pool's elements and then the fallback's (shuffled),
     in shuffled rotations, inside the box 80 out from the start piece's middle or the parent's own box. Backport
-    Core's `Jigsaw` is 1.16.5's and its pool shuffle is fastutil's (one draw more than 1.20's `Util.shuffledCopy`),
-    and it keeps no junctions, so this is our own on Core's pools, elements and templates. Every trail ruins piece is
+    Core's `Jigsaw` is 1.16.5's (its pool shuffle is fastutil's, one draw more than 1.20's `Util.shuffledCopy`, and
+    it keeps no junctions); the placer is Core's `ModernJigsaw` (1.4.4; before, our own copy of it, which laid out the
+    same pieces and blocks: `JigsawDumpSelfTest`) with 1.20.1's rules (no priorities, aliases or expansion hack). Every trail ruins piece is
     rigid, so nothing else asks the ground; in 1.12.2 terrain the ruins are buried by the terrain itself.
 *   **Pieces** (`TrailRuinsPiece`, a Core `JigsawPiece`, saved as `TTB_TrailRuinsPiece`): Core places the file with
     its `rule` processors (gravel to dirt 20% and coarse dirt 10%, mud bricks to packed mud 10%, each block's own

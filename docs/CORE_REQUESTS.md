@@ -125,7 +125,8 @@ StructureHooks.blockEntityData(String structureName, BlockEntityFiller f); // lo
   built in code in 1.12.2 and edited after placement here).
 - **Status (stream St, 2026-11-16)**: built on Core 1.3.0's `structure` package as it is; nothing more is needed
   from Core. Core's `Jigsaw` is 1.16.5's (its pool shuffle draws once more than 1.20's `Util.shuffledCopy`, and it
-  keeps no junctions), so trail ruins use their own 1.20.1 assembly on Core's pools (`structure/TrailLayout`). Core
+  keeps no junctions), so trail ruins used their own 1.20.1 assembly on Core's pools (`structure/TrailLayout`); since
+  Core 1.4.4 `TrailLayout` keeps only the stub and the placer is Core's `ModernJigsaw` (branch `core-jigsaw-26x`). Core
   skips the `capped` processor and a rule's `block_entity_modifier` (logged once); this mod works them out itself
   (`structure/Archaeology`). If Core adds `capped`, `TrailRuinsPiece` must stop adding it. Ocean ruins are reached
   through Core's `ocean_ruin` kind and the saved keys of Core's `TemplatePiece`, so no `StructureHooks` was needed.
