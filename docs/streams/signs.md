@@ -61,6 +61,9 @@ the block 30-34. Dev-server port 25931.
     line; left, right, Home, End (Shift selects), Backspace, Delete, Ctrl+A/C/X/V. Changes show on the sign in
     the world as you type; closing sends them. It closes by itself if the sign goes or you move away.
     Vanilla's `GuiEditSign` is swapped for it whenever anything opens one.
+    From 26.2 (newest installed): a standing or wall sign is drawn flat, `gui/signs/<wood>` at 3.9x, 27 below
+    the text (12 rows of it on a wall), from the sign mod's own texture, else vanilla's path, which Game Drops
+    Backport supplies for the twelve vanilla woods (1.12.2's oak and other mods' spruce, birch ...).
 *   **Renderers** (bound in client post-init, after every mod's own): `StandardSignRenderer` for vanilla's
     tile, our wood sign tile and Village & Pillage's `TileEntityWoodSign` (by class name), with each one's
     texture (Village & Pillage's from `villagerbackport:textures/entity/signs/<wood>.png`, the wood read from

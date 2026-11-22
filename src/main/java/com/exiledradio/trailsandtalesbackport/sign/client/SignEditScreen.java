@@ -337,7 +337,9 @@ public class SignEditScreen extends GuiScreen {
      * 26.2's flat sign texture for a standing or wall sign, {@code <namespace>:textures/gui/signs/<wood>.png} from the
      * sign block's name ({@code trailsandtalesbackport:cherry_wall_sign} gives cherry, Game Drops Backport's
      * {@code poplar_sign} poplar, 1.12.2's own sign {@code minecraft:} oak), when the newest installed version is 26.2
-     * or later and a mod or resource pack has the file; else null, and the sign is drawn as 1.20's model.
+     * or later and a mod or resource pack has the file, else vanilla's {@code textures/gui/signs/<wood>.png} (the
+     * newest backport's copy: Game Drops Backport supplies 26.3's twelve vanilla woods, oak among them); else null, and
+     * the sign is drawn as 1.20's model.
      */
     @javax.annotation.Nullable
     static ResourceLocation flatTexture(Block block) {
@@ -353,12 +355,22 @@ public class SignEditScreen extends GuiScreen {
         if (wood == null) {
             return null;
         }
-        ResourceLocation gui = new ResourceLocation(ns, "textures/gui/signs/" + wood + ".png");
+        ResourceLocation own = new ResourceLocation(ns, "textures/gui/signs/" + wood + ".png");
+        if (exists(own)) {
+            return own;
+        }
+        // A vanilla wood's sign from another mod (Update Aquatic's spruce sign): vanilla's own texture, which the newest
+        // backport supplies (Game Drops Backport's 26.3 copies).
+        ResourceLocation vanilla = new ResourceLocation("textures/gui/signs/" + wood + ".png");
+        return exists(vanilla) ? vanilla : null;
+    }
+
+    private static boolean exists(ResourceLocation texture) {
         try {
-            net.minecraft.client.Minecraft.getMinecraft().getResourceManager().getResource(gui).close();
-            return gui;
+            net.minecraft.client.Minecraft.getMinecraft().getResourceManager().getResource(texture).close();
+            return true;
         } catch (java.io.IOException | RuntimeException e) {
-            return null;
+            return false;
         }
     }
 
