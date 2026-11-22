@@ -77,6 +77,16 @@ public final class Check {
         int x = 20000 + 48 * this.nextArea++;
         int z = 20000;
         BlockPos corner = new BlockPos(x, 100, z);
+        // Every chunk whose population reaches into the area (1.12.2 decorates 8 to 23 blocks into a chunk) is
+        // populated first: the area's chunks and one around, the last row and column a chunk further for their
+        // neighbors. Loaded while clearing instead, the corner chunk populated once the loop reached its far
+        // neighbor, planting grass or flowers on columns 8 to 15 already cleared (a 1.20 desert well at the
+        // area's middle then found no sand to stand on).
+        for (int cx = (x >> 4) - 1; cx <= ((x + 31) >> 4) + 2; cx++) {
+            for (int cz = (z >> 4) - 1; cz <= ((z + 31) >> 4) + 2; cz++) {
+                this.world.getChunk(cx, cz);
+            }
+        }
         for (int dx = 0; dx < 32; dx++) {
             for (int dz = 0; dz < 32; dz++) {
                 for (int y = 60; y < 160; y++) {

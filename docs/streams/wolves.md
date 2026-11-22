@@ -164,3 +164,21 @@ classes.
 *   **Wild wolves' attack damage** was never 2: 1.12.2's constructor calls `setTamed(false)`, which sets 4, as
     1.20.6's attributes. The self-test checks it.
 *   Dispensers neither put wolf armor on nor shear it off, as 1.20.5's.
+
+## 26.1's puppies (branch `tt-baby-wolf`, 1.0.3)
+
+*   While Core's `VanillaRevisions.babyModels()` (Game Drops Backport installed, Core's textures switch on),
+    **`RenderWolfVariant`** draws a puppy as 26.3 does: **`ModelBabyWolf`** (26.3's `BabyWolfModel.createBodyLayer`,
+    32 x 32, with `WolfModel.setupAnim` and the baby's own sitting pose and head/tail roll), at full size, the
+    variant's `*_baby`, `*_tame_baby` or `*_angry_baby` texture (pale's too: 1.12.2 has none) and
+    `wolf_collar_baby`. The armor layer skips puppies, as 26.3's `WolfArmorLayer` does. Otherwise the 1.20 look.
+    Game Drops' own baby wrapper leaves a wolf renderer that is not vanilla's alone, so this is the only baby wolf
+    with both mods.
+*   The tail's raise is still this renderer's 1.20 tail angle; 1.12.2's limb swing is already tripled for children,
+    as 26.3's baby walk.
+*   **Assets**: `tools/babies/textures.py` copies the 28 textures from the 26.3 jar. 26.3's `wolf_collar_baby.png` is
+    a gray PNG with a tRNS chunk, which 1.12.2's ImageIO reads as opaque (the collar covered the whole puppy black):
+    the script saves such an image as RGBA. Palette PNGs keep their tRNS.
+*   **Tested** in Game Drops Backport's client self-test with this mod's dev jar (`FamilyBabyScene`): a pale adult
+    keeps 1.12.2's model and `minecraft:wolf.png`; pale, ashen, tamed woods and angry striped puppies draw
+    `ModelBabyWolf` and their `_baby` textures; the baby collar reads transparent; `family_wolves.png`.
