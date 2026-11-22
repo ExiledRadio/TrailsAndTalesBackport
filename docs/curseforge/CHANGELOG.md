@@ -1,20 +1,12 @@
-# 1.0.4
-
-*   Trail ruins are laid out by Backport Core's shared modern jigsaw placer, block for block as before.
-*   **26.1's baby camels, snifflets and armadillos** with Game Drops Backport: each has its own model, texture and animations, as in today's game, instead of a shrunken adult. Without Game Drops (or with Backport Core's modern textures off) they keep the 1.20 look.
-*   **26.1's wolf puppies** with Game Drops Backport: every wolf variant's puppy has today's baby wolf model and its own wild, tame and angry baby textures, with the baby collar. Puppies never show wolf armor, as today. The same switches bring back the 1.20 look.
-*   **Golden dandelions put a snifflet back to the start of its 48000 ticks** with Game Drops Backport, as in 26.1, not to a normal baby's 24000.
-*   **Boats are now Backport Core's**, one boat and one boat with chest for every backport's wood (needs Backport Core 1.4.4). Cherry boats, bamboo rafts and their chest forms look, float, steer and drop as before, and boats already in your worlds are kept, with their wood, the chest's contents and whoever rides them.
-*   **Cherry and bamboo boats with chest work as 1.19's**: right-clicking one whose seat is taken opens the chest, and hoppers fill and empty it.
-
-Needs Backport Core 1.4.4 or newer.
-
 # 1.0.2
 
-*   **Poplar hanging signs** with Game Drops Backport: two chains over six stripped poplar logs make six, as for every other wood.
-*   **Cherry trees at Game Drops Backport's abandoned camps** are this mod's full cherry trees.
-*   **fingerspit's music in the biomes** with Game Drops Backport: Ebb, Home, Memories, Nightly and Shores join the music of forests, jungles, badlands, deserts, the cherry grove, the mountains and the caves, as in 26.2. Game Drops Backport's dappled forest plays the forest's music.
-*   **26.2's sign editing screen** with Game Drops Backport: the sign is drawn flat, as in today's game, for the woods whose flat picture a mod or resource pack has (cherry, bamboo and poplar from the backports); others keep the 1.20 look.
+*   **With Game Drops Backport, 26.1's babies**: baby camels, snifflets, armadillos and every wolf variant's puppies have their own models, textures and animations, and a golden dandelion puts a snifflet back to the start of its 48000 ticks. They follow Game Drops' Baby Models setting.
+*   **With Game Drops Backport, more of 26.x**: poplar hanging signs, this mod's cherry trees at the abandoned camps, fingerspit's music in the biomes as in 26.2, and 26.2's flat sign editing screen.
+*   **Boats are now Backport Core's**, one boat and one boat with chest for every backport's wood. Cherry boats, bamboo rafts and their chest forms look, float, steer and drop as before, and boats already in your worlds are kept, with their wood, the chest's contents and whoever rides them.
+*   **Cherry and bamboo boats with chest work as 1.19's**: right-clicking one whose seat is taken opens the chest, and hoppers fill and empty it.
+*   Trail ruins are laid out by Backport Core's shared modern jigsaw placer, block for block as before.
+
+Needs Backport Core 1.4.4 or newer.
 
 # 1.0.1
 
