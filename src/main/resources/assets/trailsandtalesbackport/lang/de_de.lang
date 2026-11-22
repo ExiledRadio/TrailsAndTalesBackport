@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Wirrhängeschild
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Wirrwandhängeschild
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Boot
-entity.trailsandtalesbackport.chest_boat.name=Truhenboot
 item.trailsandtalesbackport.bamboo_chest_raft.name=Bambus-Truhenfloß
 item.trailsandtalesbackport.bamboo_raft.name=Bambusfloß
 item.trailsandtalesbackport.cherry_boat.name=Kirschholzboot

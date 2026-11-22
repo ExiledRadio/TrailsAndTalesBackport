@@ -32,7 +32,7 @@ import org.apache.logging.log4j.Logger;
         acceptedMinecraftVersions = "[1.12.2]",
         // Loaded before quark, so recipes are listed first: its trapdoor recipe takes any planks, and listed
         // ahead of this mod's it turned this mod's planks into oak trapdoors instead of their own.
-        dependencies = "required-after:backportcore@[1.4.0,);before:quark"
+        dependencies = "required-after:backportcore@[1.4.4,);before:quark"
 )
 public final class TrailsAndTalesBackport {
 
@@ -67,6 +67,8 @@ public final class TrailsAndTalesBackport {
         com.exiledradio.trailsandtalesbackport.biome.CherryGroveContent.preInit();
         com.exiledradio.trailsandtalesbackport.smithing.SmithingContent.preInit();
         com.exiledradio.trailsandtalesbackport.sculk.SensorContent.preInit();
+        // Boats are Backport Core's (boat/; Core's placer covers their game event); ours saved before load as Core's.
+        com.exiledradio.trailsandtalesbackport.boat.BoatContent.preInit();
         com.exiledradio.trailsandtalesbackport.presentation1205.Presentation1205.preInit();
         com.exiledradio.trailsandtalesbackport.structure.StructuresContent.preInit();
 

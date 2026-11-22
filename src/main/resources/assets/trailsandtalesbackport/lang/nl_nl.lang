@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Spookachtig houten hangbord
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Spookachtig houten uithangbord
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Boot
-entity.trailsandtalesbackport.chest_boat.name=Boot met kist
 item.trailsandtalesbackport.bamboo_chest_raft.name=Bamboevlot met kist
 item.trailsandtalesbackport.bamboo_raft.name=Bamboevlot
 item.trailsandtalesbackport.cherry_boat.name=Kersenhouten boot

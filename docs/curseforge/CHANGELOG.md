@@ -1,3 +1,8 @@
+# 1.0.4
+
+*   **Boats are now Backport Core's**, one boat and one boat with chest for every backport's wood (needs Backport Core 1.4.4). Cherry boats, bamboo rafts and their chest forms look, float, steer and drop as before, and boats already in your worlds are kept, with their wood, the chest's contents and whoever rides them.
+*   **Cherry and bamboo boats with chest work as 1.19's**: right-clicking one whose seat is taken opens the chest, and hoppers fill and empty it.
+
 # 1.0.2
 
 *   **Poplar hanging signs** with Game Drops Backport: two chains over six stripped poplar logs make six, as for every other wood.

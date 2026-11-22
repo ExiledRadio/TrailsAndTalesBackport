@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Spaczona podwieszana tablic
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Spaczona ścienna podwieszana tabliczka
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Łódka
-entity.trailsandtalesbackport.chest_boat.name=Łódka ze skrzynią
 item.trailsandtalesbackport.bamboo_chest_raft.name=Bambusowa tratwa ze skrzynią
 item.trailsandtalesbackport.bamboo_raft.name=Bambusowa tratwa
 item.trailsandtalesbackport.cherry_boat.name=Wiśniowa łódka

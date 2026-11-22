@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Искажённая под
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Искажённая настенная подвесная табличка
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Лодка
-entity.trailsandtalesbackport.chest_boat.name=Грузовая лодка
 item.trailsandtalesbackport.bamboo_chest_raft.name=Грузовой бамбуковый плот
 item.trailsandtalesbackport.bamboo_raft.name=Бамбуковый плот
 item.trailsandtalesbackport.cherry_boat.name=Вишнёвая лодка

@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Placa Suspensa Distorcida
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Placa Suspensa Distorcida de Parede
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Bote
-entity.trailsandtalesbackport.chest_boat.name=Bote com Baú
 item.trailsandtalesbackport.bamboo_chest_raft.name=Jangada de Bambu com Baú
 item.trailsandtalesbackport.bamboo_raft.name=Jangada de Bambu
 item.trailsandtalesbackport.cherry_boat.name=Bote de Cerejeira

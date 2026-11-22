@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Pancarte suspendue biscornu
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Pancarte suspendue murale biscornue
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Bateau
-entity.trailsandtalesbackport.chest_boat.name=Bateau de stockage
 item.trailsandtalesbackport.bamboo_chest_raft.name=Radeau de stockage en bambou
 item.trailsandtalesbackport.bamboo_raft.name=Radeau en bambou
 item.trailsandtalesbackport.cherry_boat.name=Bateau en cerisier

@@ -17,7 +17,6 @@ for wood, kind in (("cherry", "boat"), ("bamboo", "raft")):
         lang.append("item.%s.%s.name=%s" % (M, item, assets.name("item.minecraft." + item)))
     assets.texture("entity/boat/" + wood)
     assets.texture("entity/chest_boat/" + wood)
-lang.append("entity.%s.boat.name=%s" % (M, assets.name("entity.minecraft.boat")))
-lang.append("entity.%s.chest_boat.name=%s" % (M, assets.name("entity.minecraft.chest_boat")))
+# The boat entities are Backport Core's (its boat/), named there.
 assets.merge_lang("boat", sorted(lang))
 print("boat: %d names" % len(lang))

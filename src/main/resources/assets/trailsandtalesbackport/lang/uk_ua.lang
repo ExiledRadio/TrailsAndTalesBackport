@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Химерна вивіск
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Химерна настінна вивіска
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Човен
-entity.trailsandtalesbackport.chest_boat.name=Човен зі скринею
 item.trailsandtalesbackport.bamboo_chest_raft.name=Бамбуковий пліт зі скринею
 item.trailsandtalesbackport.bamboo_raft.name=Бамбуковий пліт
 item.trailsandtalesbackport.cherry_boat.name=Вишневий човен

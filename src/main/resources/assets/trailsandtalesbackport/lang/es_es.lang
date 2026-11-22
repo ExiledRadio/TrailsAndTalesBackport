@@ -93,8 +93,6 @@ tile.trailsandtalesbackport.warped_hanging_sign.name=Cartel colgante distorsiona
 tile.trailsandtalesbackport.warped_wall_hanging_sign.name=Cartel colgante distorsionado en pared
 
 # --- boat ---
-entity.trailsandtalesbackport.boat.name=Barca
-entity.trailsandtalesbackport.chest_boat.name=Barca con cofre
 item.trailsandtalesbackport.bamboo_chest_raft.name=Balsa de bambú con cofre
 item.trailsandtalesbackport.bamboo_raft.name=Balsa de bambú
 item.trailsandtalesbackport.cherry_boat.name=Barca de cerezo
