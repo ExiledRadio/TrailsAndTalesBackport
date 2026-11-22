@@ -1,6 +1,7 @@
 # 1.0.3
 
 *   **26.1's baby camels, snifflets and armadillos** with Game Drops Backport: each has its own model, texture and animations, as in today's game, instead of a shrunken adult. Without Game Drops (or with Backport Core's modern textures off) they keep the 1.20 look.
+*   **26.1's wolf puppies** with Game Drops Backport: every wolf variant's puppy has today's baby wolf model and its own wild, tame and angry baby textures, with the baby collar. Puppies never show wolf armor, as today. The same switches bring back the 1.20 look.
 *   **Golden dandelions put a snifflet back to the start of its 48000 ticks** with Game Drops Backport, as in 26.1, not to a normal baby's 24000.
 
 Needs Backport Core 1.4.4 or newer.
