@@ -1,5 +1,6 @@
 # 1.0.2
 
+*   **Realistic Terrain Generation** (and RTG Unofficial): cherry groves now generate in RTG worlds, on RTG's forest hills. RTG turned them into plains. Needs Backport Core 1.4.5.
 *   **With Game Drops Backport, 26.1's babies**: baby camels, snifflets, armadillos and every wolf variant's puppies have their own models, textures and animations, and a golden dandelion puts a snifflet back to the start of its 48000 ticks. They follow Game Drops' Baby Models setting.
 *   **With Game Drops Backport, more of 26.x**: poplar hanging signs, this mod's cherry trees at the abandoned camps, fingerspit's music in the biomes as in 26.2, and 26.2's flat sign editing screen, for 1.12.2's oak signs and other mods' vanilla woods too (Game Drops supplies their textures).
 *   **Boats are now Backport Core's**, one boat and one boat with chest for every backport's wood. Cherry boats, bamboo rafts and their chest forms look, float, steer and drop as before, and boats already in your worlds are kept, with their wood, the chest's contents and whoever rides them.
