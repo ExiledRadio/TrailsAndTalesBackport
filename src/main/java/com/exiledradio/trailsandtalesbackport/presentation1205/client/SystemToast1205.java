@@ -11,10 +11,17 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.lang.reflect.Method;
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * 1.20.6's {@code SystemToast} for this stream's toasts: as wide as its text (at least 160), the background drawn in
+ * This stream's system toasts. With Backport Core 1.4.5 or later they go to Core's {@code SystemToasts}, the family's
+ * one drawer (the same toast in Core's slots, with the newest installed version's look); with Core 1.4.4 this class
+ * draws them itself, as below.
+ *
+ * <p>1.20.6's {@code SystemToast} for this stream's toasts: as wide as its text (at least 160), the background drawn in
  * rows from the 160 by 32 system toast, yellow title (or the title's own color) and white message, shown 5 seconds (10
  * for low disk space), and {@code addOrUpdate} restarting a shown toast with new text.
  *
@@ -23,7 +30,7 @@ import java.util.List;
  * time is 1.20.6's default.
  */
 @SideOnly(Side.CLIENT)
-public final class SystemToast1205 implements IToast {
+public final class SystemToast1205 implements IToast, SystemToastView {
 
     /** 1.20.6's {@code SystemToast.SystemToastId}s this stream shows. */
     public enum Id {
@@ -63,19 +70,23 @@ public final class SystemToast1205 implements IToast {
         return message == null ? ImmutableList.<String>of() : ImmutableList.of(message);
     }
 
+    @Override
     public int width() {
         return this.width;
     }
 
+    @Override
     public int height() {
         return 20 + Math.max(this.messageLines.size(), 1) * 12;
     }
 
+    @Override
     public String title() {
         return this.title;
     }
 
     @Nullable
+    @Override
     public String message() {
         return this.messageLines.isEmpty() ? null : this.messageLines.get(0);
     }
@@ -157,13 +168,143 @@ public final class SystemToast1205 implements IToast {
         return this.id;
     }
 
-    /** 1.20.6's {@code SystemToast.addOrUpdate}. */
+    /** 1.20.6's {@code SystemToast.add}: Core's drawer when it has one. */
+    public static void add(Minecraft mc, Id id, String title, @Nullable String message) {
+        if (!CoreDrawer.call("add", id, title, message)) {
+            mc.getToastGui().add(new SystemToast1205(id, title, message));
+        }
+    }
+
+    /** 1.20.6's {@code SystemToast.addOrUpdate}: Core's drawer when it has one. */
     public static void addOrUpdate(GuiToast toasts, Id id, String title, @Nullable String message) {
+        if (CoreDrawer.call("addOrUpdate", id, title, message)) {
+            return;
+        }
         SystemToast1205 toast = toasts.getToast(SystemToast1205.class, id);
         if (toast == null) {
             toasts.add(new SystemToast1205(id, title, message));
         } else {
             toast.reset(title, message);
+        }
+    }
+
+    /** @return the shown or waiting toast of this id, in Core's drawer or 1.12.2's toast list, or null */
+    @Nullable
+    public static SystemToastView find(Minecraft mc, Id id) {
+        SystemToastView core = CoreDrawer.find(id);
+        return core != null ? core : mc.getToastGui().getToast(SystemToast1205.class, id);
+    }
+
+    /** Clears every toast, Core's system toasts too. */
+    public static void clear(Minecraft mc) {
+        mc.getToastGui().clear();
+        CoreDrawer.call("clear", null, null, null);
+    }
+
+    /** @return true when Backport Core draws the toasts (1.4.5 or later) */
+    public static boolean coreDraws() {
+        return CoreDrawer.CORE != null;
+    }
+
+    /**
+     * Core 1.4.5's {@code presentation.client.SystemToasts}, reached by reflection so this mod still runs on Core 1.4.4,
+     * which has no toast ids. Each of this stream's ids is one of Core's by name.
+     */
+    private static final class CoreDrawer {
+        static final Class<?> CORE;
+        static final Method ADD;
+        static final Method ADD_OR_UPDATE;
+        static final Method GET;
+        static final Method CLEAR;
+        static final Map<Id, Object> IDS = new EnumMap<Id, Object>(Id.class);
+
+        static {
+            Class<?> core = null;
+            Method add = null;
+            Method update = null;
+            Method get = null;
+            Method clear = null;
+            try {
+                Class<?> c = Class.forName("com.exiledradio.backportcore.presentation.client.SystemToasts");
+                Class<?> id = Class.forName("com.exiledradio.backportcore.presentation.client.SystemToasts$Id");
+                add = c.getMethod("add", id, String.class, String.class);
+                update = c.getMethod("addOrUpdate", id, String.class, String.class);
+                get = c.getMethod("get", id);
+                clear = c.getMethod("clear");
+                for (Id i : Id.values()) {
+                    IDS.put(i, id.getField(i.name()).get(null));
+                }
+                core = c;
+            } catch (ReflectiveOperationException | LinkageError e) {
+                // Core 1.4.4: this class draws the toasts.
+            }
+            CORE = core;
+            ADD = add;
+            ADD_OR_UPDATE = update;
+            GET = get;
+            CLEAR = clear;
+        }
+
+        /** @return true when Core took the call */
+        static boolean call(String what, @Nullable Id id, @Nullable String title, @Nullable String message) {
+            if (CORE == null) {
+                return false;
+            }
+            try {
+                if ("clear".equals(what)) {
+                    CLEAR.invoke(null);
+                } else {
+                    ("add".equals(what) ? ADD : ADD_OR_UPDATE).invoke(null, IDS.get(id), title, message);
+                }
+                return true;
+            } catch (ReflectiveOperationException e) {
+                return false;
+            }
+        }
+
+        @Nullable
+        static SystemToastView find(Id id) {
+            if (CORE == null) {
+                return null;
+            }
+            final Object t;
+            try {
+                t = GET.invoke(null, IDS.get(id));
+            } catch (ReflectiveOperationException e) {
+                return null;
+            }
+            if (t == null) {
+                return null;
+            }
+            return new SystemToastView() {
+                @Override
+                public String title() {
+                    return (String) read("title");
+                }
+
+                @Override
+                public String message() {
+                    return (String) read("message");
+                }
+
+                @Override
+                public int width() {
+                    return (Integer) read("width");
+                }
+
+                @Override
+                public int height() {
+                    return (Integer) read("height");
+                }
+
+                private Object read(String name) {
+                    try {
+                        return t.getClass().getMethod(name).invoke(t);
+                    } catch (ReflectiveOperationException e) {
+                        throw new IllegalStateException(e);
+                    }
+                }
+            };
         }
     }
 }

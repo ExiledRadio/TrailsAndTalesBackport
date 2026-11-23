@@ -186,12 +186,12 @@ public class RecoverWorldDataScreen extends GuiScreen implements GuiYesNoCallbac
     static boolean backupWithToast(Minecraft mc, File saves, String folderName) {
         try {
             long size = WorldBackups.backup(saves, folderName, WorldBackups.backupsDir());
-            mc.getToastGui().add(new SystemToast1205(SystemToast1205.Id.WORLD_BACKUP, I18n.format("selectWorld.edit.backupCreated", folderName),
-                    I18n.format("selectWorld.edit.backupSize", (int) Math.ceil(size / 1048576.0))));
+            SystemToast1205.add(mc, SystemToast1205.Id.WORLD_BACKUP, I18n.format("selectWorld.edit.backupCreated", folderName),
+                    I18n.format("selectWorld.edit.backupSize", (int) Math.ceil(size / 1048576.0)));
             return true;
         } catch (IOException e) {
-            mc.getToastGui().add(new SystemToast1205(SystemToast1205.Id.WORLD_BACKUP, I18n.format("selectWorld.edit.backupFailed"),
-                    String.valueOf(e.getMessage())));
+            SystemToast1205.add(mc, SystemToast1205.Id.WORLD_BACKUP, I18n.format("selectWorld.edit.backupFailed"),
+                    String.valueOf(e.getMessage()));
             return false;
         }
     }

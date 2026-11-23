@@ -5,6 +5,7 @@
 *   **Boats are now Backport Core's**, one boat and one boat with chest for every backport's wood. Cherry boats, bamboo rafts and their chest forms look, float, steer and drop as before, and boats already in your worlds are kept, with their wood, the chest's contents and whoever rides them.
 *   **Cherry and bamboo boats with chest work as 1.19's**: right-clicking one whose seat is taken opens the chest, and hoppers fill and empty it.
 *   Trail ruins are laid out by Backport Core's shared modern jigsaw placer, block for block as before.
+*   With Backport Core 1.4.5 or newer, the world backup, low disk space and chunk failure toasts are drawn by Core, beside the other backports' toasts. With Core 1.4.4 they are drawn as before.
 
 Needs Backport Core 1.4.4 or newer.
 
