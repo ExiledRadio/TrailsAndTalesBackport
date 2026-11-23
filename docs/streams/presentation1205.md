@@ -37,6 +37,9 @@ Every piece works only while Backport Core's newest installed version is 1.20.5 
     `addOrUpdate` (a second failure restarts the shown toast with the new position). 1.12.2's list slides every
     toast by 160 pixels; a wider one moves itself the rest, so it slides by its own width as in 1.20.6. The backup
     toast of a restore is the same class (1.20.6's `WORLD_BACKUP`).
+    With Backport Core 1.4.5 or later the toasts go to Core's `SystemToasts` instead (the family's one drawer, found
+    by reflection, the ids by name), and `SystemToast1205.find` and `clear` read and clear Core's; with Core 1.4.4
+    the class draws them as above.
 *   **Finding chunk failures** (`ChunkFailures`): 1.12.2 catches the same failures 1.20.6 reports and only logs
     them, so a log4j appender on the three loggers involved hears each one, on the thread that caught it, as it
     happens: Forge's chunk loading threads ("Unhandled exception loading chunk:" followed by the `QueuedChunk`,

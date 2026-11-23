@@ -164,7 +164,7 @@ public final class ClientPresentation1205Test {
         then(0, this::toasts);
         then(40, mc -> {
             shot(mc, "toasts.png");
-            mc.getToastGui().clear();
+            SystemToast1205.clear(mc);
             FileUtils.deleteQuietly(new File(saves(mc), WORLD));
             // The integrated server would start the server self-tests for this property, and stop itself.
             System.clearProperty(TrailsAndTalesBackport.MOD_ID + ".selftest");
@@ -173,13 +173,13 @@ public final class ClientPresentation1205Test {
         });
         then(0, mc -> mc.world != null && mc.player != null && mc.currentScreen == null);
         then(60, this::chunkFailureInGame);
-        then(0, mc -> mc.getToastGui().getToast(SystemToast1205.class, SystemToast1205.Id.CHUNK_SAVE_FAILURE) != null || this.idle > 200);
+        then(0, mc -> SystemToast1205.find(mc, SystemToast1205.Id.CHUNK_SAVE_FAILURE) != null || this.idle > 200);
         then(0, mc -> {
-            SystemToast1205 t = mc.getToastGui().getToast(SystemToast1205.class, SystemToast1205.Id.CHUNK_SAVE_FAILURE);
+            com.exiledradio.trailsandtalesbackport.presentation1205.client.SystemToastView t = SystemToast1205.find(mc, SystemToast1205.Id.CHUNK_SAVE_FAILURE);
             ok(t != null && t.title().equals("§cFailed to save chunk at [31000, 31000]") && "See log for more details".equals(t.message()),
                     "the integrated server's chunk save failure shows 1.20.5's toast: " + (t == null ? null : t.title() + " / " + t.message()));
             ok(ChunkFailures.lastReport != null && ChunkFailures.lastReport.equals("save [31000, 31000]"), "reported " + ChunkFailures.lastReport);
-            mc.getToastGui().clear();
+            SystemToast1205.clear(mc);
             mc.displayGuiScreen(null);
             return true;
         });
@@ -194,14 +194,14 @@ public final class ClientPresentation1205Test {
         then(20, mc -> {
             ok(mc.isGamePaused(), "the game is paused");
             ok(LowDiskSpaceTicker.checks > this.checksBefore, "pausing looked at the disk: " + this.checksBefore + " -> " + LowDiskSpaceTicker.checks);
-            SystemToast1205 t = mc.getToastGui().getToast(SystemToast1205.class, SystemToast1205.Id.LOW_DISK_SPACE);
+            com.exiledradio.trailsandtalesbackport.presentation1205.client.SystemToastView t = SystemToast1205.find(mc, SystemToast1205.Id.LOW_DISK_SPACE);
             ok(t != null && "Low disk space!".equals(t.title()) && "Might not be able to save the world.".equals(t.message()),
                     "with 1 MB free, pausing shows the low disk space toast");
             return true;
         });
         then(30, mc -> {
             shot(mc, "lowdisk-toast.png");
-            mc.getToastGui().clear();
+            SystemToast1205.clear(mc);
             mc.displayGuiScreen(null);
             return true;
         });
@@ -218,9 +218,9 @@ public final class ClientPresentation1205Test {
         });
         then(5, mc -> {
             ok(LowDiskSpaceTicker.checks == this.checksBefore + 1, "the autosave tick looks at the disk");
-            ok(mc.getToastGui().getToast(SystemToast1205.class, SystemToast1205.Id.LOW_DISK_SPACE) != null, "and shows the toast");
+            ok(SystemToast1205.find(mc, SystemToast1205.Id.LOW_DISK_SPACE) != null, "and shows the toast");
             DiskSpace.testUsableSpace = null;
-            mc.getToastGui().clear();
+            SystemToast1205.clear(mc);
             mc.world.sendQuittingDisconnectingPacket();
             mc.loadWorld(null);
             mc.displayGuiScreen(new GuiMainMenu());
@@ -301,7 +301,7 @@ public final class ClientPresentation1205Test {
             this.selection = list((GuiWorldSelection) mc.currentScreen);
             WorldEntry broken = entry(BROKEN);
             ok(broken != null && !broken.corrupted, "the restored world lists as a world again");
-            mc.getToastGui().clear();
+            SystemToast1205.clear(mc);
             DiskSpace.testUsableSpace = 1L << 20;
             entry(WORLD).joinWorld();
             return true;
@@ -383,7 +383,7 @@ public final class ClientPresentation1205Test {
         Presentation1205Client.onChunkLoadFailure(mc, new ChunkPos(-1234, 5678));
         Presentation1205Client.onChunkSaveFailure(mc, new ChunkPos(7, 8));
         Presentation1205Client.onLowDiskSpace(mc);
-        SystemToast1205 load = mc.getToastGui().getToast(SystemToast1205.class, SystemToast1205.Id.CHUNK_LOAD_FAILURE);
+        com.exiledradio.trailsandtalesbackport.presentation1205.client.SystemToastView load = SystemToast1205.find(mc, SystemToast1205.Id.CHUNK_LOAD_FAILURE);
         ok(load != null && load.title().equals("§cFailed to load chunk at [-1234, 5678]"), "a second load failure updates the first toast: "
                 + (load == null ? null : load.title()));
         // The width is the first text's, as 1.20.6's (reset keeps it).
@@ -392,9 +392,9 @@ public final class ClientPresentation1205Test {
         ok(load != null && load.width() == expected && load.width() > 160,
                 "the toast is as wide as its text (1.20.6): " + (load == null ? 0 : load.width()) + " / " + expected);
         ok(load != null && load.height() == 32, "and one line high");
-        SystemToast1205 save = mc.getToastGui().getToast(SystemToast1205.class, SystemToast1205.Id.CHUNK_SAVE_FAILURE);
+        com.exiledradio.trailsandtalesbackport.presentation1205.client.SystemToastView save = SystemToast1205.find(mc, SystemToast1205.Id.CHUNK_SAVE_FAILURE);
         ok(save != null && "§cFailed to save chunk at [7, 8]".equals(save.title()) && "See log for more details".equals(save.message()), "the save failure toast");
-        SystemToast1205 disk = mc.getToastGui().getToast(SystemToast1205.class, SystemToast1205.Id.LOW_DISK_SPACE);
+        com.exiledradio.trailsandtalesbackport.presentation1205.client.SystemToastView disk = SystemToast1205.find(mc, SystemToast1205.Id.LOW_DISK_SPACE);
         ok(disk != null && "Low disk space!".equals(disk.title()), "the low disk space toast");
         return true;
     }
@@ -522,7 +522,7 @@ public final class ClientPresentation1205Test {
         ok(aside != null && aside.length == 1, "the broken level.dat is kept as level.dat_corrupted_<date>");
         File[] zips = WorldBackups.backupsDir().listFiles((dir, name) -> name.endsWith("_" + BROKEN + ".zip"));
         ok(zips != null && zips.length >= 1, "a backup was made first");
-        SystemToast1205 t = mc.getToastGui().getToast(SystemToast1205.class, SystemToast1205.Id.WORLD_BACKUP);
+        com.exiledradio.trailsandtalesbackport.presentation1205.client.SystemToastView t = SystemToast1205.find(mc, SystemToast1205.Id.WORLD_BACKUP);
         ok(t != null && ("Backed up: " + BROKEN).equals(t.title()) && t.message() != null && t.message().startsWith("size: "),
                 "with the backup toast: " + (t == null ? null : t.title() + " / " + t.message()));
         return true;
