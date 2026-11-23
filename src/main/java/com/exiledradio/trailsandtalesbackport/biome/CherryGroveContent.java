@@ -95,6 +95,8 @@ public final class CherryGroveContent {
         event.getRegistry().register(biome);
         // 1.20's tags: #is_mountain and #is_overworld (Forge 1.12.2 has no overworld type).
         BiomeDictionary.addTypes(biome, BiomeDictionary.Type.MOUNTAIN);
+        // Today's cherry groves lie on mountain slopes: RTG's forest hills.
+        rtgTerrain(biome, "FOREST_HILLS");
     }
 
     @SubscribeEvent
@@ -191,6 +193,20 @@ public final class CherryGroveContent {
             return Boolean.TRUE.equals(sourcePlaces.invoke(generator, world, feature));
         } catch (ReflectiveOperationException | RuntimeException e) {
             return false;
+        }
+    }
+
+    /**
+     * Realistic Terrain Generation builds only biomes registered with it, and makes any other one plains. Backport
+     * Core's {@code RtgBiomes} (1.4.5) registers this biome on the terrain of the vanilla biome named here; reached by
+     * name, so with an older Core the biome simply stays RTG's patch biome in RTG worlds.
+     */
+    private static void rtgTerrain(Biome biome, String template) {
+        try {
+            Class.forName("com.exiledradio.backportcore.terrain.RtgBiomes").getMethod("register", Biome.class, String.class)
+                    .invoke(null, biome, template);
+        } catch (ReflectiveOperationException | LinkageError e) {
+            // A Backport Core without RtgBiomes.
         }
     }
 }
