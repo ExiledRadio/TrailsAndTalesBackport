@@ -79,7 +79,7 @@ Every feature can be turned off in Backport Core's settings screen, under Mod Op
 
 ## Compatibility
 
-**[Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-cliffs-backport)**: in its 1.18 worlds, cherry groves generate where 1.20 puts them. The brush and the copper trim use its copper, the calibrated sensor its amethyst, desert wells get suspicious sand, and sniffer eggs hatch twice as fast on its moss. Without it, cherry groves grow in 1.12's mountains and this mod brings its own copper and amethyst.
+**[Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-cliffs-backport)**: in its 1.18 worlds, cherry groves generate in its mountains. The brush and the copper trim use its copper, the calibrated sensor its amethyst, desert wells get suspicious sand, and sniffer eggs hatch twice as fast on its moss. Without it, cherry groves grow in 1.12's mountains and this mod brings its own copper and amethyst.
 
 **[Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport)**: camels spawn in its desert villages, and its smithing table takes the templates. Bamboo is its bamboo. Without it, this mod has its own bamboo and smithing table.
 
@@ -91,6 +91,10 @@ Every feature can be turned off in Backport Core's settings screen, under Mod Op
 
 **[Wild Update Backport](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport)**: mangrove hanging signs, the ward and silence templates in ancient cities, and mud for the sniffer to dig. The calibrated sculk sensor is made from its sculk sensor; without it, this mod has its own.
 
+**[Tricky Trials Backport](https://www.curseforge.com/minecraft/mc-mods/trials-backport)**: its new sherds go on decorated pots, its new templates and resin trim armor, and pale oak, cherry and bamboo get hanging signs and shelves.
+
+**[Game Drops Backport](https://www.curseforge.com/minecraft/mc-mods/game-drops-backport)**: cherry trees grow in its cherry grove camps, baby camels, snifflets, armadillos and every wolf variant's puppies get 26.1's models, and its golden dandelion keeps snifflets small.
+
 **OptiFine**: works, shaders included.
 
 **Fluidlogged API** (optional): cherry leaves, cherry and bamboo stairs, slabs, fences, trapdoors and signs, hanging signs, chains and decorated pots hold water. Without it they stay dry and everything else works.
@@ -101,11 +105,11 @@ Minecraft 1.12.2 with Forge 14.23.5.2847 or newer, and [Backport Core](https://w
 
 ***
 
-Also by me: [Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport), all of 1.14 on 1.12.2, [Update Aquatic Backport](https://www.curseforge.com/minecraft/mc-mods/update-aquatic-backport), all of 1.13 on 1.12.2, [Buzzy Bees Backport](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport), all of 1.15 on 1.12.2, [Nether Update Backport](https://www.curseforge.com/minecraft/mc-mods/nether-backport), all of 1.16 on 1.12.2, [Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-cliffs-backport), all of 1.17 and 1.18 on 1.12.2, [Wild Update Backport](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport), all of 1.19 on 1.12.2, and [Enchantment Recipes](https://www.curseforge.com/minecraft/mc-mods/rlcraft-enchantment-recipes), which lets you craft enchanted books from mod materials.
+Also by me: [Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport), all of 1.14 on 1.12.2, [Update Aquatic Backport](https://www.curseforge.com/minecraft/mc-mods/update-aquatic-backport), all of 1.13 on 1.12.2, [Buzzy Bees Backport](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport), all of 1.15 on 1.12.2, [Nether Update Backport](https://www.curseforge.com/minecraft/mc-mods/nether-backport), all of 1.16 on 1.12.2, [Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-cliffs-backport), all of 1.17 and 1.18 on 1.12.2, [Wild Update Backport](https://www.curseforge.com/minecraft/mc-mods/wild-update-backport), all of 1.19 on 1.12.2, [Tricky Trials Backport](https://www.curseforge.com/minecraft/mc-mods/trials-backport), all of 1.21 on 1.12.2, [Game Drops Backport](https://www.curseforge.com/minecraft/mc-mods/game-drops-backport), the 26.x game drops on 1.12.2, and [Enchantment Recipes](https://www.curseforge.com/minecraft/mc-mods/rlcraft-enchantment-recipes), which lets you craft enchanted books from mod materials.
 
 ## Credits
 
-**Original content: [Minecraft](https://www.minecraft.net), by [Mojang Studios](https://www.minecraft.net/en-us/about-minecraft).** Every feature this mod adds is from a later version of Minecraft. The textures, models, sounds, music and translations are Mojang's, taken from Minecraft's own game files, and remain theirs. The features' names and designs are Mojang's too.
+**Original content: [Minecraft](https://www.minecraft.net), by [Mojang Studios](https://www.minecraft.net/en-us/about-minecraft).** Every feature this mod adds is from a later version of Minecraft. The textures, models, sounds, music and translations are Mojang's and remain theirs. The features' names and designs are Mojang's too.
 
 **How this mod differs from the original:** Minecraft's newer versions don't run on 1.12.2. This mod is a Forge mod for Minecraft 1.12.2 that reimplements those features on the older game, matching the newer versions as closely as it can. It is not a copy or port of another mod. Where 1.12.2 can't do something the same way, the description above says so.
 
