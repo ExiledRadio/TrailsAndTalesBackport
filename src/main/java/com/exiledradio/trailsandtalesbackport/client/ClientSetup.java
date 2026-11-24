@@ -49,12 +49,12 @@ public final class ClientSetup {
         com.exiledradio.trailsandtalesbackport.armadillo.client.ArmadilloClient.init();
         com.exiledradio.trailsandtalesbackport.camel.client.CamelClient.init();
         com.exiledradio.trailsandtalesbackport.wolf.client.WolfClient.init();
-        com.exiledradio.trailsandtalesbackport.lookfeel.client.LookAndFeelClient.init();
+        com.exiledradio.trailsandtalesbackport.lookfeel.client.LookClient.init();
         com.exiledradio.trailsandtalesbackport.heads.client.HeadsClient.init();
         com.exiledradio.trailsandtalesbackport.sign.client.SignClient.init();
         com.exiledradio.trailsandtalesbackport.smithing.client.SmithingClient.init();
         com.exiledradio.trailsandtalesbackport.music.client.BiomeMusicClient.init();
-        com.exiledradio.trailsandtalesbackport.lookfeel.client.ArmPoses.register();
+        com.exiledradio.trailsandtalesbackport.lookfeel.client.BrushPose.register();
         com.exiledradio.trailsandtalesbackport.presentation1205.client.Presentation1205Client.init();
         com.exiledradio.trailsandtalesbackport.mechanics.client.MechanicsClient.init();
     }

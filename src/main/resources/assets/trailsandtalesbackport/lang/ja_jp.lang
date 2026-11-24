@@ -286,11 +286,6 @@ config.trailsandtalesbackport.lookAndFeel=外観と雰囲気
 config.trailsandtalesbackport.lookAndFeel.enabled=有効
 config.trailsandtalesbackport.lookAndFeel.gameMusic=ゲーム音楽に A Familiar Room
 config.trailsandtalesbackport.lookAndFeel.biomeMusic=バイオームの音楽
-options.accessibility.menu_background_blurriness=メニュー背景のぼかし具合
-options.accessibility.menu_background_blurriness.tooltip=メニュー背景のぼかし具合を変更します。
-selectWorld.data_read=ワールドデータを読み込み中…
-debug.profiler_chart.help=F3 + 1 = プロファイラーのグラフを表示
-debug.fps_charts.help=F3 + 2 = FPS と TPS のグラフを表示
 
 # --- wolf ---
 advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=ハサミを使ってオオカミから鎧を外す

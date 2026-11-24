@@ -286,11 +286,6 @@ config.trailsandtalesbackport.lookAndFeel=Apparence
 config.trailsandtalesbackport.lookAndFeel.enabled=Activé
 config.trailsandtalesbackport.lookAndFeel.gameMusic=A Familiar Room dans la musique du jeu
 config.trailsandtalesbackport.lookAndFeel.biomeMusic=Musique des biomes
-options.accessibility.menu_background_blurriness=Flou de l'arrière-plan des menus
-options.accessibility.menu_background_blurriness.tooltip=Modifie le flou de l'arrière-plan des menus.
-selectWorld.data_read=Lecture des données du monde...
-debug.profiler_chart.help=F3 + 1 = Afficher le graphique du profileur
-debug.fps_charts.help=F3 + 2 = Afficher les graphiques FPS et TPS
 
 # --- wolf ---
 advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=Retirez l'armure d'un loup en utilisant des cisailles.

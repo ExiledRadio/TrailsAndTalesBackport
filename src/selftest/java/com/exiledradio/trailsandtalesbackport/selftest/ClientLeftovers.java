@@ -3,10 +3,11 @@ package com.exiledradio.trailsandtalesbackport.selftest;
 import com.exiledradio.backportcore.presentation.client.GameMusic;
 import com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport;
 import com.exiledradio.trailsandtalesbackport.archaeology.ArchaeologyContent;
-import com.exiledradio.trailsandtalesbackport.asm.Asm;
-import com.exiledradio.trailsandtalesbackport.lookfeel.client.ArmPoses;
-import com.exiledradio.trailsandtalesbackport.lookfeel.client.DimensionScreen;
-import com.exiledradio.trailsandtalesbackport.lookfeel.client.LookHooks;
+import com.exiledradio.backportcore.presentation.versions.Look120;
+import com.exiledradio.backportcore.presentation.versions.LookHooks;
+import com.exiledradio.backportcore.presentation.versions.client.DimensionScreen1205;
+import com.exiledradio.backportcore.presentation.versions.client.Look120Client;
+import com.exiledradio.trailsandtalesbackport.lookfeel.client.BrushPose;
 import com.exiledradio.trailsandtalesbackport.music.client.BiomeMusicPack;
 import com.exiledradio.trailsandtalesbackport.sign.client.OtherSignRenderer;
 import com.exiledradio.trailsandtalesbackport.sign.client.WaxParticles;
@@ -28,8 +29,9 @@ import java.util.function.BiConsumer;
 
 /**
  * The client half of {@code LeftoversSelfTest}, run in the client check's test world: the biome music sound lists
- * and step, patch P1 (Ctrl + pick block), the dimension screen's portal backgrounds (photographed), wax-on particles,
- * the 1.20.5 shield arm and the brushing arm in third person (photographed), other mods' sign renderers.
+ * and step, Backport Core's 1.20.5 pieces this mod had until 1.0.4 (P76 Ctrl + pick block, the dimension screen's portal
+ * backgrounds and the shield arm, photographed), wax-on particles, the brushing arm in third person (photographed),
+ * other mods' sign renderers.
  */
 final class ClientLeftovers {
 
@@ -60,25 +62,25 @@ final class ClientLeftovers {
         if (t == 1) {
             instant();
             this.mc.displayGuiScreen(new GuiDownloadTerrain());
-            DimensionScreen.reason = DimensionScreen.Reason.NETHER_PORTAL;
-            this.frames = DimensionScreen.framesDrawn;
+            DimensionScreen1205.reason = Look120.Reason.NETHER_PORTAL;
+            this.frames = DimensionScreen1205.framesDrawn;
         } else if (t == 30) {
-            ok(DimensionScreen.framesDrawn > this.frames, "the nether portal screen was drawn: " + (DimensionScreen.framesDrawn - this.frames));
+            ok(DimensionScreen1205.framesDrawn > this.frames, "the nether portal screen was drawn: " + (DimensionScreen1205.framesDrawn - this.frames));
             shot("nether_portal.png");
-            DimensionScreen.reason = DimensionScreen.Reason.END_PORTAL;
-            this.frames = DimensionScreen.framesDrawn;
+            DimensionScreen1205.reason = Look120.Reason.END_PORTAL;
+            this.frames = DimensionScreen1205.framesDrawn;
         } else if (t == 60) {
-            ok(DimensionScreen.framesDrawn > this.frames, "the end portal screen was drawn: " + (DimensionScreen.framesDrawn - this.frames));
+            ok(DimensionScreen1205.framesDrawn > this.frames, "the end portal screen was drawn: " + (DimensionScreen1205.framesDrawn - this.frames));
             shot("end_portal.png");
-            DimensionScreen.reason = DimensionScreen.Reason.OTHER;
+            DimensionScreen1205.reason = Look120.Reason.OTHER;
             this.mc.displayGuiScreen(null);
             this.mc.gameSettings.thirdPersonView = 2;
             this.mc.player.rotationPitch = 30.0F;
             this.mc.player.setHeldItem(EnumHand.OFF_HAND, new ItemStack(Items.SHIELD));
             this.mc.player.setActiveHand(EnumHand.OFF_HAND);
-            this.frames = ArmPoses.blockPosed;
+            this.frames = Look120Client.blockPosed;
         } else if (t == 100) {
-            ok(ArmPoses.blockPosed > this.frames, "the shield arm follows the head: " + (ArmPoses.blockPosed - this.frames));
+            ok(Look120Client.blockPosed > this.frames, "the shield arm follows the head: " + (Look120Client.blockPosed - this.frames));
             shot("shield.png");
             this.mc.player.stopActiveHand();
             this.mc.player.setHeldItem(EnumHand.OFF_HAND, ItemStack.EMPTY);
@@ -86,10 +88,10 @@ final class ClientLeftovers {
                 this.mc.player.setHeldItem(EnumHand.MAIN_HAND, new ItemStack(ArchaeologyContent.brush));
                 this.mc.player.setActiveHand(EnumHand.MAIN_HAND);
             }
-            this.frames = ArmPoses.brushPosed;
+            this.frames = BrushPose.brushPosed;
         } else if (t == 130) {
-            ok(ArchaeologyContent.brush == null || ArmPoses.brushPosed > this.frames,
-                    "the brushing arm pose: " + (ArmPoses.brushPosed - this.frames));
+            ok(ArchaeologyContent.brush == null || BrushPose.brushPosed > this.frames,
+                    "the brushing arm pose: " + (BrushPose.brushPosed - this.frames));
             shot("brush.png");
             this.mc.player.stopActiveHand();
             this.mc.gameSettings.thirdPersonView = 0;
@@ -111,12 +113,9 @@ final class ClientLeftovers {
         ok(grove != null && grove.getWeight() >= 7, "music.overworld.cherry_grove: Bromeliad and Echo in the Wind x3, Left to Bloom (" + (grove == null ? -1 : grove.getWeight()) + ")");
         ok(GameMusic.names().contains("1.20 biome music"), "the 1.20 music step is registered: " + GameMusic.names());
 
-        // P1.
-        boolean p1 = false;
-        for (String a : Asm.APPLIED) {
-            p1 |= a.startsWith("P1 ");
-        }
-        ok(p1, "P1 is applied (Minecraft.storeTEInStack): " + Asm.APPLIED);
+        // Core's P76 (this mod's P1 until 1.0.4).
+        String p76 = com.exiledradio.backportcore.asm.Asm.state("P76");
+        ok("applied".equals(p76), "Core's P76 is applied (Minecraft.storeTEInStack): " + p76);
         ItemStack chest = new ItemStack(Blocks.CHEST);
         NBTTagCompound block = new NBTTagCompound();
         block.setString("CustomName", "Loot");
@@ -131,12 +130,12 @@ final class ClientLeftovers {
         ok("Loot".equals(picked.getDisplayName()), "Ctrl + pick block: a named chest gives a named item (" + picked.getDisplayName() + ")");
 
         // The dimension screen's reasons (1.20.6's determineLevelLoadingReason).
-        ok(DimensionScreen.reasonFor(false, 0, -1) == DimensionScreen.Reason.NETHER_PORTAL, "to the Nether: nether portal");
-        ok(DimensionScreen.reasonFor(false, -1, 0) == DimensionScreen.Reason.NETHER_PORTAL, "from the Nether: nether portal");
-        ok(DimensionScreen.reasonFor(false, 0, 1) == DimensionScreen.Reason.END_PORTAL, "to the End: end portal");
-        ok(DimensionScreen.reasonFor(false, 1, 0) == DimensionScreen.Reason.END_PORTAL, "from the End: end portal");
-        ok(DimensionScreen.reasonFor(true, -1, 0) == DimensionScreen.Reason.OTHER, "respawning after death: the menu background");
-        ok(DimensionScreen.reasonFor(false, 0, 7) == DimensionScreen.Reason.OTHER, "another dimension: the menu background");
+        ok(Look120.dimensionReason(false, 0, -1) == Look120.Reason.NETHER_PORTAL, "to the Nether: nether portal");
+        ok(Look120.dimensionReason(false, -1, 0) == Look120.Reason.NETHER_PORTAL, "from the Nether: nether portal");
+        ok(Look120.dimensionReason(false, 0, 1) == Look120.Reason.END_PORTAL, "to the End: end portal");
+        ok(Look120.dimensionReason(false, 1, 0) == Look120.Reason.END_PORTAL, "from the End: end portal");
+        ok(Look120.dimensionReason(true, -1, 0) == Look120.Reason.OTHER, "respawning after death: the menu background");
+        ok(Look120.dimensionReason(false, 0, 7) == Look120.Reason.OTHER, "another dimension: the menu background");
 
         // Other mods' signs: none in the dev client, so nothing is wrapped (vanilla's and ours are not).
         ok(OtherSignRenderer.WRAPPED.isEmpty(), "no sign renderer of this mod or vanilla's is wrapped: " + OtherSignRenderer.WRAPPED);

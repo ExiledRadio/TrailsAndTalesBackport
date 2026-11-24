@@ -5,10 +5,10 @@ import com.exiledradio.backportcore.presentation.LoadingRevision;
 import com.exiledradio.backportcore.presentation.Presentation;
 import com.exiledradio.backportcore.presentation.client.PanoramaRenderer;
 import com.exiledradio.trailsandtalesbackport.TrailsAndTalesBackport;
-import com.exiledradio.trailsandtalesbackport.lookfeel.LookAndFeel;
 import com.exiledradio.trailsandtalesbackport.lookfeel.client.GameMusicPack;
-import com.exiledradio.trailsandtalesbackport.lookfeel.client.LoadingScreen1205;
-import com.exiledradio.trailsandtalesbackport.lookfeel.client.LookAndFeelClient;
+import com.exiledradio.backportcore.presentation.versions.Look120;
+import com.exiledradio.backportcore.presentation.versions.client.LoadingScreen1205;
+import com.exiledradio.backportcore.presentation.versions.client.Look120Client;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundEventAccessor;
 import net.minecraft.client.gui.GuiButton;
@@ -33,8 +33,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * {@code runClient -Pselftest=client}: stream Lf on a real client. On the title screen: the panorama, logo, "Java
- * Edition", icon, music, F3 keys, Back button and text; then it creates a world, which draws 1.20.5's loading screen,
+ * {@code runClient -Pselftest=client}: stream Lf on a real client, and Backport Core's 1.20 pieces (this mod's until
+ * 1.0.4) with this mod installed. On the title screen: the panorama, logo, "Java Edition", icon, music, F3 keys, Back
+ * button and text; then it creates a world, which draws 1.20.5's loading screen,
  * saving one frame to {@code eclipse/lookfeel/loading.png}; then it quits. The result is logged as "CLIENT SELFTEST
  * DONE pass= fail=".
  */
@@ -121,7 +122,7 @@ public final class ClientLookFeelTest {
         ok(faces != null && faces[0].equals(new ResourceLocation(TrailsAndTalesBackport.MOD_ID, "textures/gui/title/background/panorama_0.png")),
                 "the cherry grove panorama is shown: " + (faces == null ? null : faces[0]));
         ok(PanoramaRenderer.frames > 20, "the panorama was drawn: " + PanoramaRenderer.frames);
-        ok(LookAndFeelClient.ourLogo(), "Core serves this mod's title logo");
+        ok(Look120.LOGO.equals(Presentation.asset("textures/gui/title/minecraft.png")), "Core serves its own 1.20 title logo");
         String pack = mc.getResourceManager().getResource(new ResourceLocation("textures/gui/title/minecraft.png")).getResourcePackName();
         ok("backportcore:vanilla_by_version".equals(pack), "the title logo comes from Core's vanilla-asset pack: " + pack);
         ok(mc.getResourceManager().getResource(new ResourceLocation("textures/gui/title/minecraft.png")).hasMetadata(),
@@ -131,7 +132,7 @@ public final class ClientLookFeelTest {
                 "Core lays the title out as 1.20 does: " + com.exiledradio.backportcore.presentation.client.TitleLogo.layout());
         ok(com.exiledradio.backportcore.presentation.client.TitleLogo.frames > 20,
                 "Core drew the logo in 1.20's layout: " + com.exiledradio.backportcore.presentation.client.TitleLogo.frames);
-        ok(LookAndFeelClient.iconSet, "1.20's window icon was set");
+        ok(Look120Client.iconSet, "1.20's window icon was set (Core)");
         ok(Presentation.loadingRevision() == LoadingRevision.PANORAMA_1_20_5, "the loading screen is 1.20.5's");
 
         // Minceraft: Core draws 1.20's own when 1.12.2 rolls it.
@@ -184,7 +185,7 @@ public final class ClientLookFeelTest {
             String want = String.format(kv[1], "Alex", "Steve");
             ok(want.equals(got), "I18n " + kv[0] + " = \"" + got + "\"");
         }
-        ok(Presentation.option(LookAndFeel.MENU_BLUR.id()) != null && LookAndFeel.MENU_BLUR.isShown(), "Menu Background Blur shows");
+        ok(Presentation.option(Look120.MENU_BLUR.id()) == Look120.MENU_BLUR && Look120.MENU_BLUR.isShown(), "Menu Background Blur (Core's) shows");
     }
 
     private void screens(Minecraft mc) throws Exception {

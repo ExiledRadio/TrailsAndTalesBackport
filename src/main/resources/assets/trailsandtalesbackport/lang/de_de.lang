@@ -286,11 +286,6 @@ config.trailsandtalesbackport.lookAndFeel=Erscheinungsbild
 config.trailsandtalesbackport.lookAndFeel.enabled=Aktiviert
 config.trailsandtalesbackport.lookAndFeel.gameMusic=A Familiar Room in der Spielmusik
 config.trailsandtalesbackport.lookAndFeel.biomeMusic=Biom-Musik
-options.accessibility.menu_background_blurriness=Menühintergrund‐Unschärfe
-options.accessibility.menu_background_blurriness.tooltip=Steuert die Weichzeichnung der Menühintergründe.
-selectWorld.data_read=Weltdaten werden eingelesen …
-debug.profiler_chart.help=F3 + 1 = Profiler-Diagramm anzeigen
-debug.fps_charts.help=F3 + 2 = FPS- und TPS-Diagramme anzeigen
 
 # --- wolf ---
 advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=Löse mit einer Schere den Wolfspanzer von einem Wolf

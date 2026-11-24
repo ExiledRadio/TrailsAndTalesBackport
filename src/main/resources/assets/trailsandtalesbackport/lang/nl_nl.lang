@@ -286,11 +286,6 @@ config.trailsandtalesbackport.lookAndFeel=Uiterlijk
 config.trailsandtalesbackport.lookAndFeel.enabled=Ingeschakeld
 config.trailsandtalesbackport.lookAndFeel.gameMusic=A Familiar Room in de spelmuziek
 config.trailsandtalesbackport.lookAndFeel.biomeMusic=Biomemuziek
-options.accessibility.menu_background_blurriness=Wazigheid menu-achtergrond
-options.accessibility.menu_background_blurriness.tooltip=Past de wazigheid aan van menu-achtergronden
-selectWorld.data_read=Wereldgegevens lezen...
-debug.profiler_chart.help=F3 + 1 = Profileerdergrafiek tonen
-debug.fps_charts.help=F3 + 2 = FPS- en TPS-grafieken tonen
 
 # --- wolf ---
 advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=Gebruik een schaar om wolvenharnas van een wolf te verwijderen

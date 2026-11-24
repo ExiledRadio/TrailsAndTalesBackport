@@ -286,11 +286,6 @@ config.trailsandtalesbackport.lookAndFeel=外觀與氛圍
 config.trailsandtalesbackport.lookAndFeel.enabled=啟用
 config.trailsandtalesbackport.lookAndFeel.gameMusic=遊戲音樂中的 A Familiar Room
 config.trailsandtalesbackport.lookAndFeel.biomeMusic=生態域音樂
-options.accessibility.menu_background_blurriness=選單背景模糊程度
-options.accessibility.menu_background_blurriness.tooltip=變更選單背景的模糊程度。
-selectWorld.data_read=正在讀取世界資料...
-debug.profiler_chart.help=F3 + 1 = 顯示效能分析圖表
-debug.fps_charts.help=F3 + 2 = 顯示 FPS 與 TPS 圖表
 
 # --- wolf ---
 advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=使用剪刀移除狼身上的狼鎧

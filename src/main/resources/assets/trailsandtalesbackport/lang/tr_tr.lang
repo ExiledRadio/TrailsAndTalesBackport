@@ -286,11 +286,6 @@ config.trailsandtalesbackport.lookAndFeel=Görünüm
 config.trailsandtalesbackport.lookAndFeel.enabled=Etkin
 config.trailsandtalesbackport.lookAndFeel.gameMusic=Oyun Müziğinde A Familiar Room
 config.trailsandtalesbackport.lookAndFeel.biomeMusic=Biyom Müziği
-options.accessibility.menu_background_blurriness=Menü Arka Plan Bulanıklığı
-options.accessibility.menu_background_blurriness.tooltip=Menü arka planlarının bulanıklığını değiştirir.
-selectWorld.data_read=Dünya verileri okunuyor...
-debug.profiler_chart.help=F3 + 1 = Ayrımlama grafiğini göster
-debug.fps_charts.help=F3 + 2 = FPS ve TPS grafiklerini göster
 
 # --- wolf ---
 advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=Makas kullanarak bir kurdun zırhını çıkarın

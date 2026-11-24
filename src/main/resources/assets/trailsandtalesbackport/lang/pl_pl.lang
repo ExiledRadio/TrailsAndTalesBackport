@@ -286,11 +286,6 @@ config.trailsandtalesbackport.lookAndFeel=Wygląd
 config.trailsandtalesbackport.lookAndFeel.enabled=Włączone
 config.trailsandtalesbackport.lookAndFeel.gameMusic=A Familiar Room w muzyce w grze
 config.trailsandtalesbackport.lookAndFeel.biomeMusic=Muzyka biomów
-options.accessibility.menu_background_blurriness=Rozmycie tła w menu
-options.accessibility.menu_background_blurriness.tooltip=Zmienia rozmazanie tła menu
-selectWorld.data_read=Odczytywanie danych świata…
-debug.profiler_chart.help=F3 + 1 = Pokaż wykres profilowania
-debug.fps_charts.help=F3 + 2 = Pokaż wykresy FPS i TPS
 
 # --- wolf ---
 advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=Zdejmij wilczą zbroję z wilka za pomocą nożyc

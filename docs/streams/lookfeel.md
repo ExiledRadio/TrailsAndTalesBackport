@@ -1,5 +1,15 @@
 # Stream Lf: look and feel
 
+**Since 1.0.4 (Backport Core 1.4.7) most of this stream is Backport Core's** (`presentation.versions.Look120` and
+`Look120Client`, patch P76 in place of this mod's P1), so any 1.20 or later backport has it: the title logo,
+Minceraft and "Java Edition" with their `.mcmeta`, `menu_background.png`, the splashes, the vanilla text, the window
+icon, Ctrl + scroll GUI Scale, F3 + 1 and F3 + 2 and the F3-release chart reset, Menu Background Blur, the 1.20.5
+loading screen (now blurred as Core's menus are: every pass at the full radius) and dimension-change screens, the
+shield arm and Ctrl + pick block. Back on the world and server lists was already Core's (`MenuScreens.backForCancel`).
+This mod keeps the panorama and its overlay, the menu and game music (`GameMusicPack`) and the brushing pose
+(`lookfeel.client.BrushPose`). `tools/lookfeel/generate.py` still writes the moved files; their copies now live in
+Core's `assets/backportcore/look/1.20*/`. The notes below are the stream as first built.
+
 Package `lookfeel` (client side in `lookfeel.client`). Config `lookAndFeel` (`enabled`, `gameMusic`). Packet ids
 90-94 (none used). Dev-server port 25918.
 

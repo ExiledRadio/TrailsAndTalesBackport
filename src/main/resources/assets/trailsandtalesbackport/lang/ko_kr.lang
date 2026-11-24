@@ -286,11 +286,6 @@ config.trailsandtalesbackport.lookAndFeel=외관과 분위기
 config.trailsandtalesbackport.lookAndFeel.enabled=활성화
 config.trailsandtalesbackport.lookAndFeel.gameMusic=게임 음악의 A Familiar Room
 config.trailsandtalesbackport.lookAndFeel.biomeMusic=생물 군계 음악
-options.accessibility.menu_background_blurriness=메뉴 배경 흐림
-options.accessibility.menu_background_blurriness.tooltip=메뉴 배경의 흐릿함 정도를 조절합니다.
-selectWorld.data_read=세계 데이터 읽는 중...
-debug.profiler_chart.help=F3 + 1 = 프로파일러 차트 표시
-debug.fps_charts.help=F3 + 2 = FPS 및 TPS 차트 표시
 
 # --- wolf ---
 advancements.trailsandtalesbackport.husbandry.remove_wolf_armor.description=가위를 사용해 늑대에게서 늑대 갑옷을 벗기세요
