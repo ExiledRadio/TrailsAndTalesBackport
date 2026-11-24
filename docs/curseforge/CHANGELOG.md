@@ -1,3 +1,7 @@
+# 1.0.3
+
+*   **Fixed: the chiseled bookshelf broke into black and purple particles.** Its model named its particle texture in a way 1.12.2 cannot read.
+
 # 1.0.2
 
 *   **Realistic Terrain Generation** (and RTG Unofficial): cherry groves now generate in RTG worlds, on RTG's forest hills. RTG turned them into plains. Needs Backport Core 1.4.5.

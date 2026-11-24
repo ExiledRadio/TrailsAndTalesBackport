@@ -4,7 +4,7 @@
     "top": "trailsandtalesbackport:block/chiseled_bookshelf_top",
     "side": "trailsandtalesbackport:block/chiseled_bookshelf_side",
     "front": "trailsandtalesbackport:block/chiseled_bookshelf_empty",
-    "particle": "#top"
+    "particle": "trailsandtalesbackport:block/chiseled_bookshelf_top"
   },
   "elements": [
     {
