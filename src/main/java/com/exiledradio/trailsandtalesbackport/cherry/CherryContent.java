@@ -72,7 +72,9 @@ public final class CherryContent {
         }
         JigsawPools.FeaturePlacer cherry = (world, pos, random, feature) -> {
             if (sapling != null && sapling.canPlaceBlockAt(world, pos)) {
-                new CherryTree(false).generate(world, random, pos);
+                if (!com.exiledradio.backportcore.compat.DynamicTrees.grow(world, pos, random, "dtbackport:cherry")) {
+                    new CherryTree(false).generate(world, random, pos);
+                }
             }
         };
         JigsawPools.feature("minecraft:cherry_checked", cherry);

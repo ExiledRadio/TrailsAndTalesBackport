@@ -183,7 +183,10 @@ public class CherryGroveDecorator extends BiomeDecorator {
                 if (treeTries != null) {
                     treeTries.add(floor);
                 }
-                new CherryTree(false).generate(world, random, floor);
+                // With Dynamic Trees - Backport, a dynamic cherry grows in the static one's place.
+                if (!com.exiledradio.backportcore.compat.DynamicTrees.grow(world, floor, random, "dtbackport:cherry")) {
+                    new CherryTree(false).generate(world, random, floor);
+                }
             }
         }
 
