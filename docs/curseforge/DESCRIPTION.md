@@ -1,4 +1,4 @@
-![Backport Family](https://media.forgecdn.net/attachments/2271/405/hero-family-png.png)
+![Backport Family](https://media.forgecdn.net/attachments/2272/92/hero-family-v3-png.png)
 
 [![Join the Discord](https://discord.com/api/guilds/1532942417618141204/widget.png?style=banner2)](https://discord.gg/kxQvMDJBTN) [![Source code](https://media.forgecdn.net/attachments/2272/79/source-card-png.png)](https://github.com/ExiledRadio/TrailsAndTalesBackport)
 
