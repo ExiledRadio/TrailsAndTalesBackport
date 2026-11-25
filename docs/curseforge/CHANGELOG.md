@@ -1,3 +1,9 @@
+# 1.0.5
+
+*   **Dynamic cherry trees** with Dynamic Trees - Backport installed: cherry groves grow its leaning dynamic cherry trees, and cherry saplings grow into them.
+
+Needs Backport Core 1.4.9 or newer.
+
 # 1.0.4
 
 *   **1.20's look and feel is now Backport Core's**, so it shows with any 1.20 or later backport, with or without this mod: the title logo with Minceraft and "Java Edition", the window icon, 1.20.x's splashes and wording, F3 + 1 and F3 + 2, Ctrl + scroll for GUI Scale, Menu Background Blur, 1.20.5's loading and dimension-change screens, the shield arm following your look and Ctrl + pick block without "(+NBT)". Your settings are kept. The cherry grove panorama, the music and the brushing pose stay in this mod.
