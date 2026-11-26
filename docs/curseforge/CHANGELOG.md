@@ -1,5 +1,6 @@
 # 1.0.5
 
+*   **Fixed: on a server, brushing with the brush in your offhand kicked you** ("Internal server error"). Singleplayer was not affected.
 *   **Dynamic cherry trees** with Dynamic Trees - Backport installed: cherry groves grow its leaning dynamic cherry trees, and cherry saplings grow into them.
 
 Needs Backport Core 1.4.9 or newer.

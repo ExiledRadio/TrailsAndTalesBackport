@@ -94,7 +94,7 @@ public class ItemBrush extends Item {
         BlockPos pos = hit.getBlockPos();
         IBlockState state = world.getBlockState(pos);
         EnumHandSide arm = player.getActiveHand() == EnumHand.MAIN_HAND ? player.getPrimaryHand()
-                : player.getPrimaryHand().opposite();
+                : player.getPrimaryHand() == EnumHandSide.RIGHT ? EnumHandSide.LEFT : EnumHandSide.RIGHT; // opposite() is client-only
         if (world.isRemote && state.getRenderType() != EnumBlockRenderType.INVISIBLE && state.getBlock() != Blocks.BARRIER) {
             spawnDustParticles(world, hit, state, player.getLook(0.0F), arm);
         }
